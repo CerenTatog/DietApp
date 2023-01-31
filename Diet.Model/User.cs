@@ -15,7 +15,7 @@ namespace Diet.Model
             this.UserActivities = new List<UserActivity>();
             this.UserBCs = new List<UserBC>();
         }
-        [Required]
+        [Required]//
         [StringLength(50)]
         public string UserName { get; set; }
         public string UserSurname { get; set; }

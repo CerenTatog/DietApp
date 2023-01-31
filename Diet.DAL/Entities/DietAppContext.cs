@@ -22,7 +22,6 @@ namespace Diet.DAL.Entities
         // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
 
          public virtual DbSet<Activity> Activities { get; set; }
-         public virtual DbSet<BodyCharacteristic> BodyCharacteristics { get; set; }
          public virtual DbSet<Category> Categories { get; set; }
          public virtual DbSet<Food> Foods { get; set; }
          public virtual DbSet<FoodDetail> FoodDetails { get; set; }

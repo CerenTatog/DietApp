@@ -19,7 +19,7 @@ namespace Diet.Model
         [StringLength(120)] //1dilim ekmek vb şeklinde yazacagız
         public string FoodName { get; set; }        
         public double Calorie { get; set; }
-        public Nullable<int> CategoryID { get; set; }
+        public int? CategoryID { get; set; }
 
         public virtual ICollection<FoodDetail> FoodDetails { get; set; }
         [ForeignKey("CategoryID")]

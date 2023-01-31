@@ -53,7 +53,6 @@
   <ItemGroup>
     <Compile Include="Activity.cs" />
     <Compile Include="Base.cs" />
-    <Compile Include="BodyCharacteristic.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="Food.cs" />
     <Compile Include="FoodDetail.cs" />

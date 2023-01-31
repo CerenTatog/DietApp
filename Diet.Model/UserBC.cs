@@ -7,22 +7,27 @@ using System.Threading.Tasks;
 
 namespace Diet.Model
 {
-    public class UserBC:Base
+    public class UserBC : Base
     {
         public int UserID { get; set; }
-        public int BCID { get; set; }
-        public int MeasurementValue { get; set; }
+        public BodyCharacteristicTypeEnum BodyCharacteristicType { get; set; }
+        public double MeasurementValue { get; set; }
         public DateTime MeasuredDate { get; set; }
-        public MeasureType MeasureType { get; set; }
+        public MeasureTypeEnum MeasureType { get; set; }
         [ForeignKey("UserID")]
         public virtual User User { get; set; }
-        [ForeignKey("BCID")]
-        public virtual BodyCharacteristic BodyCharacteristic { get; set; }
     }
-    public enum MeasureType
+    public enum MeasureTypeEnum
     {
-        cm,
+        cm = 1,
         kg
-
+    }
+    /// <summary>
+    /// bu alan güncellenecek
+    /// </summary>
+    public enum BodyCharacteristicTypeEnum
+    {
+        Kilo = 1,
+        Boy,
     }
 }

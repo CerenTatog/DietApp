@@ -24,7 +24,7 @@ namespace Diet.Model
     }
     public enum MealType
     {
-        Breakfast,
+        Breakfast=1,
         Lunch,
         Dinner,
         Snack

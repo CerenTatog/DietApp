@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Diet.Model;
 using Diet.DAL;
 using Diet.DAL.Entities;
+using System.Security.Cryptography;
 
 namespace Diet.BLL
 {
@@ -13,29 +14,46 @@ namespace Diet.BLL
     {
         DietAppContext db = new DietAppContext();
 
-        public double CalculateDailyCalorie()
+        public double CalculateDailyCalorie(int Id)
         {//Kişinin ilk etapta girdiği yaş,cinsiyet, harreket durumu vs.ye göre hesaplanacak değer.
          //kişinin kilo vermesine değişebilir. 
          //Men: BMR = 88.362 + (13.397 x weight in kg) +(4.799 x height in cm) – (5.677 x age in years) Women: BMR = 447.593 + (9.247 x weight in kg) +(3.098 x height in cm) – (4.330 x age in years)
 
             //double weight = db.UserDetails.Select(X=>X.Weight);
-            double height = 0;
-            double age = 0;
-            int gender = 0;
-            int ıd = 0;
+
+
             //double BMR = 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age);
 
-           
-            var query = (from u in db.Users
-                         join ud in db.UserDetails on u.ID equals ud.UserID
-                         select new
-                         {
-                             u.ID,
-                             TotalBMR = (88.362 + (13.397 * ud.Weight)+ (4.799 * ud.Height) - (5.677 * ud.Age))
-                         }).Where(x=>x.ID == ıd).FirstOrDefault();
-            double BMR1 = Convert.ToDouble(query.TotalBMR);
+            var querygender = (from u in db.Users
+                               join ud in db.UserDetails on u.ID equals ud.UserID
+                               select ud).Where(x=>x.ID == Id).FirstOrDefault();
+            if (querygender.Gender == Gender.Men)
+            {
+                var query = (from u in db.Users
+                             join ud in db.UserDetails on u.ID equals ud.UserID
+                             select new
+                             {
+                                 u.ID,
+                                 TotalBMR = (88.362 + (13.397 * ud.Weight) + (4.799 * ud.Height) - (5.677 * ud.Age))
+                             }).Where(x => x.ID == Id).FirstOrDefault();
+                double BMR1 = Convert.ToDouble(query.TotalBMR);
 
-            return BMR1;
+                return BMR1;
+            }
+            else
+            {
+                var query = (from u in db.Users
+                             join ud in db.UserDetails on u.ID equals ud.UserID
+                             select new
+                             {
+                                 u.ID,
+                                 TotalBMR = (447.593 + (9.247 * ud.Weight) + (3.098*ud.Height) - (4.330*ud.Age))
+                             }).Where(x => x.ID == Id).FirstOrDefault();
+                double BMR2 = Convert.ToDouble(query.TotalBMR);
+
+                return BMR2;
+            }
+            
         }
 
         public double CalculateCalorieIntake()

@@ -54,6 +54,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\DietAppContext.cs" />
+    <Compile Include="GenericRepository\IRepository.cs" />
+    <Compile Include="GenericRepository\Repository.cs" />
     <Compile Include="Migrations\202301311925483_create_tables.cs" />
     <Compile Include="Migrations\202301311925483_create_tables.designer.cs">
       <DependentUpon>202301311925483_create_tables.cs</DependentUpon>

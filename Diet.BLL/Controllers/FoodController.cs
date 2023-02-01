@@ -5,12 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using Diet.DAL;
 using Diet.DAL.Entities;
+using Diet.Model;
 
 namespace Diet.BLL.Controllers
 {
 
     public class FoodController : IController
     {
+       
         public void AddEntity()
         {
             throw new NotImplementedException();

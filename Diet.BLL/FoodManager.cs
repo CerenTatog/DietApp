@@ -12,24 +12,24 @@ namespace Diet.BLL
     public class FoodManager
     {
         DietAppContext db = new DietAppContext();
-        public static double CalculateDailyCalorie()
+        public double CalculateDailyCalorie()
         {//Kişinin ilk etapta girdiği yaş,cinsiyet, harreket durumu vs.ye göre hesaplanacak değer.
             //kişinin kilo vermesine değişebilir. 
 
             return 0;
         }
 
-        public static double CalculateCalorieIntake()
+        public double CalculateCalorieIntake()
         {
             return 0;
         }
 
-        public static double CalculateTotalCalorie() 
+        public double CalculateTotalCalorie() 
         {
             return 0;
         }
 
-        public static double DailyWaterNeeded() 
+        public double DailyWaterNeeded() 
         {
             return 0;
 

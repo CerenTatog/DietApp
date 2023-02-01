@@ -20,8 +20,7 @@ namespace Diet.UI
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            FoodManager fm = new FoodManager();
-            fm.CalculateTotalCalorie();
+           
         }
     }
 }

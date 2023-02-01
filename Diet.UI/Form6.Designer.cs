@@ -28,19 +28,98 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.lblKCAL = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.nmrStepCount = new System.Windows.Forms.NumericUpDown();
+            this.btnAddStepCount = new MaterialSkin.Controls.MaterialButton();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrStepCount)).BeginInit();
             this.SuspendLayout();
+            // 
+            // lblKCAL
+            // 
+            this.lblKCAL.AutoSize = true;
+            this.lblKCAL.Depth = 0;
+            this.lblKCAL.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lblKCAL.Location = new System.Drawing.Point(246, 122);
+            this.lblKCAL.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblKCAL.Name = "lblKCAL";
+            this.lblKCAL.Size = new System.Drawing.Size(32, 19);
+            this.lblKCAL.TabIndex = 0;
+            this.lblKCAL.Text = "kCal";
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel1.Location = new System.Drawing.Point(7, 218);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(255, 19);
+            this.materialLabel1.TabIndex = 1;
+            this.materialLabel1.Text = "Lütfen Günlük Adım Sayınızı Giriniz.";
+            // 
+            // nmrStepCount
+            // 
+            this.nmrStepCount.Location = new System.Drawing.Point(284, 216);
+            this.nmrStepCount.Maximum = new decimal(new int[] {
+            20000,
+            0,
+            0,
+            0});
+            this.nmrStepCount.Name = "nmrStepCount";
+            this.nmrStepCount.Size = new System.Drawing.Size(349, 22);
+            this.nmrStepCount.TabIndex = 2;
+            this.nmrStepCount.Value = new decimal(new int[] {
+            250,
+            0,
+            0,
+            0});
+            // 
+            // btnAddStepCount
+            // 
+            this.btnAddStepCount.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnAddStepCount.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnAddStepCount.Depth = 0;
+            this.btnAddStepCount.HighEmphasis = true;
+            this.btnAddStepCount.Icon = null;
+            this.btnAddStepCount.Location = new System.Drawing.Point(248, 309);
+            this.btnAddStepCount.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnAddStepCount.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnAddStepCount.Name = "btnAddStepCount";
+            this.btnAddStepCount.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnAddStepCount.Size = new System.Drawing.Size(144, 36);
+            this.btnAddStepCount.TabIndex = 3;
+            this.btnAddStepCount.Text = "Adım Sayısı Ekle";
+            this.btnAddStepCount.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnAddStepCount.UseAccentColor = false;
+            this.btnAddStepCount.UseVisualStyleBackColor = true;
+            this.btnAddStepCount.Click += new System.EventHandler(this.btnAddStepCount_Click);
             // 
             // Form6
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(657, 417);
+            this.Controls.Add(this.btnAddStepCount);
+            this.Controls.Add(this.nmrStepCount);
+            this.Controls.Add(this.materialLabel1);
+            this.Controls.Add(this.lblKCAL);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form6";
+            this.Padding = new System.Windows.Forms.Padding(4, 79, 4, 4);
             this.Text = "Adım Sayısı Gir";
+            ((System.ComponentModel.ISupportInitialize)(this.nmrStepCount)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private MaterialSkin.Controls.MaterialLabel lblKCAL;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private System.Windows.Forms.NumericUpDown nmrStepCount;
+        private MaterialSkin.Controls.MaterialButton btnAddStepCount;
     }
 }

@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Diet.BLL
 {
-    internal class Metotlar
+    public class Metotlar
     {
+        public void Temizle() 
+        { //0 lama da dahil.
+        
+        
+        }
     }
 }

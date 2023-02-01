@@ -6,7 +6,24 @@ using System.Threading.Tasks;
 
 namespace Diet.BLL
 {
-    internal class ActivityManager
+    public static class ActivityManager
     {
+        public static double TotalCalculateConsumedCalorie() 
+        {//bystep+byactivity
+            return 0;
+        }
+
+        public static double CalculateConsumedCalorieByStep() 
+        {
+            return 0;
+        }
+
+        public static double CalculateConsumedCalorieByActivity()
+        {
+            return 0;
+        }
+
+
+
     }
 }

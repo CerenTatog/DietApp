@@ -10,7 +10,7 @@ namespace Diet.BLL
     {
         public void Temizle() 
         { //0 lama da dahil.
-        
+        //.
         
         }
     }

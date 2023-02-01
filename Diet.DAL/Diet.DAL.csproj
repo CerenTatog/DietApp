@@ -54,6 +54,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IActivityDAL.cs" />
+    <Compile Include="Abstract\ICategoryDAL.cs" />
+    <Compile Include="Abstract\IFoodDAL.cs" />
+    <Compile Include="Abstract\IFoodDetailDAL.cs" />
+    <Compile Include="Abstract\IMealDAL.cs" />
+    <Compile Include="Abstract\IMealFoodDAL.cs" />
+    <Compile Include="Abstract\IUserActivityDAL.cs" />
+    <Compile Include="Abstract\IUserBCDAL.cs" />
+    <Compile Include="Abstract\IUserDAL.cs" />
+    <Compile Include="Abstract\IUserDetailDAL.cs" />
     <Compile Include="Entities\DietAppContext.cs" />
     <Compile Include="GenericRepository\IRepository.cs" />
     <Compile Include="GenericRepository\Repository.cs" />

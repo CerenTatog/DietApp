@@ -12,7 +12,6 @@ namespace Diet.Model
     {
         public Food()
         {
-            this.FoodDetails = new List<FoodDetail>();
             this.MealFoods = new List<MealFood>();
         }
         [Required]
@@ -20,8 +19,11 @@ namespace Diet.Model
         public string FoodName { get; set; }        
         public double Calorie { get; set; }
         public int? CategoryID { get; set; }
+        public double Carbonhydrate { get; set; }
+        public double Fat { get; set; }
+        public double Protein { get; set; }
 
-        public virtual ICollection<FoodDetail> FoodDetails { get; set; }
+       
         [ForeignKey("CategoryID")]
         public virtual Category Category { get; set; }
 

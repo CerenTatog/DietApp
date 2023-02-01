@@ -11,7 +11,8 @@ namespace Diet.Model
     public class Base
     {
         [Key]
-        [Column(Order =1)]
+        [Column(Order = 1)]
         public int ID { get; set; }
+        public DateTime? CreatedDate { get; set; }
     }
 }

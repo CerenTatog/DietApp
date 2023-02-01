@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using Diet.DAL.Entities;
@@ -11,8 +13,11 @@ namespace Diet.DAL.GenericRepository
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : Base
     {
-        private readonly DietAppContext _db = new DietAppContext();
-
+        private readonly DietAppContext _db = null;
+        public Repository(DietAppContext db)
+        {
+            _db = db;
+        }
         public void Create(TEntity entity)
         {
             _db.Set<TEntity>().Add(entity);
@@ -38,7 +43,8 @@ namespace Diet.DAL.GenericRepository
 
         public void Update(TEntity entity)
         {
-            _db.Set<TEntity>().AddOrUpdate(entity);
+            _db.Set<TEntity>().Attach(entity);
+            _db.Entry(entity).State = EntityState.Modified;
             _db.SaveChanges();
         }
     }

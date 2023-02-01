@@ -11,6 +11,7 @@ namespace Diet.Model
     {
         public int MealID { get; set; }
         public int FoodID { get; set; }
+        public double Quantity { get; set; }
 
         [ForeignKey("FoodID")]
         public virtual Food Food { get; set; }

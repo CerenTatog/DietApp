@@ -24,13 +24,13 @@ namespace Diet.DAL.Entities
          public virtual DbSet<Activity> Activities { get; set; }
          public virtual DbSet<Category> Categories { get; set; }
          public virtual DbSet<Food> Foods { get; set; }
-         public virtual DbSet<FoodDetail> FoodDetails { get; set; }
          public virtual DbSet<Meal> Meals { get; set; }
          public virtual DbSet<MealFood> MealFoods { get; set; }
          public virtual DbSet<User> Users { get; set; }
          public virtual DbSet<UserActivity> UserActivities { get; set; }
          public virtual DbSet<UserBC> UserBCs { get; set; }
          public virtual DbSet<UserDetail> UserDetails { get; set; }
+         public virtual DbSet<UserNotification> UserNotifications { get; set; }
     }
 
     //public class MyEntity

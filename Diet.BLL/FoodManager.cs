@@ -8,14 +8,24 @@ using Diet.DAL;
 using Diet.DAL.Entities;
 using System.Security.Cryptography;
 using System.Runtime.ConstrainedExecution;
+using Diet.DAL.GenericRepository;
+using Diet.Model.Dto;
 
 namespace Diet.BLL
 {
     public class FoodManager
     {
-        DietAppContext db = new DietAppContext();
+        //DietAppContext db = new DietAppContext();
+        UnitOfWork db = new UnitOfWork();
+        //Repository<Food> foodRepo = new Repository<Food>();
+        //Repository<Meal> mealRepo = new Repository<Meal>();
+        //Repository<MealFood> meailFoodRepo = new Repository<MealFood>();
+        //Repository<User> userRepo = new Repository<User>();
+        //Repository<UserDetail> userDetailRepo = new Repository<UserDetail>();
+        //Repository<Activity> activityRepo = new Repository<Activity>();
+        //Repository<UserActivity> userActivityRepo = new Repository<UserActivity>();
 
-        public double CalculateDailyCalorie(int Id)
+        public double CalculateDailyCalorie(int UserId)
         {//Kişinin ilk etapta girdiği yaş,cinsiyet, harreket durumu vs.ye göre hesaplanacak değer.
          //kişinin kilo vermesine değişebilir. 
          //Men: BMR = 88.362 + (13.397 x weight in kg) +(4.799 x height in cm) – (5.677 x age in years) Women: BMR = 447.593 + (9.247 x weight in kg) +(3.098 x height in cm) – (4.330 x age in years)
@@ -26,92 +36,83 @@ namespace Diet.BLL
          //Kilo vermek istiyorsa 
          //Mifflin-St. Jeor
          //BMH(Erkek) = 10 X Ağırlık(kg) +6,25 X Yükseklik(cm) – 5 X yaş(y) +5
-        //BMH(Kadın) = 10 X Ağırlık(kg) +6,25 X Yükseklik(cm) – 5 X yaş(y) – 161
+         //BMH(Kadın) = 10 X Ağırlık(kg) +6,25 X Yükseklik(cm) – 5 X yaş(y) – 161
 
-            //KATSAYILAR BU KISMA EKLENECEK AKTİVİTE DURUMUNA GÖRE
-            var querygender = (from u in db.Users
-                               join ud in db.UserDetails on u.ID equals ud.UserID
-                               select ud).Where(x=>x.ID == Id).FirstOrDefault();
-            if (querygender.Gender == Gender.Men)
+            var userDetail = db.UserDetailRepository.GetAll().Where(x => x.UserID == UserId).FirstOrDefault();
+
+            if (userDetail?.Gender == Gender.Men)
             {
-                var query = (from u in db.Users
-                             join ud in db.UserDetails on u.ID equals ud.UserID
-                             select new
-                             {
-                                 u.ID,
-                                 TotalBMR = (88.362 + (13.397 * ud.Weight) + (4.799 * ud.Height) - (5.677 * ud.Age))
-                             }).Where(x => x.ID == Id).FirstOrDefault();
-                double BMR1 = Convert.ToDouble(query.TotalBMR);
-
-                return BMR1;
-
+                double katSayi = userDetail.ActivityStatus == ActivityStatus.NonActive ? 1.2 : userDetail.ActivityStatus == ActivityStatus.MidActive ? 1.375 : userDetail.ActivityStatus == ActivityStatus.Active ? 1.725 : 1.9;
+                return (88.362 + (13.397 * userDetail.Weight) + (4.799 * userDetail.Height) - (5.677 * userDetail.Age)) * katSayi;
             }
-            else
+            else if (userDetail?.Gender == Gender.Women)
             {
-                var query = (from u in db.Users
-                             join ud in db.UserDetails on u.ID equals ud.UserID
-                             select new
-                             {
-                                 u.ID,
-                                 TotalBMR = (447.593 + (9.247 * ud.Weight) + (3.098*ud.Height) - (4.330*ud.Age))
-                             }).Where(x => x.ID == Id).FirstOrDefault();
-                double BMR2 = Convert.ToDouble(query.TotalBMR);
-
-                return BMR2;
+                double katSayi = userDetail.ActivityStatus == ActivityStatus.NonActive ? 1.2 : userDetail.ActivityStatus == ActivityStatus.MidActive ? 1.375 : userDetail.ActivityStatus == ActivityStatus.Active ? 1.725 : 1.9;
+                return (447.593 + (9.247 * userDetail.Weight) + (3.098 * userDetail.Height) - (4.330 * userDetail.Age));
             }
-
-
-            
-        }
-
-        public double CalculateCalorieIntake(int Id)//check ettirilecek. 
-        {
-            var query = (from u in db.Users
-                        join m in db.Meals on u.ID equals m.UserID
-                        join mf in db.MealFoods on m.ID equals mf.MealID
-                        join f in db.Foods on mf.FoodID equals f.ID
-                        join fd in db.FoodDetails on f.ID equals fd.FoodID
-                        select new
-                        {   u.ID,
-                            f.FoodName,
-                            f.Calorie,
-                            fd.Quantity,
-                            fd.CalculateCalorie, 
-                            hCalculatedCalorie = (fd.Quantity * f.Calorie)//bu hesaplamayı satıra nasıl yazdıracağım?
-                        }).Where(x=>x.ID == Id).FirstOrDefault();
-
-            var query2 = Convert.ToDouble(query.hCalculatedCalorie);
-            return query2;
-        }
-
-        public double CalculateTotalCalorie(int Id) 
-        {
-            //Activity'den gelen metod ile CalculateCalorieIntake farklı 
             return 0;
         }
 
-        public double DailyWaterNeeded(int Id) 
-        {//sıcaklık koşulları ignore edilecek. 
-            //GSI = kg * 0.033
-            var GSI = (from u in db.Users
-                       join ud in db.UserDetails on u.ID equals ud.UserID
-                       select new
-                       {
-                           u.ID,
-                           ud.Weight,
-                           GSI = (ud.Weight * 0.033)
-                       }).Where(x => x.ID == Id).FirstOrDefault(); ;
+        public List<DailyUserCalori> CalculateCalorieIntake(int UserId)
+        {
+            var dateToday = DateTime.Today;
+            var dateEnd = DateTime.Today.AddDays(1).AddSeconds(-1);
+            var userDailyMealRepo = db.MealRepository.GetAll().Where(x => x.MealDate >= dateToday && x.MealDate < dateEnd && x.UserID == UserId);
+            var query = (from m in userDailyMealRepo
+                         join mf in db.MealFoodRepository.GetAll() on m.ID equals mf.MealID
+                         join f in db.FoodRepository.GetAll() on mf.FoodID equals f.ID
+                         select new
+                         {
+                             f.Calorie,
+                             mf.Quantity,
+                             m.MealType
+                         }).ToList();
+            var groupQuery = (from gq in query
+                              group gq by gq.MealType into g
+                              select new DailyUserCalori
+                              {
+                                  MealType = g.Key,
+                                  TotalCalori = g.Sum(x => x.Quantity * x.Calorie)
+                              }).ToList();
 
-            return GSI.GSI;
-
-
+            return groupQuery;
         }
 
-        
+        public double CalculateTotalCalorie(int UserId)
+        {
+            var dateToday = DateTime.Today;
+            var dateEnd = DateTime.Today.AddDays(1).AddSeconds(-1);
 
+            double dailyMealCalori = CalculateCalorieIntake(UserId).Sum(x => x.TotalCalori);
+            var dailyUserActivityRepo = db.UserActivityRepository.GetAll().Where(x => x.UserID == UserId && x.ActivityTime >= dateToday && x.ActivityTime < dateEnd);
+            var dailyActivityCalori = (from userActivity in dailyUserActivityRepo
+                                       join activity in db.ActivityRepository.GetAll() on userActivity.ActivityID equals activity.ID
+                                       select new
+                                       {
+                                           userActivity.ID,
+                                           activity.LostCalorie,
+                                           userActivity.Duration
+                                       });
+            var groupQuery = (from da in dailyActivityCalori
+                              group da by da.ID into g
+                              select new
+                              {
+                                  Id = g.Key,
+                                  TotalLostCalori = g.Sum(x => x.LostCalorie * x.Duration)
+                              }).ToList();
+            double totalLostCalori = groupQuery.Sum(x => x.TotalLostCalori);
 
+            return dailyMealCalori - totalLostCalori;
+        }
 
-
-
+        public double DailyWaterNeeded(int UserId)
+        {
+            var userDetail = db.UserDetailRepository.GetAll().Where(x => x.UserID == UserId).FirstOrDefault();
+            if (userDetail != null)
+            {
+                return userDetail.Weight * 0.033;
+            }
+            return 0;
+        }
     }
 }

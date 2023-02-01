@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Diet.DAL.Entities;
 
 namespace Diet.BLL
 {
-    public static class UserManager
+    public class UserManager
     {
+        DietAppContext db = new DietAppContext();
         public static string EncryptoPassword() 
         {
             return null;

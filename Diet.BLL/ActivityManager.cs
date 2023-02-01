@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Diet.DAL.Entities;
 
 namespace Diet.BLL
 {
-    public static class ActivityManager
+    public class ActivityManager
     {
+        DietAppContext db = new DietAppContext();
         public static double TotalCalculateConsumedCalorie() 
         {//bystep+byactivity
             return 0;

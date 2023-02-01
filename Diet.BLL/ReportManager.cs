@@ -11,7 +11,6 @@ namespace Diet.BLL
         
         //haftalık kalori alımı tablosu?
 
-
         public static double CalculateCarbonhydrate()
         {
             return 0;

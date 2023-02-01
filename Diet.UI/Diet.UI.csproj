@@ -173,6 +173,14 @@
       <Project>{83cabe06-3e42-48e8-a8f1-e308ef013bb2}</Project>
       <Name>Diet.BLL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Diet.DAL\Diet.DAL.csproj">
+      <Project>{2DB7205D-F0F6-4659-8B20-55352B64C6F7}</Project>
+      <Name>Diet.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Diet.Model\Diet.Model.csproj">
+      <Project>{4B575756-33BC-4D6B-9FC4-D891746A60A9}</Project>
+      <Name>Diet.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

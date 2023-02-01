@@ -19,6 +19,6 @@ namespace Diet.Model
         public string ActivityName { get; set; }
         public double LostCalorie { get; set; }
         
-        public virtual ICollection<UserActivity> UserActivities { get; set; }//
+        public virtual ICollection<UserActivity> UserActivities { get; set; }
     }
 }

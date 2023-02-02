@@ -10,6 +10,8 @@ using System.Security.Cryptography;
 using System.Runtime.ConstrainedExecution;
 using Diet.DAL.GenericRepository;
 using Diet.Model.Dto;
+using Diet.Model.Dto.Report;
+using System.Web.UI.Design.WebControls;
 
 namespace Diet.BLL
 {
@@ -113,6 +115,91 @@ namespace Diet.BLL
                 return userDetail.Weight * 0.033;
             }
             return 0;
+        }
+        //weekly carbonhyrate alanı düzenlenecek hesaplamada sıkıntı var.
+        public double DailyTakenCarbonhyrate(int UserId) 
+        {
+            var dateToday = DateTime.Today;
+            var dateEnd = DateTime.Today.AddDays(1).AddSeconds(-1);
+            var userDailyMealRepo = db.MealRepository.GetAll().Where(x => x.MealDate >= dateEnd && x.MealDate < dateToday && x.UserID == UserId);
+            var query = (from m in userDailyMealRepo
+                         join mf in db.MealFoodRepository.GetAll() on m.ID equals mf.MealID
+                         join f in db.FoodRepository.GetAll() on mf.FoodID equals f.ID
+                         select new
+                         {
+                             f.Carbonhydrate,
+                             mf.Quantity,
+                             m.MealDate,
+                             m.MealType
+                         }).ToList();
+            var groupQuery = (from gq in query
+                              let dt = gq.MealDate
+                              group gq by dt into g
+                              select new 
+                              {
+                                  Date = g.Key,
+                                  Carbonhyrate = g.Sum(x => x.Carbonhydrate * x.Quantity)
+                              }).ToList();
+
+            return groupQuery.Sum(x=>x.Carbonhyrate);
+
+
+        }
+
+        public double DailyTakenProtein(int UserId)
+        {
+            var dateToday = DateTime.Today;
+            var dateEnd = DateTime.Today.AddDays(1).AddSeconds(-1);
+            var userDailyMealRepo = db.MealRepository.GetAll().Where(x => x.MealDate >= dateEnd && x.MealDate < dateToday && x.UserID == UserId);
+            var query = (from m in userDailyMealRepo
+                         join mf in db.MealFoodRepository.GetAll() on m.ID equals mf.MealID
+                         join f in db.FoodRepository.GetAll() on mf.FoodID equals f.ID
+                         select new
+                         {
+                             f.Protein,
+                             mf.Quantity,
+                             m.MealDate,
+                             m.MealType
+                         }).ToList();
+            var groupQuery = (from gq in query
+                              let dt = gq.MealDate
+                              group gq by dt into g
+                              select new
+                              {
+                                  Date = g.Key,
+                                  Protein = g.Sum(x => x.Protein * x.Quantity)
+                              }).ToList();
+
+            return groupQuery.Sum(x => x.Protein);
+
+        }
+
+        public double DailyTakenFat(int UserId)
+        {
+            var dateToday = DateTime.Today;
+            var dateEnd = DateTime.Today.AddDays(1).AddSeconds(-1);
+            var userDailyMealRepo = db.MealRepository.GetAll().Where(x => x.MealDate >= dateEnd && x.MealDate < dateToday && x.UserID == UserId);
+            var query = (from m in userDailyMealRepo
+                         join mf in db.MealFoodRepository.GetAll() on m.ID equals mf.MealID
+                         join f in db.FoodRepository.GetAll() on mf.FoodID equals f.ID
+                         select new
+                         {
+                             f.Fat,
+                             mf.Quantity,
+                             m.MealDate,
+                             m.MealType
+                         }).ToList();
+            var groupQuery = (from gq in query
+                              let dt = gq.MealDate
+                              group gq by dt into g
+                              select new
+                              {
+                                  Date = g.Key,
+                                  Fat = g.Sum(x => x.Fat * x.Quantity)
+                              }).ToList();
+
+            return groupQuery.Sum(x => x.Fat);
+
         }
     }
 }

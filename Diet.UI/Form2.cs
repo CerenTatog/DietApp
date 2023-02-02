@@ -35,8 +35,7 @@ namespace Diet.UI
         {
             var query = from ud in db.UserDetailRepository.GetAll()
                         select new { ud.ActivityStatus };
-           // cmbActivityStatus.Items.Add(query); //???
-            //tabPage1.IsAccessible = true;
+           cmbActivityStatus.Items.Add(query); 
         }
 
         private void btnIlerle_Click(object sender, EventArgs e)
@@ -107,11 +106,10 @@ namespace Diet.UI
         private void btnKaydetBitir_Click(object sender, EventArgs e)
         {
             newuserdetail.Age = Convert.ToInt32(txtAge.Text);
-            //newuserdetail.ActivityStatus =cmbActivityStatus.SelectedIndex; //??
+            //newuserdetail.ActivityStatus =cmbActivityStatus.SelectedIndex; //ActivityStatus Enum olarak var İnt Diet.Model.Activitystatus türüne dönüşemez uyarısı.
 
             db.UserRepository.Create(newuser);
             db.UserDetailRepository.Create(newuserdetail);
-            //SaveChange yapılacak mı?
         }
 
         private void btnGeri5_Click(object sender, EventArgs e)

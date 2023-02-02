@@ -32,9 +32,9 @@
             this.txtKullaniciAdi = new MaterialSkin.Controls.MaterialTextBox2();
             this.btnGirisYap = new MaterialSkin.Controls.MaterialButton();
             this.txtSifre = new MaterialSkin.Controls.MaterialTextBox2();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnUyelikOlustur = new MaterialSkin.Controls.MaterialButton();
             this.btnYoneticiGiris = new MaterialSkin.Controls.MaterialButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,7 +44,7 @@
             this.txtKullaniciAdi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.txtKullaniciAdi.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtKullaniciAdi.Depth = 0;
-            this.txtKullaniciAdi.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtKullaniciAdi.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtKullaniciAdi.HideSelection = true;
             this.txtKullaniciAdi.Hint = "Kullanıcı Adı";
             this.txtKullaniciAdi.LeadingIcon = null;
@@ -116,17 +116,6 @@
             this.txtSifre.TrailingIcon = null;
             this.txtSifre.UseSystemPasswordChar = false;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(54, 93);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(407, 104);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnUyelikOlustur
             // 
             this.btnUyelikOlustur.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -145,6 +134,7 @@
             this.btnUyelikOlustur.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnUyelikOlustur.UseAccentColor = false;
             this.btnUyelikOlustur.UseVisualStyleBackColor = true;
+            this.btnUyelikOlustur.Click += new System.EventHandler(this.btnUyelikOlustur_Click);
             // 
             // btnYoneticiGiris
             // 
@@ -164,6 +154,18 @@
             this.btnYoneticiGiris.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnYoneticiGiris.UseAccentColor = false;
             this.btnYoneticiGiris.UseVisualStyleBackColor = true;
+            this.btnYoneticiGiris.Click += new System.EventHandler(this.btnYoneticiGiris_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(54, 93);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(407, 104);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
@@ -191,9 +193,9 @@
         private MaterialSkin.Controls.MaterialTextBox2 txtKullaniciAdi;
         private MaterialSkin.Controls.MaterialButton btnGirisYap;
         private MaterialSkin.Controls.MaterialTextBox2 txtSifre;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private MaterialSkin.Controls.MaterialButton btnUyelikOlustur;
         private MaterialSkin.Controls.MaterialButton btnYoneticiGiris;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Diet.BLL;
+using Diet.DAL.Entities;
+using Diet.DAL.GenericRepository;
 using MaterialSkin;
 using MaterialSkin.Controls;
 
@@ -16,6 +18,8 @@ namespace Diet.UI
     public partial class Form3 : MaterialForm
     {
         FoodManager foodManager = new FoodManager();
+        //DietAppContext db1 = new DietAppContext();
+        UnitOfWork db = new UnitOfWork();
         //parametreli constructor yapılacak User bilgisi aktarılacak
         public Form3()
         {
@@ -31,7 +35,9 @@ namespace Diet.UI
 
         private void Form3_Load(object sender, EventArgs e)
         {
-
+            //var query = from u in db.UserRepository.GetAll()
+            //            select new { u.UserName, u.UserSurname, u.Email, u.CreatedDate };
+            //dataGridView1.DataSource = query.ToList(); //?? no connection string hatası ??
         }
 
         private void materialTabControl1_TabIndexChanged(object sender, EventArgs e)
@@ -42,6 +48,20 @@ namespace Diet.UI
         private void materialFloatingActionButton1_Click(object sender, EventArgs e)
         {
             var dailyMeail = foodManager.CalculateCalorieIntake(0);
+        }
+
+        private void btnUrunEkle_Click(object sender, EventArgs e)
+        {
+            Form8 frm8 = new Form8();
+            frm8.Show();
+            Hide();
+        }
+
+        private void btnAktiviteEkle_Click(object sender, EventArgs e)
+        {
+            Form9 frm9 = new Form9();
+            frm9.Show();
+            Hide();
         }
     }
 }

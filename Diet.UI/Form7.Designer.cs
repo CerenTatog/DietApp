@@ -33,9 +33,9 @@
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.cmbActivities = new MaterialSkin.Controls.MaterialComboBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.nmrDuration = new System.Windows.Forms.NumericUpDown();
             this.btnAddActivity = new MaterialSkin.Controls.MaterialButton();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrDuration)).BeginInit();
             this.SuspendLayout();
             // 
             // lblKCAL
@@ -43,10 +43,10 @@
             this.lblKCAL.AutoSize = true;
             this.lblKCAL.Depth = 0;
             this.lblKCAL.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblKCAL.Location = new System.Drawing.Point(388, 129);
+            this.lblKCAL.Location = new System.Drawing.Point(224, 95);
             this.lblKCAL.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblKCAL.Name = "lblKCAL";
-            this.lblKCAL.Size = new System.Drawing.Size(40, 24);
+            this.lblKCAL.Size = new System.Drawing.Size(32, 19);
             this.lblKCAL.TabIndex = 0;
             this.lblKCAL.Text = "kCal";
             // 
@@ -55,10 +55,10 @@
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(177, 248);
+            this.materialLabel1.Location = new System.Drawing.Point(9, 176);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(203, 24);
+            this.materialLabel1.Size = new System.Drawing.Size(162, 19);
             this.materialLabel1.TabIndex = 1;
             this.materialLabel1.Text = "Lütfen Aktivite Seçiniz.";
             // 
@@ -67,10 +67,10 @@
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.Location = new System.Drawing.Point(177, 309);
+            this.materialLabel2.Location = new System.Drawing.Point(9, 237);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(274, 24);
+            this.materialLabel2.Size = new System.Drawing.Size(219, 19);
             this.materialLabel2.TabIndex = 2;
             this.materialLabel2.Text = "Lütfen Aktivite Süresini Seçiniz";
             // 
@@ -79,7 +79,7 @@
             this.materialLabel3.AutoSize = true;
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel3.Location = new System.Drawing.Point(673, 309);
+            this.materialLabel3.Location = new System.Drawing.Point(505, 237);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(24, 19);
@@ -95,12 +95,12 @@
             this.cmbActivities.DropDownHeight = 174;
             this.cmbActivities.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbActivities.DropDownWidth = 121;
-            this.cmbActivities.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cmbActivities.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.cmbActivities.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.cmbActivities.FormattingEnabled = true;
             this.cmbActivities.IntegralHeight = false;
             this.cmbActivities.ItemHeight = 43;
-            this.cmbActivities.Location = new System.Drawing.Point(350, 223);
+            this.cmbActivities.Location = new System.Drawing.Point(182, 151);
             this.cmbActivities.MaxDropDownItems = 4;
             this.cmbActivities.MouseState = MaterialSkin.MouseState.OUT;
             this.cmbActivities.Name = "cmbActivities";
@@ -108,18 +108,18 @@
             this.cmbActivities.StartIndex = 0;
             this.cmbActivities.TabIndex = 4;
             // 
-            // numericUpDown1
+            // nmrDuration
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(413, 307);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.nmrDuration.Location = new System.Drawing.Point(245, 235);
+            this.nmrDuration.Maximum = new decimal(new int[] {
             120,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(254, 22);
-            this.numericUpDown1.TabIndex = 5;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.nmrDuration.Name = "nmrDuration";
+            this.nmrDuration.Size = new System.Drawing.Size(254, 22);
+            this.nmrDuration.TabIndex = 5;
+            this.nmrDuration.Value = new decimal(new int[] {
             15,
             0,
             0,
@@ -132,36 +132,37 @@
             this.btnAddActivity.Depth = 0;
             this.btnAddActivity.HighEmphasis = true;
             this.btnAddActivity.Icon = null;
-            this.btnAddActivity.Location = new System.Drawing.Point(343, 379);
+            this.btnAddActivity.Location = new System.Drawing.Point(175, 307);
             this.btnAddActivity.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnAddActivity.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAddActivity.Name = "btnAddActivity";
             this.btnAddActivity.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnAddActivity.Size = new System.Drawing.Size(158, 36);
+            this.btnAddActivity.Size = new System.Drawing.Size(122, 36);
             this.btnAddActivity.TabIndex = 6;
             this.btnAddActivity.Text = "Aktivite Ekle";
             this.btnAddActivity.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnAddActivity.UseAccentColor = false;
             this.btnAddActivity.UseVisualStyleBackColor = true;
+            this.btnAddActivity.Click += new System.EventHandler(this.btnAddActivity_Click);
             // 
             // Form7
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(558, 361);
             this.Controls.Add(this.btnAddActivity);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.nmrDuration);
             this.Controls.Add(this.cmbActivities);
             this.Controls.Add(this.materialLabel3);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.lblKCAL);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form7";
             this.Padding = new System.Windows.Forms.Padding(4, 79, 4, 4);
             this.Text = "Aktivite Ekle(Kullanıcı)";
             this.Load += new System.EventHandler(this.Form7_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrDuration)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,7 +175,7 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialComboBox cmbActivities;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nmrDuration;
         private MaterialSkin.Controls.MaterialButton btnAddActivity;
     }
 }

@@ -6,13 +6,15 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Diet.DAL.Entities;
+using Diet.DAL.GenericRepository;
 
 namespace Diet.BLL
 {
     public class UserManager
     {
-        DietAppContext db = new DietAppContext();          
-        public static bool IsValidPassword(string password)
+        //DietAppContext db = new DietAppContext();
+        UnitOfWork db = new UnitOfWork();
+        public  bool IsValidPassword(string password)
         {
             int uppercaseCount = 0;
             int lowercaseCount = 0;

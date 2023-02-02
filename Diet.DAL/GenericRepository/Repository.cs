@@ -27,7 +27,8 @@ namespace Diet.DAL.GenericRepository
         public void Delete(int Id)
         {
             var entity = GetById(Id);
-            _db.Set<TEntity>().Remove(entity);
+            _db.Set<TEntity>().Attach(entity);
+            _db.Entry(entity).State = EntityState.Deleted;
             _db.SaveChanges();
         }
 

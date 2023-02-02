@@ -57,22 +57,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstract\IActivityDAL.cs" />
-    <Compile Include="Abstract\ICategoryDAL.cs" />
-    <Compile Include="Abstract\IFoodDAL.cs" />
-    <Compile Include="Abstract\IFoodDetailDAL.cs" />
-    <Compile Include="Abstract\IMealDAL.cs" />
-    <Compile Include="Abstract\IMealFoodDAL.cs" />
-    <Compile Include="Abstract\IUserActivityDAL.cs" />
-    <Compile Include="Abstract\IUserBCDAL.cs" />
-    <Compile Include="Abstract\IUserDAL.cs" />
-    <Compile Include="Abstract\IUserDetailDAL.cs" />
     <Compile Include="Entities\DietAppContext.cs" />
     <Compile Include="GenericRepository\IRepository.cs" />
     <Compile Include="GenericRepository\Repository.cs" />
+    <Compile Include="GenericRepository\UnitOfWork.cs" />
     <Compile Include="Migrations\202301311925483_create_tables.cs" />
     <Compile Include="Migrations\202301311925483_create_tables.designer.cs">
       <DependentUpon>202301311925483_create_tables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202302012354001_dietapp_v2.cs" />
+    <Compile Include="Migrations\202302012354001_dietapp_v2.Designer.cs">
+      <DependentUpon>202302012354001_dietapp_v2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -90,6 +85,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202301311925483_create_tables.resx">
       <DependentUpon>202301311925483_create_tables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302012354001_dietapp_v2.resx">
+      <DependentUpon>202302012354001_dietapp_v2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

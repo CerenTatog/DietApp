@@ -58,8 +58,9 @@
     <Compile Include="Activity.cs" />
     <Compile Include="Base.cs" />
     <Compile Include="Category.cs" />
+    <Compile Include="Dto\DailyUserCalori.cs" />
+    <Compile Include="Dto\Report\WeeklyCaloriDto.cs" />
     <Compile Include="Food.cs" />
-    <Compile Include="FoodDetail.cs" />
     <Compile Include="Meal.cs" />
     <Compile Include="MealFood.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="UserActivity.cs" />
     <Compile Include="UserBC.cs" />
     <Compile Include="UserDetail.cs" />
+    <Compile Include="UserNotification.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

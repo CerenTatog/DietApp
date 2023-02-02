@@ -23,6 +23,7 @@ namespace Diet.DAL.GenericRepository
         private Repository<MealFood> _mealFoodRepository;
         private Repository<Activity> _activityRepository;
         private Repository<UserActivity> _userActivityRepository;
+        private Repository<UserBC> _userBcRepository;
         private bool _disposed = false;
         public Repository<User> UserRepository
         {
@@ -85,6 +86,15 @@ namespace Diet.DAL.GenericRepository
                 if (_userActivityRepository == null)
                     _userActivityRepository = new Repository<UserActivity>(_context);
                 return _userActivityRepository;
+            }
+        }
+        public Repository<UserBC> UserBcRepository
+        {
+            get
+            {
+                if (_userBcRepository == null)
+                    _userBcRepository = new Repository<UserBC>(_context);
+                return _userBcRepository;
             }
         }
         protected virtual void Dispose(bool disposing)

@@ -24,6 +24,7 @@ namespace Diet.UI
 
         private void btnAddStepCount_Click(object sender, EventArgs e)
         {
+            //LostCalorie User ekranına gönderilmeli.
             double LostCalorieByStep= (ActivityManager.CalculateConsumedCalorieByStep((int)nmrStepCount.Value));
             lblKCAL.Text = LostCalorieByStep.ToString() + " kCal TEBRİKLER.";
         }

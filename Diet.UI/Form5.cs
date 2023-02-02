@@ -63,6 +63,8 @@ namespace Diet.UI
             materialComboBox2.DataSource = db.FoodRepository.GetAll().Select(x => new { x.ID, x.FoodName }).ToList();
             materialComboBox2.DisplayMember = "FoodName";
             materialComboBox2.ValueMember = "ID";
+            //materialComboBox2.AutoCompleteMode = AutoCompleteMode.Suggest;
+            //materialComboBox2.AutoCompleteSource = AutoCompleteSource.ListItems;
             
 
         }

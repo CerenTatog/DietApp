@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Diet.Model
 {
-    public class Food:Base
+    public class Food : Base
     {
         public Food()
         {
@@ -16,7 +16,8 @@ namespace Diet.Model
         }
         [Required]
         [StringLength(120)] //1dilim ekmek vb şeklinde yazacagız
-        public string FoodName { get; set; }        
+        public string FoodName { get; set; }
+        public QuantityType QuantityType{ get; set; }
         public double Calorie { get; set; }
         public int? CategoryID { get; set; }
         public double Carbonhydrate { get; set; }
@@ -28,5 +29,13 @@ namespace Diet.Model
         public virtual Category Category { get; set; }
 
         public virtual ICollection<MealFood> MealFoods { get; set; }
+
+    }
+    public enum QuantityType 
+    {
+        adet=1,
+        ml,
+        gr,
+        dilim
     }
 }

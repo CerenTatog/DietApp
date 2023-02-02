@@ -33,13 +33,16 @@ namespace Diet.UI
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            var query = from ud in db.UserDetailRepository.GetAll()
-                        select new { ud.ActivityStatus };
-           cmbActivityStatus.Items.Add(query); 
+            var query = from ud in db.UserDetailRepository.GetAll().ToList()
+                        select new { Label = ud.ActivityStatus, Value = ud.ActivityStatus};
+            cmbActivityStatus.Items.Add(query);
+            cmbActivityStatus.DisplayMember = "Label";
+            cmbActivityStatus.ValueMember = "Value";
         }
 
         private void btnIlerle_Click(object sender, EventArgs e)
         {
+            // uniq
             newuser.UserName = txtKullaniciAdi.Text;
             newuser.UserSurname = txtSoyad.Text;
             materialTabControl1.SelectedTab = tabPage2;
@@ -48,7 +51,7 @@ namespace Diet.UI
 
         private void btnIlerle2_Click(object sender, EventArgs e)
         {
-            if (um.CheckEmailFormat(txtEmail.Text)==true)
+            if (um.CheckEmailFormat(txtEmail.Text) == true)
             {
                 newuser.Email = txtEmail.Text;
                 materialTabControl1.SelectedTab = tabPage3;
@@ -57,7 +60,7 @@ namespace Diet.UI
             {
                 MessageBox.Show("Lütfen .com lu bir mail adresi giriniz");
             }
-            
+
         }
 
         private void btnGeri2_Click(object sender, EventArgs e)
@@ -67,11 +70,11 @@ namespace Diet.UI
 
         private void btnIlerle3_Click(object sender, EventArgs e)
         {
-            if (txtSifre.Text==txtTekrarSifre.Text)
+            if (txtSifre.Text == txtTekrarSifre.Text)
             {
-                if (um.IsValidPassword(txtSifre.Text)==true)
+                if (um.IsValidPassword(txtSifre.Text) == true)
                 {
-                    newuser.Password =um.EncryptoPassword(txtSifre.Text);
+                    newuser.Password = um.EncryptoPassword(txtSifre.Text);
                     materialTabControl1.SelectedTab = tabPage4;
                 }
                 else
@@ -92,8 +95,8 @@ namespace Diet.UI
 
         private void btnIler4_Click(object sender, EventArgs e)
         {
-            newuserdetail.Height =Convert.ToDouble( txtBoy.Text);
-            newuserdetail.Weight =Convert.ToDouble( txtKilo.Text);
+            newuserdetail.Height = Convert.ToDouble(txtBoy.Text);
+            newuserdetail.Weight = Convert.ToDouble(txtKilo.Text);
             //newuserdetail. =Convert.ToDouble( txtBoy.Text); //Hedef kilonun veritabanında işlenmesi gerek.
             materialTabControl1.SelectedTab = tabPage5;
         }
@@ -106,7 +109,7 @@ namespace Diet.UI
         private void btnKaydetBitir_Click(object sender, EventArgs e)
         {
             newuserdetail.Age = Convert.ToInt32(txtAge.Text);
-            //newuserdetail.ActivityStatus =cmbActivityStatus.SelectedIndex; //ActivityStatus Enum olarak var İnt Diet.Model.Activitystatus türüne dönüşemez uyarısı.
+            newuserdetail.ActivityStatus = (ActivityStatus)cmbActivityStatus.SelectedValue; //ActivityStatus Enum olarak var İnt Diet.Model.Activitystatus türüne dönüşemez uyarısı.
 
             db.UserRepository.Create(newuser);
             db.UserDetailRepository.Create(newuserdetail);

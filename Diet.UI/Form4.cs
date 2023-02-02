@@ -27,5 +27,10 @@ namespace Diet.UI
         {
 
         }
+
+        private void materialFloatingActionButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

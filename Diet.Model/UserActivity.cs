@@ -13,6 +13,8 @@ namespace Diet.Model
         public int ActivityID { get; set; }
         public DateTime ActivityTime { get; set; }
         public double Duration { get; set; }
+        
+        public int? StepCount { get; set; }
         public double CalculatedCalorie { get; set; } //?
         [ForeignKey("UserID")]
         public virtual User User { get; set; }

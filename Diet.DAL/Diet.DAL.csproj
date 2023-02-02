@@ -69,6 +69,10 @@
     <Compile Include="Migrations\202302012354001_dietapp_v2.Designer.cs">
       <DependentUpon>202302012354001_dietapp_v2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202302021947425_ua_f_ud_table_column_changes.cs" />
+    <Compile Include="Migrations\202302021947425_ua_f_ud_table_column_changes.designer.cs">
+      <DependentUpon>202302021947425_ua_f_ud_table_column_changes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -88,6 +92,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202302012354001_dietapp_v2.resx">
       <DependentUpon>202302012354001_dietapp_v2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302021947425_ua_f_ud_table_column_changes.resx">
+      <DependentUpon>202302021947425_ua_f_ud_table_column_changes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

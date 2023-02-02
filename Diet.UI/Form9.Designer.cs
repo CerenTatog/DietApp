@@ -45,7 +45,8 @@
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(32, 138);
+            this.materialLabel1.Location = new System.Drawing.Point(24, 112);
+            this.materialLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(90, 19);
@@ -57,10 +58,11 @@
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.Location = new System.Drawing.Point(32, 206);
+            this.materialLabel2.Location = new System.Drawing.Point(24, 167);
+            this.materialLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(199, 24);
+            this.materialLabel2.Size = new System.Drawing.Size(159, 19);
             this.materialLabel2.TabIndex = 1;
             this.materialLabel2.Text = "Kalori (Dakika Başına)";
             // 
@@ -73,12 +75,13 @@
             this.txtActivityType.BeepOnError = false;
             this.txtActivityType.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
             this.txtActivityType.Depth = 0;
-            this.txtActivityType.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtActivityType.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtActivityType.HidePromptOnLeave = false;
             this.txtActivityType.HideSelection = true;
             this.txtActivityType.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
             this.txtActivityType.LeadingIcon = null;
-            this.txtActivityType.Location = new System.Drawing.Point(208, 109);
+            this.txtActivityType.Location = new System.Drawing.Point(156, 89);
+            this.txtActivityType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtActivityType.Mask = "";
             this.txtActivityType.MaxLength = 32767;
             this.txtActivityType.MouseState = MaterialSkin.MouseState.OUT;
@@ -95,7 +98,7 @@
             this.txtActivityType.SelectionLength = 0;
             this.txtActivityType.SelectionStart = 0;
             this.txtActivityType.ShortcutsEnabled = true;
-            this.txtActivityType.Size = new System.Drawing.Size(250, 48);
+            this.txtActivityType.Size = new System.Drawing.Size(188, 48);
             this.txtActivityType.SkipLiterals = true;
             this.txtActivityType.TabIndex = 2;
             this.txtActivityType.TabStop = false;
@@ -114,12 +117,13 @@
             this.txtCalorie.BeepOnError = false;
             this.txtCalorie.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
             this.txtCalorie.Depth = 0;
-            this.txtCalorie.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtCalorie.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtCalorie.HidePromptOnLeave = false;
             this.txtCalorie.HideSelection = true;
             this.txtCalorie.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
             this.txtCalorie.LeadingIcon = null;
-            this.txtCalorie.Location = new System.Drawing.Point(208, 182);
+            this.txtCalorie.Location = new System.Drawing.Point(156, 148);
+            this.txtCalorie.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtCalorie.Mask = "";
             this.txtCalorie.MaxLength = 32767;
             this.txtCalorie.MouseState = MaterialSkin.MouseState.OUT;
@@ -136,7 +140,7 @@
             this.txtCalorie.SelectionLength = 0;
             this.txtCalorie.SelectionStart = 0;
             this.txtCalorie.ShortcutsEnabled = true;
-            this.txtCalorie.Size = new System.Drawing.Size(250, 48);
+            this.txtCalorie.Size = new System.Drawing.Size(188, 48);
             this.txtCalorie.SkipLiterals = true;
             this.txtCalorie.TabIndex = 3;
             this.txtCalorie.TabStop = false;
@@ -153,8 +157,8 @@
             this.btnAddActivity.Depth = 0;
             this.btnAddActivity.HighEmphasis = true;
             this.btnAddActivity.Icon = null;
-            this.btnAddActivity.Location = new System.Drawing.Point(35, 272);
-            this.btnAddActivity.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnAddActivity.Location = new System.Drawing.Point(26, 221);
+            this.btnAddActivity.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnAddActivity.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAddActivity.Name = "btnAddActivity";
             this.btnAddActivity.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -173,8 +177,8 @@
             this.btnDeleteActivity.Depth = 0;
             this.btnDeleteActivity.HighEmphasis = true;
             this.btnDeleteActivity.Icon = null;
-            this.btnDeleteActivity.Location = new System.Drawing.Point(220, 272);
-            this.btnDeleteActivity.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnDeleteActivity.Location = new System.Drawing.Point(165, 221);
+            this.btnDeleteActivity.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnDeleteActivity.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnDeleteActivity.Name = "btnDeleteActivity";
             this.btnDeleteActivity.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -193,8 +197,8 @@
             this.btnUpdateActivity.Depth = 0;
             this.btnUpdateActivity.HighEmphasis = true;
             this.btnUpdateActivity.Icon = null;
-            this.btnUpdateActivity.Location = new System.Drawing.Point(364, 272);
-            this.btnUpdateActivity.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnUpdateActivity.Location = new System.Drawing.Point(273, 221);
+            this.btnUpdateActivity.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnUpdateActivity.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnUpdateActivity.Name = "btnUpdateActivity";
             this.btnUpdateActivity.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -209,11 +213,12 @@
             // dgvActivities
             // 
             this.dgvActivities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvActivities.Location = new System.Drawing.Point(567, 82);
+            this.dgvActivities.Location = new System.Drawing.Point(425, 67);
+            this.dgvActivities.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvActivities.Name = "dgvActivities";
             this.dgvActivities.RowHeadersWidth = 51;
             this.dgvActivities.RowTemplate.Height = 24;
-            this.dgvActivities.Size = new System.Drawing.Size(493, 334);
+            this.dgvActivities.Size = new System.Drawing.Size(370, 271);
             this.dgvActivities.TabIndex = 7;
             this.dgvActivities.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvActivities_CellClick);
             // 
@@ -224,8 +229,8 @@
             this.btnBack.Depth = 0;
             this.btnBack.HighEmphasis = true;
             this.btnBack.Icon = null;
-            this.btnBack.Location = new System.Drawing.Point(914, 441);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnBack.Location = new System.Drawing.Point(686, 358);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnBack.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnBack.Name = "btnBack";
             this.btnBack.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -239,9 +244,9 @@
             // 
             // Form9
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(904, 450);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.dgvActivities);
             this.Controls.Add(this.btnUpdateActivity);
@@ -251,9 +256,7 @@
             this.Controls.Add(this.txtActivityType);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form9";
-            this.Padding = new System.Windows.Forms.Padding(4, 79, 4, 4);
             this.Text = "Aktivie İşlemleri(Admin)";
             ((System.ComponentModel.ISupportInitialize)(this.dgvActivities)).EndInit();
             this.ResumeLayout(false);

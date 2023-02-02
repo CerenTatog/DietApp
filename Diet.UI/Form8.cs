@@ -25,19 +25,24 @@ namespace Diet.UI
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
         }
+        public Form8(User currentUser)
+        {
+            InitializeComponent();
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+        }
         UnitOfWork db = new UnitOfWork();
-        Food food = new Food();
-        MealFood mfood = new MealFood();
-
+        
         private void Form8_Load(object sender, EventArgs e)
         {
             LoadFood();
         }   
         private void btnEkle_Click(object sender, EventArgs e)
         {
-            food.FoodName = txtBesinAdi.Text;
-            //food.MeasureType //??????
-           // mfood.Quantity =Convert.ToDouble(txtMıktar.Text); //?? ölçü ve miktar veritabannında tutulmuyor mealsfood da quantity var ama o öğünün miktarı?
+            Food food = new Food();
+            food.FoodName = txtBesinAdi.Text;            
             food.Carbonhydrate =Convert.ToDouble(txtKarbonhıdrat.Text);
             food.Fat = Convert.ToDouble(txtYag.Text);
             food.Protein = Convert.ToDouble(txtProtein.Text);
@@ -49,8 +54,51 @@ namespace Diet.UI
         void LoadFood()
         {
             var query = from f in db.FoodRepository.GetAll()
-                        select new { f.FoodName, f.Carbonhydrate, f.Fat, f.Calorie };
+                        select new { f.ID,f.FoodName, f.Carbonhydrate, f.Fat, f.Protein,f.Calorie };
             dataGridView1.DataSource = query.ToList();
+        }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            int Id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+            Food DeletedFood = new Food();
+            DeletedFood = db.FoodRepository.GetById(Id);
+            DialogResult sor = new DialogResult();
+            sor = MessageBox.Show($@"{DeletedFood.FoodName} besini silinecek besin listesini kalıcı olarak silmek istediğinizden eminmisiniz?", "Kalıcı Olarak Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (sor == DialogResult.Yes)
+            {
+                db.FoodRepository.Delete(Id);// REMOVE HATA ALDIK
+                LoadFood();
+            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtBesinAdi.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            txtKarbonhıdrat.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            txtYag.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            txtProtein.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+           txtKalori.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+        }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            int Id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+            Food UpdatedFood = new Food();
+            UpdatedFood.FoodName = txtBesinAdi.Text;
+            UpdatedFood.Carbonhydrate =Convert.ToInt32(txtKarbonhıdrat.Text);
+            UpdatedFood.Fat =Convert.ToInt32(txtYag.Text);
+            UpdatedFood.Protein =Convert.ToInt32(txtProtein.Text);
+            UpdatedFood.Calorie =Convert.ToInt32(txtKalori.Text);
+            db.FoodRepository.Update(UpdatedFood);//SaveChanges hata verdi
+            LoadFood();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Form3 Frm3 = new Form3();
+            Frm3.Show();
+            Hide();
         }
     }
 }

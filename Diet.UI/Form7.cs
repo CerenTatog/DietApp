@@ -23,7 +23,7 @@ namespace Diet.UI
         {
             InitializeComponent();
         }
-        public Form7(User User)
+        public Form7(User currentUser)
         {
             InitializeComponent();
         }

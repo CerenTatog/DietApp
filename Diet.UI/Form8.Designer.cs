@@ -29,12 +29,7 @@
         private void InitializeComponent()
         {
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.cmbOlcu = new MaterialSkin.Controls.MaterialComboBox();
-            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.txtBesinAdi = new MaterialSkin.Controls.MaterialMultiLineTextBox();
-            this.txtMıktar = new MaterialSkin.Controls.MaterialMultiLineTextBox();
-            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.txtKarbonhıdrat = new MaterialSkin.Controls.MaterialMultiLineTextBox();
             this.txtYag = new MaterialSkin.Controls.MaterialMultiLineTextBox();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
@@ -47,7 +42,9 @@
             this.btnSil = new MaterialSkin.Controls.MaterialButton();
             this.btnGuncelle = new MaterialSkin.Controls.MaterialButton();
             this.materialButton4 = new MaterialSkin.Controls.MaterialButton();
+            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBack = new MaterialSkin.Controls.MaterialButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -57,61 +54,13 @@
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(67, 151);
+            this.materialLabel1.Location = new System.Drawing.Point(48, 53);
             this.materialLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(71, 19);
             this.materialLabel1.TabIndex = 6;
             this.materialLabel1.Text = "Besin Adı:";
-            // 
-            // materialLabel2
-            // 
-            this.materialLabel2.AutoSize = true;
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.Location = new System.Drawing.Point(88, 304);
-            this.materialLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(50, 19);
-            this.materialLabel2.TabIndex = 7;
-            this.materialLabel2.Text = "Miktar:";
-            // 
-            // cmbOlcu
-            // 
-            this.cmbOlcu.AutoResize = false;
-            this.cmbOlcu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cmbOlcu.Depth = 0;
-            this.cmbOlcu.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cmbOlcu.DropDownHeight = 174;
-            this.cmbOlcu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbOlcu.DropDownWidth = 121;
-            this.cmbOlcu.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.cmbOlcu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cmbOlcu.FormattingEnabled = true;
-            this.cmbOlcu.IntegralHeight = false;
-            this.cmbOlcu.ItemHeight = 43;
-            this.cmbOlcu.Location = new System.Drawing.Point(177, 204);
-            this.cmbOlcu.Margin = new System.Windows.Forms.Padding(4);
-            this.cmbOlcu.MaxDropDownItems = 4;
-            this.cmbOlcu.MouseState = MaterialSkin.MouseState.OUT;
-            this.cmbOlcu.Name = "cmbOlcu";
-            this.cmbOlcu.Size = new System.Drawing.Size(376, 49);
-            this.cmbOlcu.StartIndex = 0;
-            this.cmbOlcu.TabIndex = 8;
-            // 
-            // materialLabel3
-            // 
-            this.materialLabel3.Depth = 0;
-            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel3.Location = new System.Drawing.Point(88, 225);
-            this.materialLabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(67, 23);
-            this.materialLabel3.TabIndex = 9;
-            this.materialLabel3.Text = "Ölçü";
             // 
             // txtBesinAdi
             // 
@@ -128,34 +77,6 @@
             this.txtBesinAdi.TabIndex = 10;
             this.txtBesinAdi.Text = "";
             // 
-            // txtMıktar
-            // 
-            this.txtMıktar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtMıktar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMıktar.Depth = 0;
-            this.txtMıktar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtMıktar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtMıktar.Location = new System.Drawing.Point(177, 303);
-            this.txtMıktar.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMıktar.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtMıktar.Name = "txtMıktar";
-            this.txtMıktar.Size = new System.Drawing.Size(377, 38);
-            this.txtMıktar.TabIndex = 11;
-            this.txtMıktar.Text = "";
-            // 
-            // materialLabel4
-            // 
-            this.materialLabel4.AutoSize = true;
-            this.materialLabel4.Depth = 0;
-            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel4.Location = new System.Drawing.Point(17, 269);
-            this.materialLabel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(97, 19);
-            this.materialLabel4.TabIndex = 12;
-            this.materialLabel4.Text = "Karbonhidrat:";
-            // 
             // txtKarbonhıdrat
             // 
             this.txtKarbonhıdrat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -163,7 +84,7 @@
             this.txtKarbonhıdrat.Depth = 0;
             this.txtKarbonhıdrat.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtKarbonhıdrat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtKarbonhıdrat.Location = new System.Drawing.Point(177, 372);
+            this.txtKarbonhıdrat.Location = new System.Drawing.Point(153, 88);
             this.txtKarbonhıdrat.Margin = new System.Windows.Forms.Padding(4);
             this.txtKarbonhıdrat.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtKarbonhıdrat.Name = "txtKarbonhıdrat";
@@ -178,7 +99,7 @@
             this.txtYag.Depth = 0;
             this.txtYag.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtYag.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtYag.Location = new System.Drawing.Point(177, 436);
+            this.txtYag.Location = new System.Drawing.Point(153, 134);
             this.txtYag.Margin = new System.Windows.Forms.Padding(4);
             this.txtYag.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtYag.Name = "txtYag";
@@ -191,7 +112,7 @@
             this.materialLabel5.AutoSize = true;
             this.materialLabel5.Depth = 0;
             this.materialLabel5.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel5.Location = new System.Drawing.Point(116, 436);
+            this.materialLabel5.Location = new System.Drawing.Point(86, 153);
             this.materialLabel5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
@@ -206,7 +127,7 @@
             this.txtProtein.Depth = 0;
             this.txtProtein.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtProtein.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtProtein.Location = new System.Drawing.Point(177, 498);
+            this.txtProtein.Location = new System.Drawing.Point(153, 180);
             this.txtProtein.Margin = new System.Windows.Forms.Padding(4);
             this.txtProtein.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtProtein.Name = "txtProtein";
@@ -223,20 +144,20 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(733, 462);
             this.dataGridView1.TabIndex = 17;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // materialLabel6
             // 
             this.materialLabel6.AutoSize = true;
             this.materialLabel6.Depth = 0;
             this.materialLabel6.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel6.Location = new System.Drawing.Point(88, 500);
+            this.materialLabel6.Location = new System.Drawing.Point(64, 199);
             this.materialLabel6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel6.Name = "materialLabel6";
             this.materialLabel6.Size = new System.Drawing.Size(55, 19);
             this.materialLabel6.TabIndex = 18;
             this.materialLabel6.Text = "Protein:";
-            
             // 
             // txtKalori
             // 
@@ -245,7 +166,7 @@
             this.txtKalori.Depth = 0;
             this.txtKalori.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtKalori.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtKalori.Location = new System.Drawing.Point(177, 559);
+            this.txtKalori.Location = new System.Drawing.Point(153, 226);
             this.txtKalori.Margin = new System.Windows.Forms.Padding(4);
             this.txtKalori.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtKalori.Name = "txtKalori";
@@ -258,7 +179,7 @@
             this.materialLabel7.AutoSize = true;
             this.materialLabel7.Depth = 0;
             this.materialLabel7.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel7.Location = new System.Drawing.Point(100, 560);
+            this.materialLabel7.Location = new System.Drawing.Point(73, 245);
             this.materialLabel7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.materialLabel7.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel7.Name = "materialLabel7";
@@ -273,7 +194,7 @@
             this.btnEkle.Depth = 0;
             this.btnEkle.HighEmphasis = true;
             this.btnEkle.Icon = null;
-            this.btnEkle.Location = new System.Drawing.Point(237, 640);
+            this.btnEkle.Location = new System.Drawing.Point(213, 322);
             this.btnEkle.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.btnEkle.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEkle.Name = "btnEkle";
@@ -293,7 +214,7 @@
             this.btnSil.Depth = 0;
             this.btnSil.HighEmphasis = true;
             this.btnSil.Icon = null;
-            this.btnSil.Location = new System.Drawing.Point(333, 640);
+            this.btnSil.Location = new System.Drawing.Point(309, 322);
             this.btnSil.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.btnSil.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSil.Name = "btnSil";
@@ -304,6 +225,7 @@
             this.btnSil.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnSil.UseAccentColor = false;
             this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnGuncelle
             // 
@@ -312,7 +234,7 @@
             this.btnGuncelle.Depth = 0;
             this.btnGuncelle.HighEmphasis = true;
             this.btnGuncelle.Icon = null;
-            this.btnGuncelle.Location = new System.Drawing.Point(429, 640);
+            this.btnGuncelle.Location = new System.Drawing.Point(405, 322);
             this.btnGuncelle.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.btnGuncelle.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnGuncelle.Name = "btnGuncelle";
@@ -323,6 +245,7 @@
             this.btnGuncelle.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnGuncelle.UseAccentColor = false;
             this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // materialButton4
             // 
@@ -342,11 +265,34 @@
             this.materialButton4.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButton4.UseAccentColor = false;
             this.materialButton4.UseVisualStyleBackColor = true;
-            
+            // 
+            // materialLabel4
+            // 
+            this.materialLabel4.AutoSize = true;
+            this.materialLabel4.Depth = 0;
+            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel4.Location = new System.Drawing.Point(22, 107);
+            this.materialLabel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel4.Name = "materialLabel4";
+            this.materialLabel4.Size = new System.Drawing.Size(97, 19);
+            this.materialLabel4.TabIndex = 12;
+            this.materialLabel4.Text = "Karbonhidrat:";
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.materialLabel4);
+            this.groupBox1.Controls.Add(this.btnGuncelle);
+            this.groupBox1.Controls.Add(this.txtKarbonhıdrat);
+            this.groupBox1.Controls.Add(this.materialLabel1);
+            this.groupBox1.Controls.Add(this.btnSil);
+            this.groupBox1.Controls.Add(this.materialLabel5);
+            this.groupBox1.Controls.Add(this.btnEkle);
+            this.groupBox1.Controls.Add(this.txtYag);
+            this.groupBox1.Controls.Add(this.materialLabel7);
+            this.groupBox1.Controls.Add(this.txtProtein);
+            this.groupBox1.Controls.Add(this.txtKalori);
+            this.groupBox1.Controls.Add(this.materialLabel6);
             this.groupBox1.Location = new System.Drawing.Point(24, 103);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
@@ -355,29 +301,35 @@
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             // 
+            // btnBack
+            // 
+            this.btnBack.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnBack.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnBack.Depth = 0;
+            this.btnBack.HighEmphasis = true;
+            this.btnBack.Icon = null;
+            this.btnBack.Location = new System.Drawing.Point(1263, 703);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnBack.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnBack.Name = "btnBack";
+            this.btnBack.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnBack.Size = new System.Drawing.Size(158, 36);
+            this.btnBack.TabIndex = 26;
+            this.btnBack.Text = "Ana sayfaya dön";
+            this.btnBack.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnBack.UseAccentColor = false;
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // Form8
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1495, 778);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.materialButton4);
-            this.Controls.Add(this.btnGuncelle);
-            this.Controls.Add(this.btnSil);
-            this.Controls.Add(this.btnEkle);
-            this.Controls.Add(this.materialLabel7);
-            this.Controls.Add(this.txtKalori);
-            this.Controls.Add(this.materialLabel6);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.txtProtein);
-            this.Controls.Add(this.materialLabel5);
-            this.Controls.Add(this.txtYag);
-            this.Controls.Add(this.txtKarbonhıdrat);
-            this.Controls.Add(this.txtMıktar);
             this.Controls.Add(this.txtBesinAdi);
-            this.Controls.Add(this.materialLabel3);
-            this.Controls.Add(this.cmbOlcu);
-            this.Controls.Add(this.materialLabel2);
-            this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form8";
@@ -395,12 +347,7 @@
         #endregion
 
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private MaterialSkin.Controls.MaterialComboBox cmbOlcu;
-        private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialMultiLineTextBox txtBesinAdi;
-        private MaterialSkin.Controls.MaterialMultiLineTextBox txtMıktar;
-        private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private MaterialSkin.Controls.MaterialMultiLineTextBox txtKarbonhıdrat;
         private MaterialSkin.Controls.MaterialMultiLineTextBox txtYag;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
@@ -413,6 +360,8 @@
         private MaterialSkin.Controls.MaterialButton btnSil;
         private MaterialSkin.Controls.MaterialButton btnGuncelle;
         private MaterialSkin.Controls.MaterialButton materialButton4;
+        private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private System.Windows.Forms.GroupBox groupBox1;
+        private MaterialSkin.Controls.MaterialButton btnBack;
     }
 }

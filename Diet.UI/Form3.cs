@@ -162,8 +162,7 @@ namespace Diet.UI
 
         private void mfabSuEkle_Click(object sender, EventArgs e)
         {
-            var formPopup = new Form5();
-            formPopup.ShowDialog(this);
+            
         }
     }
 }

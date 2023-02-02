@@ -75,6 +75,7 @@
     <Compile Include="UserBC.cs" />
     <Compile Include="UserDetail.cs" />
     <Compile Include="UserNotification.cs" />
+    <Compile Include="UserWater.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

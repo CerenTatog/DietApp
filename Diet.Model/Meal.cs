@@ -19,7 +19,7 @@ namespace Diet.Model
 
         public virtual ICollection<MealFood> MealFoods { get; set; }
         [ForeignKey("UserID")] 
-        public virtual User User { get; set; } //?
+        public virtual User User { get; set; }
 
     }
     public enum MealType
@@ -28,5 +28,6 @@ namespace Diet.Model
         Lunch,
         Dinner,
         Snack
+       
     }
 }

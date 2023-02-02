@@ -73,6 +73,10 @@
     <Compile Include="Migrations\202302021947425_ua_f_ud_table_column_changes.designer.cs">
       <DependentUpon>202302021947425_ua_f_ud_table_column_changes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202302022042357_user_water_table.cs" />
+    <Compile Include="Migrations\202302022042357_user_water_table.designer.cs">
+      <DependentUpon>202302022042357_user_water_table.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -95,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202302021947425_ua_f_ud_table_column_changes.resx">
       <DependentUpon>202302021947425_ua_f_ud_table_column_changes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302022042357_user_water_table.resx">
+      <DependentUpon>202302022042357_user_water_table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

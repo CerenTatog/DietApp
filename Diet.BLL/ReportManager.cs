@@ -45,7 +45,7 @@ namespace Diet.BLL
 
             return groupQuery;
         }
-
+        //carbonhyrate eklenecek.
         public List<DailyUserProtein> CalculateProtein(int UserId)
         {
             var dateToday = DateTime.Now;

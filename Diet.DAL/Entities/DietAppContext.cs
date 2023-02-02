@@ -31,6 +31,8 @@ namespace Diet.DAL.Entities
          public virtual DbSet<UserBC> UserBCs { get; set; }
          public virtual DbSet<UserDetail> UserDetails { get; set; }
          public virtual DbSet<UserNotification> UserNotifications { get; set; }
+         public virtual DbSet<UserWater> UserWaters { get; set; }
+
     }
 
     //public class MyEntity

@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
@@ -93,6 +93,7 @@
             this.materialLabel21 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabelhedef = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard11 = new MaterialSkin.Controls.MaterialCard();
+            this.mlHedefDuzenle = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel23 = new MaterialSkin.Controls.MaterialLabel();
             this.mmlAdim = new MaterialSkin.Controls.MaterialMultiLineTextBox();
             this.mmlKalori = new MaterialSkin.Controls.MaterialMultiLineTextBox();
@@ -138,6 +139,7 @@
             this.materialCard6 = new MaterialSkin.Controls.MaterialCard();
             this.materialCard5 = new MaterialSkin.Controls.MaterialCard();
             this.materialCard4 = new MaterialSkin.Controls.MaterialCard();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.materialSwitch1 = new MaterialSkin.Controls.MaterialSwitch();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
@@ -148,8 +150,6 @@
             this.materialTextBox21 = new MaterialSkin.Controls.MaterialTextBox2();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.mlHedefDuzenle = new MaterialSkin.Controls.MaterialLabel();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -169,8 +169,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKullaniciListesi)).BeginInit();
             this.tabPage5.SuspendLayout();
             this.materialCard4.SuspendLayout();
-            this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.tabPage6.SuspendLayout();
             this.SuspendLayout();
             // 
             // materialTabControl1
@@ -224,7 +224,7 @@
             this.materialLabel9.Depth = 0;
             this.materialLabel9.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel9.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
-            this.materialLabel9.Location = new System.Drawing.Point(528, 563);
+            this.materialLabel9.Location = new System.Drawing.Point(819, 451);
             this.materialLabel9.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel9.Name = "materialLabel9";
             this.materialLabel9.Size = new System.Drawing.Size(26, 17);
@@ -237,7 +237,7 @@
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel2.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
-            this.materialLabel2.Location = new System.Drawing.Point(72, 563);
+            this.materialLabel2.Location = new System.Drawing.Point(544, 451);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(26, 17);
@@ -273,7 +273,7 @@
             this.materialFloatingActionButton10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.materialFloatingActionButton10.Depth = 0;
             this.materialFloatingActionButton10.Icon = null;
-            this.materialFloatingActionButton10.Location = new System.Drawing.Point(450, 592);
+            this.materialFloatingActionButton10.Location = new System.Drawing.Point(669, 471);
             this.materialFloatingActionButton10.Mini = true;
             this.materialFloatingActionButton10.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialFloatingActionButton10.Name = "materialFloatingActionButton10";
@@ -288,7 +288,7 @@
             this.materialFloatingActionButton9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.materialFloatingActionButton9.Depth = 0;
             this.materialFloatingActionButton9.Icon = null;
-            this.materialFloatingActionButton9.Location = new System.Drawing.Point(603, 592);
+            this.materialFloatingActionButton9.Location = new System.Drawing.Point(837, 471);
             this.materialFloatingActionButton9.Mini = true;
             this.materialFloatingActionButton9.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialFloatingActionButton9.Name = "materialFloatingActionButton9";
@@ -303,7 +303,7 @@
             this.mfabSuEkle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.mfabSuEkle.Depth = 0;
             this.mfabSuEkle.Icon = null;
-            this.mfabSuEkle.Location = new System.Drawing.Point(963, 471);
+            this.mfabSuEkle.Location = new System.Drawing.Point(438, 471);
             this.mfabSuEkle.Mini = true;
             this.mfabSuEkle.MouseState = MaterialSkin.MouseState.HOVER;
             this.mfabSuEkle.Name = "mfabSuEkle";
@@ -311,6 +311,7 @@
             this.mfabSuEkle.TabIndex = 12;
             this.mfabSuEkle.Text = "materialFloatingActionButton8";
             this.mfabSuEkle.UseVisualStyleBackColor = false;
+            this.mfabSuEkle.Click += new System.EventHandler(this.mfabSuEkle_Click);
             // 
             // materialProgressBar3
             // 
@@ -334,10 +335,10 @@
             // 
             this.materialDivider3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialDivider3.Depth = 0;
-            this.materialDivider3.Location = new System.Drawing.Point(66, 563);
+            this.materialDivider3.Location = new System.Drawing.Point(531, 437);
             this.materialDivider3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider3.Name = "materialDivider3";
-            this.materialDivider3.Size = new System.Drawing.Size(954, 82);
+            this.materialDivider3.Size = new System.Drawing.Size(502, 98);
             this.materialDivider3.TabIndex = 4;
             this.materialDivider3.Text = "materialDivider3";
             // 
@@ -348,7 +349,7 @@
             this.materialDivider2.Location = new System.Drawing.Point(66, 437);
             this.materialDivider2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider2.Name = "materialDivider2";
-            this.materialDivider2.Size = new System.Drawing.Size(954, 98);
+            this.materialDivider2.Size = new System.Drawing.Size(450, 98);
             this.materialDivider2.TabIndex = 3;
             this.materialDivider2.Text = "materialDivider2";
             // 
@@ -984,6 +985,21 @@
             this.materialCard11.Size = new System.Drawing.Size(946, 130);
             this.materialCard11.TabIndex = 14;
             // 
+            // mlHedefDuzenle
+            // 
+            this.mlHedefDuzenle.AutoSize = true;
+            this.mlHedefDuzenle.Depth = 0;
+            this.mlHedefDuzenle.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.mlHedefDuzenle.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
+            this.mlHedefDuzenle.HighEmphasis = true;
+            this.mlHedefDuzenle.Location = new System.Drawing.Point(891, 13);
+            this.mlHedefDuzenle.MouseState = MaterialSkin.MouseState.HOVER;
+            this.mlHedefDuzenle.Name = "mlHedefDuzenle";
+            this.mlHedefDuzenle.Size = new System.Drawing.Size(50, 17);
+            this.mlHedefDuzenle.TabIndex = 11;
+            this.mlHedefDuzenle.Text = "Düzenle";
+            this.mlHedefDuzenle.Click += new System.EventHandler(this.mlHedefDuzenle_Click);
+            // 
             // materialLabel23
             // 
             this.materialLabel23.AutoSize = true;
@@ -1575,6 +1591,22 @@
             this.materialCard4.Size = new System.Drawing.Size(343, 186);
             this.materialCard4.TabIndex = 0;
             // 
+            // chart1
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
+            this.chart1.Location = new System.Drawing.Point(17, 17);
+            this.chart1.Name = "chart1";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart1.Series.Add(series2);
+            this.chart1.Size = new System.Drawing.Size(285, 152);
+            this.chart1.TabIndex = 0;
+            this.chart1.Text = "chart1";
+            // 
             // tabPage6
             // 
             this.tabPage6.Controls.Add(this.materialSwitch1);
@@ -1780,37 +1812,6 @@
             this.ımageList1.Images.SetKeyName(0, "user (1).png");
             this.ımageList1.Images.SetKeyName(1, "planner.png");
             // 
-            // mlHedefDuzenle
-            // 
-            this.mlHedefDuzenle.AutoSize = true;
-            this.mlHedefDuzenle.Depth = 0;
-            this.mlHedefDuzenle.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.mlHedefDuzenle.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
-            this.mlHedefDuzenle.HighEmphasis = true;
-            this.mlHedefDuzenle.Location = new System.Drawing.Point(891, 13);
-            this.mlHedefDuzenle.MouseState = MaterialSkin.MouseState.HOVER;
-            this.mlHedefDuzenle.Name = "mlHedefDuzenle";
-            this.mlHedefDuzenle.Size = new System.Drawing.Size(50, 17);
-            this.mlHedefDuzenle.TabIndex = 11;
-            this.mlHedefDuzenle.Text = "Düzenle";
-            this.mlHedefDuzenle.Click += new System.EventHandler(this.mlHedefDuzenle_Click);
-            // 
-            // chart1
-            // 
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart1.Legends.Add(legend3);
-            this.chart1.Location = new System.Drawing.Point(17, 17);
-            this.chart1.Name = "chart1";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chart1.Series.Add(series3);
-            this.chart1.Size = new System.Drawing.Size(285, 152);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
-            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1853,9 +1854,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKullaniciListesi)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.materialCard4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Diet.BLL;
+using Diet.DAL.GenericRepository;
 using Diet.Model;
 using MaterialSkin;
 using MaterialSkin.Controls;
@@ -19,6 +20,7 @@ namespace Diet.UI
         FoodManager foodManager = new FoodManager();
         ReportManager reportManager = new ReportManager();
         User _currentUser;
+        UnitOfWork db = new UnitOfWork();
 
         //parametreli constructor yapılacak User bilgisi aktarılacak
         public Form3()
@@ -28,7 +30,7 @@ namespace Diet.UI
             materialSkinManager.EnforceBackcolorOnAllComponents = false;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.Amber700, Primary.BlueGrey900, Primary.Amber400, Accent.Orange700, TextShade.WHITE);
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.Amber700, Primary.BlueGrey900, Primary.Amber400, Accent.Purple400, TextShade.WHITE);
             
            
         }
@@ -42,13 +44,17 @@ namespace Diet.UI
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Amber700, Primary.BlueGrey900, Primary.Amber400, Accent.Orange700, TextShade.WHITE);
             _currentUser = user;
 
+            var query = from u in db.UserRepository.GetAll()
+                        select new { u.UserName, u.UserSurname, u.Email, u.CreatedDate };
+            dataGridView1.DataSource = query.ToList();
+
+
         }
 
         private void Form3_Load(object sender, EventArgs e)
         {
             //Karbonhidrat,Yağ, Protein gösterim alanı
             label1.Text = foodManager.DailyTakenCarbonhyrate(/*_currentUser.ID*/0).ToString();
-            
             label4.Text = foodManager.DailyTakenProtein(/*_currentUser.ID*/0).ToString();
             label6.Text = foodManager.DailyTakenFat(/*_currentUser.ID*/0).ToString();
             //Öğünlere göre alınan kalori miktarları

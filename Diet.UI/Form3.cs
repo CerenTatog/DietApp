@@ -84,9 +84,9 @@ namespace Diet.UI
 
             //Günlük Toplam Kalori
 
-            lblToplamKalori.Text = Math.Abs((toplamAlınanKalori - toplamVerilenKalori)).ToString();
-            //farkıyla alakalı bir gösterim.
-            mlKalanKalori.Text = (foodManager.CalculateDailyCalorie(_currentUser.ID) - (toplamAlınanKalori - toplamVerilenKalori)).ToString();
+            //lblToplamKalori.Text = Math.Abs((/*toplamAlınanKalori*/ - toplamVerilenKalori)).ToString();
+            ////farkıyla alakalı bir gösterim.
+            //mlKalanKalori.Text = (foodManager.CalculateDailyCalorie(_currentUser.ID) - (toplamAlınanKalori - toplamVerilenKalori)).ToString();
 
             //Kullanıcı Bilgileri /Profil
             int yas = db.UserDetailRepository.GetAll().Select(x=>x.Age).FirstOrDefault();
@@ -110,13 +110,14 @@ namespace Diet.UI
             dataGridView2.DataSource = reportManager.WeeklyMacroFood(_currentUser.ID);
             dataGridView3.DataSource = reportManager.WeeklyDrinkingWater(_currentUser.ID);
             dataGridView4.DataSource = reportManager.CalculateActivity(_currentUser.ID);
-            //dataGridView5.DataSource = reportManager.Calc => bu rapor yok.
+            //şüpheli - gün filtresi koymadık. hem label hem de liste için activity manager'da method tanımlanması gerekli.
+            dataGridView5.DataSource = db.UserActivityRepository.GetAll().Select(x => x.StepCount);
             dataGridView6.DataSource = reportManager.CalculateWeight(_currentUser.ID);
             dataGridView7.DataSource = reportManager.WhichFoodsEatenAtBreakfast(_currentUser.ID);
             dataGridView8.DataSource = reportManager.WhichFoodsEatenAtLunch(_currentUser.ID);
             dataGridView9.DataSource = reportManager.WhichFoodsEatenAtDinner(_currentUser.ID);
             dataGridView10.DataSource = reportManager.WhichFoodsEatenAtSnack(_currentUser.ID);
-            dataGridView11.DataSource = reportManager.MostEatenFood(_currentUser.ID);
+            //dataGridView11.DataSource = reportManager.MostEatenFood(_currentUser.ID);
             
         }
 
@@ -193,7 +194,9 @@ namespace Diet.UI
 
         private void mfabSuEkle_Click(object sender, EventArgs e)
         {
-            
+            Form10 frm10 = new Form10(_currentUser);
+            frm10.ShowDialog();
+
         }
 
         private void materialTabControl1_TabIndexChanged(object sender, EventArgs e)

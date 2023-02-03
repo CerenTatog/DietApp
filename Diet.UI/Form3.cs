@@ -102,6 +102,8 @@ namespace Diet.UI
             var query = from u in db.UserRepository.GetAll()
                         select new { u.UserName, u.UserSurname, u.Email, u.CreatedDate };
             dataGridViewKullaniciListesi.DataSource = query.ToList();
+            //dataGridView1.DataSource =;
+
 
             //Kullanıcı raporları
             dataGridView1.DataSource = reportManager.CalculateWeeklyCalorie(_currentUser.ID);

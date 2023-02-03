@@ -44,13 +44,17 @@
             this.materialButton4 = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbCategories = new MaterialSkin.Controls.MaterialComboBox();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.cmbMiktarTuru = new MaterialSkin.Controls.MaterialComboBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.btnBack = new MaterialSkin.Controls.MaterialButton();
-            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.cmbCategories = new MaterialSkin.Controls.MaterialComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.materialMaskedTextBox1 = new MaterialSkin.Controls.MaterialMaskedTextBox();
+            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // materialLabel1
@@ -309,6 +313,41 @@
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             // 
+            // cmbCategories
+            // 
+            this.cmbCategories.AutoResize = false;
+            this.cmbCategories.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cmbCategories.Depth = 0;
+            this.cmbCategories.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cmbCategories.DropDownHeight = 174;
+            this.cmbCategories.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCategories.DropDownWidth = 121;
+            this.cmbCategories.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cmbCategories.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmbCategories.FormattingEnabled = true;
+            this.cmbCategories.IntegralHeight = false;
+            this.cmbCategories.ItemHeight = 43;
+            this.cmbCategories.Location = new System.Drawing.Point(153, 223);
+            this.cmbCategories.MaxDropDownItems = 4;
+            this.cmbCategories.MouseState = MaterialSkin.MouseState.OUT;
+            this.cmbCategories.Name = "cmbCategories";
+            this.cmbCategories.Size = new System.Drawing.Size(377, 49);
+            this.cmbCategories.StartIndex = 0;
+            this.cmbCategories.TabIndex = 26;
+            // 
+            // materialLabel3
+            // 
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel3.Location = new System.Drawing.Point(32, 241);
+            this.materialLabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(72, 19);
+            this.materialLabel3.TabIndex = 25;
+            this.materialLabel3.Text = "Kategorisi";
+            // 
             // cmbMiktarTuru
             // 
             this.cmbMiktarTuru.AutoResize = false;
@@ -364,46 +403,84 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // materialLabel3
+            // pictureBox1
             // 
-            this.materialLabel3.AutoSize = true;
-            this.materialLabel3.Depth = 0;
-            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel3.Location = new System.Drawing.Point(32, 241);
-            this.materialLabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(72, 19);
-            this.materialLabel3.TabIndex = 25;
-            this.materialLabel3.Text = "Kategorisi";
+            this.pictureBox1.Location = new System.Drawing.Point(708, 86);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(234, 80);
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
             // 
-            // cmbCategories
+            // materialMaskedTextBox1
             // 
-            this.cmbCategories.AutoResize = false;
-            this.cmbCategories.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cmbCategories.Depth = 0;
-            this.cmbCategories.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cmbCategories.DropDownHeight = 174;
-            this.cmbCategories.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCategories.DropDownWidth = 121;
-            this.cmbCategories.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.cmbCategories.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cmbCategories.FormattingEnabled = true;
-            this.cmbCategories.IntegralHeight = false;
-            this.cmbCategories.ItemHeight = 43;
-            this.cmbCategories.Location = new System.Drawing.Point(153, 223);
-            this.cmbCategories.MaxDropDownItems = 4;
-            this.cmbCategories.MouseState = MaterialSkin.MouseState.OUT;
-            this.cmbCategories.Name = "cmbCategories";
-            this.cmbCategories.Size = new System.Drawing.Size(377, 49);
-            this.cmbCategories.StartIndex = 0;
-            this.cmbCategories.TabIndex = 26;
+            this.materialMaskedTextBox1.AllowPromptAsInput = true;
+            this.materialMaskedTextBox1.AnimateReadOnly = false;
+            this.materialMaskedTextBox1.AsciiOnly = false;
+            this.materialMaskedTextBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.materialMaskedTextBox1.BeepOnError = false;
+            this.materialMaskedTextBox1.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.materialMaskedTextBox1.Depth = 0;
+            this.materialMaskedTextBox1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialMaskedTextBox1.HidePromptOnLeave = false;
+            this.materialMaskedTextBox1.HideSelection = true;
+            this.materialMaskedTextBox1.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
+            this.materialMaskedTextBox1.LeadingIcon = null;
+            this.materialMaskedTextBox1.Location = new System.Drawing.Point(983, 82);
+            this.materialMaskedTextBox1.Mask = "";
+            this.materialMaskedTextBox1.MaxLength = 32767;
+            this.materialMaskedTextBox1.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialMaskedTextBox1.Name = "materialMaskedTextBox1";
+            this.materialMaskedTextBox1.PasswordChar = '\0';
+            this.materialMaskedTextBox1.PrefixSuffixText = null;
+            this.materialMaskedTextBox1.PromptChar = '_';
+            this.materialMaskedTextBox1.ReadOnly = false;
+            this.materialMaskedTextBox1.RejectInputOnFirstFailure = false;
+            this.materialMaskedTextBox1.ResetOnPrompt = true;
+            this.materialMaskedTextBox1.ResetOnSpace = true;
+            this.materialMaskedTextBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.materialMaskedTextBox1.SelectedText = "";
+            this.materialMaskedTextBox1.SelectionLength = 0;
+            this.materialMaskedTextBox1.SelectionStart = 0;
+            this.materialMaskedTextBox1.ShortcutsEnabled = true;
+            this.materialMaskedTextBox1.Size = new System.Drawing.Size(250, 48);
+            this.materialMaskedTextBox1.SkipLiterals = true;
+            this.materialMaskedTextBox1.TabIndex = 28;
+            this.materialMaskedTextBox1.TabStop = false;
+            this.materialMaskedTextBox1.Text = "materialMaskedTextBox1";
+            this.materialMaskedTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.materialMaskedTextBox1.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.materialMaskedTextBox1.TrailingIcon = null;
+            this.materialMaskedTextBox1.UseSystemPasswordChar = false;
+            this.materialMaskedTextBox1.ValidatingType = null;
+            // 
+            // materialButton1
+            // 
+            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton1.Depth = 0;
+            this.materialButton1.HighEmphasis = true;
+            this.materialButton1.Icon = null;
+            this.materialButton1.Location = new System.Drawing.Point(983, 139);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton1.Name = "materialButton1";
+            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton1.Size = new System.Drawing.Size(158, 36);
+            this.materialButton1.TabIndex = 29;
+            this.materialButton1.Text = "materialButton1";
+            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton1.UseAccentColor = false;
+            this.materialButton1.UseVisualStyleBackColor = true;
+            this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
             // 
             // Form8
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1495, 778);
+            this.Controls.Add(this.materialButton1);
+            this.Controls.Add(this.materialMaskedTextBox1);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.materialButton4);
             this.Controls.Add(this.dataGridView1);
@@ -417,6 +494,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -445,5 +523,8 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialComboBox cmbCategories;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private MaterialSkin.Controls.MaterialMaskedTextBox materialMaskedTextBox1;
+        private MaterialSkin.Controls.MaterialButton materialButton1;
     }
 }

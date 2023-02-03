@@ -138,5 +138,10 @@ namespace Diet.UI
             Frm3.Show();
             Hide();
         }
+
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

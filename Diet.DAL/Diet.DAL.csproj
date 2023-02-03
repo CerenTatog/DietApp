@@ -81,6 +81,14 @@
     <Compile Include="Migrations\202302031016435_foodpictureandcategoryıdnotnullable.designer.cs">
       <DependentUpon>202302031016435_foodpictureandcategoryıdnotnullable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202302032107532_Change2.cs" />
+    <Compile Include="Migrations\202302032107532_Change2.designer.cs">
+      <DependentUpon>202302032107532_Change2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202302032108412_Change3.cs" />
+    <Compile Include="Migrations\202302032108412_Change3.designer.cs">
+      <DependentUpon>202302032108412_Change3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -109,6 +117,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202302031016435_foodpictureandcategoryıdnotnullable.resx">
       <DependentUpon>202302031016435_foodpictureandcategoryıdnotnullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302032107532_Change2.resx">
+      <DependentUpon>202302032107532_Change2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302032108412_Change3.resx">
+      <DependentUpon>202302032108412_Change3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

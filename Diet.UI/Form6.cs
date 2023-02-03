@@ -38,7 +38,7 @@ namespace Diet.UI
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
-            currentUser = _currentUser;
+            _currentUser = currentUser;
         }
 
         private void btnAddStepCount_Click(object sender, EventArgs e)

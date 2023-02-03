@@ -71,7 +71,7 @@ namespace Diet.UI
             mlAtistirmalikKalori.Text = foodManager.CalculateCalorieIntake(_currentUser.ID).FirstOrDefault(x => x.MealType == MealType.Snack)?.TotalCalori.ToString();
 
             //Toplam alınan kalori miktarı(öğün toplamı)
-            double toplamAlınanKalori = (foodManager.CalculateCalorieIntake(_currentUser.ID).FirstOrDefault(x => x.MealType == MealType.Breakfast).TotalCalori + foodManager.CalculateCalorieIntake(_currentUser.ID).FirstOrDefault(x => x.MealType == MealType.Lunch).TotalCalori + foodManager.CalculateCalorieIntake(_currentUser.ID).FirstOrDefault(x => x.MealType == MealType.Dinner).TotalCalori + foodManager.CalculateCalorieIntake(_currentUser.ID).FirstOrDefault(x => x.MealType == MealType.Snack).TotalCalori);
+            double toplamAlınanKalori =0; //(foodManager.CalculateCalorieIntake(_currentUser.ID).FirstOrDefault(x => x.MealType == MealType.Breakfast).TotalCalori + foodManager.CalculateCalorieIntake(_currentUser.ID).FirstOrDefault(x => x.MealType == MealType.Lunch).TotalCalori + foodManager.CalculateCalorieIntake(_currentUser.ID).FirstOrDefault(x => x.MealType == MealType.Dinner).TotalCalori + foodManager.CalculateCalorieIntake(_currentUser.ID).FirstOrDefault(x => x.MealType == MealType.Snack).TotalCalori);
             mlToplamAlinanKalori.Text = toplamAlınanKalori.ToString();
 
             

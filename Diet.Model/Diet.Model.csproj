@@ -59,6 +59,8 @@
     <Compile Include="Base.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="Dto\DailyUserCalori.cs" />
+    <Compile Include="Dto\Report\DailyActivity.cs" />
+    <Compile Include="Dto\Report\DailyStep.cs" />
     <Compile Include="Dto\Report\FoodforMealSnack.cs" />
     <Compile Include="Dto\Report\FoodforMealDinner.cs" />
     <Compile Include="Dto\Report\FoodforMealLunch.cs" />

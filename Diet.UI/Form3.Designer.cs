@@ -1409,7 +1409,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 23);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1056, 659);
+            this.tabPage3.Size = new System.Drawing.Size(1140, 659);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Bildirimler";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1449,7 +1449,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 23);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1056, 659);
+            this.tabPage4.Size = new System.Drawing.Size(1140, 659);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Sistem Raporları";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1641,7 +1641,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 23);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1056, 659);
+            this.tabPage6.Size = new System.Drawing.Size(1140, 659);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Ayarlar";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -1839,12 +1839,12 @@
             this.materialTabControl2.Controls.Add(this.tabPage8);
             this.materialTabControl2.Controls.Add(this.tabPage9);
             this.materialTabControl2.Depth = 0;
-            this.materialTabControl2.Location = new System.Drawing.Point(566, 181);
+            this.materialTabControl2.Location = new System.Drawing.Point(412, 39);
             this.materialTabControl2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabControl2.Multiline = true;
             this.materialTabControl2.Name = "materialTabControl2";
             this.materialTabControl2.SelectedIndex = 0;
-            this.materialTabControl2.Size = new System.Drawing.Size(200, 100);
+            this.materialTabControl2.Size = new System.Drawing.Size(601, 431);
             this.materialTabControl2.TabIndex = 8;
             // 
             // tabPage8
@@ -1852,7 +1852,7 @@
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(192, 74);
+            this.tabPage8.Size = new System.Drawing.Size(593, 405);
             this.tabPage8.TabIndex = 0;
             this.tabPage8.Text = "tabPage8";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -1862,7 +1862,7 @@
             this.tabPage9.Location = new System.Drawing.Point(4, 22);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(192, 74);
+            this.tabPage9.Size = new System.Drawing.Size(593, 405);
             this.tabPage9.TabIndex = 1;
             this.tabPage9.Text = "tabPage9";
             this.tabPage9.UseVisualStyleBackColor = true;

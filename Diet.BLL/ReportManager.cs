@@ -71,6 +71,37 @@ namespace Diet.BLL
             return groupQuery;
 
         }
+        public List<WeeklyMacros> WeeklyMacroFood(int UserId) 
+        {
+            var dateToday = DateTime.Now;
+            var dateSevenDayBefore = DateTime.Today.AddDays(-7);
+            var userDailyMealRepo = db.MealRepository.GetAll().Where(x => x.MealDate >= dateSevenDayBefore && x.MealDate < dateToday && x.UserID == UserId);
+            var query = (from m in userDailyMealRepo
+                         join mf in db.MealFoodRepository.GetAll() on m.ID equals mf.MealID
+                         join f in db.FoodRepository.GetAll() on mf.FoodID equals f.ID
+                         select new
+                         {
+                             f.Carbonhydrate,
+                             f.Fat,
+                             f.Protein,
+                             mf.Quantity,
+                             m.MealDate
+                         }).ToList();
+            var groupQuery = (from gq in query
+                              let dt = gq.MealDate.Date
+                              group gq by dt into g
+                              select new WeeklyMacros
+                              {
+                                  Date = g.Key,
+                                  Carb = g.Sum(x => x.Carbonhydrate * x.Quantity),
+                                  Protein = g.Sum(x => x.Protein * x.Quantity),
+                                  Fat = g.Sum(x => x.Protein * x.Quantity),
+                              }).ToList();
+            return groupQuery;
+
+
+        }
+
         public List<WeeklyUserProtein> CalculateProtein(int UserId)
         {
             var dateToday = DateTime.Now;
@@ -168,16 +199,34 @@ namespace Diet.BLL
         }
 
         //haftalık adım sayısı Veri tabanında Adım sayısı tutulmuyor.
-        //public List<WeeklyStepDto> CalculateStep(int UserId)
-        //{
-        //    var dateToday = DateTime.Now;
-        //    var dateSevenDayBefore = DateTime.Today.AddDays(-7);
-        //    var userDailyStepRepo = db.UserActivityRepository.GetAll().Where(x => x.ActivityTime >= dateSevenDayBefore && x.ActivityTime < dateToday && x.UserID == UserId);
-        //}
+        public List<WeeklyStepDto> CalculateStep(int UserId)
+        {
+            var dateToday = DateTime.Now;
+            var dateSevenDayBefore = DateTime.Today.AddDays(-7);
+            var userDailyStepRepo = db.UserActivityRepository.GetAll().Where(x => x.ActivityTime >= dateSevenDayBefore && x.ActivityTime < dateToday && x.UserID == UserId);
+            var userDailyActivityRepo = db.UserActivityRepository.GetAll().Where(x => x.ActivityTime >= dateSevenDayBefore && x.ActivityTime < dateToday && x.UserID == UserId);
+            var query = (from ua in userDailyActivityRepo
+                         join a in db.ActivityRepository.GetAll() on ua.ActivityID equals a.ID
+                         select new
+                         {
+                             
+                             ua.StepCount,
+                             ua.ActivityTime
+                         }).ToList();
+            var groupQuery = (from gq in query
+                              let dt = gq.ActivityTime.Date
+                              group gq by dt into g
+                              select new WeeklyStepDto
+                              {
+                                  Date = g.Key,
+                                  Step = Convert.ToDouble(g.Sum(x => x.StepCount * 0.03))
+                              }).ToList();
+            return groupQuery;
+        }
 
         //kilo takibi
         public List<WeeklyWeightDto> CalculateWeight(int UserId)
-        {
+        {//şu tab
             var dateToday = DateTime.Now;
             var dateSevenDayBefore = DateTime.Today.AddDays(-7);
             var userDailyWeigthRepo = db.UserDetailRepository.GetAll().Where(x => x.CreatedDate >= dateSevenDayBefore && x.CreatedDate < dateToday && x.UserID == UserId);
@@ -207,8 +256,9 @@ namespace Diet.BLL
         //bakılacak
         public List<FoodforMealBreakFast> WhichFoodsEatenAtBreakfast(int UserId)
         {
+            var userMeal = db.MealRepository.GetAll().Where(x => x.UserID == UserId);
 
-            var query = (from m in db.MealRepository.GetAll()
+            var query = (from m in userMeal
                          join mf in db.MealFoodRepository.GetAll() on m.ID equals mf.MealID
                          join f in db.FoodRepository.GetAll() on mf.FoodID equals f.ID
                          join c in db.CategoryRepository.GetAll() on f.CategoryID equals c.ID
@@ -238,8 +288,9 @@ namespace Diet.BLL
 
         public List<FoodforMealLunch> WhichFoodsEatenAtLunch(int UserId)
         {
+            var userMeal = db.MealRepository.GetAll().Where(x => x.UserID == UserId);
 
-            var query = (from m in db.MealRepository.GetAll()
+            var query = (from m in userMeal
                          join mf in db.MealFoodRepository.GetAll() on m.ID equals mf.MealID
                          join f in db.FoodRepository.GetAll() on mf.FoodID equals f.ID
                          join c in db.CategoryRepository.GetAll() on f.CategoryID equals c.ID
@@ -269,8 +320,8 @@ namespace Diet.BLL
 
         public List<FoodforMealDinner> WhichFoodsEatenAtDinner(int UserId)
         {
-
-            var query = (from m in db.MealRepository.GetAll()
+            var userMeal = db.MealRepository.GetAll().Where(x => x.UserID == UserId);
+            var query = (from m in userMeal
                          join mf in db.MealFoodRepository.GetAll() on m.ID equals mf.MealID
                          join f in db.FoodRepository.GetAll() on mf.FoodID equals f.ID
                          join c in db.CategoryRepository.GetAll() on f.CategoryID equals c.ID
@@ -299,9 +350,9 @@ namespace Diet.BLL
         }
 
         public List<FoodforMealSnack> WhichFoodsEatenAtSnack(int UserId)
-        {//userid yi hiç kullanmadın
-
-            var query = (from m in db.MealRepository.GetAll()
+        {
+            var userMeal = db.MealRepository.GetAll().Where(x => x.UserID == UserId);
+            var query = (from m in userMeal
                          join mf in db.MealFoodRepository.GetAll() on m.ID equals mf.MealID
                          join f in db.FoodRepository.GetAll() on mf.FoodID equals f.ID
                          join c in db.CategoryRepository.GetAll() on f.CategoryID equals c.ID
@@ -329,13 +380,16 @@ namespace Diet.BLL
 
         }
         //En çok yenen yemekler raporu çıksın.
-        public List<MostEatenFoods> MostEatenFood()
-        {//ıd
-            var query = (from f in db.FoodRepository.GetAll()
+        public List<MostEatenFoods> MostEatenFood(int UserId)
+        {
+            var userMeal = db.MealRepository.GetAll().Where(x => x.UserID == UserId);
+            var query = (from um in userMeal
+                         from f in db.FoodRepository.GetAll()
                          join c in db.CategoryRepository.GetAll() on f.CategoryID equals c.ID
                          join mf in db.MealFoodRepository.GetAll() on f.ID equals mf.FoodID
                          select new
                          {
+                             um.UserID,
                              c.CategoryName,
                              f.FoodName,
                              f.QuantityType,

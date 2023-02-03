@@ -44,8 +44,8 @@
             this.materialDivider3 = new MaterialSkin.Controls.MaterialDivider();
             this.materialDivider2 = new MaterialSkin.Controls.MaterialDivider();
             this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
-            this.materialLabel34 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel33 = new MaterialSkin.Controls.MaterialLabel();
+            this.lblAktivite = new MaterialSkin.Controls.MaterialLabel();
+            this.lblAdımSayisi = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel17 = new MaterialSkin.Controls.MaterialLabel();
             this.kalori6 = new MaterialSkin.Controls.MaterialLabel();
             this.mfabAdımSayisiEkle = new MaterialSkin.Controls.MaterialFloatingActionButton();
@@ -70,7 +70,7 @@
             this.mfabOgleYemegiEkle = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.mfabKahvaltıEkle = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.materialLabel28 = new MaterialSkin.Controls.MaterialLabel();
+            this.lblHarcananToplamKalori = new MaterialSkin.Controls.MaterialLabel();
             this.label5 = new System.Windows.Forms.Label();
             this.mlYagg = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -81,7 +81,6 @@
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.mlKarbonHidrat = new MaterialSkin.Controls.MaterialLabel();
             this.k_alınan2 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialFloatingActionButton5 = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialProgressBar1 = new MaterialSkin.Controls.MaterialProgressBar();
             this.mlToplamAlinanKalori = new MaterialSkin.Controls.MaterialLabel();
             this.k_alınan = new MaterialSkin.Controls.MaterialLabel();
@@ -161,6 +160,12 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.dataGridView7 = new System.Windows.Forms.DataGridView();
+            this.dataGridView8 = new System.Windows.Forms.DataGridView();
+            this.dataGridView9 = new System.Windows.Forms.DataGridView();
+            this.dataGridView10 = new System.Windows.Forms.DataGridView();
+            this.dataGridView11 = new System.Windows.Forms.DataGridView();
+            this.lblToplamKalori = new System.Windows.Forms.Label();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -193,6 +198,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView11)).BeginInit();
             this.SuspendLayout();
             // 
             // materialTabControl1
@@ -236,7 +246,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 23);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1056, 659);
+            this.tabPage1.Size = new System.Drawing.Size(1140, 659);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Günlük";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -379,8 +389,8 @@
             // materialCard2
             // 
             this.materialCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard2.Controls.Add(this.materialLabel34);
-            this.materialCard2.Controls.Add(this.materialLabel33);
+            this.materialCard2.Controls.Add(this.lblAktivite);
+            this.materialCard2.Controls.Add(this.lblAdımSayisi);
             this.materialCard2.Controls.Add(this.materialLabel17);
             this.materialCard2.Controls.Add(this.kalori6);
             this.materialCard2.Controls.Add(this.mfabAdımSayisiEkle);
@@ -397,31 +407,31 @@
             this.materialCard2.Size = new System.Drawing.Size(437, 212);
             this.materialCard2.TabIndex = 2;
             // 
-            // materialLabel34
+            // lblAktivite
             // 
-            this.materialLabel34.AutoSize = true;
-            this.materialLabel34.Depth = 0;
-            this.materialLabel34.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel34.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            this.materialLabel34.Location = new System.Drawing.Point(235, 73);
-            this.materialLabel34.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel34.Name = "materialLabel34";
-            this.materialLabel34.Size = new System.Drawing.Size(12, 24);
-            this.materialLabel34.TabIndex = 28;
-            this.materialLabel34.Text = "0";
+            this.lblAktivite.AutoSize = true;
+            this.lblAktivite.Depth = 0;
+            this.lblAktivite.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lblAktivite.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
+            this.lblAktivite.Location = new System.Drawing.Point(235, 73);
+            this.lblAktivite.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblAktivite.Name = "lblAktivite";
+            this.lblAktivite.Size = new System.Drawing.Size(12, 24);
+            this.lblAktivite.TabIndex = 28;
+            this.lblAktivite.Text = "0";
             // 
-            // materialLabel33
+            // lblAdımSayisi
             // 
-            this.materialLabel33.AutoSize = true;
-            this.materialLabel33.Depth = 0;
-            this.materialLabel33.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel33.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            this.materialLabel33.Location = new System.Drawing.Point(235, 22);
-            this.materialLabel33.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel33.Name = "materialLabel33";
-            this.materialLabel33.Size = new System.Drawing.Size(12, 24);
-            this.materialLabel33.TabIndex = 27;
-            this.materialLabel33.Text = "0";
+            this.lblAdımSayisi.AutoSize = true;
+            this.lblAdımSayisi.Depth = 0;
+            this.lblAdımSayisi.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lblAdımSayisi.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
+            this.lblAdımSayisi.Location = new System.Drawing.Point(235, 22);
+            this.lblAdımSayisi.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblAdımSayisi.Name = "lblAdımSayisi";
+            this.lblAdımSayisi.Size = new System.Drawing.Size(12, 24);
+            this.lblAdımSayisi.TabIndex = 27;
+            this.lblAdımSayisi.Text = "0";
             // 
             // materialLabel17
             // 
@@ -473,9 +483,9 @@
             this.kalori5.Location = new System.Drawing.Point(278, 26);
             this.kalori5.MouseState = MaterialSkin.MouseState.HOVER;
             this.kalori5.Name = "kalori5";
-            this.kalori5.Size = new System.Drawing.Size(37, 17);
+            this.kalori5.Size = new System.Drawing.Size(33, 17);
             this.kalori5.TabIndex = 16;
-            this.kalori5.Text = "Kalori";
+            this.kalori5.Text = "Adım";
             // 
             // mfabAktiviteEkle
             // 
@@ -489,6 +499,7 @@
             this.mfabAktiviteEkle.TabIndex = 13;
             this.mfabAktiviteEkle.Text = "materialFloatingActionButton6";
             this.mfabAktiviteEkle.UseVisualStyleBackColor = true;
+            this.mfabAktiviteEkle.Click += new System.EventHandler(this.mfabAktiviteEkle_Click);
             // 
             // materialLabel16
             // 
@@ -744,7 +755,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.materialLabel28);
+            this.groupBox1.Controls.Add(this.lblToplamKalori);
+            this.groupBox1.Controls.Add(this.lblHarcananToplamKalori);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.mlYagg);
             this.groupBox1.Controls.Add(this.label3);
@@ -755,7 +767,6 @@
             this.groupBox1.Controls.Add(this.materialLabel4);
             this.groupBox1.Controls.Add(this.mlKarbonHidrat);
             this.groupBox1.Controls.Add(this.k_alınan2);
-            this.groupBox1.Controls.Add(this.materialFloatingActionButton5);
             this.groupBox1.Controls.Add(this.materialProgressBar1);
             this.groupBox1.Controls.Add(this.mlToplamAlinanKalori);
             this.groupBox1.Controls.Add(this.k_alınan);
@@ -765,18 +776,18 @@
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             // 
-            // materialLabel28
+            // lblHarcananToplamKalori
             // 
-            this.materialLabel28.AutoSize = true;
-            this.materialLabel28.Depth = 0;
-            this.materialLabel28.Font = new System.Drawing.Font("Roboto", 34F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel28.FontType = MaterialSkin.MaterialSkinManager.fontType.H4;
-            this.materialLabel28.Location = new System.Drawing.Point(772, 57);
-            this.materialLabel28.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel28.Name = "materialLabel28";
-            this.materialLabel28.Size = new System.Drawing.Size(20, 41);
-            this.materialLabel28.TabIndex = 22;
-            this.materialLabel28.Text = "0";
+            this.lblHarcananToplamKalori.AutoSize = true;
+            this.lblHarcananToplamKalori.Depth = 0;
+            this.lblHarcananToplamKalori.Font = new System.Drawing.Font("Roboto", 34F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lblHarcananToplamKalori.FontType = MaterialSkin.MaterialSkinManager.fontType.H4;
+            this.lblHarcananToplamKalori.Location = new System.Drawing.Point(772, 57);
+            this.lblHarcananToplamKalori.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblHarcananToplamKalori.Name = "lblHarcananToplamKalori";
+            this.lblHarcananToplamKalori.Size = new System.Drawing.Size(20, 41);
+            this.lblHarcananToplamKalori.TabIndex = 22;
+            this.lblHarcananToplamKalori.Text = "0";
             // 
             // label5
             // 
@@ -883,21 +894,6 @@
             this.k_alınan2.TabIndex = 6;
             this.k_alınan2.Text = "kcal harcanan";
             // 
-            // materialFloatingActionButton5
-            // 
-            this.materialFloatingActionButton5.AnimateShowHideButton = true;
-            this.materialFloatingActionButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.materialFloatingActionButton5.Depth = 0;
-            this.materialFloatingActionButton5.Icon = null;
-            this.materialFloatingActionButton5.Location = new System.Drawing.Point(432, 29);
-            this.materialFloatingActionButton5.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialFloatingActionButton5.Name = "materialFloatingActionButton5";
-            this.materialFloatingActionButton5.Size = new System.Drawing.Size(56, 56);
-            this.materialFloatingActionButton5.TabIndex = 4;
-            this.materialFloatingActionButton5.Text = "materialFloatingActionButton5";
-            this.materialFloatingActionButton5.UseVisualStyleBackColor = true;
-            this.materialFloatingActionButton5.Click += new System.EventHandler(this.materialFloatingActionButton5_Click);
-            // 
             // materialProgressBar1
             // 
             this.materialProgressBar1.Depth = 0;
@@ -934,6 +930,11 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.dataGridView11);
+            this.tabPage2.Controls.Add(this.dataGridView10);
+            this.tabPage2.Controls.Add(this.dataGridView9);
+            this.tabPage2.Controls.Add(this.dataGridView8);
+            this.tabPage2.Controls.Add(this.dataGridView7);
             this.tabPage2.Controls.Add(this.materialLabel22);
             this.tabPage2.Controls.Add(this.materialLabel21);
             this.tabPage2.Controls.Add(this.materialLabelhedef);
@@ -944,7 +945,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 23);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1056, 659);
+            this.tabPage2.Size = new System.Drawing.Size(1140, 659);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Profil";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -966,7 +967,7 @@
             this.materialLabel21.AutoSize = true;
             this.materialLabel21.Depth = 0;
             this.materialLabel21.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel21.Location = new System.Drawing.Point(56, 246);
+            this.materialLabel21.Location = new System.Drawing.Point(56, 233);
             this.materialLabel21.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel21.Name = "materialLabel21";
             this.materialLabel21.Size = new System.Drawing.Size(72, 19);
@@ -978,7 +979,7 @@
             this.materialLabelhedef.AutoSize = true;
             this.materialLabelhedef.Depth = 0;
             this.materialLabelhedef.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabelhedef.Location = new System.Drawing.Point(60, 445);
+            this.materialLabelhedef.Location = new System.Drawing.Point(60, 373);
             this.materialLabelhedef.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabelhedef.Name = "materialLabelhedef";
             this.materialLabelhedef.Size = new System.Drawing.Size(61, 19);
@@ -1002,12 +1003,12 @@
             this.materialCard11.Controls.Add(this.materialLabeneslenme);
             this.materialCard11.Depth = 0;
             this.materialCard11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard11.Location = new System.Drawing.Point(59, 471);
+            this.materialCard11.Location = new System.Drawing.Point(59, 396);
             this.materialCard11.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard11.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard11.Name = "materialCard11";
             this.materialCard11.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard11.Size = new System.Drawing.Size(946, 130);
+            this.materialCard11.Size = new System.Drawing.Size(474, 124);
             this.materialCard11.TabIndex = 14;
             // 
             // mlHedefDuzenle
@@ -1017,7 +1018,7 @@
             this.mlHedefDuzenle.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.mlHedefDuzenle.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
             this.mlHedefDuzenle.HighEmphasis = true;
-            this.mlHedefDuzenle.Location = new System.Drawing.Point(891, 13);
+            this.mlHedefDuzenle.Location = new System.Drawing.Point(208, 16);
             this.mlHedefDuzenle.MouseState = MaterialSkin.MouseState.HOVER;
             this.mlHedefDuzenle.Name = "mlHedefDuzenle";
             this.mlHedefDuzenle.Size = new System.Drawing.Size(50, 17);
@@ -1196,7 +1197,7 @@
             this.materialCard10.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard10.Name = "materialCard10";
             this.materialCard10.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard10.Size = new System.Drawing.Size(946, 165);
+            this.materialCard10.Size = new System.Drawing.Size(1048, 165);
             this.materialCard10.TabIndex = 14;
             // 
             // pictureBox2
@@ -1306,12 +1307,12 @@
             this.materialCard3.Controls.Add(this.materialDivider4);
             this.materialCard3.Depth = 0;
             this.materialCard3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard3.Location = new System.Drawing.Point(59, 268);
+            this.materialCard3.Location = new System.Drawing.Point(54, 247);
             this.materialCard3.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard3.Name = "materialCard3";
             this.materialCard3.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard3.Size = new System.Drawing.Size(946, 141);
+            this.materialCard3.Size = new System.Drawing.Size(1053, 112);
             this.materialCard3.TabIndex = 1;
             // 
             // materialLabel15
@@ -1320,7 +1321,7 @@
             this.materialLabel15.Depth = 0;
             this.materialLabel15.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel15.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
-            this.materialLabel15.Location = new System.Drawing.Point(891, 83);
+            this.materialLabel15.Location = new System.Drawing.Point(896, 62);
             this.materialLabel15.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel15.Name = "materialLabel15";
             this.materialLabel15.Size = new System.Drawing.Size(16, 17);
@@ -1333,7 +1334,7 @@
             this.mlHedefKilo.Depth = 0;
             this.mlHedefKilo.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.mlHedefKilo.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
-            this.mlHedefKilo.Location = new System.Drawing.Point(863, 83);
+            this.mlHedefKilo.Location = new System.Drawing.Point(881, 62);
             this.mlHedefKilo.MouseState = MaterialSkin.MouseState.HOVER;
             this.mlHedefKilo.Name = "mlHedefKilo";
             this.mlHedefKilo.Size = new System.Drawing.Size(9, 17);
@@ -1346,7 +1347,7 @@
             this.materialLabelkkg.Depth = 0;
             this.materialLabelkkg.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabelkkg.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
-            this.materialLabelkkg.Location = new System.Drawing.Point(59, 83);
+            this.materialLabelkkg.Location = new System.Drawing.Point(58, 62);
             this.materialLabelkkg.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabelkkg.Name = "materialLabelkkg";
             this.materialLabelkkg.Size = new System.Drawing.Size(16, 17);
@@ -1359,7 +1360,7 @@
             this.lblMevcutKilo.Depth = 0;
             this.lblMevcutKilo.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.lblMevcutKilo.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
-            this.lblMevcutKilo.Location = new System.Drawing.Point(32, 83);
+            this.lblMevcutKilo.Location = new System.Drawing.Point(41, 62);
             this.lblMevcutKilo.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblMevcutKilo.Name = "lblMevcutKilo";
             this.lblMevcutKilo.Size = new System.Drawing.Size(9, 17);
@@ -1394,7 +1395,7 @@
             // 
             this.materialDivider4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialDivider4.Depth = 0;
-            this.materialDivider4.Location = new System.Drawing.Point(46, 57);
+            this.materialDivider4.Location = new System.Drawing.Point(46, 46);
             this.materialDivider4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider4.Name = "materialDivider4";
             this.materialDivider4.Size = new System.Drawing.Size(861, 13);
@@ -1408,7 +1409,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 23);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1056, 659);
+            this.tabPage3.Size = new System.Drawing.Size(1140, 659);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Bildirimler";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1448,7 +1449,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 23);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1056, 659);
+            this.tabPage4.Size = new System.Drawing.Size(1140, 659);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Sistem Raporları";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1640,7 +1641,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 23);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1056, 659);
+            this.tabPage6.Size = new System.Drawing.Size(1140, 659);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Ayarlar";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -1838,12 +1839,12 @@
             this.materialTabControl2.Controls.Add(this.tabPage8);
             this.materialTabControl2.Controls.Add(this.tabPage9);
             this.materialTabControl2.Depth = 0;
-            this.materialTabControl2.Location = new System.Drawing.Point(566, 181);
+            this.materialTabControl2.Location = new System.Drawing.Point(412, 39);
             this.materialTabControl2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabControl2.Multiline = true;
             this.materialTabControl2.Name = "materialTabControl2";
             this.materialTabControl2.SelectedIndex = 0;
-            this.materialTabControl2.Size = new System.Drawing.Size(200, 100);
+            this.materialTabControl2.Size = new System.Drawing.Size(601, 431);
             this.materialTabControl2.TabIndex = 8;
             // 
             // tabPage8
@@ -1851,7 +1852,7 @@
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(192, 74);
+            this.tabPage8.Size = new System.Drawing.Size(593, 405);
             this.tabPage8.TabIndex = 0;
             this.tabPage8.Text = "tabPage8";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -1861,7 +1862,7 @@
             this.tabPage9.Location = new System.Drawing.Point(4, 22);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(192, 74);
+            this.tabPage9.Size = new System.Drawing.Size(593, 405);
             this.tabPage9.TabIndex = 1;
             this.tabPage9.Text = "tabPage9";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -1968,6 +1969,56 @@
             this.label9.TabIndex = 9;
             this.label9.Text = "Kilo?";
             // 
+            // dataGridView7
+            // 
+            this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView7.Location = new System.Drawing.Point(59, 537);
+            this.dataGridView7.Name = "dataGridView7";
+            this.dataGridView7.Size = new System.Drawing.Size(240, 111);
+            this.dataGridView7.TabIndex = 17;
+            // 
+            // dataGridView8
+            // 
+            this.dataGridView8.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView8.Location = new System.Drawing.Point(327, 537);
+            this.dataGridView8.Name = "dataGridView8";
+            this.dataGridView8.Size = new System.Drawing.Size(240, 111);
+            this.dataGridView8.TabIndex = 18;
+            this.dataGridView8.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView8_CellContentClick);
+            // 
+            // dataGridView9
+            // 
+            this.dataGridView9.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView9.Location = new System.Drawing.Point(597, 537);
+            this.dataGridView9.Name = "dataGridView9";
+            this.dataGridView9.Size = new System.Drawing.Size(240, 111);
+            this.dataGridView9.TabIndex = 19;
+            // 
+            // dataGridView10
+            // 
+            this.dataGridView10.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView10.Location = new System.Drawing.Point(867, 537);
+            this.dataGridView10.Name = "dataGridView10";
+            this.dataGridView10.Size = new System.Drawing.Size(240, 111);
+            this.dataGridView10.TabIndex = 20;
+            // 
+            // dataGridView11
+            // 
+            this.dataGridView11.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView11.Location = new System.Drawing.Point(572, 396);
+            this.dataGridView11.Name = "dataGridView11";
+            this.dataGridView11.Size = new System.Drawing.Size(535, 124);
+            this.dataGridView11.TabIndex = 21;
+            // 
+            // lblToplamKalori
+            // 
+            this.lblToplamKalori.AutoSize = true;
+            this.lblToplamKalori.Location = new System.Drawing.Point(445, 57);
+            this.lblToplamKalori.Name = "lblToplamKalori";
+            this.lblToplamKalori.Size = new System.Drawing.Size(71, 13);
+            this.lblToplamKalori.TabIndex = 23;
+            this.lblToplamKalori.Text = "Toplam Kalori";
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2025,6 +2076,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView11)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2050,7 +2106,6 @@
         private MaterialSkin.Controls.MaterialProgressBar materialProgressBar3;
         private MaterialSkin.Controls.MaterialProgressBar materialProgressBar2;
         private MaterialSkin.Controls.MaterialProgressBar materialProgressBar1;
-        private MaterialSkin.Controls.MaterialFloatingActionButton materialFloatingActionButton5;
         private System.Windows.Forms.GroupBox groupBox1;
         private MaterialSkin.Controls.MaterialLabel materialLabel17;
         private MaterialSkin.Controls.MaterialLabel kalori6;
@@ -2092,7 +2147,7 @@
         private MaterialSkin.Controls.MaterialLabel k_alınan2;
         private MaterialSkin.Controls.MaterialLabel k_alınan;
         private MaterialSkin.Controls.MaterialSwitch materialSwitch1;
-        private MaterialSkin.Controls.MaterialLabel materialLabel28;
+        private MaterialSkin.Controls.MaterialLabel lblHarcananToplamKalori;
         private MaterialSkin.Controls.MaterialLabel mlToplamAlinanKalori;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label mlYagg;
@@ -2103,8 +2158,8 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private MaterialSkin.Controls.MaterialLabel mlKarbonHidrat;
-        private MaterialSkin.Controls.MaterialLabel materialLabel34;
-        private MaterialSkin.Controls.MaterialLabel materialLabel33;
+        private MaterialSkin.Controls.MaterialLabel lblAktivite;
+        private MaterialSkin.Controls.MaterialLabel lblAdımSayisi;
         private MaterialSkin.Controls.MaterialLabel mlAtistirmalikKalori;
         private MaterialSkin.Controls.MaterialLabel mlAksamYemegiKalori;
         private MaterialSkin.Controls.MaterialLabel mlOgleYemegiCalori;
@@ -2162,5 +2217,11 @@
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView8;
+        private System.Windows.Forms.DataGridView dataGridView7;
+        private System.Windows.Forms.DataGridView dataGridView11;
+        private System.Windows.Forms.DataGridView dataGridView10;
+        private System.Windows.Forms.DataGridView dataGridView9;
+        private System.Windows.Forms.Label lblToplamKalori;
     }
 }

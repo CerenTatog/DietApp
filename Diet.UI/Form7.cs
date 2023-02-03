@@ -19,6 +19,7 @@ namespace Diet.UI
     public partial class Form7 : MaterialForm
     {
         UnitOfWork db = new UnitOfWork();
+        ActivityManager activityManager = new ActivityManager();
         public Form7()
         {
             InitializeComponent();
@@ -26,6 +27,7 @@ namespace Diet.UI
         public Form7(User currentUser)
         {
             InitializeComponent();
+            //eşitlenmesi gerekiyor. globalde tanımlanıp
         }
 
         private void Form7_Load(object sender, EventArgs e)
@@ -46,7 +48,7 @@ namespace Diet.UI
             NewActivity.ActivityID = cmbActivities.SelectedIndex;
             NewActivity.ActivityTime = DateTime.Now;
             NewActivity.Duration = (double)nmrDuration.Value;
-            double LostCalorieByAcrivity = ActivityManager.CalculateConsumedCalorieByActivity(ID); //Bu değer User Formuna gönderilmeli verilen kalori chart ına
+            double LostCalorieByAcrivity = activityManager.CalculateConsumedCalorieByActivity(ID); //Bu değer User Formuna gönderilmeli verilen kalori chart ına
             NewActivity.CalculatedCalorie = LostCalorieByAcrivity;
             db.UserActivityRepository.Create(NewActivity);
             lblKCAL.Text = LostCalorieByAcrivity.ToString() + " kCal TEBRİKLER:)";

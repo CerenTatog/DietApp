@@ -42,7 +42,7 @@ namespace Diet.UI
             var user = db.UserRepository.GetAll().Where(u => u.Email == txtKullaniciAdi.Text).FirstOrDefault();
             if (txtKullaniciAdi.Text == "admin" && txtSifre.Text == "admin")
             {
-                Form3 frm3 = new Form3();
+                Form3 frm3 = new Form3(user);
                 frm3.Show();
                 Hide();
             }

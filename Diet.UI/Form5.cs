@@ -18,7 +18,7 @@ namespace Diet.UI
     {
         UnitOfWork db = new UnitOfWork();
         MealType _mealType = MealType.Breakfast;
-        User _currentUser = null;
+        User _currentUser;
         public Form5()
         {
             InitializeComponent();
@@ -68,6 +68,7 @@ namespace Diet.UI
         List<MealFood> ogunListesi;
         private void materialButtonEkle_Click(object sender, EventArgs e)
         {
+
            
             if (materialComboBox2.SelectedValue != null && materialTextBox22 != null)
             {

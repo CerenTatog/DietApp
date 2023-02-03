@@ -105,10 +105,11 @@
             this.Controls.Add(this.nmrStepCount);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.lblKCAL);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form6";
             this.Padding = new System.Windows.Forms.Padding(4, 79, 4, 4);
             this.Text = "Adım Sayısı Gir";
+            this.Load += new System.EventHandler(this.Form6_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nmrStepCount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

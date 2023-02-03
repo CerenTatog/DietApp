@@ -24,6 +24,17 @@ namespace Diet.UI
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+
+            List<string> Type = new List<string>();
+            Type.Add(QuantityType.adet.ToString());
+            Type.Add(QuantityType.dilim.ToString());
+            Type.Add(QuantityType.ml.ToString());
+            Type.Add(QuantityType.gr.ToString());
+
+            foreach (var item in Type)
+            {
+                cmbMiktarTuru.Items.Add(item);
+            }
         }
         public Form8(User currentUser)
         {
@@ -32,6 +43,17 @@ namespace Diet.UI
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+
+            List<string> Type = new List<string>();
+            Type.Add(QuantityType.adet.ToString());
+            Type.Add(QuantityType.dilim.ToString());
+            Type.Add(QuantityType.ml.ToString());
+            Type.Add(QuantityType.gr.ToString());
+            
+            foreach (var item in Type)
+            {
+                cmbMiktarTuru.Items.Add(item);
+            }
         }
         UnitOfWork db = new UnitOfWork();
         
@@ -44,6 +66,7 @@ namespace Diet.UI
             Food food = new Food();
             food.FoodName = txtBesinAdi.Text;            
             food.Carbonhydrate =Convert.ToDouble(txtKarbonhıdrat.Text);
+            food.QuantityType =(QuantityType)(cmbMiktarTuru.SelectedIndex);
             food.Fat = Convert.ToDouble(txtYag.Text);
             food.Protein = Convert.ToDouble(txtProtein.Text);
             food.Calorie =Convert.ToDouble(txtKalori.Text);
@@ -54,7 +77,7 @@ namespace Diet.UI
         void LoadFood()
         {
             var query = from f in db.FoodRepository.GetAll()
-                        select new { f.ID,f.FoodName, f.Carbonhydrate, f.Fat, f.Protein,f.Calorie };
+                        select new { f.ID,f.FoodName,f.QuantityType, f.Carbonhydrate, f.Fat, f.Protein,f.Calorie };
             dataGridView1.DataSource = query.ToList();
         }
 
@@ -75,10 +98,11 @@ namespace Diet.UI
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txtBesinAdi.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            txtKarbonhıdrat.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            txtYag.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            txtProtein.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-           txtKalori.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            //cmbMiktarTuru.SelectedIndex = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            txtKarbonhıdrat.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            txtYag.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            txtProtein.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+           txtKalori.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
         }
 
         private void btnGuncelle_Click(object sender, EventArgs e)
@@ -87,6 +111,7 @@ namespace Diet.UI
             Food UpdatedFood = new Food();
             UpdatedFood.FoodName = txtBesinAdi.Text;
             UpdatedFood.Carbonhydrate =Convert.ToInt32(txtKarbonhıdrat.Text);
+            UpdatedFood.QuantityType =(QuantityType)cmbMiktarTuru.SelectedIndex;
             UpdatedFood.Fat =Convert.ToInt32(txtYag.Text);
             UpdatedFood.Protein =Convert.ToInt32(txtProtein.Text);
             UpdatedFood.Calorie =Convert.ToInt32(txtKalori.Text);

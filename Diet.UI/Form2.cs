@@ -33,11 +33,22 @@ namespace Diet.UI
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            var query = from ud in db.UserDetailRepository.GetAll().ToList()
-                        select new { Label = ud.ActivityStatus, Value = ud.ActivityStatus};
-            cmbActivityStatus.Items.Add(query);
-            cmbActivityStatus.DisplayMember = "Label";
-            cmbActivityStatus.ValueMember = "Value";
+            //var query = (from ud in db.UserDetailRepository.GetAll()
+            //            select new {ud.ActivityStatus}).ToList();
+
+            List<string> activityStatuses = new List<string>();
+            activityStatuses.Add(ActivityStatus.NonActive.ToString());
+            activityStatuses.Add(ActivityStatus.MidActive.ToString());
+            activityStatuses.Add(ActivityStatus.Active.ToString());
+            activityStatuses.Add(ActivityStatus.FullActive.ToString());
+            foreach (var item in activityStatuses)
+            {
+                cmbActivityStatus.Items.Add(item);
+               
+            }
+            //cmbActivityStatus.DisplayMember = "Label";
+            //cmbActivityStatus.ValueMember = "Value";
+
         }
 
         private void btnIlerle_Click(object sender, EventArgs e)
@@ -53,8 +64,17 @@ namespace Diet.UI
         {
             if (um.CheckEmailFormat(txtEmail.Text) == true)
             {
-                newuser.Email = txtEmail.Text;
-                materialTabControl1.SelectedTab = tabPage3;
+                var query = db.UserRepository.GetAll().Count(x => x.Email == txtEmail.Text);
+                if (query==0)
+                {
+                    newuser.Email = txtEmail.Text;
+                    materialTabControl1.SelectedTab = tabPage3;
+                }
+                else
+                {
+                    MessageBox.Show("Bu mail adresi ile giriş yapılmış");
+                }
+                
             }
             else
             {
@@ -108,11 +128,15 @@ namespace Diet.UI
 
         private void btnKaydetBitir_Click(object sender, EventArgs e)
         {
+
             newuserdetail.Age = Convert.ToInt32(txtAge.Text);
             newuserdetail.ActivityStatus = (ActivityStatus)cmbActivityStatus.SelectedValue; //ActivityStatus Enum olarak var İnt Diet.Model.Activitystatus türüne dönüşemez uyarısı.
 
             db.UserRepository.Create(newuser);
             db.UserDetailRepository.Create(newuserdetail);
+            Form1 frm1 = new Form1();
+            frm1.Show();
+            Hide();
         }
 
         private void btnGeri5_Click(object sender, EventArgs e)

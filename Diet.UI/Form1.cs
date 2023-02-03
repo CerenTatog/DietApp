@@ -26,6 +26,7 @@ namespace Diet.UI
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey900, Primary.BlueGrey900, Primary.BlueGrey900, Accent.LightBlue200, TextShade.WHITE);
+            
         }
         //DietAppContext db = new DietAppContext();
         UnitOfWork db = new UnitOfWork();
@@ -38,31 +39,30 @@ namespace Diet.UI
 
         private void btnGirisYap_Click(object sender, EventArgs e)
         {
-            var user = db.UserRepository.GetAll().Where(u => u.UserName == txtKullaniciAdi.Text).FirstOrDefault();
-            if (userManager.CheckEmailFormat(txtSifre.Text) == false)
-            {
-                MessageBox.Show("Lütfen '.com' uzantılı mail adresinizi giriniz");
-            }
-            else
-            {
-                MessageBox.Show("Kullanıcı Bulunamadı!");
-            }
-            if (user != null)
-            {
-                if (user.Password == userManager.EncryptoPassword(txtSifre.Text))
+            var user = db.UserRepository.GetAll().Where(u => u.Email == txtKullaniciAdi.Text).FirstOrDefault();                     
+                if (user != null)
                 {
-                    
-                    Form4 frm4 = new Form4();
-                    frm4.Show();
-                    Hide();
+                      var query = db.UserRepository.GetAll().Count(x => x.Email == txtKullaniciAdi.Text);
+                    if (user.Password == userManager.EncryptoPassword(txtSifre.Text))
+                    {
+
+                        Form4 frm4 = new Form4();
+                        frm4.Show();
+                        Hide();
+                    }
+                    else if (true)
+                    {
+                     
+                    }
+                    else
+                    {
+                        MessageBox.Show("Şifre Kontrol Et");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Şifre Kontrol Et!");
-                }
-            }
-            
-           
+                MessageBox.Show("Kullanıcı Adını Kontrol Ediniz");
+                }                       
         }
 
         private void btnUyelikOlustur_Click(object sender, EventArgs e)

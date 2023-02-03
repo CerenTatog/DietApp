@@ -33,7 +33,6 @@
             this.btnGirisYap = new MaterialSkin.Controls.MaterialButton();
             this.txtSifre = new MaterialSkin.Controls.MaterialTextBox2();
             this.btnUyelikOlustur = new MaterialSkin.Controls.MaterialButton();
-            this.btnYoneticiGiris = new MaterialSkin.Controls.MaterialButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -136,26 +135,6 @@
             this.btnUyelikOlustur.UseVisualStyleBackColor = true;
             this.btnUyelikOlustur.Click += new System.EventHandler(this.btnUyelikOlustur_Click);
             // 
-            // btnYoneticiGiris
-            // 
-            this.btnYoneticiGiris.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnYoneticiGiris.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btnYoneticiGiris.Depth = 0;
-            this.btnYoneticiGiris.HighEmphasis = true;
-            this.btnYoneticiGiris.Icon = null;
-            this.btnYoneticiGiris.Location = new System.Drawing.Point(323, 489);
-            this.btnYoneticiGiris.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnYoneticiGiris.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnYoneticiGiris.Name = "btnYoneticiGiris";
-            this.btnYoneticiGiris.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnYoneticiGiris.Size = new System.Drawing.Size(131, 36);
-            this.btnYoneticiGiris.TabIndex = 1;
-            this.btnYoneticiGiris.Text = "Yönetici Girişi";
-            this.btnYoneticiGiris.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btnYoneticiGiris.UseAccentColor = false;
-            this.btnYoneticiGiris.UseVisualStyleBackColor = true;
-            this.btnYoneticiGiris.Click += new System.EventHandler(this.btnYoneticiGiris_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
@@ -173,7 +152,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(521, 554);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnYoneticiGiris);
             this.Controls.Add(this.btnUyelikOlustur);
             this.Controls.Add(this.btnGirisYap);
             this.Controls.Add(this.txtSifre);
@@ -194,7 +172,6 @@
         private MaterialSkin.Controls.MaterialButton btnGirisYap;
         private MaterialSkin.Controls.MaterialTextBox2 txtSifre;
         private MaterialSkin.Controls.MaterialButton btnUyelikOlustur;
-        private MaterialSkin.Controls.MaterialButton btnYoneticiGiris;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

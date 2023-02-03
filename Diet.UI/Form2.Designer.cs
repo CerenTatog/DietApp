@@ -51,11 +51,12 @@
             this.txtKilo = new MaterialSkin.Controls.MaterialTextBox2();
             this.txtBoy = new MaterialSkin.Controls.MaterialTextBox2();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.cmbGender = new MaterialSkin.Controls.MaterialComboBox();
+            this.cmbActivityStatus = new MaterialSkin.Controls.MaterialComboBox();
             this.btnGeri5 = new MaterialSkin.Controls.MaterialButton();
             this.btnKaydetBitir = new MaterialSkin.Controls.MaterialButton();
             this.txtAge = new MaterialSkin.Controls.MaterialTextBox2();
             this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.cmbActivityStatus = new MaterialSkin.Controls.MaterialComboBox();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -521,6 +522,7 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.cmbGender);
             this.tabPage5.Controls.Add(this.cmbActivityStatus);
             this.tabPage5.Controls.Add(this.btnGeri5);
             this.tabPage5.Controls.Add(this.btnKaydetBitir);
@@ -532,6 +534,52 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Yaş Cinsiyet";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // cmbGender
+            // 
+            this.cmbGender.AutoResize = false;
+            this.cmbGender.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cmbGender.Depth = 0;
+            this.cmbGender.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cmbGender.DropDownHeight = 174;
+            this.cmbGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbGender.DropDownWidth = 121;
+            this.cmbGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cmbGender.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmbGender.FormattingEnabled = true;
+            this.cmbGender.Hint = "Cinsiyet Durumunuzu Belirtiniz";
+            this.cmbGender.IntegralHeight = false;
+            this.cmbGender.ItemHeight = 43;
+            this.cmbGender.Location = new System.Drawing.Point(191, 127);
+            this.cmbGender.MaxDropDownItems = 4;
+            this.cmbGender.MouseState = MaterialSkin.MouseState.OUT;
+            this.cmbGender.Name = "cmbGender";
+            this.cmbGender.Size = new System.Drawing.Size(407, 49);
+            this.cmbGender.StartIndex = 0;
+            this.cmbGender.TabIndex = 11;
+            // 
+            // cmbActivityStatus
+            // 
+            this.cmbActivityStatus.AutoResize = false;
+            this.cmbActivityStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cmbActivityStatus.Depth = 0;
+            this.cmbActivityStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cmbActivityStatus.DropDownHeight = 174;
+            this.cmbActivityStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbActivityStatus.DropDownWidth = 121;
+            this.cmbActivityStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cmbActivityStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmbActivityStatus.FormattingEnabled = true;
+            this.cmbActivityStatus.Hint = "Aktivite Durumunu Seç";
+            this.cmbActivityStatus.IntegralHeight = false;
+            this.cmbActivityStatus.ItemHeight = 43;
+            this.cmbActivityStatus.Location = new System.Drawing.Point(191, 210);
+            this.cmbActivityStatus.MaxDropDownItems = 4;
+            this.cmbActivityStatus.MouseState = MaterialSkin.MouseState.OUT;
+            this.cmbActivityStatus.Name = "cmbActivityStatus";
+            this.cmbActivityStatus.Size = new System.Drawing.Size(407, 49);
+            this.cmbActivityStatus.StartIndex = 0;
+            this.cmbActivityStatus.TabIndex = 10;
             // 
             // btnGeri5
             // 
@@ -585,7 +633,7 @@
             this.txtAge.HideSelection = true;
             this.txtAge.Hint = "Yaşınızı Griniz";
             this.txtAge.LeadingIcon = null;
-            this.txtAge.Location = new System.Drawing.Point(191, 109);
+            this.txtAge.Location = new System.Drawing.Point(191, 35);
             this.txtAge.MaxLength = 32767;
             this.txtAge.MouseState = MaterialSkin.MouseState.OUT;
             this.txtAge.Name = "txtAge";
@@ -618,29 +666,6 @@
             this.ımageList1.Images.SetKeyName(7, "password_FILL0_wght400_GRAD0_opsz48.png");
             this.ımageList1.Images.SetKeyName(8, "settings_accessibility_FILL0_wght400_GRAD0_opsz48.png");
             this.ımageList1.Images.SetKeyName(9, "transgender_FILL0_wght400_GRAD0_opsz48.png");
-            // 
-            // cmbActivityStatus
-            // 
-            this.cmbActivityStatus.AutoResize = false;
-            this.cmbActivityStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cmbActivityStatus.Depth = 0;
-            this.cmbActivityStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cmbActivityStatus.DropDownHeight = 174;
-            this.cmbActivityStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbActivityStatus.DropDownWidth = 121;
-            this.cmbActivityStatus.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.cmbActivityStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cmbActivityStatus.FormattingEnabled = true;
-            this.cmbActivityStatus.Hint = "Aktivite Durumunu Seç";
-            this.cmbActivityStatus.IntegralHeight = false;
-            this.cmbActivityStatus.ItemHeight = 43;
-            this.cmbActivityStatus.Location = new System.Drawing.Point(191, 210);
-            this.cmbActivityStatus.MaxDropDownItems = 4;
-            this.cmbActivityStatus.MouseState = MaterialSkin.MouseState.OUT;
-            this.cmbActivityStatus.Name = "cmbActivityStatus";
-            this.cmbActivityStatus.Size = new System.Drawing.Size(407, 49);
-            this.cmbActivityStatus.StartIndex = 0;
-            this.cmbActivityStatus.TabIndex = 10;
             // 
             // Form2
             // 
@@ -700,5 +725,6 @@
         private MaterialSkin.Controls.MaterialButton btnKaydetBitir;
         private MaterialSkin.Controls.MaterialTextBox2 txtAge;
         private MaterialSkin.Controls.MaterialComboBox cmbActivityStatus;
+        private MaterialSkin.Controls.MaterialComboBox cmbGender;
     }
 }

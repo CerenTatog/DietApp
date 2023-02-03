@@ -68,9 +68,9 @@ namespace Diet.UI
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
-            //int Id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());                             
+            int Id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
             //int ıd = Convert.ToInt32 (db.CategoryRepository.GetById(Id));
-            Category UpdateCat = new Category();
+            Category UpdateCat = db.CategoryRepository.GetById(Id);
             UpdateCat.CategoryName = txtKategoriAdi.Text;
             UpdateCat.Description = txtTanimlama.Text;
             db.CategoryRepository.Update(UpdateCat);

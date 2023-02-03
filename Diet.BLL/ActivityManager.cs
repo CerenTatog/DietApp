@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using Diet.DAL.Entities;
@@ -42,13 +43,15 @@ namespace Diet.BLL
                              u.ID,
                              ua.ActivityID,
                              ua.Duration,
-                             a.LostCalorie
-                         }).Where(x => x.ID == UserId).FirstOrDefault();
-            int Activity = query.ActivityID;
+                             a.LostCalorie,
+                             TotalLostCalorie = ua.Duration * a.LostCalorie
+                         }).Where(x => x.ID == UserId).ToList();
+            //int Activity = query.ActivityID;
             //double Duration = query.Duration;
             //double LostCalorie = query.LostCalorie;
             // double LostCalorieByAcrivity =LostCalorie * Duration;
-            double LostCalorieByAcrivity = query.Duration * query.LostCalorie;
+            
+            double LostCalorieByAcrivity = Convert.ToDouble(query.Select(x=>x.TotalLostCalorie)); //??Burası düzenlenecek ??
 
 
             return LostCalorieByAcrivity;

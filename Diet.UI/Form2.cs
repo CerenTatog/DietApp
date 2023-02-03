@@ -137,8 +137,7 @@ namespace Diet.UI
         {
 
             newuserdetail.Age = Convert.ToInt32(txtAge.Text);
-            newuserdetail.ActivityStatus = (ActivityStatus)cmbActivityStatus.SelectedValue; //ActivityStatus Enum olarak var İnt Diet.Model.Activitystatus türüne dönüşemez uyarısı.
-
+            newuserdetail.ActivityStatus = (ActivityStatus)cmbActivityStatus.SelectedValue; 
             db.UserRepository.Create(newuser);
             db.UserDetailRepository.Create(newuserdetail);
             Form1 frm1 = new Form1();

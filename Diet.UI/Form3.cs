@@ -71,22 +71,22 @@ namespace Diet.UI
             mlAtistirmalikKalori.Text = foodManager.CalculateCalorieIntake(_currentUser.ID).FirstOrDefault(x => x.MealType == MealType.Snack)?.TotalCalori.ToString();
 
             //Toplam alınan kalori miktarı(öğün toplamı)
-            double toplamAlınanKalori = (foodManager.CalculateCalorieIntake(_currentUser.ID).FirstOrDefault(x => x.MealType == MealType.Breakfast).TotalCalori + foodManager.CalculateCalorieIntake(_currentUser.ID).FirstOrDefault(x => x.MealType == MealType.Lunch).TotalCalori + foodManager.CalculateCalorieIntake(_currentUser.ID).FirstOrDefault(x => x.MealType == MealType.Dinner).TotalCalori + foodManager.CalculateCalorieIntake(_currentUser.ID).FirstOrDefault(x => x.MealType == MealType.Snack).TotalCalori);
+            double toplamAlınanKalori = 0; /*(foodManager.CalculateCalorieIntake(_currentUser.ID).FirstOrDefault(x => x.MealType == MealType.Breakfast).TotalCalori + foodManager.CalculateCalorieIntake(_currentUser.ID).FirstOrDefault(x => x.MealType == MealType.Lunch).TotalCalori + foodManager.CalculateCalorieIntake(_currentUser.ID).FirstOrDefault(x => x.MealType == MealType.Dinner).TotalCalori + foodManager.CalculateCalorieIntake(_currentUser.ID).FirstOrDefault(x => x.MealType == MealType.Snack).TotalCalori);*/
             mlToplamAlinanKalori.Text = toplamAlınanKalori.ToString();
 
             
             //Harcanan kalori
             //lblAdımSayisi.Text = (activityManager.CalculateConsumedCalorieByStep(_currentUser.ID)).ToString();//form6'dan veri gelecek.
-            lblAktivite.Text = (activityManager.CalculateConsumedCalorieByActivity(_currentUser.ID)).ToString();
-            //Harcanan Toplam Kalori
-            double toplamVerilenKalori = (activityManager.TotalCalculateConsumedCalorie(_currentUser.ID));
-            lblHarcananToplamKalori.Text = toplamVerilenKalori.ToString();
+            //lblAktivite.Text = (activityManager.CalculateConsumedCalorieByActivity(_currentUser.ID)).ToString();
+            ////Harcanan Toplam Kalori
+            //double toplamVerilenKalori = (activityManager.TotalCalculateConsumedCalorie(_currentUser.ID));
+            //lblHarcananToplamKalori.Text = toplamVerilenKalori.ToString();   //????
 
             //Günlük Toplam Kalori
 
-            lblToplamKalori.Text = Math.Abs((toplamAlınanKalori - toplamVerilenKalori)).ToString();
-            //farkıyla alakalı bir gösterim.
-            mlKalanKalori.Text = (foodManager.CalculateDailyCalorie(_currentUser.ID) - (toplamAlınanKalori - toplamVerilenKalori)).ToString();
+            //lblToplamKalori.Text = Math.Abs((toplamAlınanKalori - toplamVerilenKalori)).ToString();
+            ////farkıyla alakalı bir gösterim.
+            //mlKalanKalori.Text = (foodManager.CalculateDailyCalorie(_currentUser.ID) - (toplamAlınanKalori - toplamVerilenKalori)).ToString();
 
             //Kullanıcı Bilgileri /Profil
             int yas = db.UserDetailRepository.GetAll().Select(x=>x.Age).FirstOrDefault();
@@ -116,7 +116,7 @@ namespace Diet.UI
             dataGridView8.DataSource = reportManager.WhichFoodsEatenAtLunch(_currentUser.ID);
             dataGridView9.DataSource = reportManager.WhichFoodsEatenAtDinner(_currentUser.ID);
             dataGridView10.DataSource = reportManager.WhichFoodsEatenAtSnack(_currentUser.ID);
-            dataGridView11.DataSource = reportManager.MostEatenFood(_currentUser.ID);
+            //dataGridView11.DataSource = reportManager.MostEatenFood(_currentUser.ID); //???
             
         }
 
@@ -224,6 +224,13 @@ namespace Diet.UI
         private void dataGridView8_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+            Form11 frm11 = new Form11();
+            frm11.Show();
+            Hide();
         }
     }
 }

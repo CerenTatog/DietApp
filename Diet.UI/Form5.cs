@@ -17,7 +17,7 @@ namespace Diet.UI
     public partial class Form5 : MaterialForm
     {
         UnitOfWork db = new UnitOfWork();
-        MealType _mealType = MealType.Breakfast;
+        MealType _mealType;
         User _currentUser;
         public Form5()
         {
@@ -39,7 +39,9 @@ namespace Diet.UI
             _mealType = mealType;
             _currentUser = currentUser;
         }
-
+        //listbox düzeltilecek.
+        //seçilen besine göre picturebox
+        //seçilen besine göre "miktar" alanı quntityytpe olacak.
         private void Form5_Load(object sender, EventArgs e)
         {
             materialLabel5.Text = _yazi;
@@ -91,14 +93,9 @@ namespace Diet.UI
 
                 //burası düzeltilecek.görüntüde sıkıntı var. 
                 //mealtype'ı düzelt.
-                foreach (MealFood item in ogunListesi)
-                {
-                    materialListBox1.Items.Add(new MaterialListBoxItem()
-                    {
-                        Text = item.Food.FoodName,
-                        Tag = item
-                    }) ;
-                }
+                materialListBox1.Items.Add(yeniOgun.ID);
+
+               
                 
             }
             else

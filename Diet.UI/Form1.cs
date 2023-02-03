@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Diet.BLL;
+using Diet.BLL.Helper;
 using Diet.DAL.Entities;
 using Diet.DAL.GenericRepository;
 using MaterialSkin;
@@ -17,24 +18,22 @@ namespace Diet.UI
 {
     public partial class Form1 : MaterialForm
     {
-        UserManager userManager;
         public Form1()
         {
             InitializeComponent();
-            userManager = new UserManager();
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey900, Primary.BlueGrey900, Primary.BlueGrey900, Accent.LightBlue200, TextShade.WHITE);
-            
+
         }
-       
+
         UnitOfWork db = new UnitOfWork();
-        
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           
+
         }
 
         private void btnGirisYap_Click(object sender, EventArgs e)
@@ -49,7 +48,7 @@ namespace Diet.UI
             else if (user != null)
             {
                 var query = db.UserRepository.GetAll().Count(x => x.Email == txtKullaniciAdi.Text);
-                if (user.Password == userManager.EncryptoPassword(txtSifre.Text))
+                if (user.Password == txtSifre.Text.EncryptoPassword())
                 {
 
                     Form4 frm4 = new Form4();
@@ -70,9 +69,9 @@ namespace Diet.UI
                 MessageBox.Show("Kullanıcı Adını Kontrol Ediniz");
             }
         }
-    
-            
-                     
+
+
+
 
         private void btnUyelikOlustur_Click(object sender, EventArgs e)
         {

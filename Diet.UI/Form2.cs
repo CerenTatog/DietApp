@@ -12,6 +12,8 @@ using System.Windows.Forms;
 using Diet.DAL.GenericRepository;
 using Diet.Model;
 using Diet.BLL;
+using Diet.BLL.Helper;
+using Diet.Model.Dto;
 
 namespace Diet.UI
 {
@@ -20,7 +22,6 @@ namespace Diet.UI
         UnitOfWork db = new UnitOfWork();
         User newuser = new User();
         UserDetail newuserdetail = new UserDetail();
-        UserManager um = new UserManager();
 
         public Form2()
         {
@@ -33,29 +34,25 @@ namespace Diet.UI
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            //var query = (from ud in db.UserDetailRepository.GetAll()
-            //            select new {ud.ActivityStatus}).ToList();
-
-            List<string> activityStatuses = new List<string>();
-            activityStatuses.Add(ActivityStatus.NonActive.ToString());
-            activityStatuses.Add(ActivityStatus.MidActive.ToString());
-            activityStatuses.Add(ActivityStatus.Active.ToString());
-            activityStatuses.Add(ActivityStatus.FullActive.ToString());
-            foreach (var item in activityStatuses)
+            List<ActivityStatus> activityStatusList = Enum.GetValues(typeof(ActivityStatus)).Cast<ActivityStatus>().ToList();
+            List<CustomSelectItem> activityTypeList = activityStatusList.Select(x=> new CustomSelectItem
             {
-                cmbActivityStatus.Items.Add(item);
-               
-            }
-            List<string> gender = new List<string>();
-            gender.Add(Gender.Women.ToString());
-            gender.Add(Gender.Men.ToString());
-            foreach (var item in gender)
-            {
-                cmbGender.Items.Add(item);
-            }
-            //cmbActivityStatus.DisplayMember = "Label";
-            //cmbActivityStatus.ValueMember = "Value";
+                Label = x.GetEnumDisplayName(),
+                Value = (int)x
+            }).ToList();
+            cmbActivityStatus.DataSource = activityTypeList;
+            cmbActivityStatus.DisplayMember = "Label";
+            cmbActivityStatus.ValueMember = "Value";
 
+            List<Gender> genderList = Enum.GetValues(typeof(Gender)).Cast<Gender>().ToList();
+            List<CustomSelectItem> genderTypeList = genderList.Select(x => new CustomSelectItem
+            {
+                Label = x.GetEnumDisplayName(),
+                Value = (int)x
+            }).ToList();
+            cmbGender.DataSource = genderTypeList;
+            cmbGender.DisplayMember = "Label";
+            cmbGender.ValueMember = "Value";
         }
 
         private void btnIlerle_Click(object sender, EventArgs e)
@@ -69,7 +66,7 @@ namespace Diet.UI
 
         private void btnIlerle2_Click(object sender, EventArgs e)
         {
-            if (um.CheckEmailFormat(txtEmail.Text) == true)
+            if (txtEmail.Text.CheckEmailFormat() == true)
             {
                 var query = db.UserRepository.GetAll().Count(x => x.Email == txtEmail.Text);
                 if (query==0)
@@ -99,9 +96,9 @@ namespace Diet.UI
         {
             if (txtSifre.Text == txtTekrarSifre.Text)
             {
-                if (um.IsValidPassword(txtSifre.Text) == true)
+                if (txtSifre.Text.IsValidPassword() == true)
                 {
-                    newuser.Password = um.EncryptoPassword(txtSifre.Text);
+                    newuser.Password = txtSifre.Text.EncryptoPassword();
                     materialTabControl1.SelectedTab = tabPage4;
                 }
                 else
@@ -137,7 +134,8 @@ namespace Diet.UI
         {
 
             newuserdetail.Age = Convert.ToInt32(txtAge.Text);
-            newuserdetail.ActivityStatus = (ActivityStatus)cmbActivityStatus.SelectedValue; 
+            newuserdetail.ActivityStatus = (ActivityStatus)cmbActivityStatus.SelectedValue;
+            newuserdetail.Gender = (Gender)cmbGender.SelectedValue;
             db.UserRepository.Create(newuser);
             db.UserDetailRepository.Create(newuserdetail);
             Form1 frm1 = new Form1();

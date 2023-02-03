@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -23,14 +24,20 @@ namespace Diet.Model
     }
     public enum Gender
     {
-        Men=1,
+        [Display(Name = "Erkek")]
+        Men =1,
+        [Display(Name = "Kadın")]
         Women
     }
     public enum ActivityStatus
     {
+        [Display(Name ="Aktif Değil")]
         NonActive=1,
+        [Display(Name = "Orta Aktif")]
         MidActive,
+        [Display(Name = "Aktif")]
         Active,
+        [Display(Name = "Çok Aktif")]
         FullActive
 
     }

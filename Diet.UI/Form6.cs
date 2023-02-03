@@ -22,6 +22,7 @@ namespace Diet.UI
         
         UnitOfWork db = new UnitOfWork();
         User _currentUser;
+        ActivityManager activityManager = new ActivityManager();
         public Form6()
         {
             InitializeComponent();
@@ -45,7 +46,7 @@ namespace Diet.UI
             //LostCalorie User ekranına gönderilmeli.
             var query = (from ua in db.UserActivityRepository.GetAll()
                          select new { ua.UserID, ua.StepCount }).Where(x => x.UserID == _currentUser.ID);
-            double LostCalorieByStep= ActivityManager.CalculateConsumedCalorieByStep(_currentUser.ID);
+            double LostCalorieByStep= activityManager.CalculateConsumedCalorieByStep(_currentUser.ID);
             UserActivity newuserAct = new UserActivity();
             newuserAct.UserID = _currentUser.ID;
             newuserAct.ActivityID = 1;

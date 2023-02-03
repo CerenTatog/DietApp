@@ -35,6 +35,12 @@ namespace Diet.UI
             {
                 cmbMiktarTuru.Items.Add(item);
             }
+            var query = from c in db.CategoryRepository.GetAll()
+                        select new
+                        {
+                            c.CategoryName
+                        };
+            cmbCategories.DataSource = query.ToList();
         }
         public Form8(User currentUser)
         {
@@ -54,6 +60,12 @@ namespace Diet.UI
             {
                 cmbMiktarTuru.Items.Add(item);
             }
+            var query = from c in db.CategoryRepository.GetAll()
+                        select new
+                        {
+                            c.CategoryName
+                        };
+            cmbCategories.DataSource = query.ToList();
         }
         UnitOfWork db = new UnitOfWork();
         
@@ -66,7 +78,8 @@ namespace Diet.UI
             Food food = new Food();
             food.FoodName = txtBesinAdi.Text;            
             food.Carbonhydrate =Convert.ToDouble(txtKarbonhıdrat.Text);
-            food.QuantityType =(QuantityType)(cmbMiktarTuru.SelectedIndex);
+            food.QuantityType =(QuantityType)cmbMiktarTuru.SelectedIndex;
+            food.CategoryID = cmbCategories.SelectedIndex+1;
             food.Fat = Convert.ToDouble(txtYag.Text);
             food.Protein = Convert.ToDouble(txtProtein.Text);
             food.Calorie =Convert.ToDouble(txtKalori.Text);

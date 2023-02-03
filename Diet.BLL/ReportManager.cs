@@ -283,9 +283,9 @@ namespace Diet.BLL
         public List<MostEatenFoods> MostEatenFood(int UserId)
         {
             var userMeal = db.MealRepository.GetAll().Where(x => x.UserID == UserId);
-            var query = (from um in userMeal
-                         from f in db.FoodRepository.GetAll()
-                         join mf in db.MealFoodRepository.GetAll() on f.ID equals mf.FoodID
+            var query = (from mf in db.MealFoodRepository.GetAll()
+                         join f in db.FoodRepository.GetAll() on mf.FoodID equals f.ID
+                         join um in userMeal on mf.MealID equals um.ID
                          select new
                          {
                              f.FoodName,

@@ -26,10 +26,17 @@ namespace Diet.DAL.GenericRepository
 
         public void Delete(int Id)
         {
-            var entity = GetById(Id);
-            _db.Set<TEntity>().Attach(entity);
-            _db.Entry(entity).State = EntityState.Deleted;
+            TEntity entityToDelete = _db.Set<TEntity>().Find(Id);
+            Delete(entityToDelete);
             _db.SaveChanges();
+        }
+        public virtual void Delete(TEntity Entity)
+        {
+            if (_db.Entry(Entity).State == EntityState.Detached) //Concurrency için 
+            {
+                _db.Set<TEntity>().Attach(Entity);
+            }
+            _db.Set<TEntity>().Remove(Entity);
         }
 
         public IQueryable<TEntity> GetAll()

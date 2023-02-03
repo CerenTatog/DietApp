@@ -114,7 +114,7 @@ namespace Diet.UI
             dataGridView3.DataSource = reportManager.WeeklyDrinkingWater(_currentUser.ID);
             dataGridView4.DataSource = reportManager.CalculateActivity(_currentUser.ID);
             //şüpheli - gün filtresi koymadık. hem label hem de liste için activity manager'da method tanımlanması gerekli.
-            dataGridView5.DataSource = db.UserActivityRepository.GetAll().Select(x => x.StepCount);
+            //dataGridView5.DataSource = db.UserActivityRepository.GetAll().Select(x => x.StepCount);
             dataGridView6.DataSource = reportManager.CalculateWeight(_currentUser.ID);
             dataGridView7.DataSource = reportManager.WhichFoodsEatenByMealType(_currentUser.ID,MealType.Breakfast);
             dataGridView8.DataSource = reportManager.WhichFoodsEatenByMealType(_currentUser.ID, MealType.Lunch);

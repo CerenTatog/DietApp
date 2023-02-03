@@ -51,7 +51,7 @@ namespace Diet.UI
                 if (user.Password == txtSifre.Text.EncryptoPassword())
                 {
 
-                    Form4 frm4 = new Form4();
+                    Form3 frm4 = new Form3(user);
                     frm4.Show();
                     Hide();
                 }

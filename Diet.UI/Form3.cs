@@ -114,7 +114,7 @@ namespace Diet.UI
             dataGridView3.DataSource = reportManager.WeeklyDrinkingWater(_currentUser.ID);
             dataGridView4.DataSource = reportManager.CalculateActivity(_currentUser.ID);
             //şüpheli - gün filtresi koymadık. hem label hem de liste için activity manager'da method tanımlanması gerekli.
-            dataGridView5.DataSource = db.UserActivityRepository.GetAll().Select(x => x.StepCount);
+            //dataGridView5.DataSource = db.UserActivityRepository.GetAll().Select(x => x.StepCount);
             dataGridView6.DataSource = reportManager.CalculateWeight(_currentUser.ID);
             dataGridView7.DataSource = reportManager.WhichFoodsEatenAtBreakfast(_currentUser.ID);
             dataGridView8.DataSource = reportManager.WhichFoodsEatenAtLunch(_currentUser.ID);
@@ -224,12 +224,25 @@ namespace Diet.UI
         private void mfabAktiviteEkle_Click(object sender, EventArgs e)
         {
             Form7 form7 = new Form7(_currentUser);
+            form7.FormClosing += Form7_FormClosing;
             form7.ShowDialog();
+        }
+
+        private void Form7_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Form3_Load(sender, e);
         }
 
         private void dataGridView8_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+            Form11 frm11 = new Form11();
+            frm11.Show();
+            Hide();
         }
     }
 }

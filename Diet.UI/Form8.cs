@@ -78,7 +78,7 @@ namespace Diet.UI
             Food food = new Food();
             food.FoodName = txtBesinAdi.Text;            
             food.Carbonhydrate =Convert.ToDouble(txtKarbonhıdrat.Text);
-            food.QuantityType =(QuantityType)cmbMiktarTuru.SelectedIndex;
+            food.Portion = (QuantityType)cmbMiktarTuru.SelectedIndex;
             food.CategoryID = cmbCategories.SelectedIndex+1;
             food.Fat = Convert.ToDouble(txtYag.Text);
             food.Protein = Convert.ToDouble(txtProtein.Text);
@@ -90,7 +90,7 @@ namespace Diet.UI
         void LoadFood()
         {
             var query = from f in db.FoodRepository.GetAll()
-                        select new { f.ID,f.FoodName,f.QuantityType, f.Carbonhydrate, f.Fat, f.Protein,f.Calorie };
+                        select new { f.ID,f.FoodName,f.Portion, f.Carbonhydrate, f.Fat, f.Protein,f.Calorie };
             dataGridView1.DataSource = query.ToList();
         }
 
@@ -124,7 +124,7 @@ namespace Diet.UI
             Food UpdatedFood = new Food();
             UpdatedFood.FoodName = txtBesinAdi.Text;
             UpdatedFood.Carbonhydrate =Convert.ToInt32(txtKarbonhıdrat.Text);
-            UpdatedFood.QuantityType =(QuantityType)cmbMiktarTuru.SelectedIndex;
+            UpdatedFood.Portion = (QuantityType)cmbMiktarTuru.SelectedIndex;
             UpdatedFood.Fat =Convert.ToInt32(txtYag.Text);
             UpdatedFood.Protein =Convert.ToInt32(txtProtein.Text);
             UpdatedFood.Calorie =Convert.ToInt32(txtKalori.Text);
@@ -137,6 +137,11 @@ namespace Diet.UI
             Form3 Frm3 = new Form3();
             Frm3.Show();
             Hide();
+        }
+
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

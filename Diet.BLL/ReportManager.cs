@@ -266,7 +266,7 @@ namespace Diet.BLL
                          {
                              c.CategoryName,
                              f.FoodName,
-                             f.QuantityType,
+                             f.Portion,
                              mf.Quantity,
                              m.MealDate,
                              m.MealType
@@ -298,7 +298,7 @@ namespace Diet.BLL
                          {
                              c.CategoryName,
                              f.FoodName,
-                             f.QuantityType,
+                             f.Portion,
                              mf.Quantity,
                              m.MealDate,
                              m.MealType
@@ -329,7 +329,7 @@ namespace Diet.BLL
                          {
                              c.CategoryName,
                              f.FoodName,
-                             f.QuantityType,
+                             f.Portion,
                              mf.Quantity,
                              m.MealDate,
                              m.MealType
@@ -360,7 +360,7 @@ namespace Diet.BLL
                          {
                              c.CategoryName,
                              f.FoodName,
-                             f.QuantityType,
+                             f.Portion,
                              mf.Quantity,
                              m.MealDate,
                              m.MealType
@@ -392,7 +392,7 @@ namespace Diet.BLL
                              um.UserID,
                              c.CategoryName,
                              f.FoodName,
-                             f.QuantityType,
+                             f.Portion,
                              mf.Quantity
                          }).ToList();
             var groupQuery = (from gq in query

@@ -26,6 +26,7 @@ namespace Diet.Model
         [Required]
         [StringLength(80)]
         public string Email { get; set; }
+        
         public UserType UserType { get; set; }
 
        

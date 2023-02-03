@@ -28,7 +28,7 @@ namespace Diet.UI
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey900, Primary.BlueGrey900, Primary.BlueGrey900, Accent.LightBlue200, TextShade.WHITE);
             
         }
-        //DietAppContext db = new DietAppContext();
+       
         UnitOfWork db = new UnitOfWork();
         
 

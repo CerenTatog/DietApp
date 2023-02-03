@@ -93,7 +93,7 @@ namespace Diet.UI
 
                 //burası düzeltilecek.görüntüde sıkıntı var. 
                 //mealtype'ı düzelt.
-                materialListBox1.Items.Add(yeniOgun.ID);
+               // materialListBox1.Items.Add(yeniOgun.ID);
 
                
                 

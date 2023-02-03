@@ -20,6 +20,8 @@ namespace Diet.UI
     {
         UnitOfWork db = new UnitOfWork();
         ActivityManager activityManager = new ActivityManager();
+        User _currentUser = null;
+        
         public Form7()
         {
             InitializeComponent();
@@ -28,6 +30,8 @@ namespace Diet.UI
         {
             InitializeComponent();
             //eşitlenmesi gerekiyor. globalde tanımlanıp
+            _currentUser = currentUser;
+           
         }
 
         private void Form7_Load(object sender, EventArgs e)
@@ -38,20 +42,34 @@ namespace Diet.UI
                              u.ID,
                              u.ActivityName
                          }).ToList();
-            cmbActivities.Items.Add(query);
+           
+            cmbActivities.DataSource = db.ActivityRepository.GetAll().Select(x => new { x.ID, x.ActivityName }).ToList();
+            cmbActivities.DisplayMember = "ActivityName";
+            cmbActivities.ValueMember = "ID";
         }
 
         private void btnAddActivity_Click(object sender, EventArgs e)
         {
-            int ID = 1;//Kullanıcı giriş yaptığında tüm formlara gönderilecek.
-            UserActivity NewActivity = new UserActivity();
-            NewActivity.ActivityID = cmbActivities.SelectedIndex;
-            NewActivity.ActivityTime = DateTime.Now;
-            NewActivity.Duration = (double)nmrDuration.Value;
-            double LostCalorieByAcrivity = activityManager.CalculateConsumedCalorieByActivity(ID); //Bu değer User Formuna gönderilmeli verilen kalori chart ına
-            NewActivity.CalculatedCalorie = LostCalorieByAcrivity;
-            db.UserActivityRepository.Create(NewActivity);
-            lblKCAL.Text = LostCalorieByAcrivity.ToString() + " kCal TEBRİKLER:)";
+            if (cmbActivities.SelectedValue !=null)
+            {
+                UserActivity NewActivity = new UserActivity();
+
+                NewActivity.ActivityID = (int)cmbActivities.SelectedValue;
+                NewActivity.UserID = _currentUser.ID;
+                NewActivity.ActivityTime = DateTime.Now;
+                NewActivity.Duration = (double)nmrDuration.Value;                             
+                NewActivity.CalculatedCalorie = db.ActivityRepository.GetById(NewActivity.ActivityID).LostCalorie * NewActivity.Duration; 
+                db.UserActivityRepository.Create(NewActivity);
+                lblKCAL.Text = NewActivity.CalculatedCalorie.ToString() + " kCal TEBRİKLER:)";
+                
+            }
+            else
+            {
+                MessageBox.Show("Lütfen Aktivite Giriniz");
+            }
+           
         }
+
+        
     }
 }

@@ -43,8 +43,7 @@
             this.lblKCAL.AutoSize = true;
             this.lblKCAL.Depth = 0;
             this.lblKCAL.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblKCAL.Location = new System.Drawing.Point(168, 77);
-            this.lblKCAL.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblKCAL.Location = new System.Drawing.Point(224, 95);
             this.lblKCAL.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblKCAL.Name = "lblKCAL";
             this.lblKCAL.Size = new System.Drawing.Size(32, 19);
@@ -56,8 +55,7 @@
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(7, 143);
-            this.materialLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.materialLabel1.Location = new System.Drawing.Point(9, 176);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(162, 19);
@@ -69,8 +67,7 @@
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.Location = new System.Drawing.Point(7, 193);
-            this.materialLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.materialLabel2.Location = new System.Drawing.Point(9, 238);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(219, 19);
@@ -82,8 +79,7 @@
             this.materialLabel3.AutoSize = true;
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel3.Location = new System.Drawing.Point(379, 193);
-            this.materialLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.materialLabel3.Location = new System.Drawing.Point(505, 238);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(24, 19);
@@ -104,26 +100,26 @@
             this.cmbActivities.FormattingEnabled = true;
             this.cmbActivities.IntegralHeight = false;
             this.cmbActivities.ItemHeight = 43;
-            this.cmbActivities.Location = new System.Drawing.Point(302, 123);
-            this.cmbActivities.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbActivities.Location = new System.Drawing.Point(403, 151);
+            this.cmbActivities.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbActivities.MaxDropDownItems = 4;
             this.cmbActivities.MouseState = MaterialSkin.MouseState.OUT;
             this.cmbActivities.Name = "cmbActivities";
-            this.cmbActivities.Size = new System.Drawing.Size(261, 49);
+            this.cmbActivities.Size = new System.Drawing.Size(347, 49);
             this.cmbActivities.StartIndex = 0;
             this.cmbActivities.TabIndex = 4;
             // 
             // nmrDuration
             // 
-            this.nmrDuration.Location = new System.Drawing.Point(302, 192);
-            this.nmrDuration.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nmrDuration.Location = new System.Drawing.Point(403, 236);
+            this.nmrDuration.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nmrDuration.Maximum = new decimal(new int[] {
             120,
             0,
             0,
             0});
             this.nmrDuration.Name = "nmrDuration";
-            this.nmrDuration.Size = new System.Drawing.Size(190, 20);
+            this.nmrDuration.Size = new System.Drawing.Size(253, 22);
             this.nmrDuration.TabIndex = 5;
             this.nmrDuration.Value = new decimal(new int[] {
             15,
@@ -138,8 +134,8 @@
             this.btnAddActivity.Depth = 0;
             this.btnAddActivity.HighEmphasis = true;
             this.btnAddActivity.Icon = null;
-            this.btnAddActivity.Location = new System.Drawing.Point(131, 249);
-            this.btnAddActivity.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.btnAddActivity.Location = new System.Drawing.Point(175, 306);
+            this.btnAddActivity.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnAddActivity.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAddActivity.Name = "btnAddActivity";
             this.btnAddActivity.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -153,9 +149,9 @@
             // 
             // Form7
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(611, 410);
+            this.ClientSize = new System.Drawing.Size(815, 505);
             this.Controls.Add(this.btnAddActivity);
             this.Controls.Add(this.nmrDuration);
             this.Controls.Add(this.cmbActivities);
@@ -163,8 +159,11 @@
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.lblKCAL);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form7";
+            this.Padding = new System.Windows.Forms.Padding(4, 79, 4, 4);
             this.Text = "Aktivite Ekle(Kullanıcı)";
+            
             this.Load += new System.EventHandler(this.Form7_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nmrDuration)).EndInit();
             this.ResumeLayout(false);

@@ -32,8 +32,8 @@ namespace Diet.UI
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey900, Primary.BlueGrey900, Primary.Amber400, Accent.Red100, TextShade.WHITE);
-            
-           
+
+
         }
         public Form3(User user)
         {
@@ -49,8 +49,8 @@ namespace Diet.UI
             //            select new { u.UserName, u.UserSurname, u.Email, u.CreatedDate };
             //dataGridViewKullaniciListesi.DataSource = query.ToList();
 
-           
-            
+
+
 
         }
 
@@ -60,23 +60,24 @@ namespace Diet.UI
             mlKarbonhidratg.Text = foodManager.DailyTakenCarbonhyrate(_currentUser.ID).ToString();
             mlProteing.Text = foodManager.DailyTakenProtein(_currentUser.ID).ToString();
             mlYagg.Text = foodManager.DailyTakenFat(_currentUser.ID).ToString();
-            
+
             //Öğünlere göre alınan kalori miktarları
-            mlKahvaltıKalori.Text = foodManager.CalculateCalorieIntake(_currentUser.ID).FirstOrDefault(x => x.MealType == MealType.Breakfast)?.TotalCalori.ToString();
+            var calculateCalorieIntake = foodManager.CalculateCalorieIntake(_currentUser.ID);
+            mlKahvaltıKalori.Text = calculateCalorieIntake.FirstOrDefault(x => x.MealType == MealType.Breakfast)?.TotalCalori.ToString();
 
-            mlOgleYemegiCalori.Text = foodManager.CalculateCalorieIntake(_currentUser.ID).FirstOrDefault(x => x.MealType == MealType.Lunch)?.TotalCalori.ToString();
+            mlOgleYemegiCalori.Text = calculateCalorieIntake.FirstOrDefault(x => x.MealType == MealType.Lunch)?.TotalCalori.ToString();
 
-            mlAksamYemegiKalori.Text = foodManager.CalculateCalorieIntake(_currentUser.ID).FirstOrDefault(x => x.MealType == MealType.Dinner)?.TotalCalori.ToString();
+            mlAksamYemegiKalori.Text = calculateCalorieIntake.FirstOrDefault(x => x.MealType == MealType.Dinner)?.TotalCalori.ToString();
 
-            mlAtistirmalikKalori.Text = foodManager.CalculateCalorieIntake(_currentUser.ID).FirstOrDefault(x => x.MealType == MealType.Snack)?.TotalCalori.ToString();
+            mlAtistirmalikKalori.Text = calculateCalorieIntake.FirstOrDefault(x => x.MealType == MealType.Snack)?.TotalCalori.ToString();
 
             //Toplam alınan kalori miktarı(öğün toplamı)
-            //double toplamAlınanKalori = (foodManager.CalculateCalorieIntake(_currentUser.ID).FirstOrDefault(x => x.MealType == MealType.Breakfast).TotalCalori + foodManager.CalculateCalorieIntake(_currentUser.ID).FirstOrDefault(x => x.MealType == MealType.Lunch).TotalCalori + foodManager.CalculateCalorieIntake(_currentUser.ID).FirstOrDefault(x => x.MealType == MealType.Dinner).TotalCalori + foodManager.CalculateCalorieIntake(_currentUser.ID).FirstOrDefault(x => x.MealType == MealType.Snack).TotalCalori);
+            double toplamAlınanKalori = calculateCalorieIntake.Sum(x=> x.TotalCalori);
             //mlToplamAlinanKalori.Text = toplamAlınanKalori.ToString();
 
-            
+
             //Harcanan kalori
-            //lblAdımSayisi.Text = (activityManager.CalculateConsumedCalorieByStep(_currentUser.ID)).ToString();//form6'dan veri gelecek.
+            lblAdımSayisi.Text = (activityManager.CalculateConsumedCalorieByStep(_currentUser.ID)).ToString();//form6'dan veri gelecek.
             lblAktivite.Text = (activityManager.CalculateConsumedCalorieByActivity(_currentUser.ID)).ToString();
             //Harcanan Toplam Kalori
             double toplamVerilenKalori = (activityManager.TotalCalculateConsumedCalorie(_currentUser.ID));
@@ -89,14 +90,14 @@ namespace Diet.UI
             //mlKalanKalori.Text = (foodManager.CalculateDailyCalorie(_currentUser.ID) - (toplamAlınanKalori - toplamVerilenKalori)).ToString();
 
             //Kullanıcı Bilgileri /Profil
-            int yas = db.UserDetailRepository.GetAll().Select(x=>x.Age).FirstOrDefault();
+            int yas = db.UserDetailRepository.GetAll().Select(x => x.Age).FirstOrDefault();
             lblUserYas.Text = yas.ToString();
             mlKalanKalorid.Text = foodManager.CalculateDailyCalorie(_currentUser.ID).ToString();
             mmlKilo.Text = mlKalanKalorid.Text;
             double mevcutKilo = db.UserDetailRepository.GetAll().Select(x => x.Weight).FirstOrDefault();
             lblMevcutKilo.Text = mevcutKilo.ToString();
             mlHedefKilo.Text = (mevcutKilo - 5).ToString();
-            
+
 
             //Kullanıcı Listesi -Sistem Raporları
             var query = from u in db.UserRepository.GetAll()
@@ -118,43 +119,43 @@ namespace Diet.UI
             dataGridView9.DataSource = reportManager.WhichFoodsEatenAtDinner(_currentUser.ID);
             dataGridView10.DataSource = reportManager.WhichFoodsEatenAtSnack(_currentUser.ID);
             //dataGridView11.DataSource = reportManager.MostEatenFood(_currentUser.ID);
-            
+
         }
 
         private void mfabKahvaltıEkle_Click(object sender, EventArgs e)
         {
             string ogun = materialLabel5.Text;
-            Form5 form5 = new Form5(ogun,Model.MealType.Breakfast,_currentUser);
+            Form5 form5 = new Form5(ogun, Model.MealType.Breakfast, _currentUser);
             form5.ShowDialog();
         }
 
         private void mfabOgleYemegiEkle_Click(object sender, EventArgs e)
         {
             string ogun = materialLabel6.Text;
-            Form5 form5 = new Form5(ogun,MealType.Lunch,_currentUser);
+            Form5 form5 = new Form5(ogun, MealType.Lunch, _currentUser);
             form5.ShowDialog();
         }
 
         private void mfabAksamYemegiEkle_Click(object sender, EventArgs e)
         {
             string ogun = materialLabel7.Text;
-            Form5 form5 = new Form5(ogun,MealType.Dinner,_currentUser);
+            Form5 form5 = new Form5(ogun, MealType.Dinner, _currentUser);
             form5.ShowDialog();
         }
 
         private void mfabAtıstırmalıkEkle_Click(object sender, EventArgs e)
         {
             string ogun = materialLabel8.Text;
-            Form5 form5 = new Form5(ogun,MealType.Snack,_currentUser);
+            Form5 form5 = new Form5(ogun, MealType.Snack, _currentUser);
             form5.ShowDialog();
         }
 
-        
+
         private void UrunEkle_Click(object sender, EventArgs e)
         {
             Form8 frm8 = new Form8(_currentUser);
             frm8.ShowDialog();
-            
+
 
         }
         //userıd
@@ -162,7 +163,7 @@ namespace Diet.UI
         {
             Form9 frm9 = new Form9(_currentUser);
             frm9.ShowDialog();
-         
+
         }
 
         private void materialLabel15_Click(object sender, EventArgs e)

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -150,6 +150,9 @@
             this.materialTextBox21 = new MaterialSkin.Controls.MaterialTextBox2();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.materialTabControl2 = new MaterialSkin.Controls.MaterialTabControl();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -171,6 +174,7 @@
             this.materialCard4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.tabPage6.SuspendLayout();
+            this.materialTabControl2.SuspendLayout();
             this.SuspendLayout();
             // 
             // materialTabControl1
@@ -192,6 +196,7 @@
             this.materialTabControl1.SelectedIndex = 0;
             this.materialTabControl1.Size = new System.Drawing.Size(1064, 686);
             this.materialTabControl1.TabIndex = 0;
+            this.materialTabControl1.TabIndexChanged += new System.EventHandler(this.materialTabControl1_TabIndexChanged);
             // 
             // tabPage1
             // 
@@ -439,6 +444,7 @@
             this.mfabAdımSayisiEkle.TabIndex = 12;
             this.mfabAdımSayisiEkle.Text = "materialFloatingActionButton7";
             this.mfabAdımSayisiEkle.UseVisualStyleBackColor = false;
+            this.mfabAdımSayisiEkle.Click += new System.EventHandler(this.mfabAdımSayisiEkle_Click);
             // 
             // kalori5
             // 
@@ -872,6 +878,7 @@
             this.materialFloatingActionButton5.TabIndex = 4;
             this.materialFloatingActionButton5.Text = "materialFloatingActionButton5";
             this.materialFloatingActionButton5.UseVisualStyleBackColor = true;
+            this.materialFloatingActionButton5.Click += new System.EventHandler(this.materialFloatingActionButton5_Click);
             // 
             // materialProgressBar1
             // 
@@ -1018,7 +1025,7 @@
             this.mmlAdim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.mmlAdim.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mmlAdim.Depth = 0;
-            this.mmlAdim.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.mmlAdim.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.mmlAdim.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.mmlAdim.Location = new System.Drawing.Point(107, 97);
             this.mmlAdim.MouseState = MaterialSkin.MouseState.HOVER;
@@ -1033,7 +1040,7 @@
             this.mmlKalori.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.mmlKalori.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mmlKalori.Depth = 0;
-            this.mmlKalori.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.mmlKalori.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.mmlKalori.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.mmlKalori.Location = new System.Drawing.Point(68, 75);
             this.mmlKalori.MouseState = MaterialSkin.MouseState.HOVER;
@@ -1048,7 +1055,7 @@
             this.mmlKilo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.mmlKilo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mmlKilo.Depth = 0;
-            this.mmlKilo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.mmlKilo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.mmlKilo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.mmlKilo.Location = new System.Drawing.Point(62, 54);
             this.mmlKilo.MouseState = MaterialSkin.MouseState.HOVER;
@@ -1063,7 +1070,7 @@
             this.mmlHedef.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.mmlHedef.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mmlHedef.Depth = 0;
-            this.mmlHedef.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.mmlHedef.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.mmlHedef.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.mmlHedef.Location = new System.Drawing.Point(68, 34);
             this.mmlHedef.MouseState = MaterialSkin.MouseState.HOVER;
@@ -1078,7 +1085,7 @@
             this.mmlBeslenme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.mmlBeslenme.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mmlBeslenme.Depth = 0;
-            this.mmlBeslenme.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.mmlBeslenme.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.mmlBeslenme.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.mmlBeslenme.Location = new System.Drawing.Point(91, 13);
             this.mmlBeslenme.MouseState = MaterialSkin.MouseState.HOVER;
@@ -1593,22 +1600,23 @@
             // 
             // chart1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
             this.chart1.Location = new System.Drawing.Point(17, 17);
             this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chart1.Series.Add(series3);
             this.chart1.Size = new System.Drawing.Size(285, 152);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.materialTabControl2);
             this.tabPage6.Controls.Add(this.materialSwitch1);
             this.tabPage6.Controls.Add(this.materialDivider1);
             this.tabPage6.Controls.Add(this.materialTextBox26);
@@ -1812,6 +1820,39 @@
             this.ımageList1.Images.SetKeyName(0, "user (1).png");
             this.ımageList1.Images.SetKeyName(1, "planner.png");
             // 
+            // materialTabControl2
+            // 
+            this.materialTabControl2.Controls.Add(this.tabPage8);
+            this.materialTabControl2.Controls.Add(this.tabPage9);
+            this.materialTabControl2.Depth = 0;
+            this.materialTabControl2.Location = new System.Drawing.Point(566, 181);
+            this.materialTabControl2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialTabControl2.Multiline = true;
+            this.materialTabControl2.Name = "materialTabControl2";
+            this.materialTabControl2.SelectedIndex = 0;
+            this.materialTabControl2.Size = new System.Drawing.Size(200, 100);
+            this.materialTabControl2.TabIndex = 8;
+            // 
+            // tabPage8
+            // 
+            this.tabPage8.Location = new System.Drawing.Point(4, 22);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage8.Size = new System.Drawing.Size(192, 74);
+            this.tabPage8.TabIndex = 0;
+            this.tabPage8.Text = "tabPage8";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // tabPage9
+            // 
+            this.tabPage9.Location = new System.Drawing.Point(4, 22);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage9.Size = new System.Drawing.Size(192, 74);
+            this.tabPage9.TabIndex = 1;
+            this.tabPage9.Text = "tabPage9";
+            this.tabPage9.UseVisualStyleBackColor = true;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1857,6 +1898,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
+            this.materialTabControl2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1980,5 +2022,8 @@
         private MaterialSkin.Controls.MaterialMultiLineTextBox mmlBeslenme;
         private MaterialSkin.Controls.MaterialLabel mlHedefDuzenle;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private MaterialSkin.Controls.MaterialTabControl materialTabControl2;
+        private System.Windows.Forms.TabPage tabPage8;
+        private System.Windows.Forms.TabPage tabPage9;
     }
 }

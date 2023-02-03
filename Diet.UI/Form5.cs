@@ -89,6 +89,8 @@ namespace Diet.UI
                 ogunListesi = new List<MealFood>();
                 ogunListesi.Add(yeniOgun);
 
+                //burası düzeltilecek.görüntüde sıkıntı var. 
+                //mealtype'ı düzelt.
                 foreach (MealFood item in ogunListesi)
                 {
                     materialListBox1.Items.Add(new MaterialListBoxItem()

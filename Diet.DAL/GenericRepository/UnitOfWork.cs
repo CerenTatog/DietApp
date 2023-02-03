@@ -26,6 +26,8 @@ namespace Diet.DAL.GenericRepository
         private Repository<UserBC> _userBcRepository;
         private Repository<UserWater> _userWaterRepository;
         private Repository<UserNotification> _userNotificationRepository;
+        private Repository<Category> _categoryRepository;
+        
         private bool _disposed = false;
         public Repository<User> UserRepository
         {
@@ -119,7 +121,17 @@ namespace Diet.DAL.GenericRepository
             }
         }
 
+        public Repository<Category> CategoryRepository
+        {
+            get
+            {
+                if (_categoryRepository == null)
+                    _categoryRepository = new Repository<Category>(_context);
+                return _categoryRepository;
+            }
+        }
 
+        
         protected virtual void Dispose(bool disposing)
         {
             if (!this._disposed)

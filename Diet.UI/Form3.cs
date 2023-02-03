@@ -48,6 +48,8 @@ namespace Diet.UI
                         select new { u.UserName, u.UserSurname, u.Email, u.CreatedDate };
             dataGridViewKullaniciListesi.DataSource = query.ToList();
 
+           
+            
 
         }
 
@@ -57,6 +59,7 @@ namespace Diet.UI
             mlKarbonhidratg.Text = foodManager.DailyTakenCarbonhyrate(/*_currentUser.ID*/0).ToString();
             mlProteing.Text = foodManager.DailyTakenProtein(/*_currentUser.ID*/0).ToString();
             mlYagg.Text = foodManager.DailyTakenFat(/*_currentUser.ID*/0).ToString();
+            
             //Öğünlere göre alınan kalori miktarları
             mlKahvaltıKalori.Text = foodManager.CalculateCalorieIntake(/*_currentUser.ID*/0).FirstOrDefault(x => x.MealType == MealType.Breakfast)?.TotalCalori.ToString();
 
@@ -163,6 +166,24 @@ namespace Diet.UI
         private void mfabSuEkle_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void materialTabControl1_TabIndexChanged(object sender, EventArgs e)
+        {
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.Amber100, Primary.Blue900, Primary.Amber400, Accent.Red100, TextShade.WHITE);
+
+        }
+
+        private void materialFloatingActionButton5_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            pictureBox1.ImageLocation = openFileDialog.FileName;
+        }
+
+        private void mfabAdımSayisiEkle_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -19,10 +19,11 @@ namespace Diet.Model
         public string FoodName { get; set; }
         public QuantityType QuantityType{ get; set; }
         public double Calorie { get; set; }
-        public int? CategoryID { get; set; }
+        public int CategoryID { get; set; }
         public double Carbonhydrate { get; set; }
         public double Fat { get; set; }
         public double Protein { get; set; }
+        public string FoodPicture { get; set; }
 
        
         [ForeignKey("CategoryID")]

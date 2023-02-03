@@ -77,6 +77,10 @@
     <Compile Include="Migrations\202302022042357_user_water_table.designer.cs">
       <DependentUpon>202302022042357_user_water_table.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202302031016435_foodpictureandcategoryıdnotnullable.cs" />
+    <Compile Include="Migrations\202302031016435_foodpictureandcategoryıdnotnullable.designer.cs">
+      <DependentUpon>202302031016435_foodpictureandcategoryıdnotnullable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -102,6 +106,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202302022042357_user_water_table.resx">
       <DependentUpon>202302022042357_user_water_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302031016435_foodpictureandcategoryıdnotnullable.resx">
+      <DependentUpon>202302031016435_foodpictureandcategoryıdnotnullable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

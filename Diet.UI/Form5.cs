@@ -17,8 +17,8 @@ namespace Diet.UI
     public partial class Form5 : MaterialForm
     {
         UnitOfWork db = new UnitOfWork();
-        MealType _mealType = MealType.Breakfast;
-        User _currentUser = null;
+        MealType _mealType = MealType.Breakfast;//kontrol edeceğim 
+        User _currentUser;
         public Form5()
         {
             InitializeComponent();
@@ -88,6 +88,8 @@ namespace Diet.UI
                 ogunListesi = new List<MealFood>();
                 ogunListesi.Add(yeniOgun);
 
+                //burası düzeltilecek.görüntüde sıkıntı var. 
+                //mealtype'ı düzelt.
                 foreach (MealFood item in ogunListesi)
                 {
                     materialListBox1.Items.Add(new MaterialListBoxItem()

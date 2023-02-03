@@ -12,6 +12,7 @@ namespace Diet.Model.Dto.Report
         public MealType MealType { get; set; } = MealType.Lunch;
         public string FoodName { get; set; }
         public double TotalQuantity { get; set; }
+        public int TotalCount { get; set; }
         
                                  
 

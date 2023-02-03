@@ -69,22 +69,12 @@
             this.mfabAksamYemegiEkle = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.mfabOgleYemegiEkle = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.mfabKahvaltıEkle = new MaterialSkin.Controls.MaterialFloatingActionButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblHarcananToplamKalori = new MaterialSkin.Controls.MaterialLabel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.mlYagg = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.mlProteing = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.mlKarbonhidratg = new System.Windows.Forms.Label();
-            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            this.mlKarbonHidrat = new MaterialSkin.Controls.MaterialLabel();
-            this.k_alınan2 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialProgressBar1 = new MaterialSkin.Controls.MaterialProgressBar();
-            this.mlToplamAlinanKalori = new MaterialSkin.Controls.MaterialLabel();
-            this.k_alınan = new MaterialSkin.Controls.MaterialLabel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataGridView11 = new System.Windows.Forms.DataGridView();
+            this.dataGridView10 = new System.Windows.Forms.DataGridView();
+            this.dataGridView9 = new System.Windows.Forms.DataGridView();
+            this.dataGridView8 = new System.Windows.Forms.DataGridView();
+            this.dataGridView7 = new System.Windows.Forms.DataGridView();
             this.materialLabel22 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel21 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabelhedef = new MaterialSkin.Controls.MaterialLabel();
@@ -129,13 +119,28 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dataGridViewKullaniciListesi = new System.Windows.Forms.DataGridView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.materialCard9 = new MaterialSkin.Controls.MaterialCard();
+            this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.materialCard8 = new MaterialSkin.Controls.MaterialCard();
+            this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.materialCard7 = new MaterialSkin.Controls.MaterialCard();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.materialCard6 = new MaterialSkin.Controls.MaterialCard();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.materialCard5 = new MaterialSkin.Controls.MaterialCard();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.materialCard4 = new MaterialSkin.Controls.MaterialCard();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.materialTabControl2 = new MaterialSkin.Controls.MaterialTabControl();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
             this.materialSwitch1 = new MaterialSkin.Controls.MaterialSwitch();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.materialTextBox26 = new MaterialSkin.Controls.MaterialTextBox2();
@@ -145,34 +150,33 @@
             this.materialTextBox21 = new MaterialSkin.Controls.MaterialTextBox2();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.materialTabControl2 = new MaterialSkin.Controls.MaterialTabControl();
-            this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.tabPage9 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.dataGridView5 = new System.Windows.Forms.DataGridView();
-            this.dataGridView6 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.dataGridView7 = new System.Windows.Forms.DataGridView();
-            this.dataGridView8 = new System.Windows.Forms.DataGridView();
-            this.dataGridView9 = new System.Windows.Forms.DataGridView();
-            this.dataGridView10 = new System.Windows.Forms.DataGridView();
-            this.dataGridView11 = new System.Windows.Forms.DataGridView();
+            this.k_alınan = new MaterialSkin.Controls.MaterialLabel();
+            this.materialProgressBar1 = new MaterialSkin.Controls.MaterialProgressBar();
+            this.k_alınan2 = new MaterialSkin.Controls.MaterialLabel();
+            this.mlKarbonHidrat = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.mlKarbonhidratg = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.mlProteing = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.mlYagg = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblHarcananToplamKalori = new MaterialSkin.Controls.MaterialLabel();
             this.lblToplamKalori = new System.Windows.Forms.Label();
+            this.mlToplamAlinanKalori = new MaterialSkin.Controls.MaterialLabel();
+            this.materialCard12 = new MaterialSkin.Controls.MaterialCard();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.materialCard2.SuspendLayout();
             this.materialCard1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
             this.materialCard11.SuspendLayout();
             this.materialCard10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -185,24 +189,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKullaniciListesi)).BeginInit();
             this.tabPage5.SuspendLayout();
             this.materialCard9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
             this.materialCard8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.materialCard7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.materialCard6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.materialCard5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.materialCard4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage6.SuspendLayout();
             this.materialTabControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView11)).BeginInit();
+            this.materialCard12.SuspendLayout();
             this.SuspendLayout();
             // 
             // materialTabControl1
@@ -228,6 +228,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.materialCard12);
             this.tabPage1.Controls.Add(this.materialLabel9);
             this.tabPage1.Controls.Add(this.materialLabel2);
             this.tabPage1.Controls.Add(this.materialLabel1);
@@ -235,13 +236,10 @@
             this.tabPage1.Controls.Add(this.materialFloatingActionButton10);
             this.tabPage1.Controls.Add(this.materialFloatingActionButton9);
             this.tabPage1.Controls.Add(this.mfabSuEkle);
-            this.tabPage1.Controls.Add(this.materialProgressBar3);
-            this.tabPage1.Controls.Add(this.materialProgressBar2);
             this.tabPage1.Controls.Add(this.materialDivider3);
             this.tabPage1.Controls.Add(this.materialDivider2);
             this.tabPage1.Controls.Add(this.materialCard2);
             this.tabPage1.Controls.Add(this.materialCard1);
-            this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.ImageKey = "planner.png";
             this.tabPage1.Location = new System.Drawing.Point(4, 23);
             this.tabPage1.Name = "tabPage1";
@@ -283,7 +281,7 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel1.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
-            this.materialLabel1.Location = new System.Drawing.Point(72, 437);
+            this.materialLabel1.Location = new System.Drawing.Point(35, 417);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(78, 17);
@@ -349,7 +347,7 @@
             // materialProgressBar3
             // 
             this.materialProgressBar3.Depth = 0;
-            this.materialProgressBar3.Location = new System.Drawing.Point(734, 164);
+            this.materialProgressBar3.Location = new System.Drawing.Point(670, 98);
             this.materialProgressBar3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialProgressBar3.Name = "materialProgressBar3";
             this.materialProgressBar3.Size = new System.Drawing.Size(230, 5);
@@ -358,7 +356,7 @@
             // materialProgressBar2
             // 
             this.materialProgressBar2.Depth = 0;
-            this.materialProgressBar2.Location = new System.Drawing.Point(416, 164);
+            this.materialProgressBar2.Location = new System.Drawing.Point(349, 98);
             this.materialProgressBar2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialProgressBar2.Name = "materialProgressBar2";
             this.materialProgressBar2.Size = new System.Drawing.Size(230, 5);
@@ -739,6 +737,7 @@
             // mfabKahvaltıEkle
             // 
             this.mfabKahvaltıEkle.AnimateShowHideButton = true;
+            this.mfabKahvaltıEkle.AutoSize = true;
             this.mfabKahvaltıEkle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.mfabKahvaltıEkle.Depth = 0;
             this.mfabKahvaltıEkle.Icon = null;
@@ -746,187 +745,11 @@
             this.mfabKahvaltıEkle.Mini = true;
             this.mfabKahvaltıEkle.MouseState = MaterialSkin.MouseState.HOVER;
             this.mfabKahvaltıEkle.Name = "mfabKahvaltıEkle";
-            this.mfabKahvaltıEkle.Size = new System.Drawing.Size(40, 40);
+            this.mfabKahvaltıEkle.Size = new System.Drawing.Size(157, 40);
             this.mfabKahvaltıEkle.TabIndex = 0;
             this.mfabKahvaltıEkle.Text = "materialFloatingActionButton1";
             this.mfabKahvaltıEkle.UseVisualStyleBackColor = false;
             this.mfabKahvaltıEkle.Click += new System.EventHandler(this.mfabKahvaltıEkle_Click);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.lblToplamKalori);
-            this.groupBox1.Controls.Add(this.lblHarcananToplamKalori);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.mlYagg);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.mlProteing);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.mlKarbonhidratg);
-            this.groupBox1.Controls.Add(this.materialLabel3);
-            this.groupBox1.Controls.Add(this.materialLabel4);
-            this.groupBox1.Controls.Add(this.mlKarbonHidrat);
-            this.groupBox1.Controls.Add(this.k_alınan2);
-            this.groupBox1.Controls.Add(this.materialProgressBar1);
-            this.groupBox1.Controls.Add(this.mlToplamAlinanKalori);
-            this.groupBox1.Controls.Add(this.k_alınan);
-            this.groupBox1.Location = new System.Drawing.Point(66, 23);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(954, 168);
-            this.groupBox1.TabIndex = 14;
-            this.groupBox1.TabStop = false;
-            // 
-            // lblHarcananToplamKalori
-            // 
-            this.lblHarcananToplamKalori.AutoSize = true;
-            this.lblHarcananToplamKalori.Depth = 0;
-            this.lblHarcananToplamKalori.Font = new System.Drawing.Font("Roboto", 34F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.lblHarcananToplamKalori.FontType = MaterialSkin.MaterialSkinManager.fontType.H4;
-            this.lblHarcananToplamKalori.Location = new System.Drawing.Point(772, 57);
-            this.lblHarcananToplamKalori.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblHarcananToplamKalori.Name = "lblHarcananToplamKalori";
-            this.lblHarcananToplamKalori.Size = new System.Drawing.Size(20, 41);
-            this.lblHarcananToplamKalori.TabIndex = 22;
-            this.lblHarcananToplamKalori.Text = "0";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(817, 149);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(16, 13);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "gr";
-            // 
-            // mlYagg
-            // 
-            this.mlYagg.AutoSize = true;
-            this.mlYagg.Location = new System.Drawing.Point(776, 149);
-            this.mlYagg.Name = "mlYagg";
-            this.mlYagg.Size = new System.Drawing.Size(13, 13);
-            this.mlYagg.TabIndex = 19;
-            this.mlYagg.Text = "0";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(478, 152);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(16, 13);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "gr";
-            // 
-            // mlProteing
-            // 
-            this.mlProteing.AutoSize = true;
-            this.mlProteing.Location = new System.Drawing.Point(437, 152);
-            this.mlProteing.Name = "mlProteing";
-            this.mlProteing.Size = new System.Drawing.Size(13, 13);
-            this.mlProteing.TabIndex = 17;
-            this.mlProteing.Text = "0";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(193, 149);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(16, 13);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "gr";
-            // 
-            // mlKarbonhidratg
-            // 
-            this.mlKarbonhidratg.AutoSize = true;
-            this.mlKarbonhidratg.Location = new System.Drawing.Point(152, 149);
-            this.mlKarbonhidratg.Name = "mlKarbonhidratg";
-            this.mlKarbonhidratg.Size = new System.Drawing.Size(13, 13);
-            this.mlKarbonhidratg.TabIndex = 15;
-            this.mlKarbonhidratg.Text = "0";
-            // 
-            // materialLabel3
-            // 
-            this.materialLabel3.AutoSize = true;
-            this.materialLabel3.Depth = 0;
-            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel3.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
-            this.materialLabel3.Location = new System.Drawing.Point(786, 121);
-            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(25, 17);
-            this.materialLabel3.TabIndex = 14;
-            this.materialLabel3.Text = "Yağ";
-            // 
-            // materialLabel4
-            // 
-            this.materialLabel4.AutoSize = true;
-            this.materialLabel4.Depth = 0;
-            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel4.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
-            this.materialLabel4.Location = new System.Drawing.Point(442, 121);
-            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(46, 17);
-            this.materialLabel4.TabIndex = 13;
-            this.materialLabel4.Text = "Protein";
-            // 
-            // mlKarbonHidrat
-            // 
-            this.mlKarbonHidrat.AutoSize = true;
-            this.mlKarbonHidrat.Depth = 0;
-            this.mlKarbonHidrat.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.mlKarbonHidrat.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
-            this.mlKarbonHidrat.Location = new System.Drawing.Point(123, 121);
-            this.mlKarbonHidrat.MouseState = MaterialSkin.MouseState.HOVER;
-            this.mlKarbonHidrat.Name = "mlKarbonHidrat";
-            this.mlKarbonHidrat.Size = new System.Drawing.Size(87, 17);
-            this.mlKarbonHidrat.TabIndex = 12;
-            this.mlKarbonHidrat.Text = "Karbonhidrat ";
-            // 
-            // k_alınan2
-            // 
-            this.k_alınan2.AutoSize = true;
-            this.k_alınan2.Depth = 0;
-            this.k_alınan2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.k_alınan2.Location = new System.Drawing.Point(798, 66);
-            this.k_alınan2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.k_alınan2.Name = "k_alınan2";
-            this.k_alınan2.Size = new System.Drawing.Size(101, 19);
-            this.k_alınan2.TabIndex = 6;
-            this.k_alınan2.Text = "kcal harcanan";
-            // 
-            // materialProgressBar1
-            // 
-            this.materialProgressBar1.Depth = 0;
-            this.materialProgressBar1.Location = new System.Drawing.Point(52, 141);
-            this.materialProgressBar1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialProgressBar1.Name = "materialProgressBar1";
-            this.materialProgressBar1.Size = new System.Drawing.Size(230, 5);
-            this.materialProgressBar1.TabIndex = 5;
-            // 
-            // mlToplamAlinanKalori
-            // 
-            this.mlToplamAlinanKalori.AutoSize = true;
-            this.mlToplamAlinanKalori.Depth = 0;
-            this.mlToplamAlinanKalori.Font = new System.Drawing.Font("Roboto", 34F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.mlToplamAlinanKalori.FontType = MaterialSkin.MaterialSkinManager.fontType.H4;
-            this.mlToplamAlinanKalori.Location = new System.Drawing.Point(148, 57);
-            this.mlToplamAlinanKalori.MouseState = MaterialSkin.MouseState.HOVER;
-            this.mlToplamAlinanKalori.Name = "mlToplamAlinanKalori";
-            this.mlToplamAlinanKalori.Size = new System.Drawing.Size(20, 41);
-            this.mlToplamAlinanKalori.TabIndex = 21;
-            this.mlToplamAlinanKalori.Text = "0";
-            // 
-            // k_alınan
-            // 
-            this.k_alınan.AutoSize = true;
-            this.k_alınan.Depth = 0;
-            this.k_alınan.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.k_alınan.Location = new System.Drawing.Point(193, 66);
-            this.k_alınan.MouseState = MaterialSkin.MouseState.HOVER;
-            this.k_alınan.Name = "k_alınan";
-            this.k_alınan.Size = new System.Drawing.Size(78, 19);
-            this.k_alınan.TabIndex = 5;
-            this.k_alınan.Text = "kcal alınan";
             // 
             // tabPage2
             // 
@@ -949,6 +772,47 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Profil";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView11
+            // 
+            this.dataGridView11.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView11.Location = new System.Drawing.Point(572, 396);
+            this.dataGridView11.Name = "dataGridView11";
+            this.dataGridView11.Size = new System.Drawing.Size(535, 124);
+            this.dataGridView11.TabIndex = 21;
+            // 
+            // dataGridView10
+            // 
+            this.dataGridView10.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView10.Location = new System.Drawing.Point(867, 537);
+            this.dataGridView10.Name = "dataGridView10";
+            this.dataGridView10.Size = new System.Drawing.Size(240, 111);
+            this.dataGridView10.TabIndex = 20;
+            // 
+            // dataGridView9
+            // 
+            this.dataGridView9.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView9.Location = new System.Drawing.Point(597, 537);
+            this.dataGridView9.Name = "dataGridView9";
+            this.dataGridView9.Size = new System.Drawing.Size(240, 111);
+            this.dataGridView9.TabIndex = 19;
+            // 
+            // dataGridView8
+            // 
+            this.dataGridView8.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView8.Location = new System.Drawing.Point(327, 537);
+            this.dataGridView8.Name = "dataGridView8";
+            this.dataGridView8.Size = new System.Drawing.Size(240, 111);
+            this.dataGridView8.TabIndex = 18;
+            this.dataGridView8.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView8_CellContentClick);
+            // 
+            // dataGridView7
+            // 
+            this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView7.Location = new System.Drawing.Point(59, 537);
+            this.dataGridView7.Name = "dataGridView7";
+            this.dataGridView7.Size = new System.Drawing.Size(240, 111);
+            this.dataGridView7.TabIndex = 17;
             // 
             // materialLabel22
             // 
@@ -1544,6 +1408,60 @@
             this.tabPage5.Text = "Raporlar";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(596, 466);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(30, 13);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "Kilo?";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(60, 466);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(60, 13);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "Adım Sayısı";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(596, 252);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(81, 13);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Aktivite Kayıtları";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(60, 252);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(63, 13);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Su Tüketimi";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(596, 25);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(90, 13);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Makro Besin Alımı";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(60, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Besinsel Enerji";
+            // 
             // materialCard9
             // 
             this.materialCard9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -1557,6 +1475,14 @@
             this.materialCard9.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard9.Size = new System.Drawing.Size(428, 186);
             this.materialCard9.TabIndex = 3;
+            // 
+            // dataGridView6
+            // 
+            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView6.Location = new System.Drawing.Point(17, 19);
+            this.dataGridView6.Name = "dataGridView6";
+            this.dataGridView6.Size = new System.Drawing.Size(394, 150);
+            this.dataGridView6.TabIndex = 5;
             // 
             // materialCard8
             // 
@@ -1572,6 +1498,14 @@
             this.materialCard8.Size = new System.Drawing.Size(461, 186);
             this.materialCard8.TabIndex = 2;
             // 
+            // dataGridView5
+            // 
+            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView5.Location = new System.Drawing.Point(17, 17);
+            this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.Size = new System.Drawing.Size(427, 150);
+            this.dataGridView5.TabIndex = 4;
+            // 
             // materialCard7
             // 
             this.materialCard7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -1585,6 +1519,14 @@
             this.materialCard7.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard7.Size = new System.Drawing.Size(428, 186);
             this.materialCard7.TabIndex = 2;
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Location = new System.Drawing.Point(17, 19);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.Size = new System.Drawing.Size(394, 150);
+            this.dataGridView4.TabIndex = 3;
             // 
             // materialCard6
             // 
@@ -1600,6 +1542,14 @@
             this.materialCard6.Size = new System.Drawing.Size(461, 186);
             this.materialCard6.TabIndex = 1;
             // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(17, 17);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(427, 150);
+            this.dataGridView3.TabIndex = 2;
+            // 
             // materialCard5
             // 
             this.materialCard5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -1614,6 +1564,14 @@
             this.materialCard5.Size = new System.Drawing.Size(428, 186);
             this.materialCard5.TabIndex = 1;
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(17, 17);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(394, 150);
+            this.dataGridView2.TabIndex = 1;
+            // 
             // materialCard4
             // 
             this.materialCard4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -1627,6 +1585,14 @@
             this.materialCard4.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard4.Size = new System.Drawing.Size(461, 186);
             this.materialCard4.TabIndex = 0;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(17, 17);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(427, 150);
+            this.dataGridView1.TabIndex = 0;
             // 
             // tabPage6
             // 
@@ -1645,6 +1611,39 @@
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Ayarlar";
             this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // materialTabControl2
+            // 
+            this.materialTabControl2.Controls.Add(this.tabPage8);
+            this.materialTabControl2.Controls.Add(this.tabPage9);
+            this.materialTabControl2.Depth = 0;
+            this.materialTabControl2.Location = new System.Drawing.Point(412, 39);
+            this.materialTabControl2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialTabControl2.Multiline = true;
+            this.materialTabControl2.Name = "materialTabControl2";
+            this.materialTabControl2.SelectedIndex = 0;
+            this.materialTabControl2.Size = new System.Drawing.Size(601, 431);
+            this.materialTabControl2.TabIndex = 8;
+            // 
+            // tabPage8
+            // 
+            this.tabPage8.Location = new System.Drawing.Point(4, 22);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage8.Size = new System.Drawing.Size(593, 405);
+            this.tabPage8.TabIndex = 0;
+            this.tabPage8.Text = "tabPage8";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // tabPage9
+            // 
+            this.tabPage9.Location = new System.Drawing.Point(4, 22);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage9.Size = new System.Drawing.Size(593, 405);
+            this.tabPage9.TabIndex = 1;
+            this.tabPage9.Text = "tabPage9";
+            this.tabPage9.UseVisualStyleBackColor = true;
             // 
             // materialSwitch1
             // 
@@ -1822,7 +1821,7 @@
             this.tabPage7.Location = new System.Drawing.Point(4, 23);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(1056, 659);
+            this.tabPage7.Size = new System.Drawing.Size(1140, 659);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Çıkış Yap";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -1834,190 +1833,196 @@
             this.ımageList1.Images.SetKeyName(0, "user (1).png");
             this.ımageList1.Images.SetKeyName(1, "planner.png");
             // 
-            // materialTabControl2
+            // k_alınan
             // 
-            this.materialTabControl2.Controls.Add(this.tabPage8);
-            this.materialTabControl2.Controls.Add(this.tabPage9);
-            this.materialTabControl2.Depth = 0;
-            this.materialTabControl2.Location = new System.Drawing.Point(412, 39);
-            this.materialTabControl2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialTabControl2.Multiline = true;
-            this.materialTabControl2.Name = "materialTabControl2";
-            this.materialTabControl2.SelectedIndex = 0;
-            this.materialTabControl2.Size = new System.Drawing.Size(601, 431);
-            this.materialTabControl2.TabIndex = 8;
+            this.k_alınan.AutoSize = true;
+            this.k_alınan.Depth = 0;
+            this.k_alınan.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.k_alınan.Location = new System.Drawing.Point(165, 29);
+            this.k_alınan.MouseState = MaterialSkin.MouseState.HOVER;
+            this.k_alınan.Name = "k_alınan";
+            this.k_alınan.Size = new System.Drawing.Size(78, 19);
+            this.k_alınan.TabIndex = 5;
+            this.k_alınan.Text = "kcal alınan";
             // 
-            // tabPage8
+            // materialProgressBar1
             // 
-            this.tabPage8.Location = new System.Drawing.Point(4, 22);
-            this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(593, 405);
-            this.tabPage8.TabIndex = 0;
-            this.tabPage8.Text = "tabPage8";
-            this.tabPage8.UseVisualStyleBackColor = true;
+            this.materialProgressBar1.Depth = 0;
+            this.materialProgressBar1.Location = new System.Drawing.Point(24, 98);
+            this.materialProgressBar1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialProgressBar1.Name = "materialProgressBar1";
+            this.materialProgressBar1.Size = new System.Drawing.Size(230, 5);
+            this.materialProgressBar1.TabIndex = 5;
             // 
-            // tabPage9
+            // k_alınan2
             // 
-            this.tabPage9.Location = new System.Drawing.Point(4, 22);
-            this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(593, 405);
-            this.tabPage9.TabIndex = 1;
-            this.tabPage9.Text = "tabPage9";
-            this.tabPage9.UseVisualStyleBackColor = true;
+            this.k_alınan2.AutoSize = true;
+            this.k_alınan2.Depth = 0;
+            this.k_alınan2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.k_alınan2.Location = new System.Drawing.Point(818, 23);
+            this.k_alınan2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.k_alınan2.Name = "k_alınan2";
+            this.k_alınan2.Size = new System.Drawing.Size(101, 19);
+            this.k_alınan2.TabIndex = 6;
+            this.k_alınan2.Text = "kcal harcanan";
             // 
-            // dataGridView1
+            // mlKarbonHidrat
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(17, 17);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(427, 150);
-            this.dataGridView1.TabIndex = 0;
+            this.mlKarbonHidrat.AutoSize = true;
+            this.mlKarbonHidrat.Depth = 0;
+            this.mlKarbonHidrat.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.mlKarbonHidrat.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
+            this.mlKarbonHidrat.Location = new System.Drawing.Point(95, 78);
+            this.mlKarbonHidrat.MouseState = MaterialSkin.MouseState.HOVER;
+            this.mlKarbonHidrat.Name = "mlKarbonHidrat";
+            this.mlKarbonHidrat.Size = new System.Drawing.Size(87, 17);
+            this.mlKarbonHidrat.TabIndex = 12;
+            this.mlKarbonHidrat.Text = "Karbonhidrat ";
             // 
-            // dataGridView2
+            // materialLabel4
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(17, 17);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(394, 150);
-            this.dataGridView2.TabIndex = 1;
+            this.materialLabel4.AutoSize = true;
+            this.materialLabel4.Depth = 0;
+            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel4.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
+            this.materialLabel4.Location = new System.Drawing.Point(434, 78);
+            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel4.Name = "materialLabel4";
+            this.materialLabel4.Size = new System.Drawing.Size(46, 17);
+            this.materialLabel4.TabIndex = 13;
+            this.materialLabel4.Text = "Protein";
             // 
-            // dataGridView3
+            // materialLabel3
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(17, 17);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(427, 150);
-            this.dataGridView3.TabIndex = 2;
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel3.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
+            this.materialLabel3.Location = new System.Drawing.Point(758, 78);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(25, 17);
+            this.materialLabel3.TabIndex = 14;
+            this.materialLabel3.Text = "Yağ";
             // 
-            // dataGridView4
+            // mlKarbonhidratg
             // 
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(17, 19);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(394, 150);
-            this.dataGridView4.TabIndex = 3;
+            this.mlKarbonhidratg.AutoSize = true;
+            this.mlKarbonhidratg.Location = new System.Drawing.Point(124, 106);
+            this.mlKarbonhidratg.Name = "mlKarbonhidratg";
+            this.mlKarbonhidratg.Size = new System.Drawing.Size(13, 13);
+            this.mlKarbonhidratg.TabIndex = 15;
+            this.mlKarbonhidratg.Text = "0";
             // 
-            // dataGridView5
+            // label2
             // 
-            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Location = new System.Drawing.Point(17, 17);
-            this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.Size = new System.Drawing.Size(427, 150);
-            this.dataGridView5.TabIndex = 4;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(165, 106);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(16, 13);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "gr";
             // 
-            // dataGridView6
+            // mlProteing
             // 
-            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView6.Location = new System.Drawing.Point(17, 19);
-            this.dataGridView6.Name = "dataGridView6";
-            this.dataGridView6.Size = new System.Drawing.Size(394, 150);
-            this.dataGridView6.TabIndex = 5;
+            this.mlProteing.AutoSize = true;
+            this.mlProteing.Location = new System.Drawing.Point(429, 109);
+            this.mlProteing.Name = "mlProteing";
+            this.mlProteing.Size = new System.Drawing.Size(13, 13);
+            this.mlProteing.TabIndex = 17;
+            this.mlProteing.Text = "0";
             // 
-            // label1
+            // label3
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(60, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Besinsel Enerji";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(473, 109);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(16, 13);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "gr";
             // 
-            // label4
+            // mlYagg
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(596, 25);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Makro Besin Alımı";
+            this.mlYagg.AutoSize = true;
+            this.mlYagg.Location = new System.Drawing.Point(748, 106);
+            this.mlYagg.Name = "mlYagg";
+            this.mlYagg.Size = new System.Drawing.Size(13, 13);
+            this.mlYagg.TabIndex = 19;
+            this.mlYagg.Text = "0";
             // 
-            // label6
+            // label5
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(60, 252);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 13);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Su Tüketimi";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(789, 106);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(16, 13);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "gr";
             // 
-            // label7
+            // lblHarcananToplamKalori
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(596, 252);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(81, 13);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Aktivite Kayıtları";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(60, 466);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(60, 13);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "Adım Sayısı";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(596, 466);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(30, 13);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "Kilo?";
-            // 
-            // dataGridView7
-            // 
-            this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView7.Location = new System.Drawing.Point(59, 537);
-            this.dataGridView7.Name = "dataGridView7";
-            this.dataGridView7.Size = new System.Drawing.Size(240, 111);
-            this.dataGridView7.TabIndex = 17;
-            // 
-            // dataGridView8
-            // 
-            this.dataGridView8.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView8.Location = new System.Drawing.Point(327, 537);
-            this.dataGridView8.Name = "dataGridView8";
-            this.dataGridView8.Size = new System.Drawing.Size(240, 111);
-            this.dataGridView8.TabIndex = 18;
-            this.dataGridView8.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView8_CellContentClick);
-            // 
-            // dataGridView9
-            // 
-            this.dataGridView9.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView9.Location = new System.Drawing.Point(597, 537);
-            this.dataGridView9.Name = "dataGridView9";
-            this.dataGridView9.Size = new System.Drawing.Size(240, 111);
-            this.dataGridView9.TabIndex = 19;
-            // 
-            // dataGridView10
-            // 
-            this.dataGridView10.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView10.Location = new System.Drawing.Point(867, 537);
-            this.dataGridView10.Name = "dataGridView10";
-            this.dataGridView10.Size = new System.Drawing.Size(240, 111);
-            this.dataGridView10.TabIndex = 20;
-            // 
-            // dataGridView11
-            // 
-            this.dataGridView11.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView11.Location = new System.Drawing.Point(572, 396);
-            this.dataGridView11.Name = "dataGridView11";
-            this.dataGridView11.Size = new System.Drawing.Size(535, 124);
-            this.dataGridView11.TabIndex = 21;
+            this.lblHarcananToplamKalori.AutoSize = true;
+            this.lblHarcananToplamKalori.Depth = 0;
+            this.lblHarcananToplamKalori.Font = new System.Drawing.Font("Roboto", 34F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lblHarcananToplamKalori.FontType = MaterialSkin.MaterialSkinManager.fontType.H4;
+            this.lblHarcananToplamKalori.Location = new System.Drawing.Point(764, 14);
+            this.lblHarcananToplamKalori.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblHarcananToplamKalori.Name = "lblHarcananToplamKalori";
+            this.lblHarcananToplamKalori.Size = new System.Drawing.Size(20, 41);
+            this.lblHarcananToplamKalori.TabIndex = 22;
+            this.lblHarcananToplamKalori.Text = "0";
             // 
             // lblToplamKalori
             // 
             this.lblToplamKalori.AutoSize = true;
-            this.lblToplamKalori.Location = new System.Drawing.Point(445, 57);
+            this.lblToplamKalori.Location = new System.Drawing.Point(409, 35);
             this.lblToplamKalori.Name = "lblToplamKalori";
             this.lblToplamKalori.Size = new System.Drawing.Size(71, 13);
             this.lblToplamKalori.TabIndex = 23;
             this.lblToplamKalori.Text = "Toplam Kalori";
+            // 
+            // mlToplamAlinanKalori
+            // 
+            this.mlToplamAlinanKalori.AutoSize = true;
+            this.mlToplamAlinanKalori.Depth = 0;
+            this.mlToplamAlinanKalori.Font = new System.Drawing.Font("Roboto", 34F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.mlToplamAlinanKalori.FontType = MaterialSkin.MaterialSkinManager.fontType.H4;
+            this.mlToplamAlinanKalori.Location = new System.Drawing.Point(120, 23);
+            this.mlToplamAlinanKalori.MouseState = MaterialSkin.MouseState.HOVER;
+            this.mlToplamAlinanKalori.Name = "mlToplamAlinanKalori";
+            this.mlToplamAlinanKalori.Size = new System.Drawing.Size(20, 41);
+            this.mlToplamAlinanKalori.TabIndex = 21;
+            this.mlToplamAlinanKalori.Text = "0";
+            // 
+            // materialCard12
+            // 
+            this.materialCard12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard12.Controls.Add(this.lblHarcananToplamKalori);
+            this.materialCard12.Controls.Add(this.mlToplamAlinanKalori);
+            this.materialCard12.Controls.Add(this.k_alınan);
+            this.materialCard12.Controls.Add(this.materialProgressBar1);
+            this.materialCard12.Controls.Add(this.lblToplamKalori);
+            this.materialCard12.Controls.Add(this.k_alınan2);
+            this.materialCard12.Controls.Add(this.mlKarbonHidrat);
+            this.materialCard12.Controls.Add(this.materialLabel4);
+            this.materialCard12.Controls.Add(this.materialLabel3);
+            this.materialCard12.Controls.Add(this.label5);
+            this.materialCard12.Controls.Add(this.materialProgressBar2);
+            this.materialCard12.Controls.Add(this.mlKarbonhidratg);
+            this.materialCard12.Controls.Add(this.mlYagg);
+            this.materialCard12.Controls.Add(this.materialProgressBar3);
+            this.materialCard12.Controls.Add(this.label2);
+            this.materialCard12.Controls.Add(this.label3);
+            this.materialCard12.Controls.Add(this.mlProteing);
+            this.materialCard12.Depth = 0;
+            this.materialCard12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard12.Location = new System.Drawing.Point(66, 52);
+            this.materialCard12.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard12.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard12.Name = "materialCard12";
+            this.materialCard12.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard12.Size = new System.Drawing.Size(954, 146);
+            this.materialCard12.TabIndex = 30;
             // 
             // Form3
             // 
@@ -2040,10 +2045,13 @@
             this.materialCard2.PerformLayout();
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
             this.materialCard11.ResumeLayout(false);
             this.materialCard11.PerformLayout();
             this.materialCard10.ResumeLayout(false);
@@ -2062,25 +2070,22 @@
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             this.materialCard9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
             this.materialCard8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.materialCard7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.materialCard6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.materialCard5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.materialCard4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
             this.materialTabControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView11)).EndInit();
+            this.materialCard12.ResumeLayout(false);
+            this.materialCard12.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2105,8 +2110,6 @@
         private System.Windows.Forms.TabPage tabPage7;
         private MaterialSkin.Controls.MaterialProgressBar materialProgressBar3;
         private MaterialSkin.Controls.MaterialProgressBar materialProgressBar2;
-        private MaterialSkin.Controls.MaterialProgressBar materialProgressBar1;
-        private System.Windows.Forms.GroupBox groupBox1;
         private MaterialSkin.Controls.MaterialLabel materialLabel17;
         private MaterialSkin.Controls.MaterialLabel kalori6;
         private MaterialSkin.Controls.MaterialFloatingActionButton mfabAdımSayisiEkle;
@@ -2144,20 +2147,7 @@
         private MaterialSkin.Controls.MaterialTextBox2 materialTextBox23;
         private MaterialSkin.Controls.MaterialTextBox2 materialTextBox21;
         private System.Windows.Forms.ImageList ımageList1;
-        private MaterialSkin.Controls.MaterialLabel k_alınan2;
-        private MaterialSkin.Controls.MaterialLabel k_alınan;
         private MaterialSkin.Controls.MaterialSwitch materialSwitch1;
-        private MaterialSkin.Controls.MaterialLabel lblHarcananToplamKalori;
-        private MaterialSkin.Controls.MaterialLabel mlToplamAlinanKalori;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label mlYagg;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label mlProteing;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label mlKarbonhidratg;
-        private MaterialSkin.Controls.MaterialLabel materialLabel3;
-        private MaterialSkin.Controls.MaterialLabel materialLabel4;
-        private MaterialSkin.Controls.MaterialLabel mlKarbonHidrat;
         private MaterialSkin.Controls.MaterialLabel lblAktivite;
         private MaterialSkin.Controls.MaterialLabel lblAdımSayisi;
         private MaterialSkin.Controls.MaterialLabel mlAtistirmalikKalori;
@@ -2222,6 +2212,21 @@
         private System.Windows.Forms.DataGridView dataGridView11;
         private System.Windows.Forms.DataGridView dataGridView10;
         private System.Windows.Forms.DataGridView dataGridView9;
+        private MaterialSkin.Controls.MaterialCard materialCard12;
+        private MaterialSkin.Controls.MaterialLabel lblHarcananToplamKalori;
+        private MaterialSkin.Controls.MaterialLabel mlToplamAlinanKalori;
+        private MaterialSkin.Controls.MaterialLabel k_alınan;
+        private MaterialSkin.Controls.MaterialProgressBar materialProgressBar1;
         private System.Windows.Forms.Label lblToplamKalori;
+        private MaterialSkin.Controls.MaterialLabel k_alınan2;
+        private MaterialSkin.Controls.MaterialLabel mlKarbonHidrat;
+        private MaterialSkin.Controls.MaterialLabel materialLabel4;
+        private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label mlKarbonhidratg;
+        private System.Windows.Forms.Label mlYagg;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label mlProteing;
     }
 }

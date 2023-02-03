@@ -288,7 +288,7 @@ namespace Diet.BLL
 
         public List<FoodforMealLunch> WhichFoodsEatenAtLunch(int UserId)
         {
-            var userMeal = db.MealRepository.GetAll().Where(x => x.UserID == UserId);
+            var userMeal = db.MealRepository.GetAll().Where(x => x.UserID == UserId && x.MealType == MealType.Lunch);
 
             var query = (from m in userMeal
                          join mf in db.MealFoodRepository.GetAll() on m.ID equals mf.MealID
@@ -302,15 +302,15 @@ namespace Diet.BLL
                              mf.Quantity,
                              m.MealDate,
                              m.MealType
-                         }).ToList().Where(x => x.MealType == MealType.Lunch);
+                         });
             var groupQuery = (from gq in query
-                              let dt = gq.MealType
-                              group gq by dt into g
+                              group gq by gq.FoodName into g
                               select new FoodforMealLunch
                               {
-                                  MealType = g.Key,
-                                  FoodName = g.Select(x => x.FoodName).ToString(),
-                                  TotalQuantity = g.Sum(x => x.Quantity)
+                                  MealType = MealType.Lunch,
+                                  FoodName = g.Key,
+                                  TotalQuantity = g.Sum(x => x.Quantity),
+                                  TotalCount = g.Count()
                                   //toplam miktar?
                               }).OrderByDescending(x => x.TotalQuantity).Take(5).ToList();
 

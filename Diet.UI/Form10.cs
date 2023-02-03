@@ -52,5 +52,10 @@ namespace Diet.UI
             db.UserWaterRepository.Create(water);
             
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

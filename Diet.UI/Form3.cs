@@ -83,10 +83,10 @@ namespace Diet.UI
             
 
             //Kullanıcı Listesi -Sistem Raporları
-            var query = from u in db.UserRepository.GetAll()
-                        select new { u.UserName, u.UserSurname, u.Email, u.CreatedDate };
-            dataGridViewKullaniciListesi.DataSource = query.ToList();
-            dataGridView1.DataSource= 
+            //var query = from u in db.UserRepository.GetAll()
+            //            select new { u.UserName, u.UserSurname, u.Email, u.CreatedDate };
+            //dataGridViewKullaniciListesi.DataSource = query.ToList();
+            //dataGridView1.DataSource= 
 
 
 

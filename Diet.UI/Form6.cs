@@ -19,7 +19,7 @@ namespace Diet.UI
 {
     public partial class Form6 : MaterialForm
     {
-        
+
         UnitOfWork db = new UnitOfWork();
         User _currentUser;
         ActivityManager activityManager = new ActivityManager();
@@ -46,16 +46,15 @@ namespace Diet.UI
             //LostCalorie User ekranına gönderilmeli.
             var query = (from ua in db.UserActivityRepository.GetAll()
                          select new { ua.UserID, ua.StepCount }).Where(x => x.UserID == _currentUser.ID);
-            double LostCalorieByStep= activityManager.CalculateConsumedCalorieByStep(_currentUser.ID);
             UserActivity newuserAct = new UserActivity();
             newuserAct.UserID = _currentUser.ID;
             newuserAct.ActivityID = 1;
             newuserAct.ActivityTime = DateTime.Now;
             newuserAct.Duration = 25;
-            newuserAct.CalculatedCalorie = LostCalorieByStep;
-            newuserAct.StepCount =Convert.ToInt32(nmrStepCount.Value);
+            newuserAct.CalculatedCalorie = activityManager.CalculateCalorieByStep((int)nmrStepCount.Value);
+            newuserAct.StepCount = Convert.ToInt32(nmrStepCount.Value);
             db.UserActivityRepository.Create(newuserAct);
-            lblKCAL.Text = LostCalorieByStep.ToString() + " kCal TEBRİKLER.";
+            lblKCAL.Text = newuserAct.CalculatedCalorie.ToString() + " kCal TEBRİKLER.";
 
 
         }

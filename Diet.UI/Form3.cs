@@ -72,22 +72,24 @@ namespace Diet.UI
             mlAtistirmalikKalori.Text = calculateCalorieIntake.FirstOrDefault(x => x.MealType == MealType.Snack)?.TotalCalori.ToString();
 
             //Toplam alınan kalori miktarı(öğün toplamı)
-            double toplamAlınanKalori = calculateCalorieIntake.Sum(x=> x.TotalCalori);
+            double toplamAlınanKalori = calculateCalorieIntake.Sum(x => x.TotalCalori);
             //mlToplamAlinanKalori.Text = toplamAlınanKalori.ToString();
 
 
+            var dailyCalculateConsumedCalorieByActivity = activityManager.CalculateConsumedCalorieByActivity(_currentUser.ID);
+            var dailyCalculateConsumedCalorieByStep = activityManager.CalculateConsumedCalorieByStep(_currentUser.ID);
             //Harcanan kalori
-            lblAdımSayisi.Text = (activityManager.CalculateConsumedCalorieByStep(_currentUser.ID)).ToString();//form6'dan veri gelecek.
-            lblAktivite.Text = (activityManager.CalculateConsumedCalorieByActivity(_currentUser.ID)).ToString();
+            lblAdımSayisi.Text = activityManager.CalculateStepCountByUserId(_currentUser.ID).ToString();//form6'dan veri gelecek.
+            lblAktivite.Text = dailyCalculateConsumedCalorieByActivity.ToString();
             //Harcanan Toplam Kalori
-            double toplamVerilenKalori = (activityManager.TotalCalculateConsumedCalorie(_currentUser.ID));
+            double toplamVerilenKalori = dailyCalculateConsumedCalorieByActivity + dailyCalculateConsumedCalorieByStep;
             lblHarcananToplamKalori.Text = toplamVerilenKalori.ToString();
 
             //Günlük Toplam Kalori
 
-            //lblToplamKalori.Text = Math.Abs((/*toplamAlınanKalori*/ - toplamVerilenKalori)).ToString();
+            lblToplamKalori.Text = Math.Abs((toplamAlınanKalori - toplamVerilenKalori)).ToString();
             ////farkıyla alakalı bir gösterim.
-            //mlKalanKalori.Text = (foodManager.CalculateDailyCalorie(_currentUser.ID) - (toplamAlınanKalori - toplamVerilenKalori)).ToString();
+            mlKalanKalori.Text = (foodManager.CalculateDailyCalorie(_currentUser.ID) - (toplamAlınanKalori - toplamVerilenKalori)).ToString();
 
             //Kullanıcı Bilgileri /Profil
             int yas = db.UserDetailRepository.GetAll().Select(x => x.Age).FirstOrDefault();

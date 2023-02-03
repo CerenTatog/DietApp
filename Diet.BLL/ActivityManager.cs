@@ -14,73 +14,59 @@ namespace Diet.BLL
     {
         UnitOfWork db = new UnitOfWork();
         User _currentUser;
-        public double TotalCalculateConsumedCalorie(int UserId) 
-        {//bystep+byactivity
-            double TotalLostCalorie = CalculateConsumedCalorieByStep(UserId) + CalculateConsumedCalorieByActivity(UserId);
-
-            return TotalLostCalorie;
+        public double CalculateCalorieByStep(int stepCount)
+        {
+            return stepCount * 0.03;
         }
 
-        public double CalculateConsumedCalorieByStep(int UserID) 
+        public double CalculateConsumedCalorieByStep(int UserID)
         {
             var dateToday = DateTime.Today;
             var dateEnd = DateTime.Today.AddDays(1).AddSeconds(-1);
-            //var userDailyStepRepo = db.UserActivityRepository.GetAll().Where(x => x.ActivityTime >= dateToday && x.ActivityTime < dateEnd && x.UserID == UserID);
+            var userDailyStepRepo = db.UserActivityRepository.GetAll().Where(x => x.ActivityTime >= dateToday && x.ActivityTime < dateEnd && x.UserID == UserID && x.StepCount > 0);
 
-            var query = (from ua in db.UserActivityRepository.GetAll()
+            var query = (from ua in userDailyStepRepo
                          select new
                          {
-                             ua.UserID,
-                             ua.ActivityTime,
-                             ua.StepCount
+                             TotalCalorie = ua.StepCount * 0.03
                          }).ToList();
-           //double LostCalorieByStep = Convert.ToDouble(query.StepCount * 0.03);
-            var groupQuery = (from gq in query
-                              let dt = gq.ActivityTime.Date
-                              group gq by dt into g
-                              select new DailyStep
-                              {
-                                  Date = g.Key,
-                                  Step = Convert.ToDouble(g.Sum(x => x.StepCount * 0.03))
-                              }).ToList();
-            return Convert.ToDouble(groupQuery);
+
+            return query.Sum(x => x.TotalCalorie.GetValueOrDefault());
+        }
+
+        public int CalculateStepCountByUserId(int UserID)
+        {
+            var dateToday = DateTime.Today;
+            var dateEnd = DateTime.Today.AddDays(1).AddSeconds(-1);
+            var userDailyStepRepo = db.UserActivityRepository.GetAll().Where(x => x.ActivityTime >= dateToday && x.ActivityTime < dateEnd && x.UserID == UserID && x.StepCount > 0);
+
+            var query = (from ua in userDailyStepRepo
+                         select new
+                         {
+                             TotalStepCount = ua.StepCount
+                         }).ToList();
+
+            return query.Sum(x => x.TotalStepCount.GetValueOrDefault());
         }
 
         public double CalculateConsumedCalorieByActivity(int UserId)
         {
             var dateToday = DateTime.Today;
             var dateEnd = DateTime.Today.AddDays(1).AddSeconds(-1);
-            var userDailyMealRepo = db.UserActivityRepository.GetAll().Where(x => x.ActivityTime >= dateToday && x.ActivityTime < dateEnd && x.UserID == UserId);
+            var userActivityRepo = db.UserActivityRepository.GetAll().Where(x => x.ActivityTime >= dateToday && x.ActivityTime < dateEnd && x.UserID == UserId && x.StepCount == null);
 
-            var query = (from u in db.UserRepository.GetAll()
-                         join ua in db.UserActivityRepository.GetAll() on u.ID equals ua.UserID
-                         join a in db.ActivityRepository.GetAll() on ua.ActivityID equals a.ID
+            var query = (from userActivity in userActivityRepo
+                         join a in db.ActivityRepository.GetAll() on userActivity.ActivityID equals a.ID
                          select new
                          {
-                             u.ID,
-                             ua.ActivityID,
-                             ua.ActivityTime,
-                             ua.Duration,
+                             userActivity.UserID,
+                             userActivity.ActivityID,
+                             userActivity.ActivityTime,
+                             userActivity.Duration,
                              a.LostCalorie
                          }).ToList();
-            //int Activity = query.ActivityID;
-            //double Duration = query.Duration;
-            //double LostCalorie = query.LostCalorie;
-            // double LostCalorieByAcrivity =LostCalorie * Duration;
-            //double LostCalorieByAcrivity = query.Duration * query.LostCalorie;
-            var groupQuery = (from gq in query
-                              let dt = gq.ActivityTime.Date
-                              group gq by dt into g
-                              select new DailyActivity
-                              {
-                                  Date = g.Key,
-                                  Activity=g.Sum(x=> x.LostCalorie*x.Duration)
-                              }).ToList();
 
-            return Convert.ToDouble(groupQuery);
+            return query.Sum(x => x.LostCalorie * x.Duration);
         }
-
-
-
     }
 }

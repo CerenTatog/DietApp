@@ -11,16 +11,16 @@ namespace Diet.BLL
 {
     public class ActivityManager
     {
-        static UnitOfWork db = new UnitOfWork();
+        UnitOfWork db = new UnitOfWork();
         User _currentUser;
-        public static double TotalCalculateConsumedCalorie(int UserId) 
+        public double TotalCalculateConsumedCalorie(int UserId) 
         {//bystep+byactivity
             double TotalLostCalorie = CalculateConsumedCalorieByStep(UserId) + CalculateConsumedCalorieByActivity(UserId);
 
             return TotalLostCalorie;
         }
 
-        public static double CalculateConsumedCalorieByStep(int UserID) 
+        public double CalculateConsumedCalorieByStep(int UserID) 
         {
             var query = (from ua in db.UserActivityRepository.GetAll()
                          select new
@@ -32,7 +32,7 @@ namespace Diet.BLL
             return LostCalorieByStep;
         }
 
-        public static double CalculateConsumedCalorieByActivity(int UserId)
+        public double CalculateConsumedCalorieByActivity(int UserId)
         {
             var query = (from u in db.UserRepository.GetAll()
                          join ua in db.UserActivityRepository.GetAll() on u.ID equals ua.UserID

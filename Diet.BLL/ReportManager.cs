@@ -46,7 +46,32 @@ namespace Diet.BLL
             return groupQuery;
         }
 
-        public List<DailyUserProtein> CalculateProtein(int UserId)
+        public List<WeeklyCarbonHydrateDo> CalculateCarb(int UserId)
+        {
+            var dateToday = DateTime.Now;
+            var dateSevenDayBefore = DateTime.Today.AddDays(-7);
+            var userDailyMealRepo = db.MealRepository.GetAll().Where(x => x.MealDate >= dateSevenDayBefore && x.MealDate < dateToday && x.UserID == UserId);
+            var query = (from m in userDailyMealRepo
+                         join mf in db.MealFoodRepository.GetAll() on m.ID equals mf.MealID
+                         join f in db.FoodRepository.GetAll() on mf.FoodID equals f.ID
+                         select new
+                         {
+                             f.Carbonhydrate,
+                             mf.Quantity,
+                             m.MealDate
+                         }).ToList();
+            var groupQuery = (from gq in query
+                              let dt = gq.MealDate.Date
+                              group gq by dt into g
+                              select new WeeklyCarbonHydrateDo
+                              {
+                                  Date = g.Key,
+                                  Carb = g.Sum(x => x.Carbonhydrate * x.Quantity)
+                              }).ToList();
+            return groupQuery;
+
+        }
+        public List<WeeklyUserProtein> CalculateProtein(int UserId)
         {
             var dateToday = DateTime.Now;
             var dateSevenDayBefore = DateTime.Today.AddDays(-7);
@@ -63,7 +88,7 @@ namespace Diet.BLL
             var groupQuery = (from gq in query
                               let dt = gq.MealDate.Date
                               group gq by dt into g
-                              select new DailyUserProtein
+                              select new WeeklyUserProtein
                               {
                                   Date = g.Key,
                                   Protein = g.Sum(x => x.Protein * x.Quantity)
@@ -98,12 +123,24 @@ namespace Diet.BLL
 
         }
 
-        //haftalık su tüketimi Veri tabanında su tutmuyoruz bakılacak KİLO*0.003 İLE HESAPLANIYOR
-        //public List<WeeklyWaterDto> CalculateWater(int UserId)
-        //{
-        //    var dateToday = DateTime.Now;
-        //    var dateSevenDayBefore = DateTime.Today.AddDays(-7);
-        //}
+        //Haftalık su tüketimi
+        public List<WeeklyWaterDto> WeeklyDrinkingWater(int UserId) 
+        {
+            var dateToday = DateTime.Now;
+            var dateSevenDayBefore = DateTime.Today.AddDays(-7);
+            var userDailyWater = db.UserWaterRepository.GetAll().Where(x => x.DrinkTime >= dateSevenDayBefore && x.DrinkTime < dateToday && x.UserID == UserId);
+            var groupQuery = (from gq in userDailyWater
+                              let dt = gq.DrinkTime
+                              group gq by dt into g
+                              select new WeeklyWaterDto
+                              {
+                                  Date = g.Key,
+                                  Water = g.Sum(x => x.Quantity)
+                              }).ToList();
+            return groupQuery;
+
+
+        }
 
         //haftalık aktivite kayıtları
         public List<WeeklyActivityDto> CalculateActivity(int UserId)

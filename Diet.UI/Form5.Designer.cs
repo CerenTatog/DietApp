@@ -255,6 +255,7 @@
             this.materialComboBox2.Size = new System.Drawing.Size(354, 49);
             this.materialComboBox2.StartIndex = 0;
             this.materialComboBox2.TabIndex = 14;
+            this.materialComboBox2.SelectedIndexChanged += new System.EventHandler(this.materialComboBox2_SelectedIndexChanged);
             // 
             // Form5
             // 

@@ -14,6 +14,7 @@ namespace Diet.Model
             this.Meals = new List<Meal>();
             this.UserActivities = new List<UserActivity>();
             this.UserBCs = new List<UserBC>();
+            this.UserWaters = new List<UserWater>();
         }
         [Required]
         [StringLength(50)]
@@ -30,8 +31,9 @@ namespace Diet.Model
        
         public virtual ICollection<Meal> Meals { get; set; }
         public virtual ICollection<UserActivity> UserActivities { get; set; }
-
         public virtual ICollection<UserBC> UserBCs { get; set; }
+
+        public virtual ICollection<UserWater> UserWaters { get; set; }
     }
     public enum UserType
     {

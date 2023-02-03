@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Diet.Model.Dto.Report
 {
-    public class DailyUserProtein
+    public class WeeklyCarbonHydrateDo
     {
-        public double Protein { get; set; }
-        public DateTime Date { get; set; }
+        public double Carb { get; set; }
+
+        public DateTime? Date { get; set; }
     }
 }

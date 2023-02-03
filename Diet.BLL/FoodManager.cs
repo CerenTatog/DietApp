@@ -199,6 +199,21 @@ namespace Diet.BLL
                               }).ToList();
 
             return groupQuery.Sum(x => x.Fat);
+        }
+        public double DailyDrinkingWater(int UserId)
+        {
+            var dateToday = DateTime.Today;
+            var dateEnd = DateTime.Today.AddDays(1).AddSeconds(-1);
+            var userDailyWater = db.UserWaterRepository.GetAll().Where(x => x.DrinkTime >= dateEnd && x.DrinkTime < dateToday && x.UserID == UserId);
+            var groupQuery = (from gq in userDailyWater
+                              let dt = gq.DrinkTime
+                              group gq by dt into g
+                              select new
+                              {
+                                  Date = g.Key,
+                                  TotalMl = g.Sum(x => x.Quantity)
+                              }).ToList();
+            return groupQuery.Sum(x => x.TotalMl);
 
         }
     }

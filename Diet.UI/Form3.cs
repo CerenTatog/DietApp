@@ -117,7 +117,7 @@ namespace Diet.UI
             form5.ShowDialog();
         }
 
-        //UserID yok 
+        
         private void UrunEkle_Click(object sender, EventArgs e)
         {
             Form8 frm8 = new Form8();
@@ -138,7 +138,7 @@ namespace Diet.UI
 
         }
 
-        private void mlHedefDuzenle_Click(object sender, EventArgs e)
+        private void mlHedefDuzenle_Click(object sender, EventArgs e)//bu alan değişecek. 
         {
             if (mlHedefDuzenle.Text == "Düzenle")
             {
@@ -158,6 +158,11 @@ namespace Diet.UI
                 mmlAdim.ReadOnly = true;
                 mmlHedef.ReadOnly = true;
             }
+        }
+
+        private void mfabSuEkle_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

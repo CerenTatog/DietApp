@@ -63,9 +63,6 @@ namespace Diet.UI
             materialComboBox2.DataSource = db.FoodRepository.GetAll().Select(x => new { x.ID, x.FoodName }).ToList();
             materialComboBox2.DisplayMember = "FoodName";
             materialComboBox2.ValueMember = "ID";
-            //materialComboBox2.AutoCompleteMode = AutoCompleteMode.Suggest;
-            //materialComboBox2.AutoCompleteSource = AutoCompleteSource.ListItems;
-            
 
         }
         List<MealFood> ogunListesi;
@@ -124,8 +121,13 @@ namespace Diet.UI
 
         private void materialButtonTamamla_Click(object sender, EventArgs e)
         {
-            //hesaplanmış kalorileri buraya at. ve form3'e gönder.
+          
             this.Close();
+        }
+
+        private void materialComboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //bu alan güncellenecek.
         }
     }
 }

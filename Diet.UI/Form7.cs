@@ -26,6 +26,7 @@ namespace Diet.UI
         public Form7(User currentUser)
         {
             InitializeComponent();
+            //eşitlenmesi gerekiyor. globalde tanımlanıp
         }
 
         private void Form7_Load(object sender, EventArgs e)

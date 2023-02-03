@@ -20,6 +20,7 @@ namespace Diet.UI
         FoodManager foodManager = new FoodManager();
         ReportManager reportManager = new ReportManager();
         User _currentUser;
+        ActivityManager activityManager = new ActivityManager();
         UnitOfWork db = new UnitOfWork();
 
         //parametreli constructor yapılacak User bilgisi aktarılacak
@@ -56,26 +57,26 @@ namespace Diet.UI
         private void Form3_Load(object sender, EventArgs e)
         {
             //Karbonhidrat,Yağ, Protein gösterim alanı
-            mlKarbonhidratg.Text = foodManager.DailyTakenCarbonhyrate(/*_currentUser.ID*/0).ToString();
-            mlProteing.Text = foodManager.DailyTakenProtein(/*_currentUser.ID*/0).ToString();
-            mlYagg.Text = foodManager.DailyTakenFat(/*_currentUser.ID*/0).ToString();
+            mlKarbonhidratg.Text = foodManager.DailyTakenCarbonhyrate(_currentUser.ID).ToString();
+            mlProteing.Text = foodManager.DailyTakenProtein(_currentUser.ID).ToString();
+            mlYagg.Text = foodManager.DailyTakenFat(_currentUser.ID).ToString();
             
             //Öğünlere göre alınan kalori miktarları
-            mlKahvaltıKalori.Text = foodManager.CalculateCalorieIntake(/*_currentUser.ID*/0).FirstOrDefault(x => x.MealType == MealType.Breakfast)?.TotalCalori.ToString();
+            mlKahvaltıKalori.Text = foodManager.CalculateCalorieIntake(_currentUser.ID).FirstOrDefault(x => x.MealType == MealType.Breakfast)?.TotalCalori.ToString();
 
-            mlOgleYemegiCalori.Text = foodManager.CalculateCalorieIntake(/*_currentUser.ID*/0).FirstOrDefault(x => x.MealType == MealType.Lunch)?.TotalCalori.ToString();
+            mlOgleYemegiCalori.Text = foodManager.CalculateCalorieIntake(_currentUser.ID).FirstOrDefault(x => x.MealType == MealType.Lunch)?.TotalCalori.ToString();
 
-            mlAksamYemegiKalori.Text = foodManager.CalculateCalorieIntake(/*_currentUser.ID*/0).FirstOrDefault(x => x.MealType == MealType.Dinner)?.TotalCalori.ToString();
+            mlAksamYemegiKalori.Text = foodManager.CalculateCalorieIntake(_currentUser.ID).FirstOrDefault(x => x.MealType == MealType.Dinner)?.TotalCalori.ToString();
 
-            mlAtistirmalikKalori.Text = foodManager.CalculateCalorieIntake(/*_currentUser.ID*/0).FirstOrDefault(x => x.MealType == MealType.Snack)?.TotalCalori.ToString();
+            mlAtistirmalikKalori.Text = foodManager.CalculateCalorieIntake(_currentUser.ID).FirstOrDefault(x => x.MealType == MealType.Snack)?.TotalCalori.ToString();
 
             //Toplam alınan kalori miktarı(öğün toplamı)
-            mlToplamAlinanKalori.Text = (foodManager.CalculateCalorieIntake(/*_currentUser.ID*/0).FirstOrDefault(x => x.MealType == MealType.Breakfast)?.TotalCalori + foodManager.CalculateCalorieIntake(/*_currentUser.ID*/0).FirstOrDefault(x => x.MealType == MealType.Lunch)?.TotalCalori + foodManager.CalculateCalorieIntake(/*_currentUser.ID*/0).FirstOrDefault(x => x.MealType == MealType.Dinner)?.TotalCalori + foodManager.CalculateCalorieIntake(/*_currentUser.ID*/0).FirstOrDefault(x => x.MealType == MealType.Snack)?.TotalCalori).ToString();
+            mlToplamAlinanKalori.Text = (foodManager.CalculateCalorieIntake(/*_currentUser.ID*/0).FirstOrDefault(x => x.MealType == MealType.Breakfast)?.TotalCalori + foodManager.CalculateCalorieIntake(_currentUser.ID).FirstOrDefault(x => x.MealType == MealType.Lunch)?.TotalCalori + foodManager.CalculateCalorieIntake(_currentUser.ID).FirstOrDefault(x => x.MealType == MealType.Dinner)?.TotalCalori + foodManager.CalculateCalorieIntake(_currentUser.ID).FirstOrDefault(x => x.MealType == MealType.Snack)?.TotalCalori).ToString();
 
             //Kullanıcı Bilgileri /Profil
             int yas = db.UserDetailRepository.GetAll().Select(x=>x.Age).FirstOrDefault();
             lblUserYas.Text = yas.ToString();
-            mlKalanKalorid.Text = foodManager.CalculateDailyCalorie(/*_currentUser.ID*/0).ToString();
+            mlKalanKalorid.Text = foodManager.CalculateDailyCalorie(_currentUser.ID).ToString();
             mmlKilo.Text = mlKalanKalorid.Text;
             double mevcutKilo = db.UserDetailRepository.GetAll().Select(x => x.Weight).FirstOrDefault();
             lblMevcutKilo.Text = mevcutKilo.ToString();
@@ -83,12 +84,19 @@ namespace Diet.UI
             
 
             //Kullanıcı Listesi -Sistem Raporları
-            //var query = from u in db.UserRepository.GetAll()
-            //            select new { u.UserName, u.UserSurname, u.Email, u.CreatedDate };
-            //dataGridViewKullaniciListesi.DataSource = query.ToList();
-            //dataGridView1.DataSource= 
+            var query = from u in db.UserRepository.GetAll()
+                        select new { u.UserName, u.UserSurname, u.Email, u.CreatedDate };
+            dataGridViewKullaniciListesi.DataSource = query.ToList();
 
-
+            //Kullanıcı raporları
+            dataGridView1.DataSource = reportManager.CalculateWeeklyCalorie(_currentUser.ID);
+            dataGridView2.DataSource = reportManager.WeeklyMacroFood(_currentUser.ID);
+            dataGridView3.DataSource = reportManager.WeeklyDrinkingWater(_currentUser.ID);
+            dataGridView4.DataSource = reportManager.CalculateActivity(_currentUser.ID);
+            //dataGridView5.DataSource = reportManager.Calc => bu rapor yok.
+            dataGridView6.DataSource = reportManager.CalculateWeight(_currentUser.ID);
+            
+           lblAdımSayisi = activityManager.
 
         }
 
@@ -183,7 +191,14 @@ namespace Diet.UI
 
         private void mfabAdımSayisiEkle_Click(object sender, EventArgs e)
         {
+            Form6 form6 = new Form6(_currentUser);
+            form6.ShowDialog();
+        }
 
+        private void mfabAktiviteEkle_Click(object sender, EventArgs e)
+        {
+            Form7 form7 = new Form7(_currentUser);
+            form7.ShowDialog();
         }
     }
 }

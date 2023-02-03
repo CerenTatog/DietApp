@@ -12,8 +12,8 @@ namespace Diet.BLL
     public class ActivityManager
     {
         static UnitOfWork db = new UnitOfWork();
-        User _currentUser;
-        public static double TotalCalculateConsumedCalorie(int UserId) 
+        
+        public double TotalCalculateConsumedCalorie(int UserId) 
         {//bystep+byactivity
             double TotalLostCalorie = CalculateConsumedCalorieByStep(UserId) + CalculateConsumedCalorieByActivity(UserId);
 

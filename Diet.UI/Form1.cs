@@ -39,31 +39,40 @@ namespace Diet.UI
 
         private void btnGirisYap_Click(object sender, EventArgs e)
         {
-            var user = db.UserRepository.GetAll().Where(u => u.Email == txtKullaniciAdi.Text).FirstOrDefault();                     
-                if (user != null)
+            var user = db.UserRepository.GetAll().Where(u => u.Email == txtKullaniciAdi.Text).FirstOrDefault();
+            if (txtKullaniciAdi.Text == "admin" && txtSifre.Text == "admin")
+            {
+                Form3 frm3 = new Form3();
+                frm3.Show();
+                Hide();
+            }
+            else if (user != null)
+            {
+                var query = db.UserRepository.GetAll().Count(x => x.Email == txtKullaniciAdi.Text);
+                if (user.Password == userManager.EncryptoPassword(txtSifre.Text))
                 {
-                      var query = db.UserRepository.GetAll().Count(x => x.Email == txtKullaniciAdi.Text);
-                    if (user.Password == userManager.EncryptoPassword(txtSifre.Text))
-                    {
 
-                        Form4 frm4 = new Form4();
-                        frm4.Show();
-                        Hide();
-                    }
-                    else if (true)
-                    {
-                     
-                    }
-                    else
-                    {
-                        MessageBox.Show("Şifre Kontrol Et");
-                    }
+                    Form4 frm4 = new Form4();
+                    frm4.Show();
+                    Hide();
+                }
+                else if (true)
+                {
+
                 }
                 else
                 {
+                    MessageBox.Show("Şifre Kontrol Et");
+                }
+            }
+            else
+            {
                 MessageBox.Show("Kullanıcı Adını Kontrol Ediniz");
-                }                       
+            }
         }
+    
+            
+                     
 
         private void btnUyelikOlustur_Click(object sender, EventArgs e)
         {

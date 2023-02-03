@@ -46,6 +46,13 @@ namespace Diet.UI
                 cmbActivityStatus.Items.Add(item);
                
             }
+            List<string> gender = new List<string>();
+            gender.Add(Gender.Women.ToString());
+            gender.Add(Gender.Men.ToString());
+            foreach (var item in gender)
+            {
+                cmbGender.Items.Add(item);
+            }
             //cmbActivityStatus.DisplayMember = "Label";
             //cmbActivityStatus.ValueMember = "Value";
 

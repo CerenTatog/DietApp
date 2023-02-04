@@ -33,7 +33,7 @@ namespace Diet.UI
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnGirisYap_Click(object sender, EventArgs e)
@@ -85,6 +85,20 @@ namespace Diet.UI
             Form3 frm3 = new Form3();
             frm3.Show();
             Hide();
+        }
+
+        
+
+        private void materialCheckbox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkPassword.CheckState==CheckState.Checked)
+            {
+                txtSifre.UseSystemPasswordChar = true;
+            }
+            else
+            {
+                txtSifre.UseSystemPasswordChar = false;
+            }
         }
     }
 }

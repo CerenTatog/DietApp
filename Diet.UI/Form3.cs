@@ -41,8 +41,8 @@ namespace Diet.UI
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.EnforceBackcolorOnAllComponents = false;
             materialSkinManager.AddFormToManage(this);
-            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.Amber700, Primary.BlueGrey900, Primary.Amber400, Accent.Orange700, TextShade.WHITE);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey600, Primary.BlueGrey900, Primary.BlueGrey600, Accent.Blue700, TextShade.WHITE);
             _currentUser = user;
 
             //var query = from u in db.UserRepository.GetAll()
@@ -113,7 +113,7 @@ namespace Diet.UI
             dataGridView2.DataSource = reportManager.WeeklyMacroFood(_currentUser.ID);
             dataGridView3.DataSource = reportManager.WeeklyDrinkingWater(_currentUser.ID);
             dataGridView4.DataSource = reportManager.CalculateActivity(_currentUser.ID);
-            //şüpheli - gün filtresi koymadık. hem label hem de liste için activity manager'da method tanımlanması gerekli.
+            //gün filtresi koymadık. hem label hem de liste için activity manager'da method tanımlanması gerekli.
             //dataGridView5.DataSource = db.UserActivityRepository.GetAll().Select(x => x.StepCount);
             dataGridView6.DataSource = reportManager.CalculateWeight(_currentUser.ID);
             dataGridView7.DataSource = reportManager.WhichFoodsEatenByMealType(_currentUser.ID,MealType.Breakfast);
@@ -135,13 +135,20 @@ namespace Diet.UI
         {
             string ogun = materialLabel6.Text;
             Form5 form5 = new Form5(ogun, MealType.Lunch, _currentUser);
+            form5.FormClosing += Form5_FormClosing;
             form5.ShowDialog();
+        }
+
+        private void Form5_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Form3_Load(sender, e);
         }
 
         private void mfabAksamYemegiEkle_Click(object sender, EventArgs e)
         {
             string ogun = materialLabel7.Text;
             Form5 form5 = new Form5(ogun, MealType.Dinner, _currentUser);
+            form5.FormClosing += Form5_FormClosing;
             form5.ShowDialog();
         }
 
@@ -204,8 +211,7 @@ namespace Diet.UI
 
         private void materialTabControl1_TabIndexChanged(object sender, EventArgs e)
         {
-            var materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.Amber100, Primary.Blue900, Primary.Amber400, Accent.Red100, TextShade.WHITE);
+           
 
         }
 
@@ -243,6 +249,11 @@ namespace Diet.UI
             Form11 frm11 = new Form11();
             frm11.Show();
             Hide();
+        }
+
+        private void materialCard13_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

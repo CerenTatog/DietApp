@@ -86,7 +86,7 @@ namespace Diet.UI
                          select new
                          {
                              UserName = u.UserName + " " + u.UserSurname,
-                             Activite = userActivity.Activity,
+                             Activite = userActivity.Activity.ActivityName,
                              ActiviteZamanı = userActivity.ActivityTime,
                              AktiviteSüresi = userActivity.Duration
                          }).ToList();

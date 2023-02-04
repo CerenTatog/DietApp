@@ -32,6 +32,24 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.materialCard12 = new MaterialSkin.Controls.MaterialCard();
+            this.lblHarcananToplamKalori = new MaterialSkin.Controls.MaterialLabel();
+            this.mlToplamAlinanKalori = new MaterialSkin.Controls.MaterialLabel();
+            this.k_alınan = new MaterialSkin.Controls.MaterialLabel();
+            this.materialProgressBar1 = new MaterialSkin.Controls.MaterialProgressBar();
+            this.lblToplamKalori = new System.Windows.Forms.Label();
+            this.k_alınan2 = new MaterialSkin.Controls.MaterialLabel();
+            this.mlKarbonHidrat = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.materialProgressBar2 = new MaterialSkin.Controls.MaterialProgressBar();
+            this.mlKarbonhidratg = new System.Windows.Forms.Label();
+            this.mlYagg = new System.Windows.Forms.Label();
+            this.materialProgressBar3 = new MaterialSkin.Controls.MaterialProgressBar();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.mlProteing = new System.Windows.Forms.Label();
             this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
@@ -39,10 +57,6 @@
             this.materialFloatingActionButton10 = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.materialFloatingActionButton9 = new MaterialSkin.Controls.MaterialFloatingActionButton();
             this.mfabSuEkle = new MaterialSkin.Controls.MaterialFloatingActionButton();
-            this.materialProgressBar3 = new MaterialSkin.Controls.MaterialProgressBar();
-            this.materialProgressBar2 = new MaterialSkin.Controls.MaterialProgressBar();
-            this.materialDivider3 = new MaterialSkin.Controls.MaterialDivider();
-            this.materialDivider2 = new MaterialSkin.Controls.MaterialDivider();
             this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
             this.lblAktivite = new MaterialSkin.Controls.MaterialLabel();
             this.lblAdımSayisi = new MaterialSkin.Controls.MaterialLabel();
@@ -143,31 +157,16 @@
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.materialSwitch1 = new MaterialSkin.Controls.MaterialSwitch();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
-            this.materialTextBox26 = new MaterialSkin.Controls.MaterialTextBox2();
-            this.materialTextBox25 = new MaterialSkin.Controls.MaterialTextBox2();
-            this.materialTextBox24 = new MaterialSkin.Controls.MaterialTextBox2();
-            this.materialTextBox23 = new MaterialSkin.Controls.MaterialTextBox2();
-            this.materialTextBox21 = new MaterialSkin.Controls.MaterialTextBox2();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.k_alınan = new MaterialSkin.Controls.MaterialLabel();
-            this.materialProgressBar1 = new MaterialSkin.Controls.MaterialProgressBar();
-            this.k_alınan2 = new MaterialSkin.Controls.MaterialLabel();
-            this.mlKarbonHidrat = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.mlKarbonhidratg = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.mlProteing = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.mlYagg = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lblHarcananToplamKalori = new MaterialSkin.Controls.MaterialLabel();
-            this.lblToplamKalori = new System.Windows.Forms.Label();
-            this.mlToplamAlinanKalori = new MaterialSkin.Controls.MaterialLabel();
-            this.materialCard12 = new MaterialSkin.Controls.MaterialCard();
+            this.materialCard13 = new MaterialSkin.Controls.MaterialCard();
+            this.materialCard14 = new MaterialSkin.Controls.MaterialCard();
+            this.materialTextBox1 = new MaterialSkin.Controls.MaterialTextBox();
+            this.materialTextBox2 = new MaterialSkin.Controls.MaterialTextBox();
+            this.materialTextBox22 = new MaterialSkin.Controls.MaterialTextBox2();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.materialCard12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.materialCard2.SuspendLayout();
             this.materialCard1.SuspendLayout();
@@ -202,7 +201,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage6.SuspendLayout();
             this.materialTabControl2.SuspendLayout();
-            this.materialCard12.SuspendLayout();
+            this.tabPage8.SuspendLayout();
+            this.tabPage9.SuspendLayout();
+            this.materialCard13.SuspendLayout();
+            this.materialCard14.SuspendLayout();
             this.SuspendLayout();
             // 
             // materialTabControl1
@@ -228,16 +230,9 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.materialCard14);
+            this.tabPage1.Controls.Add(this.materialCard13);
             this.tabPage1.Controls.Add(this.materialCard12);
-            this.tabPage1.Controls.Add(this.materialLabel9);
-            this.tabPage1.Controls.Add(this.materialLabel2);
-            this.tabPage1.Controls.Add(this.materialLabel1);
-            this.tabPage1.Controls.Add(this.pictureBox1);
-            this.tabPage1.Controls.Add(this.materialFloatingActionButton10);
-            this.tabPage1.Controls.Add(this.materialFloatingActionButton9);
-            this.tabPage1.Controls.Add(this.mfabSuEkle);
-            this.tabPage1.Controls.Add(this.materialDivider3);
-            this.tabPage1.Controls.Add(this.materialDivider2);
             this.tabPage1.Controls.Add(this.materialCard2);
             this.tabPage1.Controls.Add(this.materialCard1);
             this.tabPage1.ImageKey = "planner.png";
@@ -249,13 +244,222 @@
             this.tabPage1.Text = "Günlük";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // materialCard12
+            // 
+            this.materialCard12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard12.Controls.Add(this.lblHarcananToplamKalori);
+            this.materialCard12.Controls.Add(this.mlToplamAlinanKalori);
+            this.materialCard12.Controls.Add(this.k_alınan);
+            this.materialCard12.Controls.Add(this.materialProgressBar1);
+            this.materialCard12.Controls.Add(this.lblToplamKalori);
+            this.materialCard12.Controls.Add(this.k_alınan2);
+            this.materialCard12.Controls.Add(this.mlKarbonHidrat);
+            this.materialCard12.Controls.Add(this.materialLabel4);
+            this.materialCard12.Controls.Add(this.materialLabel3);
+            this.materialCard12.Controls.Add(this.label5);
+            this.materialCard12.Controls.Add(this.materialProgressBar2);
+            this.materialCard12.Controls.Add(this.mlKarbonhidratg);
+            this.materialCard12.Controls.Add(this.mlYagg);
+            this.materialCard12.Controls.Add(this.materialProgressBar3);
+            this.materialCard12.Controls.Add(this.label2);
+            this.materialCard12.Controls.Add(this.label3);
+            this.materialCard12.Controls.Add(this.mlProteing);
+            this.materialCard12.Depth = 0;
+            this.materialCard12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard12.Location = new System.Drawing.Point(66, 52);
+            this.materialCard12.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard12.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard12.Name = "materialCard12";
+            this.materialCard12.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard12.Size = new System.Drawing.Size(954, 146);
+            this.materialCard12.TabIndex = 30;
+            // 
+            // lblHarcananToplamKalori
+            // 
+            this.lblHarcananToplamKalori.AutoSize = true;
+            this.lblHarcananToplamKalori.Depth = 0;
+            this.lblHarcananToplamKalori.Font = new System.Drawing.Font("Roboto", 34F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lblHarcananToplamKalori.FontType = MaterialSkin.MaterialSkinManager.fontType.H4;
+            this.lblHarcananToplamKalori.Location = new System.Drawing.Point(764, 14);
+            this.lblHarcananToplamKalori.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblHarcananToplamKalori.Name = "lblHarcananToplamKalori";
+            this.lblHarcananToplamKalori.Size = new System.Drawing.Size(20, 41);
+            this.lblHarcananToplamKalori.TabIndex = 22;
+            this.lblHarcananToplamKalori.Text = "0";
+            // 
+            // mlToplamAlinanKalori
+            // 
+            this.mlToplamAlinanKalori.AutoSize = true;
+            this.mlToplamAlinanKalori.Depth = 0;
+            this.mlToplamAlinanKalori.Font = new System.Drawing.Font("Roboto", 34F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.mlToplamAlinanKalori.FontType = MaterialSkin.MaterialSkinManager.fontType.H4;
+            this.mlToplamAlinanKalori.Location = new System.Drawing.Point(120, 23);
+            this.mlToplamAlinanKalori.MouseState = MaterialSkin.MouseState.HOVER;
+            this.mlToplamAlinanKalori.Name = "mlToplamAlinanKalori";
+            this.mlToplamAlinanKalori.Size = new System.Drawing.Size(20, 41);
+            this.mlToplamAlinanKalori.TabIndex = 21;
+            this.mlToplamAlinanKalori.Text = "0";
+            // 
+            // k_alınan
+            // 
+            this.k_alınan.AutoSize = true;
+            this.k_alınan.Depth = 0;
+            this.k_alınan.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.k_alınan.Location = new System.Drawing.Point(165, 29);
+            this.k_alınan.MouseState = MaterialSkin.MouseState.HOVER;
+            this.k_alınan.Name = "k_alınan";
+            this.k_alınan.Size = new System.Drawing.Size(78, 19);
+            this.k_alınan.TabIndex = 5;
+            this.k_alınan.Text = "kcal alınan";
+            // 
+            // materialProgressBar1
+            // 
+            this.materialProgressBar1.Depth = 0;
+            this.materialProgressBar1.Location = new System.Drawing.Point(24, 98);
+            this.materialProgressBar1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialProgressBar1.Name = "materialProgressBar1";
+            this.materialProgressBar1.Size = new System.Drawing.Size(230, 5);
+            this.materialProgressBar1.TabIndex = 5;
+            // 
+            // lblToplamKalori
+            // 
+            this.lblToplamKalori.AutoSize = true;
+            this.lblToplamKalori.Location = new System.Drawing.Point(409, 35);
+            this.lblToplamKalori.Name = "lblToplamKalori";
+            this.lblToplamKalori.Size = new System.Drawing.Size(71, 13);
+            this.lblToplamKalori.TabIndex = 23;
+            this.lblToplamKalori.Text = "Toplam Kalori";
+            // 
+            // k_alınan2
+            // 
+            this.k_alınan2.AutoSize = true;
+            this.k_alınan2.Depth = 0;
+            this.k_alınan2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.k_alınan2.Location = new System.Drawing.Point(818, 23);
+            this.k_alınan2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.k_alınan2.Name = "k_alınan2";
+            this.k_alınan2.Size = new System.Drawing.Size(101, 19);
+            this.k_alınan2.TabIndex = 6;
+            this.k_alınan2.Text = "kcal harcanan";
+            // 
+            // mlKarbonHidrat
+            // 
+            this.mlKarbonHidrat.AutoSize = true;
+            this.mlKarbonHidrat.Depth = 0;
+            this.mlKarbonHidrat.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.mlKarbonHidrat.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
+            this.mlKarbonHidrat.Location = new System.Drawing.Point(95, 78);
+            this.mlKarbonHidrat.MouseState = MaterialSkin.MouseState.HOVER;
+            this.mlKarbonHidrat.Name = "mlKarbonHidrat";
+            this.mlKarbonHidrat.Size = new System.Drawing.Size(87, 17);
+            this.mlKarbonHidrat.TabIndex = 12;
+            this.mlKarbonHidrat.Text = "Karbonhidrat ";
+            // 
+            // materialLabel4
+            // 
+            this.materialLabel4.AutoSize = true;
+            this.materialLabel4.Depth = 0;
+            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel4.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
+            this.materialLabel4.Location = new System.Drawing.Point(434, 78);
+            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel4.Name = "materialLabel4";
+            this.materialLabel4.Size = new System.Drawing.Size(46, 17);
+            this.materialLabel4.TabIndex = 13;
+            this.materialLabel4.Text = "Protein";
+            // 
+            // materialLabel3
+            // 
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel3.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
+            this.materialLabel3.Location = new System.Drawing.Point(758, 78);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(25, 17);
+            this.materialLabel3.TabIndex = 14;
+            this.materialLabel3.Text = "Yağ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(789, 106);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(16, 13);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "gr";
+            // 
+            // materialProgressBar2
+            // 
+            this.materialProgressBar2.Depth = 0;
+            this.materialProgressBar2.Location = new System.Drawing.Point(349, 98);
+            this.materialProgressBar2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialProgressBar2.Name = "materialProgressBar2";
+            this.materialProgressBar2.Size = new System.Drawing.Size(230, 5);
+            this.materialProgressBar2.TabIndex = 6;
+            // 
+            // mlKarbonhidratg
+            // 
+            this.mlKarbonhidratg.AutoSize = true;
+            this.mlKarbonhidratg.Location = new System.Drawing.Point(124, 106);
+            this.mlKarbonhidratg.Name = "mlKarbonhidratg";
+            this.mlKarbonhidratg.Size = new System.Drawing.Size(13, 13);
+            this.mlKarbonhidratg.TabIndex = 15;
+            this.mlKarbonhidratg.Text = "0";
+            // 
+            // mlYagg
+            // 
+            this.mlYagg.AutoSize = true;
+            this.mlYagg.Location = new System.Drawing.Point(748, 106);
+            this.mlYagg.Name = "mlYagg";
+            this.mlYagg.Size = new System.Drawing.Size(13, 13);
+            this.mlYagg.TabIndex = 19;
+            this.mlYagg.Text = "0";
+            // 
+            // materialProgressBar3
+            // 
+            this.materialProgressBar3.Depth = 0;
+            this.materialProgressBar3.Location = new System.Drawing.Point(670, 98);
+            this.materialProgressBar3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialProgressBar3.Name = "materialProgressBar3";
+            this.materialProgressBar3.Size = new System.Drawing.Size(230, 5);
+            this.materialProgressBar3.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(165, 106);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(16, 13);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "gr";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(473, 109);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(16, 13);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "gr";
+            // 
+            // mlProteing
+            // 
+            this.mlProteing.AutoSize = true;
+            this.mlProteing.Location = new System.Drawing.Point(429, 109);
+            this.mlProteing.Name = "mlProteing";
+            this.mlProteing.Size = new System.Drawing.Size(13, 13);
+            this.mlProteing.TabIndex = 17;
+            this.mlProteing.Text = "0";
+            // 
             // materialLabel9
             // 
             this.materialLabel9.AutoSize = true;
             this.materialLabel9.Depth = 0;
             this.materialLabel9.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel9.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
-            this.materialLabel9.Location = new System.Drawing.Point(819, 451);
+            this.materialLabel9.Location = new System.Drawing.Point(7, 0);
             this.materialLabel9.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel9.Name = "materialLabel9";
             this.materialLabel9.Size = new System.Drawing.Size(26, 17);
@@ -268,7 +472,7 @@
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel2.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
-            this.materialLabel2.Location = new System.Drawing.Point(544, 451);
+            this.materialLabel2.Location = new System.Drawing.Point(203, 66);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(26, 17);
@@ -281,7 +485,7 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel1.FontType = MaterialSkin.MaterialSkinManager.fontType.Subtitle2;
-            this.materialLabel1.Location = new System.Drawing.Point(35, 417);
+            this.materialLabel1.Location = new System.Drawing.Point(8, 3);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(78, 17);
@@ -291,7 +495,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Diet.UI.Properties.Resources.water;
-            this.pictureBox1.Location = new System.Drawing.Point(93, 471);
+            this.pictureBox1.Location = new System.Drawing.Point(24, 33);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(48, 40);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -304,7 +508,7 @@
             this.materialFloatingActionButton10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.materialFloatingActionButton10.Depth = 0;
             this.materialFloatingActionButton10.Icon = null;
-            this.materialFloatingActionButton10.Location = new System.Drawing.Point(669, 471);
+            this.materialFloatingActionButton10.Location = new System.Drawing.Point(125, 30);
             this.materialFloatingActionButton10.Mini = true;
             this.materialFloatingActionButton10.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialFloatingActionButton10.Name = "materialFloatingActionButton10";
@@ -319,7 +523,7 @@
             this.materialFloatingActionButton9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.materialFloatingActionButton9.Depth = 0;
             this.materialFloatingActionButton9.Icon = null;
-            this.materialFloatingActionButton9.Location = new System.Drawing.Point(837, 471);
+            this.materialFloatingActionButton9.Location = new System.Drawing.Point(271, 30);
             this.materialFloatingActionButton9.Mini = true;
             this.materialFloatingActionButton9.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialFloatingActionButton9.Name = "materialFloatingActionButton9";
@@ -334,7 +538,7 @@
             this.mfabSuEkle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.mfabSuEkle.Depth = 0;
             this.mfabSuEkle.Icon = null;
-            this.mfabSuEkle.Location = new System.Drawing.Point(438, 471);
+            this.mfabSuEkle.Location = new System.Drawing.Point(349, 23);
             this.mfabSuEkle.Mini = true;
             this.mfabSuEkle.MouseState = MaterialSkin.MouseState.HOVER;
             this.mfabSuEkle.Name = "mfabSuEkle";
@@ -343,46 +547,6 @@
             this.mfabSuEkle.Text = "materialFloatingActionButton8";
             this.mfabSuEkle.UseVisualStyleBackColor = false;
             this.mfabSuEkle.Click += new System.EventHandler(this.mfabSuEkle_Click);
-            // 
-            // materialProgressBar3
-            // 
-            this.materialProgressBar3.Depth = 0;
-            this.materialProgressBar3.Location = new System.Drawing.Point(670, 98);
-            this.materialProgressBar3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialProgressBar3.Name = "materialProgressBar3";
-            this.materialProgressBar3.Size = new System.Drawing.Size(230, 5);
-            this.materialProgressBar3.TabIndex = 7;
-            // 
-            // materialProgressBar2
-            // 
-            this.materialProgressBar2.Depth = 0;
-            this.materialProgressBar2.Location = new System.Drawing.Point(349, 98);
-            this.materialProgressBar2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialProgressBar2.Name = "materialProgressBar2";
-            this.materialProgressBar2.Size = new System.Drawing.Size(230, 5);
-            this.materialProgressBar2.TabIndex = 6;
-            // 
-            // materialDivider3
-            // 
-            this.materialDivider3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialDivider3.Depth = 0;
-            this.materialDivider3.Location = new System.Drawing.Point(531, 437);
-            this.materialDivider3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialDivider3.Name = "materialDivider3";
-            this.materialDivider3.Size = new System.Drawing.Size(502, 98);
-            this.materialDivider3.TabIndex = 4;
-            this.materialDivider3.Text = "materialDivider3";
-            // 
-            // materialDivider2
-            // 
-            this.materialDivider2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialDivider2.Depth = 0;
-            this.materialDivider2.Location = new System.Drawing.Point(66, 437);
-            this.materialDivider2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialDivider2.Name = "materialDivider2";
-            this.materialDivider2.Size = new System.Drawing.Size(450, 98);
-            this.materialDivider2.TabIndex = 3;
-            this.materialDivider2.Text = "materialDivider2";
             // 
             // materialCard2
             // 
@@ -397,7 +561,7 @@
             this.materialCard2.Controls.Add(this.materialLabel16);
             this.materialCard2.Depth = 0;
             this.materialCard2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard2.Location = new System.Drawing.Point(583, 208);
+            this.materialCard2.Location = new System.Drawing.Point(583, 234);
             this.materialCard2.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard2.Name = "materialCard2";
@@ -532,7 +696,7 @@
             this.materialCard1.Controls.Add(this.mfabKahvaltıEkle);
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard1.Location = new System.Drawing.Point(66, 208);
+            this.materialCard1.Location = new System.Drawing.Point(66, 234);
             this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
@@ -1599,11 +1763,6 @@
             this.tabPage6.Controls.Add(this.materialTabControl2);
             this.tabPage6.Controls.Add(this.materialSwitch1);
             this.tabPage6.Controls.Add(this.materialDivider1);
-            this.tabPage6.Controls.Add(this.materialTextBox26);
-            this.tabPage6.Controls.Add(this.materialTextBox25);
-            this.tabPage6.Controls.Add(this.materialTextBox24);
-            this.tabPage6.Controls.Add(this.materialTextBox23);
-            this.tabPage6.Controls.Add(this.materialTextBox21);
             this.tabPage6.Location = new System.Drawing.Point(4, 23);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
@@ -1617,32 +1776,35 @@
             this.materialTabControl2.Controls.Add(this.tabPage8);
             this.materialTabControl2.Controls.Add(this.tabPage9);
             this.materialTabControl2.Depth = 0;
-            this.materialTabControl2.Location = new System.Drawing.Point(412, 39);
+            this.materialTabControl2.Location = new System.Drawing.Point(109, 39);
             this.materialTabControl2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabControl2.Multiline = true;
             this.materialTabControl2.Name = "materialTabControl2";
             this.materialTabControl2.SelectedIndex = 0;
-            this.materialTabControl2.Size = new System.Drawing.Size(601, 431);
+            this.materialTabControl2.Size = new System.Drawing.Size(904, 431);
             this.materialTabControl2.TabIndex = 8;
             // 
             // tabPage8
             // 
+            this.tabPage8.Controls.Add(this.materialTextBox2);
+            this.tabPage8.Controls.Add(this.materialTextBox1);
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage8.Size = new System.Drawing.Size(593, 405);
             this.tabPage8.TabIndex = 0;
-            this.tabPage8.Text = "tabPage8";
+            this.tabPage8.Text = "Hesap Ayarları";
             this.tabPage8.UseVisualStyleBackColor = true;
             // 
             // tabPage9
             // 
+            this.tabPage9.Controls.Add(this.materialTextBox22);
             this.tabPage9.Location = new System.Drawing.Point(4, 22);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(593, 405);
+            this.tabPage9.Size = new System.Drawing.Size(896, 405);
             this.tabPage9.TabIndex = 1;
-            this.tabPage9.Text = "tabPage9";
+            this.tabPage9.Text = "Profil Ayarları";
             this.tabPage9.UseVisualStyleBackColor = true;
             // 
             // materialSwitch1
@@ -1671,151 +1833,6 @@
             this.materialDivider1.TabIndex = 6;
             this.materialDivider1.Text = "materialDivider1";
             // 
-            // materialTextBox26
-            // 
-            this.materialTextBox26.AnimateReadOnly = false;
-            this.materialTextBox26.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.materialTextBox26.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.materialTextBox26.Depth = 0;
-            this.materialTextBox26.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox26.HideSelection = true;
-            this.materialTextBox26.LeadingIcon = null;
-            this.materialTextBox26.Location = new System.Drawing.Point(67, 127);
-            this.materialTextBox26.MaxLength = 32767;
-            this.materialTextBox26.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox26.Name = "materialTextBox26";
-            this.materialTextBox26.PasswordChar = '\0';
-            this.materialTextBox26.PrefixSuffixText = null;
-            this.materialTextBox26.ReadOnly = false;
-            this.materialTextBox26.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.materialTextBox26.SelectedText = "";
-            this.materialTextBox26.SelectionLength = 0;
-            this.materialTextBox26.SelectionStart = 0;
-            this.materialTextBox26.ShortcutsEnabled = true;
-            this.materialTextBox26.Size = new System.Drawing.Size(250, 48);
-            this.materialTextBox26.TabIndex = 5;
-            this.materialTextBox26.TabStop = false;
-            this.materialTextBox26.Text = "materialTextBox26";
-            this.materialTextBox26.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialTextBox26.TrailingIcon = null;
-            this.materialTextBox26.UseSystemPasswordChar = false;
-            // 
-            // materialTextBox25
-            // 
-            this.materialTextBox25.AnimateReadOnly = false;
-            this.materialTextBox25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.materialTextBox25.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.materialTextBox25.Depth = 0;
-            this.materialTextBox25.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox25.HideSelection = true;
-            this.materialTextBox25.LeadingIcon = null;
-            this.materialTextBox25.Location = new System.Drawing.Point(67, 181);
-            this.materialTextBox25.MaxLength = 32767;
-            this.materialTextBox25.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox25.Name = "materialTextBox25";
-            this.materialTextBox25.PasswordChar = '\0';
-            this.materialTextBox25.PrefixSuffixText = null;
-            this.materialTextBox25.ReadOnly = false;
-            this.materialTextBox25.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.materialTextBox25.SelectedText = "";
-            this.materialTextBox25.SelectionLength = 0;
-            this.materialTextBox25.SelectionStart = 0;
-            this.materialTextBox25.ShortcutsEnabled = true;
-            this.materialTextBox25.Size = new System.Drawing.Size(250, 48);
-            this.materialTextBox25.TabIndex = 4;
-            this.materialTextBox25.TabStop = false;
-            this.materialTextBox25.Text = "materialTextBox25";
-            this.materialTextBox25.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialTextBox25.TrailingIcon = null;
-            this.materialTextBox25.UseSystemPasswordChar = false;
-            // 
-            // materialTextBox24
-            // 
-            this.materialTextBox24.AnimateReadOnly = false;
-            this.materialTextBox24.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.materialTextBox24.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.materialTextBox24.Depth = 0;
-            this.materialTextBox24.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox24.HideSelection = true;
-            this.materialTextBox24.LeadingIcon = null;
-            this.materialTextBox24.Location = new System.Drawing.Point(67, 235);
-            this.materialTextBox24.MaxLength = 32767;
-            this.materialTextBox24.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox24.Name = "materialTextBox24";
-            this.materialTextBox24.PasswordChar = '\0';
-            this.materialTextBox24.PrefixSuffixText = null;
-            this.materialTextBox24.ReadOnly = false;
-            this.materialTextBox24.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.materialTextBox24.SelectedText = "";
-            this.materialTextBox24.SelectionLength = 0;
-            this.materialTextBox24.SelectionStart = 0;
-            this.materialTextBox24.ShortcutsEnabled = true;
-            this.materialTextBox24.Size = new System.Drawing.Size(250, 48);
-            this.materialTextBox24.TabIndex = 3;
-            this.materialTextBox24.TabStop = false;
-            this.materialTextBox24.Text = "materialTextBox24";
-            this.materialTextBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialTextBox24.TrailingIcon = null;
-            this.materialTextBox24.UseSystemPasswordChar = false;
-            // 
-            // materialTextBox23
-            // 
-            this.materialTextBox23.AnimateReadOnly = false;
-            this.materialTextBox23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.materialTextBox23.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.materialTextBox23.Depth = 0;
-            this.materialTextBox23.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox23.HideSelection = true;
-            this.materialTextBox23.LeadingIcon = null;
-            this.materialTextBox23.Location = new System.Drawing.Point(67, 289);
-            this.materialTextBox23.MaxLength = 32767;
-            this.materialTextBox23.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox23.Name = "materialTextBox23";
-            this.materialTextBox23.PasswordChar = '\0';
-            this.materialTextBox23.PrefixSuffixText = null;
-            this.materialTextBox23.ReadOnly = false;
-            this.materialTextBox23.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.materialTextBox23.SelectedText = "";
-            this.materialTextBox23.SelectionLength = 0;
-            this.materialTextBox23.SelectionStart = 0;
-            this.materialTextBox23.ShortcutsEnabled = true;
-            this.materialTextBox23.Size = new System.Drawing.Size(250, 48);
-            this.materialTextBox23.TabIndex = 2;
-            this.materialTextBox23.TabStop = false;
-            this.materialTextBox23.Text = "materialTextBox23";
-            this.materialTextBox23.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialTextBox23.TrailingIcon = null;
-            this.materialTextBox23.UseSystemPasswordChar = false;
-            // 
-            // materialTextBox21
-            // 
-            this.materialTextBox21.AnimateReadOnly = false;
-            this.materialTextBox21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.materialTextBox21.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.materialTextBox21.Depth = 0;
-            this.materialTextBox21.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox21.HideSelection = true;
-            this.materialTextBox21.LeadingIcon = null;
-            this.materialTextBox21.Location = new System.Drawing.Point(67, 73);
-            this.materialTextBox21.MaxLength = 32767;
-            this.materialTextBox21.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox21.Name = "materialTextBox21";
-            this.materialTextBox21.PasswordChar = '\0';
-            this.materialTextBox21.PrefixSuffixText = null;
-            this.materialTextBox21.ReadOnly = false;
-            this.materialTextBox21.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.materialTextBox21.SelectedText = "";
-            this.materialTextBox21.SelectionLength = 0;
-            this.materialTextBox21.SelectionStart = 0;
-            this.materialTextBox21.ShortcutsEnabled = true;
-            this.materialTextBox21.Size = new System.Drawing.Size(250, 48);
-            this.materialTextBox21.TabIndex = 0;
-            this.materialTextBox21.TabStop = false;
-            this.materialTextBox21.Text = "materialTextBox21";
-            this.materialTextBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialTextBox21.TrailingIcon = null;
-            this.materialTextBox21.UseSystemPasswordChar = false;
-            // 
             // tabPage7
             // 
             this.tabPage7.Location = new System.Drawing.Point(4, 23);
@@ -1833,196 +1850,102 @@
             this.ımageList1.Images.SetKeyName(0, "user (1).png");
             this.ımageList1.Images.SetKeyName(1, "planner.png");
             // 
-            // k_alınan
+            // materialCard13
             // 
-            this.k_alınan.AutoSize = true;
-            this.k_alınan.Depth = 0;
-            this.k_alınan.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.k_alınan.Location = new System.Drawing.Point(165, 29);
-            this.k_alınan.MouseState = MaterialSkin.MouseState.HOVER;
-            this.k_alınan.Name = "k_alınan";
-            this.k_alınan.Size = new System.Drawing.Size(78, 19);
-            this.k_alınan.TabIndex = 5;
-            this.k_alınan.Text = "kcal alınan";
+            this.materialCard13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard13.Controls.Add(this.materialLabel1);
+            this.materialCard13.Controls.Add(this.pictureBox1);
+            this.materialCard13.Controls.Add(this.mfabSuEkle);
+            this.materialCard13.Depth = 0;
+            this.materialCard13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard13.Location = new System.Drawing.Point(66, 466);
+            this.materialCard13.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard13.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard13.Name = "materialCard13";
+            this.materialCard13.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard13.Size = new System.Drawing.Size(489, 100);
+            this.materialCard13.TabIndex = 31;
+            this.materialCard13.Paint += new System.Windows.Forms.PaintEventHandler(this.materialCard13_Paint);
             // 
-            // materialProgressBar1
+            // materialCard14
             // 
-            this.materialProgressBar1.Depth = 0;
-            this.materialProgressBar1.Location = new System.Drawing.Point(24, 98);
-            this.materialProgressBar1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialProgressBar1.Name = "materialProgressBar1";
-            this.materialProgressBar1.Size = new System.Drawing.Size(230, 5);
-            this.materialProgressBar1.TabIndex = 5;
+            this.materialCard14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard14.Controls.Add(this.materialFloatingActionButton10);
+            this.materialCard14.Controls.Add(this.materialFloatingActionButton9);
+            this.materialCard14.Controls.Add(this.materialLabel2);
+            this.materialCard14.Controls.Add(this.materialLabel9);
+            this.materialCard14.Depth = 0;
+            this.materialCard14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard14.Location = new System.Drawing.Point(583, 466);
+            this.materialCard14.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard14.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard14.Name = "materialCard14";
+            this.materialCard14.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard14.Size = new System.Drawing.Size(437, 97);
+            this.materialCard14.TabIndex = 32;
             // 
-            // k_alınan2
+            // materialTextBox1
             // 
-            this.k_alınan2.AutoSize = true;
-            this.k_alınan2.Depth = 0;
-            this.k_alınan2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.k_alınan2.Location = new System.Drawing.Point(818, 23);
-            this.k_alınan2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.k_alınan2.Name = "k_alınan2";
-            this.k_alınan2.Size = new System.Drawing.Size(101, 19);
-            this.k_alınan2.TabIndex = 6;
-            this.k_alınan2.Text = "kcal harcanan";
+            this.materialTextBox1.AnimateReadOnly = false;
+            this.materialTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialTextBox1.Depth = 0;
+            this.materialTextBox1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTextBox1.LeadingIcon = null;
+            this.materialTextBox1.Location = new System.Drawing.Point(36, 31);
+            this.materialTextBox1.MaxLength = 50;
+            this.materialTextBox1.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialTextBox1.Multiline = false;
+            this.materialTextBox1.Name = "materialTextBox1";
+            this.materialTextBox1.Size = new System.Drawing.Size(128, 50);
+            this.materialTextBox1.TabIndex = 0;
+            this.materialTextBox1.Text = "Şifre Değiştir";
+            this.materialTextBox1.TrailingIcon = null;
             // 
-            // mlKarbonHidrat
+            // materialTextBox2
             // 
-            this.mlKarbonHidrat.AutoSize = true;
-            this.mlKarbonHidrat.Depth = 0;
-            this.mlKarbonHidrat.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.mlKarbonHidrat.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
-            this.mlKarbonHidrat.Location = new System.Drawing.Point(95, 78);
-            this.mlKarbonHidrat.MouseState = MaterialSkin.MouseState.HOVER;
-            this.mlKarbonHidrat.Name = "mlKarbonHidrat";
-            this.mlKarbonHidrat.Size = new System.Drawing.Size(87, 17);
-            this.mlKarbonHidrat.TabIndex = 12;
-            this.mlKarbonHidrat.Text = "Karbonhidrat ";
+            this.materialTextBox2.AnimateReadOnly = false;
+            this.materialTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialTextBox2.Depth = 0;
+            this.materialTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTextBox2.LeadingIcon = null;
+            this.materialTextBox2.Location = new System.Drawing.Point(36, 102);
+            this.materialTextBox2.MaxLength = 50;
+            this.materialTextBox2.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialTextBox2.Multiline = false;
+            this.materialTextBox2.Name = "materialTextBox2";
+            this.materialTextBox2.Size = new System.Drawing.Size(128, 50);
+            this.materialTextBox2.TabIndex = 1;
+            this.materialTextBox2.Text = "Tercihler";
+            this.materialTextBox2.TrailingIcon = null;
             // 
-            // materialLabel4
+            // materialTextBox22
             // 
-            this.materialLabel4.AutoSize = true;
-            this.materialLabel4.Depth = 0;
-            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel4.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
-            this.materialLabel4.Location = new System.Drawing.Point(434, 78);
-            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(46, 17);
-            this.materialLabel4.TabIndex = 13;
-            this.materialLabel4.Text = "Protein";
-            // 
-            // materialLabel3
-            // 
-            this.materialLabel3.AutoSize = true;
-            this.materialLabel3.Depth = 0;
-            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel3.FontType = MaterialSkin.MaterialSkinManager.fontType.Body2;
-            this.materialLabel3.Location = new System.Drawing.Point(758, 78);
-            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(25, 17);
-            this.materialLabel3.TabIndex = 14;
-            this.materialLabel3.Text = "Yağ";
-            // 
-            // mlKarbonhidratg
-            // 
-            this.mlKarbonhidratg.AutoSize = true;
-            this.mlKarbonhidratg.Location = new System.Drawing.Point(124, 106);
-            this.mlKarbonhidratg.Name = "mlKarbonhidratg";
-            this.mlKarbonhidratg.Size = new System.Drawing.Size(13, 13);
-            this.mlKarbonhidratg.TabIndex = 15;
-            this.mlKarbonhidratg.Text = "0";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(165, 106);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(16, 13);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "gr";
-            // 
-            // mlProteing
-            // 
-            this.mlProteing.AutoSize = true;
-            this.mlProteing.Location = new System.Drawing.Point(429, 109);
-            this.mlProteing.Name = "mlProteing";
-            this.mlProteing.Size = new System.Drawing.Size(13, 13);
-            this.mlProteing.TabIndex = 17;
-            this.mlProteing.Text = "0";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(473, 109);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(16, 13);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "gr";
-            // 
-            // mlYagg
-            // 
-            this.mlYagg.AutoSize = true;
-            this.mlYagg.Location = new System.Drawing.Point(748, 106);
-            this.mlYagg.Name = "mlYagg";
-            this.mlYagg.Size = new System.Drawing.Size(13, 13);
-            this.mlYagg.TabIndex = 19;
-            this.mlYagg.Text = "0";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(789, 106);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(16, 13);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "gr";
-            // 
-            // lblHarcananToplamKalori
-            // 
-            this.lblHarcananToplamKalori.AutoSize = true;
-            this.lblHarcananToplamKalori.Depth = 0;
-            this.lblHarcananToplamKalori.Font = new System.Drawing.Font("Roboto", 34F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.lblHarcananToplamKalori.FontType = MaterialSkin.MaterialSkinManager.fontType.H4;
-            this.lblHarcananToplamKalori.Location = new System.Drawing.Point(764, 14);
-            this.lblHarcananToplamKalori.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblHarcananToplamKalori.Name = "lblHarcananToplamKalori";
-            this.lblHarcananToplamKalori.Size = new System.Drawing.Size(20, 41);
-            this.lblHarcananToplamKalori.TabIndex = 22;
-            this.lblHarcananToplamKalori.Text = "0";
-            // 
-            // lblToplamKalori
-            // 
-            this.lblToplamKalori.AutoSize = true;
-            this.lblToplamKalori.Location = new System.Drawing.Point(409, 35);
-            this.lblToplamKalori.Name = "lblToplamKalori";
-            this.lblToplamKalori.Size = new System.Drawing.Size(71, 13);
-            this.lblToplamKalori.TabIndex = 23;
-            this.lblToplamKalori.Text = "Toplam Kalori";
-            // 
-            // mlToplamAlinanKalori
-            // 
-            this.mlToplamAlinanKalori.AutoSize = true;
-            this.mlToplamAlinanKalori.Depth = 0;
-            this.mlToplamAlinanKalori.Font = new System.Drawing.Font("Roboto", 34F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.mlToplamAlinanKalori.FontType = MaterialSkin.MaterialSkinManager.fontType.H4;
-            this.mlToplamAlinanKalori.Location = new System.Drawing.Point(120, 23);
-            this.mlToplamAlinanKalori.MouseState = MaterialSkin.MouseState.HOVER;
-            this.mlToplamAlinanKalori.Name = "mlToplamAlinanKalori";
-            this.mlToplamAlinanKalori.Size = new System.Drawing.Size(20, 41);
-            this.mlToplamAlinanKalori.TabIndex = 21;
-            this.mlToplamAlinanKalori.Text = "0";
-            // 
-            // materialCard12
-            // 
-            this.materialCard12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard12.Controls.Add(this.lblHarcananToplamKalori);
-            this.materialCard12.Controls.Add(this.mlToplamAlinanKalori);
-            this.materialCard12.Controls.Add(this.k_alınan);
-            this.materialCard12.Controls.Add(this.materialProgressBar1);
-            this.materialCard12.Controls.Add(this.lblToplamKalori);
-            this.materialCard12.Controls.Add(this.k_alınan2);
-            this.materialCard12.Controls.Add(this.mlKarbonHidrat);
-            this.materialCard12.Controls.Add(this.materialLabel4);
-            this.materialCard12.Controls.Add(this.materialLabel3);
-            this.materialCard12.Controls.Add(this.label5);
-            this.materialCard12.Controls.Add(this.materialProgressBar2);
-            this.materialCard12.Controls.Add(this.mlKarbonhidratg);
-            this.materialCard12.Controls.Add(this.mlYagg);
-            this.materialCard12.Controls.Add(this.materialProgressBar3);
-            this.materialCard12.Controls.Add(this.label2);
-            this.materialCard12.Controls.Add(this.label3);
-            this.materialCard12.Controls.Add(this.mlProteing);
-            this.materialCard12.Depth = 0;
-            this.materialCard12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard12.Location = new System.Drawing.Point(66, 52);
-            this.materialCard12.Margin = new System.Windows.Forms.Padding(14);
-            this.materialCard12.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard12.Name = "materialCard12";
-            this.materialCard12.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard12.Size = new System.Drawing.Size(954, 146);
-            this.materialCard12.TabIndex = 30;
+            this.materialTextBox22.AnimateReadOnly = false;
+            this.materialTextBox22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.materialTextBox22.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.materialTextBox22.Depth = 0;
+            this.materialTextBox22.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialTextBox22.HideSelection = true;
+            this.materialTextBox22.LeadingIcon = null;
+            this.materialTextBox22.Location = new System.Drawing.Point(6, 12);
+            this.materialTextBox22.MaxLength = 32767;
+            this.materialTextBox22.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialTextBox22.Name = "materialTextBox22";
+            this.materialTextBox22.PasswordChar = '\0';
+            this.materialTextBox22.PrefixSuffixText = null;
+            this.materialTextBox22.ReadOnly = false;
+            this.materialTextBox22.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.materialTextBox22.SelectedText = "";
+            this.materialTextBox22.SelectionLength = 0;
+            this.materialTextBox22.SelectionStart = 0;
+            this.materialTextBox22.ShortcutsEnabled = true;
+            this.materialTextBox22.Size = new System.Drawing.Size(250, 48);
+            this.materialTextBox22.TabIndex = 0;
+            this.materialTextBox22.TabStop = false;
+            this.materialTextBox22.Text = "materialTextBox22";
+            this.materialTextBox22.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.materialTextBox22.TrailingIcon = null;
+            this.materialTextBox22.UseSystemPasswordChar = false;
             // 
             // Form3
             // 
@@ -2039,7 +1962,8 @@
             this.Load += new System.EventHandler(this.Form3_Load);
             this.materialTabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.materialCard12.ResumeLayout(false);
+            this.materialCard12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.materialCard2.ResumeLayout(false);
             this.materialCard2.PerformLayout();
@@ -2084,8 +2008,12 @@
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
             this.materialTabControl2.ResumeLayout(false);
-            this.materialCard12.ResumeLayout(false);
-            this.materialCard12.PerformLayout();
+            this.tabPage8.ResumeLayout(false);
+            this.tabPage9.ResumeLayout(false);
+            this.materialCard13.ResumeLayout(false);
+            this.materialCard13.PerformLayout();
+            this.materialCard14.ResumeLayout(false);
+            this.materialCard14.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2094,8 +2022,6 @@
 
         private MaterialSkin.Controls.MaterialTabControl materialTabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private MaterialSkin.Controls.MaterialDivider materialDivider3;
-        private MaterialSkin.Controls.MaterialDivider materialDivider2;
         private MaterialSkin.Controls.MaterialCard materialCard2;
         private MaterialSkin.Controls.MaterialCard materialCard1;
         private MaterialSkin.Controls.MaterialFloatingActionButton mfabAtıstırmalıkEkle;
@@ -2141,11 +2067,6 @@
         private MaterialSkin.Controls.MaterialCard materialCard9;
         private MaterialSkin.Controls.MaterialCard materialCard8;
         private MaterialSkin.Controls.MaterialDivider materialDivider1;
-        private MaterialSkin.Controls.MaterialTextBox2 materialTextBox26;
-        private MaterialSkin.Controls.MaterialTextBox2 materialTextBox25;
-        private MaterialSkin.Controls.MaterialTextBox2 materialTextBox24;
-        private MaterialSkin.Controls.MaterialTextBox2 materialTextBox23;
-        private MaterialSkin.Controls.MaterialTextBox2 materialTextBox21;
         private System.Windows.Forms.ImageList ımageList1;
         private MaterialSkin.Controls.MaterialSwitch materialSwitch1;
         private MaterialSkin.Controls.MaterialLabel lblAktivite;
@@ -2228,5 +2149,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label mlProteing;
+        private MaterialSkin.Controls.MaterialCard materialCard14;
+        private MaterialSkin.Controls.MaterialCard materialCard13;
+        private MaterialSkin.Controls.MaterialTextBox materialTextBox2;
+        private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
+        private MaterialSkin.Controls.MaterialTextBox2 materialTextBox22;
     }
 }

@@ -1163,7 +1163,7 @@
             this.ClientSize = new System.Drawing.Size(1101, 758);
             this.Controls.Add(this.materialTabControl1);
             this.Name = "Form4";
-            this.Text = "Home(Kullanıcı)";
+            this.Text = "Admin Panel";
             this.Load += new System.EventHandler(this.Form4_Load);
             this.materialTabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

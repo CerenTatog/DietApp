@@ -32,13 +32,14 @@ namespace Diet.Model
     }
     public enum QuantityType 
     {
-        [Display(Name ="Adet")]
-        Adet=1,
-        [Display(Name = "Ml")]
-        Ml,
-        [Display(Name = "Gr")]
-        Gr,
-        [Display(Name = "Dilim")]
-        Dilim
+        adet=1,
+        ml,
+        gr,
+        dilim,
+        yemekKasigi,
+        suBardagi,
+        cayBardagi,
+        kase,
+        tatliKasigi
     }
 }

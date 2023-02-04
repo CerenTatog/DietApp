@@ -62,7 +62,7 @@
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(48, 53);
+            this.materialLabel1.Location = new System.Drawing.Point(48, 44);
             this.materialLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
@@ -77,7 +77,7 @@
             this.txtBesinAdi.Depth = 0;
             this.txtBesinAdi.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtBesinAdi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtBesinAdi.Location = new System.Drawing.Point(177, 137);
+            this.txtBesinAdi.Location = new System.Drawing.Point(153, 34);
             this.txtBesinAdi.Margin = new System.Windows.Forms.Padding(4);
             this.txtBesinAdi.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtBesinAdi.Name = "txtBesinAdi";
@@ -92,7 +92,7 @@
             this.txtKarbonhıdrat.Depth = 0;
             this.txtKarbonhıdrat.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtKarbonhıdrat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtKarbonhıdrat.Location = new System.Drawing.Point(153, 88);
+            this.txtKarbonhıdrat.Location = new System.Drawing.Point(153, 97);
             this.txtKarbonhıdrat.Margin = new System.Windows.Forms.Padding(4);
             this.txtKarbonhıdrat.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtKarbonhıdrat.Name = "txtKarbonhıdrat";
@@ -295,6 +295,7 @@
             this.groupBox1.Controls.Add(this.materialLabel2);
             this.groupBox1.Controls.Add(this.materialLabel4);
             this.groupBox1.Controls.Add(this.btnGuncelle);
+            this.groupBox1.Controls.Add(this.txtBesinAdi);
             this.groupBox1.Controls.Add(this.txtKarbonhıdrat);
             this.groupBox1.Controls.Add(this.materialLabel1);
             this.groupBox1.Controls.Add(this.btnSil);
@@ -305,11 +306,11 @@
             this.groupBox1.Controls.Add(this.txtProtein);
             this.groupBox1.Controls.Add(this.txtKalori);
             this.groupBox1.Controls.Add(this.materialLabel6);
-            this.groupBox1.Location = new System.Drawing.Point(24, 103);
+            this.groupBox1.Location = new System.Drawing.Point(24, 86);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(625, 625);
+            this.groupBox1.Size = new System.Drawing.Size(625, 642);
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             // 
@@ -420,7 +421,7 @@
             this.materialMaskedTextBox1.BeepOnError = false;
             this.materialMaskedTextBox1.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
             this.materialMaskedTextBox1.Depth = 0;
-            this.materialMaskedTextBox1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialMaskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialMaskedTextBox1.HidePromptOnLeave = false;
             this.materialMaskedTextBox1.HideSelection = true;
             this.materialMaskedTextBox1.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
@@ -484,7 +485,6 @@
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.materialButton4);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.txtBesinAdi);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form8";

@@ -39,7 +39,7 @@ namespace Diet.UI
         private void btnGirisYap_Click(object sender, EventArgs e)
         {
             var user = db.UserRepository.GetAll().Where(u => u.Email == txtKullaniciAdi.Text).FirstOrDefault();
-            if (txtKullaniciAdi.Text == "admin" && txtSifre.Text == "admin")
+            if (txtKullaniciAdi.Text.Trim() == "admin" && txtSifre.Text.Trim() == "admin")
             {
                 Form3 frm3 = new Form3(user);
                 frm3.Show();
@@ -48,7 +48,7 @@ namespace Diet.UI
             else if (user != null)
             {
                 var query = db.UserRepository.GetAll().Count(x => x.Email == txtKullaniciAdi.Text);
-                if (user.Password == txtSifre.Text.EncryptoPassword())
+                if (user.Password.Trim() == txtSifre.Text.EncryptoPassword())
                 {
 
                     Form3 frm4 = new Form3(user);

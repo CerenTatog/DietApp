@@ -32,55 +32,63 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnIlerle = new MaterialSkin.Controls.MaterialButton();
             this.txtSoyad = new MaterialSkin.Controls.MaterialTextBox2();
             this.txtKullaniciAdi = new MaterialSkin.Controls.MaterialTextBox2();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.btnGeri2 = new MaterialSkin.Controls.MaterialButton();
             this.btnIlerle2 = new MaterialSkin.Controls.MaterialButton();
             this.txtEmail = new MaterialSkin.Controls.MaterialTextBox2();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.btnGeri3 = new MaterialSkin.Controls.MaterialButton();
             this.btnIlerle3 = new MaterialSkin.Controls.MaterialButton();
             this.txtTekrarSifre = new MaterialSkin.Controls.MaterialTextBox2();
             this.txtSifre = new MaterialSkin.Controls.MaterialTextBox2();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.btnGeri4 = new MaterialSkin.Controls.MaterialButton();
             this.btnIler4 = new MaterialSkin.Controls.MaterialButton();
-            this.txtHedefKilo = new MaterialSkin.Controls.MaterialTextBox2();
-            this.txtKilo = new MaterialSkin.Controls.MaterialTextBox2();
-            this.txtBoy = new MaterialSkin.Controls.MaterialTextBox2();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.cmbGender = new MaterialSkin.Controls.MaterialComboBox();
             this.cmbActivityStatus = new MaterialSkin.Controls.MaterialComboBox();
             this.btnGeri5 = new MaterialSkin.Controls.MaterialButton();
             this.btnKaydetBitir = new MaterialSkin.Controls.MaterialButton();
-            this.txtAge = new MaterialSkin.Controls.MaterialTextBox2();
             this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.nmrBoy = new System.Windows.Forms.NumericUpDown();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.nmrKilo = new System.Windows.Forms.NumericUpDown();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.nmrHedefKilo = new System.Windows.Forms.NumericUpDown();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            this.nmrYas = new System.Windows.Forms.NumericUpDown();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.tabPage4.SuspendLayout();
-            this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrBoy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrKilo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrHedefKilo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrYas)).BeginInit();
             this.SuspendLayout();
             // 
             // materialTabControl1
@@ -116,6 +124,16 @@
             this.tabPage1.Size = new System.Drawing.Size(790, 418);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Ad Soyad";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(465, 275);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(52, 36);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
             // btnIlerle
             // 
@@ -212,6 +230,26 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "E-mail";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(455, 224);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(52, 36);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(246, 224);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(52, 36);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 11;
+            this.pictureBox5.TabStop = false;
+            // 
             // btnGeri2
             // 
             this.btnGeri2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -298,6 +336,26 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Şifre";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(452, 251);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(52, 36);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 13;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(243, 251);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(52, 36);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 12;
+            this.pictureBox6.TabStop = false;
             // 
             // btnGeri3
             // 
@@ -401,13 +459,16 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.materialLabel3);
+            this.tabPage4.Controls.Add(this.materialLabel2);
+            this.tabPage4.Controls.Add(this.materialLabel1);
+            this.tabPage4.Controls.Add(this.nmrHedefKilo);
+            this.tabPage4.Controls.Add(this.nmrKilo);
+            this.tabPage4.Controls.Add(this.nmrBoy);
             this.tabPage4.Controls.Add(this.pictureBox4);
             this.tabPage4.Controls.Add(this.pictureBox7);
             this.tabPage4.Controls.Add(this.btnGeri4);
             this.tabPage4.Controls.Add(this.btnIler4);
-            this.tabPage4.Controls.Add(this.txtHedefKilo);
-            this.tabPage4.Controls.Add(this.txtKilo);
-            this.tabPage4.Controls.Add(this.txtBoy);
             this.tabPage4.ImageKey = "settings_accessibility_FILL0_wght400_GRAD0_opsz48.png";
             this.tabPage4.Location = new System.Drawing.Point(4, 39);
             this.tabPage4.Name = "tabPage4";
@@ -415,6 +476,26 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Kişisel Özellikler";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(463, 311);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(52, 36);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 13;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(254, 311);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(52, 36);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 12;
+            this.pictureBox7.TabStop = false;
             // 
             // btnGeri4
             // 
@@ -458,102 +539,16 @@
             this.btnIler4.UseVisualStyleBackColor = false;
             this.btnIler4.Click += new System.EventHandler(this.btnIler4_Click);
             // 
-            // txtHedefKilo
-            // 
-            this.txtHedefKilo.AnimateReadOnly = false;
-            this.txtHedefKilo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtHedefKilo.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtHedefKilo.Depth = 0;
-            this.txtHedefKilo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtHedefKilo.HideSelection = true;
-            this.txtHedefKilo.Hint = "Hedeflediğiniz Kilo";
-            this.txtHedefKilo.LeadingIcon = null;
-            this.txtHedefKilo.Location = new System.Drawing.Point(183, 218);
-            this.txtHedefKilo.MaxLength = 32767;
-            this.txtHedefKilo.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtHedefKilo.Name = "txtHedefKilo";
-            this.txtHedefKilo.PasswordChar = '\0';
-            this.txtHedefKilo.PrefixSuffixText = null;
-            this.txtHedefKilo.ReadOnly = false;
-            this.txtHedefKilo.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtHedefKilo.SelectedText = "";
-            this.txtHedefKilo.SelectionLength = 0;
-            this.txtHedefKilo.SelectionStart = 0;
-            this.txtHedefKilo.ShortcutsEnabled = true;
-            this.txtHedefKilo.Size = new System.Drawing.Size(407, 48);
-            this.txtHedefKilo.TabIndex = 6;
-            this.txtHedefKilo.TabStop = false;
-            this.txtHedefKilo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtHedefKilo.TrailingIcon = null;
-            this.txtHedefKilo.UseSystemPasswordChar = false;
-            // 
-            // txtKilo
-            // 
-            this.txtKilo.AnimateReadOnly = false;
-            this.txtKilo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtKilo.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtKilo.Depth = 0;
-            this.txtKilo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtKilo.HideSelection = true;
-            this.txtKilo.Hint = "Kilonuz Kaç kg?";
-            this.txtKilo.LeadingIcon = null;
-            this.txtKilo.Location = new System.Drawing.Point(183, 136);
-            this.txtKilo.MaxLength = 32767;
-            this.txtKilo.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtKilo.Name = "txtKilo";
-            this.txtKilo.PasswordChar = '\0';
-            this.txtKilo.PrefixSuffixText = null;
-            this.txtKilo.ReadOnly = false;
-            this.txtKilo.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtKilo.SelectedText = "";
-            this.txtKilo.SelectionLength = 0;
-            this.txtKilo.SelectionStart = 0;
-            this.txtKilo.ShortcutsEnabled = true;
-            this.txtKilo.Size = new System.Drawing.Size(407, 48);
-            this.txtKilo.TabIndex = 6;
-            this.txtKilo.TabStop = false;
-            this.txtKilo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtKilo.TrailingIcon = null;
-            this.txtKilo.UseSystemPasswordChar = false;
-            // 
-            // txtBoy
-            // 
-            this.txtBoy.AnimateReadOnly = false;
-            this.txtBoy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtBoy.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtBoy.Depth = 0;
-            this.txtBoy.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtBoy.HideSelection = true;
-            this.txtBoy.Hint = "Boyunuz Kaç cm?";
-            this.txtBoy.LeadingIcon = null;
-            this.txtBoy.Location = new System.Drawing.Point(183, 49);
-            this.txtBoy.MaxLength = 32767;
-            this.txtBoy.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtBoy.Name = "txtBoy";
-            this.txtBoy.PasswordChar = '\0';
-            this.txtBoy.PrefixSuffixText = null;
-            this.txtBoy.ReadOnly = false;
-            this.txtBoy.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtBoy.SelectedText = "";
-            this.txtBoy.SelectionLength = 0;
-            this.txtBoy.SelectionStart = 0;
-            this.txtBoy.ShortcutsEnabled = true;
-            this.txtBoy.Size = new System.Drawing.Size(407, 48);
-            this.txtBoy.TabIndex = 7;
-            this.txtBoy.TabStop = false;
-            this.txtBoy.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtBoy.TrailingIcon = null;
-            this.txtBoy.UseSystemPasswordChar = false;
-            // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.materialLabel4);
+            this.tabPage5.Controls.Add(this.nmrYas);
             this.tabPage5.Controls.Add(this.pictureBox9);
             this.tabPage5.Controls.Add(this.pictureBox8);
             this.tabPage5.Controls.Add(this.cmbGender);
             this.tabPage5.Controls.Add(this.cmbActivityStatus);
             this.tabPage5.Controls.Add(this.btnGeri5);
             this.tabPage5.Controls.Add(this.btnKaydetBitir);
-            this.tabPage5.Controls.Add(this.txtAge);
             this.tabPage5.ImageKey = "transgender_FILL0_wght400_GRAD0_opsz48.png";
             this.tabPage5.Location = new System.Drawing.Point(4, 39);
             this.tabPage5.Name = "tabPage5";
@@ -561,6 +556,26 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Yaş Cinsiyet";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
+            this.pictureBox9.Location = new System.Drawing.Point(402, 290);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(52, 36);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox9.TabIndex = 12;
+            this.pictureBox9.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
+            this.pictureBox8.Location = new System.Drawing.Point(262, 290);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(52, 36);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 12;
+            this.pictureBox8.TabStop = false;
             // 
             // cmbGender
             // 
@@ -650,35 +665,6 @@
             this.btnKaydetBitir.UseVisualStyleBackColor = false;
             this.btnKaydetBitir.Click += new System.EventHandler(this.btnKaydetBitir_Click);
             // 
-            // txtAge
-            // 
-            this.txtAge.AnimateReadOnly = false;
-            this.txtAge.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtAge.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtAge.Depth = 0;
-            this.txtAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtAge.HideSelection = true;
-            this.txtAge.Hint = "Yaşınızı Griniz";
-            this.txtAge.LeadingIcon = null;
-            this.txtAge.Location = new System.Drawing.Point(191, 35);
-            this.txtAge.MaxLength = 32767;
-            this.txtAge.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtAge.Name = "txtAge";
-            this.txtAge.PasswordChar = '\0';
-            this.txtAge.PrefixSuffixText = null;
-            this.txtAge.ReadOnly = false;
-            this.txtAge.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtAge.SelectedText = "";
-            this.txtAge.SelectionLength = 0;
-            this.txtAge.SelectionStart = 0;
-            this.txtAge.ShortcutsEnabled = true;
-            this.txtAge.Size = new System.Drawing.Size(433, 48);
-            this.txtAge.TabIndex = 8;
-            this.txtAge.TabStop = false;
-            this.txtAge.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtAge.TrailingIcon = null;
-            this.txtAge.UseSystemPasswordChar = false;
-            // 
             // ımageList1
             // 
             this.ımageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ımageList1.ImageStream")));
@@ -694,96 +680,81 @@
             this.ımageList1.Images.SetKeyName(8, "settings_accessibility_FILL0_wght400_GRAD0_opsz48.png");
             this.ımageList1.Images.SetKeyName(9, "transgender_FILL0_wght400_GRAD0_opsz48.png");
             // 
-            // pictureBox1
+            // nmrBoy
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(465, 275);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(52, 36);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.nmrBoy.Location = new System.Drawing.Point(183, 55);
+            this.nmrBoy.Name = "nmrBoy";
+            this.nmrBoy.Size = new System.Drawing.Size(407, 22);
+            this.nmrBoy.TabIndex = 14;
             // 
-            // pictureBox5
+            // materialLabel1
             // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(246, 224);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(52, 36);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 11;
-            this.pictureBox5.TabStop = false;
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel1.Location = new System.Drawing.Point(183, 30);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(128, 19);
+            this.materialLabel1.TabIndex = 15;
+            this.materialLabel1.Text = "Boyunuz Kaç cm?";
             // 
-            // pictureBox6
+            // nmrKilo
             // 
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(243, 251);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(52, 36);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 12;
-            this.pictureBox6.TabStop = false;
+            this.nmrKilo.Location = new System.Drawing.Point(183, 140);
+            this.nmrKilo.Name = "nmrKilo";
+            this.nmrKilo.Size = new System.Drawing.Size(407, 22);
+            this.nmrKilo.TabIndex = 14;
             // 
-            // pictureBox7
+            // materialLabel2
             // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(254, 311);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(52, 36);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox7.TabIndex = 12;
-            this.pictureBox7.TabStop = false;
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel2.Location = new System.Drawing.Point(183, 115);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(114, 19);
+            this.materialLabel2.TabIndex = 15;
+            this.materialLabel2.Text = "Kilonuz Kaç kg?";
             // 
-            // pictureBox8
+            // nmrHedefKilo
             // 
-            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(262, 290);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(52, 36);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 12;
-            this.pictureBox8.TabStop = false;
+            this.nmrHedefKilo.Location = new System.Drawing.Point(183, 228);
+            this.nmrHedefKilo.Name = "nmrHedefKilo";
+            this.nmrHedefKilo.Size = new System.Drawing.Size(407, 22);
+            this.nmrHedefKilo.TabIndex = 14;
             // 
-            // pictureBox9
+            // materialLabel3
             // 
-            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(402, 290);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(52, 36);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox9.TabIndex = 12;
-            this.pictureBox9.TabStop = false;
-           
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel3.Location = new System.Drawing.Point(183, 203);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(193, 19);
+            this.materialLabel3.TabIndex = 15;
+            this.materialLabel3.Text = "Hedeflediğiniz Kilo Kaç kg?";
             // 
-            // pictureBox2
+            // materialLabel4
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(455, 224);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(52, 36);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 12;
-            this.pictureBox2.TabStop = false;
+            this.materialLabel4.AutoSize = true;
+            this.materialLabel4.Depth = 0;
+            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel4.Location = new System.Drawing.Point(188, 34);
+            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel4.Name = "materialLabel4";
+            this.materialLabel4.Size = new System.Drawing.Size(106, 19);
+            this.materialLabel4.TabIndex = 17;
+            this.materialLabel4.Text = "Yaşınızı Giriniz";
             // 
-            // pictureBox3
+            // nmrYas
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(452, 251);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(52, 36);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 13;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(463, 311);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(52, 36);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 13;
-            this.pictureBox4.TabStop = false;
+            this.nmrYas.Location = new System.Drawing.Point(188, 59);
+            this.nmrYas.Name = "nmrYas";
+            this.nmrYas.Size = new System.Drawing.Size(436, 22);
+            this.nmrYas.TabIndex = 16;
             // 
             // Form2
             // 
@@ -803,23 +774,27 @@
             this.materialTabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrBoy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrKilo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrHedefKilo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrYas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -845,12 +820,8 @@
         private MaterialSkin.Controls.MaterialTextBox2 txtSifre;
         private MaterialSkin.Controls.MaterialButton btnGeri4;
         private MaterialSkin.Controls.MaterialButton btnIler4;
-        private MaterialSkin.Controls.MaterialTextBox2 txtHedefKilo;
-        private MaterialSkin.Controls.MaterialTextBox2 txtKilo;
-        private MaterialSkin.Controls.MaterialTextBox2 txtBoy;
         private MaterialSkin.Controls.MaterialButton btnGeri5;
         private MaterialSkin.Controls.MaterialButton btnKaydetBitir;
-        private MaterialSkin.Controls.MaterialTextBox2 txtAge;
         private MaterialSkin.Controls.MaterialComboBox cmbActivityStatus;
         private MaterialSkin.Controls.MaterialComboBox cmbGender;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -862,5 +833,13 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private System.Windows.Forms.NumericUpDown nmrBoy;
+        private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private System.Windows.Forms.NumericUpDown nmrHedefKilo;
+        private System.Windows.Forms.NumericUpDown nmrKilo;
+        private MaterialSkin.Controls.MaterialLabel materialLabel4;
+        private System.Windows.Forms.NumericUpDown nmrYas;
     }
 }

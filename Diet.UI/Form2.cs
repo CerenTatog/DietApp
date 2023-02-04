@@ -58,8 +58,8 @@ namespace Diet.UI
         private void btnIlerle_Click(object sender, EventArgs e)
         {
             // uniq
-            newuser.UserName = txtKullaniciAdi.Text;
-            newuser.UserSurname = txtSoyad.Text;
+            newuser.UserName = txtKullaniciAdi.Text.Trim();
+            newuser.UserSurname = txtSoyad.Text.Trim();
             materialTabControl1.SelectedTab = tabPage2;
 
         }
@@ -71,7 +71,7 @@ namespace Diet.UI
                 var query = db.UserRepository.GetAll().Count(x => x.Email == txtEmail.Text);
                 if (query==0)
                 {
-                    newuser.Email = txtEmail.Text;
+                    newuser.Email = txtEmail.Text.Trim();
                     materialTabControl1.SelectedTab = tabPage3;
                 }
                 else
@@ -94,7 +94,7 @@ namespace Diet.UI
 
         private void btnIlerle3_Click(object sender, EventArgs e)
         {
-            if (txtSifre.Text == txtTekrarSifre.Text)
+            if (txtSifre.Text.Trim() == txtTekrarSifre.Text.Trim())
             {
                 if (txtSifre.Text.IsValidPassword() == true)
                 {
@@ -119,9 +119,9 @@ namespace Diet.UI
 
         private void btnIler4_Click(object sender, EventArgs e)
         {
-            newuserdetail.Height = Convert.ToDouble(txtBoy.Text);
-            newuserdetail.Weight = Convert.ToDouble(txtKilo.Text);
-            //newuserdetail. =Convert.ToDouble( txtBoy.Text); //Hedef kilonun veritabanında işlenmesi gerek.
+            newuserdetail.Height = Convert.ToDouble(nmrBoy.Value);
+            newuserdetail.Weight = Convert.ToDouble(nmrKilo.Value);
+            newuserdetail.TargetWeight =Convert.ToInt32(nmrHedefKilo.Value);
             materialTabControl1.SelectedTab = tabPage5;
         }
 
@@ -133,7 +133,7 @@ namespace Diet.UI
         private void btnKaydetBitir_Click(object sender, EventArgs e)
         {
 
-            newuserdetail.Age = Convert.ToInt32(txtAge.Text);
+            newuserdetail.Age = Convert.ToInt32(nmrYas.Value);
             newuserdetail.ActivityStatus = (ActivityStatus)cmbActivityStatus.SelectedValue;
             newuserdetail.Gender = (Gender)cmbGender.SelectedValue;
             db.UserRepository.Create(newuser);

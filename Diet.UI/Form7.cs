@@ -45,6 +45,31 @@ namespace Diet.UI
 
         private void Form7_Load(object sender, EventArgs e)
         {
+            LoadCmbAndDgv();
+        }
+
+        private void btnAddActivity_Click(object sender, EventArgs e)
+        {
+            if (cmbActivities.SelectedValue !=null)
+            {
+                UserActivity NewActivity = new UserActivity();
+                NewActivity.ActivityID = (int)cmbActivities.SelectedValue;
+                NewActivity.UserID = _currentUser.ID;
+                NewActivity.ActivityTime = DateTime.Now;
+                NewActivity.Duration = (double)nmrDuration.Value;                             
+                NewActivity.CalculatedCalorie = db.ActivityRepository.GetById(NewActivity.ActivityID).LostCalorie * NewActivity.Duration; 
+                db.UserActivityRepository.Create(NewActivity);
+                lblKCAL.Text = NewActivity.CalculatedCalorie.ToString() + " kCal TEBRİKLER:)";
+                LoadCmbAndDgv();
+            }
+            else
+            {
+                MessageBox.Show("Lütfen Aktivite Giriniz");
+            }
+           
+        }
+        public void LoadCmbAndDgv()
+        {
             // cmb Aktivite seçenekleri
             cmbActivities.DataSource = db.ActivityRepository.GetAll().Select(x => new { x.ID, x.ActivityName }).ToList();
             cmbActivities.DisplayMember = "ActivityName";
@@ -60,33 +85,12 @@ namespace Diet.UI
                          join u in db.UserRepository.GetAll() on userActivity.UserID equals u.ID
                          select new
                          {
-                             UserName=u.UserName+" "+u.UserSurname,
-                             Activite=userActivity.Activity,
-                             ActiviteZamanı= userActivity.ActivityTime,
-                             AktiviteSüresi=userActivity.Duration
+                             UserName = u.UserName + " " + u.UserSurname,
+                             Activite = userActivity.Activity,
+                             ActiviteZamanı = userActivity.ActivityTime,
+                             AktiviteSüresi = userActivity.Duration
                          }).ToList();
             dataGridView1.DataSource = query;
-        }
-
-        private void btnAddActivity_Click(object sender, EventArgs e)
-        {
-            if (cmbActivities.SelectedValue !=null)
-            {
-                UserActivity NewActivity = new UserActivity();
-                NewActivity.ActivityID = (int)cmbActivities.SelectedValue;
-                NewActivity.UserID = _currentUser.ID;
-                NewActivity.ActivityTime = DateTime.Now;
-                NewActivity.Duration = (double)nmrDuration.Value;                             
-                NewActivity.CalculatedCalorie = db.ActivityRepository.GetById(NewActivity.ActivityID).LostCalorie * NewActivity.Duration; 
-                db.UserActivityRepository.Create(NewActivity);
-                lblKCAL.Text = NewActivity.CalculatedCalorie.ToString() + " kCal TEBRİKLER:)";
-                
-            }
-            else
-            {
-                MessageBox.Show("Lütfen Aktivite Giriniz");
-            }
-           
         }
 
         

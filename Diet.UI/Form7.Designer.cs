@@ -35,7 +35,10 @@
             this.cmbActivities = new MaterialSkin.Controls.MaterialComboBox();
             this.nmrDuration = new System.Windows.Forms.NumericUpDown();
             this.btnAddActivity = new MaterialSkin.Controls.MaterialButton();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             ((System.ComponentModel.ISupportInitialize)(this.nmrDuration)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblKCAL
@@ -43,7 +46,7 @@
             this.lblKCAL.AutoSize = true;
             this.lblKCAL.Depth = 0;
             this.lblKCAL.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblKCAL.Location = new System.Drawing.Point(224, 95);
+            this.lblKCAL.Location = new System.Drawing.Point(231, 97);
             this.lblKCAL.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblKCAL.Name = "lblKCAL";
             this.lblKCAL.Size = new System.Drawing.Size(32, 19);
@@ -100,7 +103,7 @@
             this.cmbActivities.FormattingEnabled = true;
             this.cmbActivities.IntegralHeight = false;
             this.cmbActivities.ItemHeight = 43;
-            this.cmbActivities.Location = new System.Drawing.Point(403, 151);
+            this.cmbActivities.Location = new System.Drawing.Point(234, 163);
             this.cmbActivities.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbActivities.MaxDropDownItems = 4;
             this.cmbActivities.MouseState = MaterialSkin.MouseState.OUT;
@@ -111,7 +114,7 @@
             // 
             // nmrDuration
             // 
-            this.nmrDuration.Location = new System.Drawing.Point(403, 236);
+            this.nmrDuration.Location = new System.Drawing.Point(234, 235);
             this.nmrDuration.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nmrDuration.Maximum = new decimal(new int[] {
             120,
@@ -147,11 +150,35 @@
             this.btnAddActivity.UseVisualStyleBackColor = true;
             this.btnAddActivity.Click += new System.EventHandler(this.btnAddActivity_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(7, 391);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(574, 272);
+            this.dataGridView1.TabIndex = 7;
+            // 
+            // materialLabel4
+            // 
+            this.materialLabel4.AutoSize = true;
+            this.materialLabel4.Depth = 0;
+            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel4.Location = new System.Drawing.Point(21, 364);
+            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel4.Name = "materialLabel4";
+            this.materialLabel4.Size = new System.Drawing.Size(155, 24);
+            this.materialLabel4.TabIndex = 8;
+            this.materialLabel4.Text = "Günlük Aktiviteler";
+            // 
             // Form7
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(815, 505);
+            this.ClientSize = new System.Drawing.Size(589, 684);
+            this.Controls.Add(this.materialLabel4);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnAddActivity);
             this.Controls.Add(this.nmrDuration);
             this.Controls.Add(this.cmbActivities);
@@ -159,13 +186,13 @@
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.lblKCAL);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form7";
             this.Padding = new System.Windows.Forms.Padding(4, 79, 4, 4);
             this.Text = "Aktivite Ekle(Kullanıcı)";
-            
             this.Load += new System.EventHandler(this.Form7_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nmrDuration)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,5 +207,7 @@
         private MaterialSkin.Controls.MaterialComboBox cmbActivities;
         private System.Windows.Forms.NumericUpDown nmrDuration;
         private MaterialSkin.Controls.MaterialButton btnAddActivity;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel4;
     }
 }

@@ -42,7 +42,7 @@ namespace Diet.UI
             materialSkinManager.EnforceBackcolorOnAllComponents = false;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey600, Primary.BlueGrey900, Primary.BlueGrey600, Accent.Blue700, TextShade.WHITE);
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey600, Primary.BlueGrey700, Primary.BlueGrey600, Accent.LightBlue400, TextShade.WHITE);
             _currentUser = user;
 
             //var query = from u in db.UserRepository.GetAll()
@@ -251,9 +251,6 @@ namespace Diet.UI
             Hide();
         }
 
-        private void materialCard13_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+       
     }
 }

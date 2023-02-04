@@ -26,10 +26,10 @@ namespace Diet.UI
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
 
             List<string> Type = new List<string>();
-            Type.Add(QuantityType.adet.ToString());
-            Type.Add(QuantityType.dilim.ToString());
-            Type.Add(QuantityType.ml.ToString());
-            Type.Add(QuantityType.gr.ToString());
+            Type.Add(QuantityType.Adet.ToString());
+            Type.Add(QuantityType.Dilim.ToString());
+            Type.Add(QuantityType.Ml.ToString());
+            Type.Add(QuantityType.Gr.ToString());
 
             foreach (var item in Type)
             {
@@ -51,10 +51,10 @@ namespace Diet.UI
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
 
             List<string> Type = new List<string>();
-            Type.Add(QuantityType.adet.ToString());
-            Type.Add(QuantityType.dilim.ToString());
-            Type.Add(QuantityType.ml.ToString());
-            Type.Add(QuantityType.gr.ToString());
+            Type.Add(QuantityType.Adet.ToString());
+            Type.Add(QuantityType.Dilim.ToString());
+            Type.Add(QuantityType.Ml.ToString());
+            Type.Add(QuantityType.Gr.ToString());
             
             foreach (var item in Type)
             {

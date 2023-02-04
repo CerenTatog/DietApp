@@ -58,6 +58,7 @@
     <Compile Include="Activity.cs" />
     <Compile Include="Base.cs" />
     <Compile Include="Category.cs" />
+    <Compile Include="Dto\CustomSelectItem.cs" />
     <Compile Include="Dto\DailyUserCalori.cs" />
     <Compile Include="Dto\Report\DailyActivity.cs" />
     <Compile Include="Dto\Report\DailyStep.cs" />

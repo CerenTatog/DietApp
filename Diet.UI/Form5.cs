@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Diet.BLL.Helper;
 using Diet.DAL.GenericRepository;
 using Diet.Model;
 using MaterialSkin;
@@ -70,8 +71,6 @@ namespace Diet.UI
         List<MealFood> ogunListesi;
         private void materialButtonEkle_Click(object sender, EventArgs e)
         {
-
-           
             if (materialComboBox2.SelectedValue != null && materialTextBox22 != null)
             {
                 Meal meal = new Meal();
@@ -88,12 +87,13 @@ namespace Diet.UI
                 yeniOgun.Quantity = Convert.ToDouble(materialTextBox22.Text);
                 db.MealFoodRepository.Create(yeniOgun);
 
-                ogunListesi = new List<MealFood>();
-                ogunListesi.Add(yeniOgun);
-
-                //burası düzeltilecek.görüntüde sıkıntı var. 
-                //mealtype'ı düzelt.
-               // materialListBox1.Items.Add(yeniOgun.ID);
+                var food = db.FoodRepository.GetById(yeniOgun.FoodID);
+               materialListBox1.Items.Add(new MaterialListBoxItem 
+               {
+                   SecondaryText= "",
+                   Tag = yeniOgun,
+                   Text = $"{food.FoodName} {yeniOgun.Quantity} {food.Portion.GetEnumDisplayName()} Kalori:{food.Calorie * (yeniOgun.Quantity / food.PortionQuantity)}"
+               });
 
                
                 
@@ -107,7 +107,7 @@ namespace Diet.UI
 
         private void materialButtonSil_Click(object sender, EventArgs e)
         {
-            if (materialListBox1.SelectedIndex > 0)
+            if (materialListBox1.SelectedItem?.Tag != null)
             {
                 var mealFood = materialListBox1.SelectedItem.Tag as MealFood;
                 materialListBox1.Items.RemoveAt(materialListBox1.SelectedIndex);

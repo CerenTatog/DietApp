@@ -15,7 +15,7 @@ namespace Diet.Model
             this.MealFoods = new List<MealFood>();
         }
         [Required]
-        [StringLength(120)] //1dilim ekmek vb şeklinde yazacagız
+        [StringLength(120)] 
         public string FoodName { get; set; }
         public QuantityType Portion{ get; set; }
         public double Calorie { get; set; }
@@ -24,13 +24,11 @@ namespace Diet.Model
         public double Fat { get; set; }
         public double Protein { get; set; }
         public byte[] FoodPicture { get; set; }
+        public double PortionQuantity { get; set; }
 
-       
         [ForeignKey("CategoryID")]
         public virtual Category Category { get; set; }
-
         public virtual ICollection<MealFood> MealFoods { get; set; }
-
     }
     public enum QuantityType 
     {

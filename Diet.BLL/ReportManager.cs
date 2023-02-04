@@ -71,7 +71,7 @@ namespace Diet.BLL
             return groupQuery;
 
         }
-        public List<WeeklyMacros> WeeklyMacroFood(int UserId) 
+        public List<WeeklyMacros> WeeklyMacroFood(int UserId)
         {
             var dateToday = DateTime.Now;
             var dateSevenDayBefore = DateTime.Today.AddDays(-7);
@@ -209,7 +209,7 @@ namespace Diet.BLL
                          join a in db.ActivityRepository.GetAll() on ua.ActivityID equals a.ID
                          select new
                          {
-                             
+
                              ua.StepCount,
                              ua.ActivityTime
                          }).ToList();
@@ -254,127 +254,27 @@ namespace Diet.BLL
         //Hangi yemeklerin hangi öğünlerde ne kadar yendiğini gösteren bir rapor hazırlansın.
 
         //bakılacak
-        public List<FoodforMealBreakFast> WhichFoodsEatenAtBreakfast(int UserId)
+        public List<FoodforMealLunch> WhichFoodsEatenByMealType(int UserId, MealType mealType)
         {
-            var userMeal = db.MealRepository.GetAll().Where(x => x.UserID == UserId);
+            var userMeal = db.MealRepository.GetAll().Where(x => x.UserID == UserId && x.MealType == mealType);
 
             var query = (from m in userMeal
                          join mf in db.MealFoodRepository.GetAll() on m.ID equals mf.MealID
                          join f in db.FoodRepository.GetAll() on mf.FoodID equals f.ID
-                         join c in db.CategoryRepository.GetAll() on f.CategoryID equals c.ID
                          select new
                          {
-                             c.CategoryName,
                              f.FoodName,
-                             f.Portion,
+                             f.PortionQuantity,
                              mf.Quantity,
-                             m.MealDate,
-                             m.MealType
-                         }).Where(x => x.MealType == MealType.Breakfast).ToList();
-            var groupQuery = (from gq in query
-                              let dt = gq.MealType
-                              group gq by dt into g
-                              select new FoodforMealBreakFast
-                              {
-                                  MealType = g.Key,
-                                  FoodName = g.Select(x => x.FoodName).ToString(),
-                                  TotalQuantity = g.Sum(x => x.Quantity)
-                                  //toplam miktar?
-                              }).OrderByDescending(x => x.TotalQuantity).Take(5).ToList();
-
-            return groupQuery;
-
-        }
-
-        public List<FoodforMealLunch> WhichFoodsEatenAtLunch(int UserId)
-        {
-            var userMeal = db.MealRepository.GetAll().Where(x => x.UserID == UserId && x.MealType == MealType.Lunch);
-
-            var query = (from m in userMeal
-                         join mf in db.MealFoodRepository.GetAll() on m.ID equals mf.MealID
-                         join f in db.FoodRepository.GetAll() on mf.FoodID equals f.ID
-                         join c in db.CategoryRepository.GetAll() on f.CategoryID equals c.ID
-                         select new
-                         {
-                             c.CategoryName,
-                             f.FoodName,
-                             f.Portion,
-                             mf.Quantity,
-                             m.MealDate,
-                             m.MealType
                          });
             var groupQuery = (from gq in query
                               group gq by gq.FoodName into g
                               select new FoodforMealLunch
                               {
-                                  MealType = MealType.Lunch,
+                                  MealType = mealType,
                                   FoodName = g.Key,
-                                  TotalQuantity = g.Sum(x => x.Quantity),
-                                  TotalCount = g.Count()
-                                  //toplam miktar?
-                              }).OrderByDescending(x => x.TotalQuantity).Take(5).ToList();
-
-            return groupQuery;
-
-        }
-
-        public List<FoodforMealDinner> WhichFoodsEatenAtDinner(int UserId)
-        {
-            var userMeal = db.MealRepository.GetAll().Where(x => x.UserID == UserId);
-            var query = (from m in userMeal
-                         join mf in db.MealFoodRepository.GetAll() on m.ID equals mf.MealID
-                         join f in db.FoodRepository.GetAll() on mf.FoodID equals f.ID
-                         join c in db.CategoryRepository.GetAll() on f.CategoryID equals c.ID
-                         select new
-                         {
-                             c.CategoryName,
-                             f.FoodName,
-                             f.Portion,
-                             mf.Quantity,
-                             m.MealDate,
-                             m.MealType
-                         }).ToList().Where(x => x.MealType == MealType.Dinner);
-            var groupQuery = (from gq in query
-                              let dt = gq.MealType
-                              group gq by dt into g
-                              select new FoodforMealDinner
-                              {
-                                  MealType = g.Key,
-                                  FoodName = g.Select(x => x.FoodName).ToString(),
-                                  TotalQuantity = g.Sum(x => x.Quantity)
-                                  //toplam miktar?
-                              }).OrderByDescending(x => x.TotalQuantity).Take(5).ToList();
-
-            return groupQuery;
-
-        }
-
-        public List<FoodforMealSnack> WhichFoodsEatenAtSnack(int UserId)
-        {
-            var userMeal = db.MealRepository.GetAll().Where(x => x.UserID == UserId);
-            var query = (from m in userMeal
-                         join mf in db.MealFoodRepository.GetAll() on m.ID equals mf.MealID
-                         join f in db.FoodRepository.GetAll() on mf.FoodID equals f.ID
-                         join c in db.CategoryRepository.GetAll() on f.CategoryID equals c.ID
-                         select new
-                         {
-                             c.CategoryName,
-                             f.FoodName,
-                             f.Portion,
-                             mf.Quantity,
-                             m.MealDate,
-                             m.MealType
-                         }).ToList().Where(x => x.MealType == MealType.Snack);
-            var groupQuery = (from gq in query
-                              let dt = gq.MealType
-                              group gq by dt into g
-                              select new FoodforMealSnack
-                              {
-                                  MealType = g.Key,
-                                  FoodName = g.Select(x => x.FoodName).ToString(),
-                                  TotalQuantity = g.Sum(x => x.Quantity)
-                                  //toplam miktar?
-                              }).OrderByDescending(x => x.TotalQuantity).Take(5).ToList();
+                                  TotalQuantity = g.Sum(x => x.Quantity / x.PortionQuantity),
+                              }).ToList();
 
             return groupQuery;
 
@@ -383,27 +283,21 @@ namespace Diet.BLL
         public List<MostEatenFoods> MostEatenFood(int UserId)
         {
             var userMeal = db.MealRepository.GetAll().Where(x => x.UserID == UserId);
-            var query = (from um in userMeal
-                         from f in db.FoodRepository.GetAll()
-                         join c in db.CategoryRepository.GetAll() on f.CategoryID equals c.ID
-                         join mf in db.MealFoodRepository.GetAll() on f.ID equals mf.FoodID
+            var query = (from mf in db.MealFoodRepository.GetAll()
+                         join f in db.FoodRepository.GetAll() on mf.FoodID equals f.ID
+                         join um in userMeal on mf.MealID equals um.ID
                          select new
                          {
-                             um.UserID,
-                             c.CategoryName,
                              f.FoodName,
-                             f.Portion,
+                             f.PortionQuantity,
                              mf.Quantity
-                         }).ToList();
+                         });
             var groupQuery = (from gq in query
-                              let dt = gq.FoodName
-                              group gq by dt into g
+                              group gq by gq.FoodName into g
                               select new MostEatenFoods
                               {
                                   FoodName = g.Key,
-                                  CategoryName = g.Select(x=>x.CategoryName).ToString(),
-                                  //QuantityType = g.Select(x=>x.QuantityType).Value,
-                                  TotalQuantity = g.Sum(x => x.Quantity)
+                                  TotalQuantity = g.Sum(x => x.Quantity / x.PortionQuantity)
                               }).OrderByDescending(x => x.TotalQuantity).ToList();
 
             return groupQuery.ToList();

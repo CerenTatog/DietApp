@@ -116,11 +116,11 @@ namespace Diet.UI
             //şüpheli - gün filtresi koymadık. hem label hem de liste için activity manager'da method tanımlanması gerekli.
             //dataGridView5.DataSource = db.UserActivityRepository.GetAll().Select(x => x.StepCount);
             dataGridView6.DataSource = reportManager.CalculateWeight(_currentUser.ID);
-            dataGridView7.DataSource = reportManager.WhichFoodsEatenAtBreakfast(_currentUser.ID);
-            dataGridView8.DataSource = reportManager.WhichFoodsEatenAtLunch(_currentUser.ID);
-            dataGridView9.DataSource = reportManager.WhichFoodsEatenAtDinner(_currentUser.ID);
-            dataGridView10.DataSource = reportManager.WhichFoodsEatenAtSnack(_currentUser.ID);
-            //dataGridView11.DataSource = reportManager.MostEatenFood(_currentUser.ID);
+            dataGridView7.DataSource = reportManager.WhichFoodsEatenByMealType(_currentUser.ID,MealType.Breakfast);
+            dataGridView8.DataSource = reportManager.WhichFoodsEatenByMealType(_currentUser.ID, MealType.Lunch);
+            dataGridView9.DataSource = reportManager.WhichFoodsEatenByMealType(_currentUser.ID, MealType.Dinner);
+            dataGridView10.DataSource = reportManager.WhichFoodsEatenByMealType(_currentUser.ID, MealType.Snack);
+            dataGridView11.DataSource = reportManager.MostEatenFood(_currentUser.ID);
 
         }
 

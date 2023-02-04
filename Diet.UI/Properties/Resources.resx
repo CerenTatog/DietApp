@@ -121,8 +121,14 @@
   <data name="omelette" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\omelette.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="cooking-show" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cooking-show.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="cashew-atıstırmalık" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cashew-atıstırmalık.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="justify-textdik2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\justify-textdik2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="breakfast" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\breakfast.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,7 +193,7 @@
   <data name="mineral-water" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mineral-water.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="justify-textdik2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\justify-textdik2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="fasting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fasting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

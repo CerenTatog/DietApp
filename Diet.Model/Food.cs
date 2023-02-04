@@ -17,7 +17,7 @@ namespace Diet.Model
         [Required]
         [StringLength(120)] 
         public string FoodName { get; set; }
-        public QuantityType Portion{ get; set; }
+        public QuantityType Portion { get; set; }
         public double Calorie { get; set; }
         public int CategoryID { get; set; }        
         public double Carbonhydrate { get; set; }
@@ -32,14 +32,23 @@ namespace Diet.Model
     }
     public enum QuantityType 
     {
+        [Display(Name = "Adet")]
         adet=1,
+        [Display(Name = "ml")]
         ml,
+        [Display(Name = "gr")]
         gr,
+        [Display(Name = "dilim")]
         dilim,
+        [Display(Name = "Yemek Kaşığı")]
         yemekKasigi,
+        [Display(Name = "Su Bardağı")]
         suBardagi,
+        [Display(Name = "Çay Bardağı")]
         cayBardagi,
+        [Display(Name = "Kase")]
         kase,
+        [Display(Name = "Tatlı Kaşığı")]
         tatliKasigi
     }
 }

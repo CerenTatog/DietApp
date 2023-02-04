@@ -8,8 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Diet.BLL;
+using Diet.BLL.Helper;
 using Diet.DAL.GenericRepository;
 using Diet.Model;
+using Diet.Model.Dto.Report;
 using LiveCharts;
 using LiveCharts.Wpf;
 using MaterialSkin;
@@ -24,6 +26,7 @@ namespace Diet.UI
         User _currentUser;
         ActivityManager activityManager = new ActivityManager();
         UnitOfWork db = new UnitOfWork();
+        UserManager userManager = new UserManager();
 
         //parametreli constructor yapılacak User bilgisi aktarılacak
         public Form3()
@@ -89,7 +92,7 @@ namespace Diet.UI
 
             //Günlük Toplam Kalori
 
-            lblToplamKalori.Text = Math.Abs((toplamAlınanKalori - toplamVerilenKalori)).ToString();
+            //lblToplamKalori.Text = Math.Abs((toplamAlınanKalori - toplamVerilenKalori)).ToString();
             ////farkıyla alakalı bir gösterim.
             mlKalanKalori.Text = (foodManager.CalculateDailyCalorie(_currentUser.ID) - (toplamAlınanKalori - toplamVerilenKalori)).ToString();
 
@@ -97,30 +100,23 @@ namespace Diet.UI
             int yas = db.UserDetailRepository.GetAll().Select(x => x.Age).FirstOrDefault();
             lblUserYas.Text = yas.ToString();
             mlKalanKalorid.Text = foodManager.CalculateDailyCalorie(_currentUser.ID).ToString();
-            mmlKilo.Text = mlKalanKalorid.Text;
+            //mmlKilo.Text = mlKalanKalorid.Text;
             double mevcutKilo = db.UserDetailRepository.GetAll().Select(x => x.Weight).FirstOrDefault();
             lblMevcutKilo.Text = mevcutKilo.ToString();
-            mlHedefKilo.Text = (mevcutKilo - 5).ToString();
+            mlHedefKilo.Text = (mevcutKilo - (db.UserDetailRepository.GetById(_currentUser.ID).TargetWeight)).ToString();
 
-
-            //Kullanıcı Listesi -Sistem Raporları
-            var query = from u in db.UserRepository.GetAll()
-                        select new { u.UserName, u.UserSurname, u.Email, u.CreatedDate };
-            dataGridViewKullaniciListesi.DataSource = query.ToList();
-            //dataGridView1.DataSource =;
-
+            //Water
+            lblWaterTotal.Text = $"{userManager.GetDailyWater(_currentUser.ID)} ml";
 
             //Kullanıcı raporları
-            dataGridView1.DataSource = reportManager.CalculateWeeklyCalorie(_currentUser.ID);
-            dataGridView2.DataSource = reportManager.WeeklyMacroFood(_currentUser.ID);
-            dataGridView3.DataSource = reportManager.WeeklyDrinkingWater(_currentUser.ID);
-            dataGridView4.DataSource = reportManager.CalculateActivity(_currentUser.ID);
-            //gün filtresi koymadık. hem label hem de liste için activity manager'da method tanımlanması gerekli.
-            //dataGridView5.DataSource = db.UserActivityRepository.GetAll().Select(x => x.StepCount);
-            dataGridView6.DataSource = reportManager.CalculateWeight(_currentUser.ID);
-           
-           
-            dataGridView11.DataSource = reportManager.MostEatenFood(_currentUser.ID);
+            //dataGridView1.DataSource = reportManager.CalculateWeeklyCalorie(_currentUser.ID);
+            //dataGridView2.DataSource = reportManager.WeeklyMacroFood(_currentUser.ID);
+            //dataGridView3.DataSource = reportManager.WeeklyDrinkingWater(_currentUser.ID);
+            //dataGridView4.DataSource = reportManager.CalculateActivity(_currentUser.ID);
+            //dataGridView6.DataSource = reportManager.CalculateWeight(_currentUser.ID);
+
+
+            //dataGridView11.DataSource = reportManager.MostEatenFood(_currentUser.ID);
 
 
             //günlük sayfası => gelen kullanıcıya göre isim alanı değişecek.
@@ -141,7 +137,7 @@ namespace Diet.UI
                 series.Add(pie);
                 pieChart1.Series = series;
             }
-            pieChart1.LegendLocation = LegendLocation.Bottom;
+            pieChart1.LegendLocation = LegendLocation.Right;
 
             Func<ChartPoint, string> fu2 = x => string.Format("{0},{1:P}", x.Y, x.Participation);
             SeriesCollection series2 = new SeriesCollection();
@@ -155,7 +151,7 @@ namespace Diet.UI
                 series2.Add(pie2);
                 pieChart2.Series = series2;
             }
-            pieChart2.LegendLocation = LegendLocation.Bottom;
+            pieChart2.LegendLocation = LegendLocation.Right;
 
             Func<ChartPoint, string> fu3 = x => string.Format("{0},{1:P}", x.Y, x.Participation);
             SeriesCollection series3 = new SeriesCollection();
@@ -169,7 +165,7 @@ namespace Diet.UI
                 series3.Add(pie3);
                 pieChart3.Series = series3;
             }
-            pieChart3.LegendLocation = LegendLocation.Bottom;
+            pieChart3.LegendLocation = LegendLocation.Right;
 
             Func<ChartPoint, string> fu4 = x => string.Format("{0},{1:P}", x.Y, x.Participation);
             SeriesCollection series4 = new SeriesCollection();
@@ -183,7 +179,17 @@ namespace Diet.UI
                 series4.Add(pie4);
                 pieChart4.Series = series4;
             }
-            pieChart4.LegendLocation = LegendLocation.Bottom;
+            pieChart4.LegendLocation = LegendLocation.Right;
+
+
+            //List<MostEatenFoods> mef =  reportManager.MostEatenFood(_currentUser.ID);
+            //materialListBox1.Items.Add(new MaterialListBoxItem
+            //{
+            //    SecondaryText = "",
+            //    Tag = mef.Foo,
+            //    Text = $"{mef.} {yeniOgun.Quantity} {food.Portion.GetEnumDisplayName()} Kalori:{food.Calorie * (yeniOgun.Quantity / food.PortionQuantity)}"
+            //});
+
 
         }
 
@@ -223,21 +229,7 @@ namespace Diet.UI
         }
 
 
-        private void UrunEkle_Click(object sender, EventArgs e)
-        {
-            Form8 frm8 = new Form8(_currentUser);
-            frm8.ShowDialog();
-
-
-        }
-        //userıd
-        private void mlAktiviteDuzenle_Click(object sender, EventArgs e)
-        {
-            Form9 frm9 = new Form9(_currentUser);
-            frm9.ShowDialog();
-
-        }
-
+        
         private void materialLabel15_Click(object sender, EventArgs e)
         {
 
@@ -250,8 +242,8 @@ namespace Diet.UI
 
         private void mfabSuEkle_Click(object sender, EventArgs e)
         {
-            Form10 frm10 = new Form10(_currentUser);
-            frm10.ShowDialog();
+            double currentWater = userManager.AddDailyWater(_currentUser.ID);
+            lblWaterTotal.Text = $"{currentWater} ml" ;
 
         }
 
@@ -297,6 +289,10 @@ namespace Diet.UI
             Hide();
         }
 
-       
+        private void materialFloatingActionButton1_Click(object sender, EventArgs e)
+        {
+            double currentWater = userManager.RemoveDailyWater(_currentUser.ID);
+            lblWaterTotal.Text = $"{currentWater} ml";
+        }
     }
 }

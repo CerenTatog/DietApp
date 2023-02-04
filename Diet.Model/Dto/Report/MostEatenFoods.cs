@@ -11,7 +11,7 @@ namespace Diet.Model.Dto.Report
        
         public string FoodName { get; set; }
         public string CategoryName { get; set;}
-        public QuantityType QuantityType { get; set;}
+       //public QuantityType QuantityType { get; set;}
         public double TotalQuantity { get; set; }
 
     }

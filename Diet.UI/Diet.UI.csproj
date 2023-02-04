@@ -205,6 +205,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\Resources\breakfast.png" />
+    <None Include="Resources\minus-sign.png" />
+    <None Include="Resources\minus.png" />
+    <None Include="Resources\run.png" />
+    <None Include="Resources\dumbbell.png" />
+    <None Include="Resources\granola.png" />
+    <None Include="Resources\research.png" />
+    <None Include="Resources\food.png" />
+    <None Include="Resources\smoked.png" />
+    <None Include="Resources\plus.png" />
+    <None Include="Resources\breakfast %282%29.png" />
+    <None Include="Resources\Screenshot_1.png" />
     <None Include="Resources\mineral-water.png" />
     <None Include="Resources\water.png" />
     <None Include="Resources\breakfast.png" />

@@ -37,6 +37,11 @@ namespace Diet.Model
         adet=1,
         ml,
         gr,
-        dilim
+        dilim,
+        yemekKasigi,
+        suBardagi,
+        cayBardagi,
+        kase,
+        tatliKasigi
     }
 }

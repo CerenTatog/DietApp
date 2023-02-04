@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using Diet.BLL;
 using Diet.DAL.GenericRepository;
 using Diet.Model;
+using LiveCharts;
+using LiveCharts.Wpf;
 using MaterialSkin;
 using MaterialSkin.Controls;
 
@@ -116,11 +118,72 @@ namespace Diet.UI
             //gün filtresi koymadık. hem label hem de liste için activity manager'da method tanımlanması gerekli.
             //dataGridView5.DataSource = db.UserActivityRepository.GetAll().Select(x => x.StepCount);
             dataGridView6.DataSource = reportManager.CalculateWeight(_currentUser.ID);
-            dataGridView7.DataSource = reportManager.WhichFoodsEatenByMealType(_currentUser.ID,MealType.Breakfast);
-            dataGridView8.DataSource = reportManager.WhichFoodsEatenByMealType(_currentUser.ID, MealType.Lunch);
-            dataGridView9.DataSource = reportManager.WhichFoodsEatenByMealType(_currentUser.ID, MealType.Dinner);
-            dataGridView10.DataSource = reportManager.WhichFoodsEatenByMealType(_currentUser.ID, MealType.Snack);
+           
+           
             dataGridView11.DataSource = reportManager.MostEatenFood(_currentUser.ID);
+
+
+            //günlük sayfası => gelen kullanıcıya göre isim alanı değişecek.
+            //profil sayfası gelen kullanıcının cinsiyetine göre resim değişecek.
+            //günlük sayfası => karbonhidrat/protein/yağ güncellenecek.
+            //günlük sayfası=>su alanı bağlanacak. 
+
+            //Pie Chart
+            Func<ChartPoint, string> fu = x => string.Format("{0},{1:P}", x.Y,x.Participation);
+            SeriesCollection series = new SeriesCollection();
+            foreach (var item in reportManager.WhichFoodsEatenByMealType(_currentUser.ID, MealType.Breakfast))
+            {
+                PieSeries pie = new PieSeries();
+                pie.Title = item.FoodName;
+                pie.Values = new ChartValues<double> { item.TotalQuantity };
+                pie.DataLabels = true;
+                pie.LabelPoint = fu;
+                series.Add(pie);
+                pieChart1.Series = series;
+            }
+            pieChart1.LegendLocation = LegendLocation.Bottom;
+
+            Func<ChartPoint, string> fu2 = x => string.Format("{0},{1:P}", x.Y, x.Participation);
+            SeriesCollection series2 = new SeriesCollection();
+            foreach (var item in reportManager.WhichFoodsEatenByMealType(_currentUser.ID, MealType.Lunch))
+            {
+                PieSeries pie2 = new PieSeries();
+                pie2.Title = item.FoodName;
+                pie2.Values = new ChartValues<double> { item.TotalQuantity };
+                pie2.DataLabels = true;
+                pie2.LabelPoint = fu2;
+                series2.Add(pie2);
+                pieChart2.Series = series2;
+            }
+            pieChart2.LegendLocation = LegendLocation.Bottom;
+
+            Func<ChartPoint, string> fu3 = x => string.Format("{0},{1:P}", x.Y, x.Participation);
+            SeriesCollection series3 = new SeriesCollection();
+            foreach (var item in reportManager.WhichFoodsEatenByMealType(_currentUser.ID, MealType.Dinner))
+            {
+                PieSeries pie3 = new PieSeries();
+                pie3.Title = item.FoodName;
+                pie3.Values = new ChartValues<double> { item.TotalQuantity };
+                pie3.DataLabels = true;
+                pie3.LabelPoint = fu3;
+                series3.Add(pie3);
+                pieChart3.Series = series3;
+            }
+            pieChart3.LegendLocation = LegendLocation.Bottom;
+
+            Func<ChartPoint, string> fu4 = x => string.Format("{0},{1:P}", x.Y, x.Participation);
+            SeriesCollection series4 = new SeriesCollection();
+            foreach (var item in reportManager.WhichFoodsEatenByMealType(_currentUser.ID, MealType.Snack))
+            {
+                PieSeries pie4 = new PieSeries();
+                pie4.Title = item.FoodName;
+                pie4.Values = new ChartValues<double> { item.TotalQuantity };
+                pie4.DataLabels = true;
+                pie4.LabelPoint = fu4;
+                series4.Add(pie4);
+                pieChart4.Series = series4;
+            }
+            pieChart4.LegendLocation = LegendLocation.Bottom;
 
         }
 
@@ -182,24 +245,7 @@ namespace Diet.UI
 
         private void mlHedefDuzenle_Click(object sender, EventArgs e)//bu alan değişecek. 
         {
-            if (mlHedefDuzenle.Text == "Düzenle")
-            {
-                mlHedefDuzenle.Text = "Kaydet";
-                mmlBeslenme.ReadOnly = false;
-                mmlHedef.ReadOnly = false;
-                mmlKalori.ReadOnly = false;
-                mmlAdim.ReadOnly = false;
-                mmlHedef.ReadOnly = false;
-            }
-            else if (mlHedefDuzenle.Text == "Kaydet")
-            {
-                mlHedefDuzenle.Text = "Düzenle";
-                mmlBeslenme.ReadOnly = true;
-                mmlHedef.ReadOnly = true;
-                mmlKalori.ReadOnly = true;
-                mmlAdim.ReadOnly = true;
-                mmlHedef.ReadOnly = true;
-            }
+           
         }
 
         private void mfabSuEkle_Click(object sender, EventArgs e)

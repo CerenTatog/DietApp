@@ -30,16 +30,25 @@ namespace Diet.Model
         public virtual Category Category { get; set; }
         public virtual ICollection<MealFood> MealFoods { get; set; }
     }
-    public enum QuantityType 
+    public enum QuantityType
     {
-        adet=1,
+        [Display(Name = "Adet")]
+        adet = 1,
+        [Display(Name = "ml")]
         ml,
+        [Display(Name = "gr")]
         gr,
+        [Display(Name = "dilim")]
         dilim,
+        [Display(Name = "Yemek Kaşığı")]
         yemekKasigi,
+        [Display(Name = "Su Bardağı")]
         suBardagi,
+        [Display(Name = "Çay Bardağı")]
         cayBardagi,
+        [Display(Name = "Kase")]
         kase,
+        [Display(Name = "Tatlı Kaşığı")]
         tatliKasigi
     }
 }

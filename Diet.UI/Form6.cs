@@ -54,7 +54,7 @@ namespace Diet.UI
             newuserAct.CalculatedCalorie = activityManager.CalculateCalorieByStep((int)nmrStepCount.Value);
             newuserAct.StepCount = Convert.ToInt32(nmrStepCount.Value);
             db.UserActivityRepository.Create(newuserAct);
-            lblKCAL.Text = newuserAct.CalculatedCalorie.ToString() + " kCal TEBRİKLER.";
+            lblKCAL.Text = newuserAct.CalculatedCalorie.ToString() + " kcal";
 
 
         }

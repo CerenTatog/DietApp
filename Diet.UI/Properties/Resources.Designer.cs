@@ -203,6 +203,16 @@ namespace Diet.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap foot_traffic {
+            get {
+                object obj = ResourceManager.GetObject("foot-traffic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fried_rice {
             get {
                 object obj = ResourceManager.GetObject("fried-rice", resourceCulture);
@@ -246,6 +256,16 @@ namespace Diet.UI.Properties {
         internal static System.Drawing.Bitmap justify_textdik2 {
             get {
                 object obj = ResourceManager.GetObject("justify-textdik2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lifestyle {
+            get {
+                object obj = ResourceManager.GetObject("lifestyle", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

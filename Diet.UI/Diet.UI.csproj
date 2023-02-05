@@ -210,6 +210,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\Resources\breakfast.png" />
+    <None Include="Resources\lifestyle.png" />
+    <None Include="Resources\foot-traffic.png" />
     <None Include="Resources\running.png" />
     <None Include="Resources\email.png" />
     <None Include="Resources\right-arrow.png" />

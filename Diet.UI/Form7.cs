@@ -59,7 +59,7 @@ namespace Diet.UI
                 NewActivity.Duration = (double)nmrDuration.Value;                             
                 NewActivity.CalculatedCalorie = db.ActivityRepository.GetById(NewActivity.ActivityID).LostCalorie * NewActivity.Duration; 
                 db.UserActivityRepository.Create(NewActivity);
-                lblKCAL.Text = NewActivity.CalculatedCalorie.ToString() + " kCal TEBRİKLER:)";
+                lblKCAL.Text = NewActivity.CalculatedCalorie.ToString() + " kCal";
                 LoadCmbAndDgv();
             }
             else

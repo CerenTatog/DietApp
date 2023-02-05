@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnEkle = new MaterialSkin.Controls.MaterialButton();
             this.btnSil = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
@@ -36,10 +37,10 @@
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.txtKategoriAdi = new MaterialSkin.Controls.MaterialMultiLineTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtKategoriID = new MaterialSkin.Controls.MaterialMultiLineTextBox();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.btnGeri = new MaterialSkin.Controls.MaterialButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.txtKategoriID = new MaterialSkin.Controls.MaterialMultiLineTextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -51,8 +52,8 @@
             this.btnEkle.Depth = 0;
             this.btnEkle.HighEmphasis = true;
             this.btnEkle.Icon = null;
-            this.btnEkle.Location = new System.Drawing.Point(302, 188);
-            this.btnEkle.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.btnEkle.Location = new System.Drawing.Point(290, 209);
+            this.btnEkle.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnEkle.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEkle.Name = "btnEkle";
             this.btnEkle.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -71,8 +72,8 @@
             this.btnSil.Depth = 0;
             this.btnSil.HighEmphasis = true;
             this.btnSil.Icon = null;
-            this.btnSil.Location = new System.Drawing.Point(398, 188);
-            this.btnSil.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.btnSil.Location = new System.Drawing.Point(362, 209);
+            this.btnSil.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnSil.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSil.Name = "btnSil";
             this.btnSil.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -89,8 +90,7 @@
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(91, 79);
-            this.materialLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.materialLabel1.Location = new System.Drawing.Point(68, 64);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(91, 19);
@@ -104,11 +104,10 @@
             this.txtTanimlama.Depth = 0;
             this.txtTanimlama.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtTanimlama.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtTanimlama.Location = new System.Drawing.Point(238, 122);
-            this.txtTanimlama.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTanimlama.Location = new System.Drawing.Point(178, 99);
             this.txtTanimlama.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtTanimlama.Name = "txtTanimlama";
-            this.txtTanimlama.Size = new System.Drawing.Size(443, 30);
+            this.txtTanimlama.Size = new System.Drawing.Size(332, 65);
             this.txtTanimlama.TabIndex = 13;
             this.txtTanimlama.Text = "";
             // 
@@ -119,8 +118,8 @@
             this.btnGuncelle.Depth = 0;
             this.btnGuncelle.HighEmphasis = true;
             this.btnGuncelle.Icon = null;
-            this.btnGuncelle.Location = new System.Drawing.Point(494, 188);
-            this.btnGuncelle.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.btnGuncelle.Location = new System.Drawing.Point(434, 209);
+            this.btnGuncelle.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnGuncelle.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnGuncelle.Name = "btnGuncelle";
             this.btnGuncelle.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -137,13 +136,12 @@
             this.materialLabel4.AutoSize = true;
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel4.Location = new System.Drawing.Point(91, 133);
-            this.materialLabel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.materialLabel4.Location = new System.Drawing.Point(108, 100);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(87, 19);
+            this.materialLabel4.Size = new System.Drawing.Size(51, 19);
             this.materialLabel4.TabIndex = 12;
-            this.materialLabel4.Text = "Tanımlama:";
+            this.materialLabel4.Text = "Tanım:";
             // 
             // txtKategoriAdi
             // 
@@ -152,11 +150,10 @@
             this.txtKategoriAdi.Depth = 0;
             this.txtKategoriAdi.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtKategoriAdi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtKategoriAdi.Location = new System.Drawing.Point(238, 67);
-            this.txtKategoriAdi.Margin = new System.Windows.Forms.Padding(4);
+            this.txtKategoriAdi.Location = new System.Drawing.Point(178, 54);
             this.txtKategoriAdi.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtKategoriAdi.Name = "txtKategoriAdi";
-            this.txtKategoriAdi.Size = new System.Drawing.Size(443, 31);
+            this.txtKategoriAdi.Size = new System.Drawing.Size(332, 25);
             this.txtKategoriAdi.TabIndex = 26;
             this.txtKategoriAdi.Text = "";
             // 
@@ -171,13 +168,38 @@
             this.groupBox1.Controls.Add(this.materialLabel1);
             this.groupBox1.Controls.Add(this.btnSil);
             this.groupBox1.Controls.Add(this.btnEkle);
-            this.groupBox1.Location = new System.Drawing.Point(54, 85);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Location = new System.Drawing.Point(36, 118);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(731, 268);
+            this.groupBox1.Size = new System.Drawing.Size(548, 264);
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
+            // 
+            // txtKategoriID
+            // 
+            this.txtKategoriID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtKategoriID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtKategoriID.Depth = 0;
+            this.txtKategoriID.Enabled = false;
+            this.txtKategoriID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtKategoriID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.txtKategoriID.Location = new System.Drawing.Point(178, 19);
+            this.txtKategoriID.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtKategoriID.Name = "txtKategoriID";
+            this.txtKategoriID.Size = new System.Drawing.Size(332, 25);
+            this.txtKategoriID.TabIndex = 26;
+            this.txtKategoriID.Text = "";
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel2.Location = new System.Drawing.Point(76, 25);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(83, 19);
+            this.materialLabel2.TabIndex = 6;
+            this.materialLabel2.Text = "Kategori ID:";
             // 
             // btnGeri
             // 
@@ -186,8 +208,8 @@
             this.btnGeri.Depth = 0;
             this.btnGeri.HighEmphasis = true;
             this.btnGeri.Icon = null;
-            this.btnGeri.Location = new System.Drawing.Point(632, 652);
-            this.btnGeri.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnGeri.Location = new System.Drawing.Point(431, 74);
+            this.btnGeri.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnGeri.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnGeri.Name = "btnGeri";
             this.btnGeri.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -201,53 +223,34 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(54, 378);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.Location = new System.Drawing.Point(36, 396);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(731, 230);
+            this.dataGridView1.Size = new System.Drawing.Size(548, 187);
             this.dataGridView1.TabIndex = 28;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // materialLabel2
-            // 
-            this.materialLabel2.AutoSize = true;
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.Location = new System.Drawing.Point(91, 35);
-            this.materialLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(83, 19);
-            this.materialLabel2.TabIndex = 6;
-            this.materialLabel2.Text = "Kategori ID:";
-            // 
-            // txtKategoriID
-            // 
-            this.txtKategoriID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtKategoriID.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtKategoriID.Depth = 0;
-            this.txtKategoriID.Enabled = false;
-            this.txtKategoriID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtKategoriID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txtKategoriID.Location = new System.Drawing.Point(238, 23);
-            this.txtKategoriID.Margin = new System.Windows.Forms.Padding(4);
-            this.txtKategoriID.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtKategoriID.Name = "txtKategoriID";
-            this.txtKategoriID.Size = new System.Drawing.Size(443, 31);
-            this.txtKategoriID.TabIndex = 26;
-            this.txtKategoriID.Text = "";
-            // 
             // Form11
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(905, 744);
+            this.ClientSize = new System.Drawing.Size(615, 604);
             this.Controls.Add(this.btnGeri);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form11";
+            this.Padding = new System.Windows.Forms.Padding(2, 52, 2, 2);
             this.Text = "Kategori Ekle(Admin)";
             this.Load += new System.EventHandler(this.Form11_Load);
             this.groupBox1.ResumeLayout(false);

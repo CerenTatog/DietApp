@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.txtActivityType = new MaterialSkin.Controls.MaterialMaskedTextBox();
@@ -37,6 +38,7 @@
             this.btnUpdateActivity = new MaterialSkin.Controls.MaterialButton();
             this.dgvActivities = new System.Windows.Forms.DataGridView();
             this.btnBack = new MaterialSkin.Controls.MaterialButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvActivities)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,7 +47,7 @@
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(24, 112);
+            this.materialLabel1.Location = new System.Drawing.Point(96, 157);
             this.materialLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
@@ -58,7 +60,7 @@
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.Location = new System.Drawing.Point(24, 167);
+            this.materialLabel2.Location = new System.Drawing.Point(27, 219);
             this.materialLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
@@ -80,8 +82,8 @@
             this.txtActivityType.HideSelection = true;
             this.txtActivityType.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
             this.txtActivityType.LeadingIcon = null;
-            this.txtActivityType.Location = new System.Drawing.Point(156, 89);
-            this.txtActivityType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtActivityType.Location = new System.Drawing.Point(202, 137);
+            this.txtActivityType.Margin = new System.Windows.Forms.Padding(2);
             this.txtActivityType.Mask = "";
             this.txtActivityType.MaxLength = 32767;
             this.txtActivityType.MouseState = MaterialSkin.MouseState.OUT;
@@ -122,8 +124,8 @@
             this.txtCalorie.HideSelection = true;
             this.txtCalorie.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
             this.txtCalorie.LeadingIcon = null;
-            this.txtCalorie.Location = new System.Drawing.Point(156, 148);
-            this.txtCalorie.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCalorie.Location = new System.Drawing.Point(202, 206);
+            this.txtCalorie.Margin = new System.Windows.Forms.Padding(2);
             this.txtCalorie.Mask = "";
             this.txtCalorie.MaxLength = 32767;
             this.txtCalorie.MouseState = MaterialSkin.MouseState.OUT;
@@ -157,7 +159,7 @@
             this.btnAddActivity.Depth = 0;
             this.btnAddActivity.HighEmphasis = true;
             this.btnAddActivity.Icon = null;
-            this.btnAddActivity.Location = new System.Drawing.Point(26, 221);
+            this.btnAddActivity.Location = new System.Drawing.Point(122, 302);
             this.btnAddActivity.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnAddActivity.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAddActivity.Name = "btnAddActivity";
@@ -177,7 +179,7 @@
             this.btnDeleteActivity.Depth = 0;
             this.btnDeleteActivity.HighEmphasis = true;
             this.btnDeleteActivity.Icon = null;
-            this.btnDeleteActivity.Location = new System.Drawing.Point(165, 221);
+            this.btnDeleteActivity.Location = new System.Drawing.Point(209, 302);
             this.btnDeleteActivity.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnDeleteActivity.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnDeleteActivity.Name = "btnDeleteActivity";
@@ -197,7 +199,7 @@
             this.btnUpdateActivity.Depth = 0;
             this.btnUpdateActivity.HighEmphasis = true;
             this.btnUpdateActivity.Icon = null;
-            this.btnUpdateActivity.Location = new System.Drawing.Point(273, 221);
+            this.btnUpdateActivity.Location = new System.Drawing.Point(296, 302);
             this.btnUpdateActivity.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnUpdateActivity.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnUpdateActivity.Name = "btnUpdateActivity";
@@ -212,13 +214,22 @@
             // 
             // dgvActivities
             // 
+            this.dgvActivities.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvActivities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvActivities.Location = new System.Drawing.Point(425, 67);
-            this.dgvActivities.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvActivities.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvActivities.Location = new System.Drawing.Point(443, 139);
+            this.dgvActivities.Margin = new System.Windows.Forms.Padding(2);
             this.dgvActivities.Name = "dgvActivities";
             this.dgvActivities.RowHeadersWidth = 51;
             this.dgvActivities.RowTemplate.Height = 24;
-            this.dgvActivities.Size = new System.Drawing.Size(370, 271);
+            this.dgvActivities.Size = new System.Drawing.Size(370, 199);
             this.dgvActivities.TabIndex = 7;
             this.dgvActivities.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvActivities_CellClick);
             // 
@@ -229,7 +240,7 @@
             this.btnBack.Depth = 0;
             this.btnBack.HighEmphasis = true;
             this.btnBack.Icon = null;
-            this.btnBack.Location = new System.Drawing.Point(686, 358);
+            this.btnBack.Location = new System.Drawing.Point(667, 96);
             this.btnBack.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnBack.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnBack.Name = "btnBack";
@@ -242,11 +253,19 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Location = new System.Drawing.Point(21, 121);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(407, 241);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            // 
             // Form9
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(904, 450);
+            this.ClientSize = new System.Drawing.Size(871, 418);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.dgvActivities);
             this.Controls.Add(this.btnUpdateActivity);
@@ -256,6 +275,7 @@
             this.Controls.Add(this.txtActivityType);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
+            this.Controls.Add(this.groupBox1);
             this.Name = "Form9";
             this.Text = "Aktivie İşlemleri(Admin)";
             ((System.ComponentModel.ISupportInitialize)(this.dgvActivities)).EndInit();
@@ -275,5 +295,6 @@
         private MaterialSkin.Controls.MaterialButton btnUpdateActivity;
         private System.Windows.Forms.DataGridView dgvActivities;
         private MaterialSkin.Controls.MaterialButton btnBack;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

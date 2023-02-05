@@ -149,6 +149,12 @@ namespace Diet.UI
             materialTabControl1.SelectedTab = tabPage4;
         }
 
-        
+       
+        private void materialLabel7_Click(object sender, EventArgs e)
+        {
+            Form1 frm1 = new Form1();
+            frm1.Show();
+            this.Hide();
+        }
     }
 }

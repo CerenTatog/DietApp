@@ -43,6 +43,8 @@
             this.materialComboBox2 = new MaterialSkin.Controls.MaterialComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.materialListBox1 = new MaterialSkin.Controls.MaterialListBox();
+            this.materialListBox2 = new MaterialSkin.Controls.MaterialListBox();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -258,11 +260,40 @@
             this.materialListBox1.Size = new System.Drawing.Size(621, 234);
             this.materialListBox1.TabIndex = 3;
             // 
+            // materialListBox2
+            // 
+            this.materialListBox2.BackColor = System.Drawing.Color.White;
+            this.materialListBox2.BorderColor = System.Drawing.Color.LightGray;
+            this.materialListBox2.Depth = 0;
+            this.materialListBox2.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialListBox2.Location = new System.Drawing.Point(800, 137);
+            this.materialListBox2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialListBox2.Name = "materialListBox2";
+            this.materialListBox2.SelectedIndex = -1;
+            this.materialListBox2.SelectedItem = null;
+            this.materialListBox2.Size = new System.Drawing.Size(314, 511);
+            this.materialListBox2.TabIndex = 14;
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel2.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
+            this.materialLabel2.Location = new System.Drawing.Point(795, 94);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(175, 29);
+            this.materialLabel2.TabIndex = 15;
+            this.materialLabel2.Text = "Popüler Besinler";
+            // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(785, 693);
+            this.ClientSize = new System.Drawing.Size(1137, 693);
+            this.Controls.Add(this.materialLabel2);
+            this.Controls.Add(this.materialListBox2);
             this.Controls.Add(this.materialButtonTamamla);
             this.Controls.Add(this.materialButtonSil);
             this.Controls.Add(this.materialLabel1);
@@ -293,5 +324,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private MaterialSkin.Controls.MaterialComboBox materialComboBox2;
         private MaterialSkin.Controls.MaterialListBox materialListBox1;
+        private MaterialSkin.Controls.MaterialListBox materialListBox2;
+        private MaterialSkin.Controls.MaterialLabel materialLabel2;
     }
 }

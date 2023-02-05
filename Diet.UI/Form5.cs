@@ -66,7 +66,9 @@ namespace Diet.UI
             materialComboBox2.DataSource = db.FoodRepository.GetAll().Select(x => new { x.ID, x.FoodName }).ToList();
             materialComboBox2.DisplayMember = "FoodName";
             materialComboBox2.ValueMember = "ID";
-
+            materialTextBox22.Text = "";
+            materialComboBox2.SelectedIndex = -1;
+            //materialLabel3.Text = db.FoodRepository.GetAll().Where(x => x.FoodName == materialComboBox2.SelectedItem.ToString()).Select(x => x.Portion).ToString();
         }
         List<MealFood> ogunListesi;
         private void materialButtonEkle_Click(object sender, EventArgs e)
@@ -92,15 +94,16 @@ namespace Diet.UI
                {
                    SecondaryText= "",
                    Tag = yeniOgun,
-                   Text = $"{food.FoodName} {yeniOgun.Quantity} {food.Portion.GetEnumDisplayName()} Kalori:{food.Calorie * (yeniOgun.Quantity / food.PortionQuantity)}"
+                   Text = $"{food.FoodName} {yeniOgun.Quantity} {food.Portion.GetEnumDisplayName()} {food.Calorie * (yeniOgun.Quantity / food.PortionQuantity)} Kalori, KarbonHidrat: {food.Carbonhydrate} g,Protein: {food.Protein} g, Yağ: {food.Fat} g "
                });
 
-               
+                Form5_Load(sender,e);
                 
             }
             else
             {
                 MessageBox.Show("Lütfen tüm alanları doldurun. ");
+                Form5_Load(sender, e);
             }
 
         }
@@ -116,7 +119,7 @@ namespace Diet.UI
 
 
             }
-           
+            Form5_Load(sender, e);
         }
 
         private void materialButtonTamamla_Click(object sender, EventArgs e)

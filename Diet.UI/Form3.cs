@@ -263,6 +263,8 @@ namespace Diet.UI
             cmbCinsiyet.DisplayMember = "Label";
             cmbCinsiyet.ValueMember = "Value";
 
+            LoadBodyAnalyz();
+
 
         }
 
@@ -406,6 +408,22 @@ namespace Diet.UI
             userBC.Weight = userDetail.Weight;
             userBC.Height = userDetail.Height;
             db.UserBcRepository.Create(userBC);
+
+            LoadBodyAnalyz();
+            
+        }
+        void LoadBodyAnalyz()
+        {
+            var query = from a in db.UserBcRepository.GetAll().Where(x => x.UserID == _currentUser.ID)
+                        select new
+                        {
+                            a.Height,
+                            a.Weight,
+                            a.ActivityStatus
+                        };
+            dataGridView1.DataSource = query.ToList();
+
+                        
         }
     }
 }

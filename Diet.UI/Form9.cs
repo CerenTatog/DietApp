@@ -38,12 +38,21 @@ namespace Diet.UI
 
         private void btnAddActivity_Click(object sender, EventArgs e)
         {
-            Activity AddetActivity = new Activity();
-            AddetActivity.ActivityName = txtActivityType.Text;
-            AddetActivity.LostCalorie = Convert.ToDouble(txtCalorie.Text);
-            AddetActivity.CreatedDate = DateTime.Now;
-            db.ActivityRepository.Create(AddetActivity);
-            loadActivities();
+            string activityName = txtActivityType.Text.Trim();
+            var checkActivity = db.ActivityRepository.GetAll().Any(x => x.ActivityName == activityName);
+            if (checkActivity)
+            {
+                MessageBox.Show("Aynı isimli aktivite zaten eklenmiştir.");
+            }
+            else
+            {
+                Activity AddetActivity = new Activity();
+                AddetActivity.ActivityName = txtActivityType.Text;
+                AddetActivity.LostCalorie = Convert.ToDouble(txtCalorie.Text);
+                AddetActivity.CreatedDate = DateTime.Now;
+                db.ActivityRepository.Create(AddetActivity);
+                loadActivities();
+            }           
         }
         void loadActivities()
         {

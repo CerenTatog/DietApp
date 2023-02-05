@@ -220,6 +220,10 @@
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.pictureBox20 = new System.Windows.Forms.PictureBox();
             this.materialCard38 = new MaterialSkin.Controls.MaterialCard();
+            this.cmbCinsiyet = new MaterialSkin.Controls.MaterialComboBox();
+            this.nmrBoy = new System.Windows.Forms.NumericUpDown();
+            this.nmrKilo = new System.Windows.Forms.NumericUpDown();
+            this.cmbYas = new System.Windows.Forms.NumericUpDown();
             this.btnSaveAndUpdate = new MaterialSkin.Controls.MaterialButton();
             this.cmbAktivite = new MaterialSkin.Controls.MaterialComboBox();
             this.materialLabel69 = new MaterialSkin.Controls.MaterialLabel();
@@ -241,10 +245,7 @@
             this.materialLabel71 = new MaterialSkin.Controls.MaterialLabel();
             this.tabPage10 = new System.Windows.Forms.TabPage();
             this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.cmbYas = new System.Windows.Forms.NumericUpDown();
-            this.nmrKilo = new System.Windows.Forms.NumericUpDown();
-            this.nmrBoy = new System.Windows.Forms.NumericUpDown();
-            this.cmbCinsiyet = new MaterialSkin.Controls.MaterialComboBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.materialCard17.SuspendLayout();
@@ -310,13 +311,14 @@
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
             this.materialCard38.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrBoy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrKilo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbYas)).BeginInit();
             this.tabPage7.SuspendLayout();
             this.materialCard39.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.materialCard40.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbYas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmrKilo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmrBoy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // materialTabControl1
@@ -2963,6 +2965,7 @@
             // materialCard38
             // 
             this.materialCard38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard38.Controls.Add(this.dataGridView1);
             this.materialCard38.Controls.Add(this.cmbCinsiyet);
             this.materialCard38.Controls.Add(this.nmrBoy);
             this.materialCard38.Controls.Add(this.nmrKilo);
@@ -2981,8 +2984,56 @@
             this.materialCard38.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard38.Name = "materialCard38";
             this.materialCard38.Padding = new System.Windows.Forms.Padding(19, 17, 19, 17);
-            this.materialCard38.Size = new System.Drawing.Size(915, 596);
+            this.materialCard38.Size = new System.Drawing.Size(915, 834);
             this.materialCard38.TabIndex = 3;
+            // 
+            // cmbCinsiyet
+            // 
+            this.cmbCinsiyet.AutoResize = false;
+            this.cmbCinsiyet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cmbCinsiyet.Depth = 0;
+            this.cmbCinsiyet.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cmbCinsiyet.DropDownHeight = 174;
+            this.cmbCinsiyet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCinsiyet.DropDownWidth = 121;
+            this.cmbCinsiyet.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cmbCinsiyet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmbCinsiyet.FormattingEnabled = true;
+            this.cmbCinsiyet.IntegralHeight = false;
+            this.cmbCinsiyet.ItemHeight = 43;
+            this.cmbCinsiyet.Location = new System.Drawing.Point(250, 191);
+            this.cmbCinsiyet.MaxDropDownItems = 4;
+            this.cmbCinsiyet.MouseState = MaterialSkin.MouseState.OUT;
+            this.cmbCinsiyet.Name = "cmbCinsiyet";
+            this.cmbCinsiyet.Size = new System.Drawing.Size(545, 49);
+            this.cmbCinsiyet.StartIndex = 0;
+            this.cmbCinsiyet.TabIndex = 14;
+            // 
+            // nmrBoy
+            // 
+            this.nmrBoy.Location = new System.Drawing.Point(255, 135);
+            this.nmrBoy.Name = "nmrBoy";
+            this.nmrBoy.Size = new System.Drawing.Size(538, 22);
+            this.nmrBoy.TabIndex = 13;
+            // 
+            // nmrKilo
+            // 
+            this.nmrKilo.Location = new System.Drawing.Point(255, 63);
+            this.nmrKilo.Maximum = new decimal(new int[] {
+            250,
+            0,
+            0,
+            0});
+            this.nmrKilo.Name = "nmrKilo";
+            this.nmrKilo.Size = new System.Drawing.Size(538, 22);
+            this.nmrKilo.TabIndex = 13;
+            // 
+            // cmbYas
+            // 
+            this.cmbYas.Location = new System.Drawing.Point(256, 264);
+            this.cmbYas.Name = "cmbYas";
+            this.cmbYas.Size = new System.Drawing.Size(538, 22);
+            this.cmbYas.TabIndex = 13;
             // 
             // btnSaveAndUpdate
             // 
@@ -3373,48 +3424,16 @@
             this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.ımageList1.Images.SetKeyName(0, "calendar-lines-pen.png");
             // 
-            // cmbYas
+            // dataGridView1
             // 
-            this.cmbYas.Location = new System.Drawing.Point(256, 264);
-            this.cmbYas.Name = "cmbYas";
-            this.cmbYas.Size = new System.Drawing.Size(538, 22);
-            this.cmbYas.TabIndex = 13;
-            // 
-            // nmrKilo
-            // 
-            this.nmrKilo.Location = new System.Drawing.Point(255, 63);
-            this.nmrKilo.Name = "nmrKilo";
-            this.nmrKilo.Size = new System.Drawing.Size(538, 22);
-            this.nmrKilo.TabIndex = 13;
-            // 
-            // nmrBoy
-            // 
-            this.nmrBoy.Location = new System.Drawing.Point(255, 135);
-            this.nmrBoy.Name = "nmrBoy";
-            this.nmrBoy.Size = new System.Drawing.Size(538, 22);
-            this.nmrBoy.TabIndex = 13;
-            // 
-            // cmbCinsiyet
-            // 
-            this.cmbCinsiyet.AutoResize = false;
-            this.cmbCinsiyet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cmbCinsiyet.Depth = 0;
-            this.cmbCinsiyet.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cmbCinsiyet.DropDownHeight = 174;
-            this.cmbCinsiyet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCinsiyet.DropDownWidth = 121;
-            this.cmbCinsiyet.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.cmbCinsiyet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cmbCinsiyet.FormattingEnabled = true;
-            this.cmbCinsiyet.IntegralHeight = false;
-            this.cmbCinsiyet.ItemHeight = 43;
-            this.cmbCinsiyet.Location = new System.Drawing.Point(250, 191);
-            this.cmbCinsiyet.MaxDropDownItems = 4;
-            this.cmbCinsiyet.MouseState = MaterialSkin.MouseState.OUT;
-            this.cmbCinsiyet.Name = "cmbCinsiyet";
-            this.cmbCinsiyet.Size = new System.Drawing.Size(545, 49);
-            this.cmbCinsiyet.StartIndex = 0;
-            this.cmbCinsiyet.TabIndex = 14;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(107, 556);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(710, 258);
+            this.dataGridView1.TabIndex = 15;
             // 
             // Form3
             // 
@@ -3526,15 +3545,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
             this.materialCard38.ResumeLayout(false);
             this.materialCard38.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrBoy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrKilo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbYas)).EndInit();
             this.tabPage7.ResumeLayout(false);
             this.materialCard39.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.materialCard40.ResumeLayout(false);
             this.materialCard40.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbYas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmrKilo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmrBoy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3756,5 +3776,6 @@
         private System.Windows.Forms.NumericUpDown nmrKilo;
         private System.Windows.Forms.NumericUpDown cmbYas;
         private MaterialSkin.Controls.MaterialComboBox cmbCinsiyet;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

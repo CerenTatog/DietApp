@@ -219,13 +219,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\Resources\breakfast.png" />
-    <None Include="Resources\justify-textdik2.png" />
-    <None Include="Resources\justify-textdik.png" />
-    <None Include="Resources\justify-text.png" />
-    <None Include="Resources\climb.png" />
-    <None Include="Resources\fire.png" />
-    <None Include="Resources\birthday-cake.png" />
-    <None Include="Resources\woman %283%29.png" />
     <None Include="Resources\minus-sign.png" />
     <None Include="Resources\minus.png" />
     <None Include="Resources\run.png" />

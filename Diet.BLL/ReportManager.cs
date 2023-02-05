@@ -42,7 +42,7 @@ namespace Diet.BLL
                               {
                                   Date = g.Key,
                                   Calori = g.Sum(x => x.Calorie * (x.Quantity / x.PortionQuantity))
-                              }).ToList();
+                              }).OrderBy(x=> x.Date).ToList();
 
             return groupQuery;
         }
@@ -98,7 +98,7 @@ namespace Diet.BLL
                                   Date = g.Key,
                                   Carb = g.Sum(x => x.Carbonhydrate * (x.Quantity / x.PortionQuantity)),
                                   Protein = g.Sum(x => x.Protein * (x.Quantity / x.PortionQuantity)),
-                                  Fat = g.Sum(x => x.Protein * (x.Quantity / x.PortionQuantity)),
+                                  Fat = g.Sum(x => x.Fat * (x.Quantity / x.PortionQuantity)),
                               }).ToList();
             return groupQuery;
 

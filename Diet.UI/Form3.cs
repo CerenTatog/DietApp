@@ -137,35 +137,72 @@ namespace Diet.UI
             //dataGridView3.DataSource = reportManager.WeeklyDrinkingWater(_currentUser.ID);
             //dataGridView4.DataSource = reportManager.CalculateActivity(_currentUser.ID);
             //dataGridView6.DataSource = reportManager.CalculateWeight(_currentUser.ID);
+            cartesianChart2.Series.Clear();
+            cartesianChart2.AxisX.Clear();
+            var weeklyMacroFood = reportManager.WeeklyMacroFood(_currentUser.ID);
+            double[] protein = reportManager.WeeklyMacroFood(_currentUser.ID).Select(x => x.Protein).ToArray();
+            double[] carb = reportManager.WeeklyMacroFood(_currentUser.ID).Select(x => x.Carb).ToArray();
+            double[] fat = reportManager.WeeklyMacroFood(_currentUser.ID).Select(x => x.Fat).ToArray();
+            cartesianChart2.Series = new SeriesCollection
+            {
+                new ColumnSeries
+                {
+                    Title = "Protein",
+                    Values = new ChartValues<double>(protein)
+                }
+            };
+
+            cartesianChart2.Series.Add(new ColumnSeries
+            {
+                Title = "Karbonhidrat",
+                Values = new ChartValues<double>(carb) 
+            });
+
+            cartesianChart2.Series.Add(new ColumnSeries
+            {
+                Title = "Yağ",
+                Values = new ChartValues<double>(fat)
+            });
+
+            cartesianChart2.AxisX.Add(new Axis
+            {
+                Title = "",
+                Labels = weeklyMacroFood.Select(x=> x.Date.ToString("dd/MM/yyyy")).ToList(),
+            });
 
             //Çalışmıyor?
-            //var data1 = reportManager.CalculateWeeklyCalorie(_currentUser.ID);
-            //ColumnSeries series5 = new ColumnSeries()
-            //{
-            //    DataLabels = true,
-            //    Values = new ChartValues<double>(),
-            //    LabelPoint = point => point.Y.ToString()
-            //};
-            //Axis axisX = new Axis()
-            //{
-            //    Separator = new Separator() { Step = 1, IsEnabled = false },
-            //    Labels = new List<string>()
+            cartesianChart1.Series.Clear();
+            cartesianChart1.AxisX.Clear();
+            cartesianChart1.AxisY.Clear();
 
-            //};
-            //Axis axisY = new Axis()
-            //{
-            //    LabelFormatter = y => y.ToString("C"),
-            //    Separator = new Separator()
-            //};
-            //cartesianChart1.Series.Add(series5);
-            //cartesianChart1.AxisX.Add(axisX);
-            //cartesianChart1.AxisY.Add(axisY);
-            //foreach (var item in data1)
-            //{
-            //    series5.Values.Add(item.Date);
-            //    axisX.Labels.Add(item.Calori.ToString());
-            //    
-            //}
+            var data1 = reportManager.CalculateWeeklyCalorie(_currentUser.ID);
+            ColumnSeries series5 = new ColumnSeries()
+            {
+                DataLabels = true,
+                Values = new ChartValues<double>(),
+                LabelPoint = point => point.Y.ToString(),
+                Title = "Kalori"
+            };
+            Axis axisX = new Axis()
+            {
+                Separator = new Separator() { Step = 1, IsEnabled = false },
+                Labels = new List<string>()
+
+            };
+            Axis axisY = new Axis()
+            {
+                LabelFormatter = y => y.ToString(),
+                //Separator = new Separator()
+            };
+            cartesianChart1.Series.Add(series5);
+            cartesianChart1.AxisX.Add(axisX);
+            cartesianChart1.AxisY.Add(axisY);
+
+            foreach (var item in data1)
+            {
+                series5.Values.Add(item.Calori);
+                axisX.Labels.Add(item.Date.ToString("dd/MM/yyyy"));
+            }
 
 
 

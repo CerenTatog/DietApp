@@ -37,14 +37,15 @@ namespace Diet.UI
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+            _currentUser = user;
         }
 
         private void Form4_Load(object sender, EventArgs e)
         {
             //Kullanıcı Listesi -Sistem Raporları
-            //var query = from u in db.UserRepository.GetAll()
-            //            select new { u.UserName, u.UserSurname, u.Email, u.CreatedDate };
-            //dataGridViewKullaniciListesi.DataSource = query.ToList();
+            var query = from u in db.UserRepository.GetAll()
+                        select new { u.UserName, u.UserSurname, u.Email, u.CreatedDate };
+            dataGridViewKullaniciListesi.DataSource = query.ToList();
         }
 
         private void materialFloatingActionButton1_Click(object sender, EventArgs e)
@@ -54,20 +55,25 @@ namespace Diet.UI
 
         private void BesinEkle_Click(object sender, EventArgs e)
         {
-            //Form8 frm8 = new Form8(_currentUser);
-            //frm8.ShowDialog();
+            Form8 frm8 = new Form8(_currentUser);
+            frm8.ShowDialog();
 
 
         }
         //userıd
         private void mlAktiviteDuzenle_Click(object sender, EventArgs e)
         {
-            //Form9 frm9 = new Form9(_currentUser);
-            //frm9.ShowDialog();
+            Form9 frm9 = new Form9(_currentUser);
+            frm9.ShowDialog();
 
         }
 
         private void materialCard10_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void materialLabel4_Click(object sender, EventArgs e)
         {
 
         }

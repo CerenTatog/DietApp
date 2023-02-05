@@ -27,7 +27,7 @@ namespace Diet.UI
             InitializeComponent();
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
-            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
 
         }
@@ -37,7 +37,7 @@ namespace Diet.UI
             //eşitlenmesi gerekiyor. globalde tanımlanıp
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
-            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
             _currentUser = currentUser;
            
@@ -59,7 +59,7 @@ namespace Diet.UI
                 NewActivity.Duration = (double)nmrDuration.Value;                             
                 NewActivity.CalculatedCalorie = db.ActivityRepository.GetById(NewActivity.ActivityID).LostCalorie * NewActivity.Duration; 
                 db.UserActivityRepository.Create(NewActivity);
-                lblKCAL.Text = NewActivity.CalculatedCalorie.ToString() + " kCal TEBRİKLER:)";
+                lblKCAL.Text = NewActivity.CalculatedCalorie.ToString() + " kCal";
                 LoadCmbAndDgv();
             }
             else

@@ -132,10 +132,9 @@ namespace Diet.UI
 
         private void btnKaydetBitir_Click(object sender, EventArgs e)
         {
-
             newuserdetail.Age = Convert.ToInt32(nmrYas.Value);
             newuserdetail.ActivityStatus = (ActivityStatus)cmbActivityStatus.SelectedValue;
-            newuserdetail.Gender = (Gender)cmbGender.SelectedValue;        
+            newuserdetail.Gender = (Gender)cmbGender.SelectedValue;
             newuser.CreatedDate = DateTime.Now;
             db.UserRepository.Create(newuser);
             newuserdetail.UserID = newuser.ID;
@@ -150,6 +149,12 @@ namespace Diet.UI
             materialTabControl1.SelectedTab = tabPage4;
         }
 
-        
+       
+        private void materialLabel7_Click(object sender, EventArgs e)
+        {
+            Form1 frm1 = new Form1();
+            frm1.Show();
+            this.Hide();
+        }
     }
 }

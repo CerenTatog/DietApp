@@ -17,7 +17,8 @@ namespace Diet.UI
     public partial class Form11 : MaterialForm
     {
         UnitOfWork db = new UnitOfWork();
-         public Form11()
+        User _currentUser;
+        public Form11()
         {
             InitializeComponent();
             var materialSkinManager = MaterialSkinManager.Instance;
@@ -27,12 +28,23 @@ namespace Diet.UI
 
             LoadCategory();
         }
+        public Form11(User user)
+        {
+            InitializeComponent();
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+            _currentUser = user;
+            LoadCategory();
+        }
+
 
         private void Form11_Load(object sender, EventArgs e)
         {
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
-            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
         }
 

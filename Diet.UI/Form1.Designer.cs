@@ -34,14 +34,14 @@
             this.btnGirisYap = new MaterialSkin.Controls.MaterialButton();
             this.txtSifre = new MaterialSkin.Controls.MaterialTextBox2();
             this.btnUyelikOlustur = new MaterialSkin.Controls.MaterialButton();
+            this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.chkPassword = new MaterialSkin.Controls.MaterialCheckbox();
+            this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.chkPassword = new MaterialSkin.Controls.MaterialCheckbox();
+            this.materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // txtKullaniciAdi
@@ -54,7 +54,8 @@
             this.txtKullaniciAdi.HideSelection = true;
             this.txtKullaniciAdi.Hint = "Kullanıcı Adı";
             this.txtKullaniciAdi.LeadingIcon = null;
-            this.txtKullaniciAdi.Location = new System.Drawing.Point(54, 216);
+            this.txtKullaniciAdi.Location = new System.Drawing.Point(15, 241);
+            this.txtKullaniciAdi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtKullaniciAdi.MaxLength = 32767;
             this.txtKullaniciAdi.MouseState = MaterialSkin.MouseState.OUT;
             this.txtKullaniciAdi.Name = "txtKullaniciAdi";
@@ -66,7 +67,7 @@
             this.txtKullaniciAdi.SelectionLength = 0;
             this.txtKullaniciAdi.SelectionStart = 0;
             this.txtKullaniciAdi.ShortcutsEnabled = true;
-            this.txtKullaniciAdi.Size = new System.Drawing.Size(407, 48);
+            this.txtKullaniciAdi.Size = new System.Drawing.Size(305, 48);
             this.txtKullaniciAdi.TabIndex = 0;
             this.txtKullaniciAdi.TabStop = false;
             this.txtKullaniciAdi.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -75,17 +76,18 @@
             // 
             // btnGirisYap
             // 
+            this.btnGirisYap.AutoSize = false;
             this.btnGirisYap.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnGirisYap.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnGirisYap.Depth = 0;
             this.btnGirisYap.HighEmphasis = true;
             this.btnGirisYap.Icon = null;
-            this.btnGirisYap.Location = new System.Drawing.Point(350, 358);
-            this.btnGirisYap.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnGirisYap.Location = new System.Drawing.Point(182, 411);
+            this.btnGirisYap.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnGirisYap.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnGirisYap.Name = "btnGirisYap";
             this.btnGirisYap.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnGirisYap.Size = new System.Drawing.Size(111, 36);
+            this.btnGirisYap.Size = new System.Drawing.Size(138, 36);
             this.btnGirisYap.TabIndex = 1;
             this.btnGirisYap.Text = "      Giriş Yap     ";
             this.btnGirisYap.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -103,7 +105,8 @@
             this.txtSifre.HideSelection = true;
             this.txtSifre.Hint = "Şifre";
             this.txtSifre.LeadingIcon = null;
-            this.txtSifre.Location = new System.Drawing.Point(54, 291);
+            this.txtSifre.Location = new System.Drawing.Point(15, 303);
+            this.txtSifre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtSifre.MaxLength = 32767;
             this.txtSifre.MouseState = MaterialSkin.MouseState.OUT;
             this.txtSifre.Name = "txtSifre";
@@ -115,7 +118,7 @@
             this.txtSifre.SelectionLength = 0;
             this.txtSifre.SelectionStart = 0;
             this.txtSifre.ShortcutsEnabled = true;
-            this.txtSifre.Size = new System.Drawing.Size(407, 48);
+            this.txtSifre.Size = new System.Drawing.Size(305, 48);
             this.txtSifre.TabIndex = 0;
             this.txtSifre.TabStop = false;
             this.txtSifre.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -129,8 +132,8 @@
             this.btnUyelikOlustur.Depth = 0;
             this.btnUyelikOlustur.HighEmphasis = true;
             this.btnUyelikOlustur.Icon = null;
-            this.btnUyelikOlustur.Location = new System.Drawing.Point(54, 489);
-            this.btnUyelikOlustur.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnUyelikOlustur.Location = new System.Drawing.Point(17, 411);
+            this.btnUyelikOlustur.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnUyelikOlustur.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnUyelikOlustur.Name = "btnUyelikOlustur";
             this.btnUyelikOlustur.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -142,48 +145,17 @@
             this.btnUyelikOlustur.UseVisualStyleBackColor = true;
             this.btnUyelikOlustur.Click += new System.EventHandler(this.btnUyelikOlustur_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(251, 455);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(210, 70);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(177, 82);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(126, 115);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
-            // 
             // ımageList1
             // 
             this.ımageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ımageList1.ImageStream")));
             this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.ımageList1.Images.SetKeyName(0, "not-visible.png");
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(54, 358);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(54, 36);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 5;
-            this.pictureBox3.TabStop = false;
-            // 
             // chkPassword
             // 
             this.chkPassword.AutoSize = true;
             this.chkPassword.Depth = 0;
-            this.chkPassword.Location = new System.Drawing.Point(111, 358);
+            this.chkPassword.Location = new System.Drawing.Point(213, 353);
             this.chkPassword.Margin = new System.Windows.Forms.Padding(0);
             this.chkPassword.MouseLocation = new System.Drawing.Point(-1, -1);
             this.chkPassword.MouseState = MaterialSkin.MouseState.HOVER;
@@ -196,28 +168,64 @@
             this.chkPassword.UseVisualStyleBackColor = true;
             this.chkPassword.CheckedChanged += new System.EventHandler(this.materialCheckbox1_CheckedChanged);
             // 
+            // materialCard1
+            // 
+            this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard1.Controls.Add(this.pictureBox2);
+            this.materialCard1.Controls.Add(this.chkPassword);
+            this.materialCard1.Controls.Add(this.btnGirisYap);
+            this.materialCard1.Controls.Add(this.txtKullaniciAdi);
+            this.materialCard1.Controls.Add(this.txtSifre);
+            this.materialCard1.Controls.Add(this.btnUyelikOlustur);
+            this.materialCard1.Depth = 0;
+            this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard1.Location = new System.Drawing.Point(98, 239);
+            this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard1.Name = "materialCard1";
+            this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard1.Size = new System.Drawing.Size(343, 485);
+            this.materialCard1.TabIndex = 7;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.pictureBox1.Image = global::Diet.UI.Properties.Resources.logomuzkare;
+            this.pictureBox1.Location = new System.Drawing.Point(173, 89);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(189, 123);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Diet.UI.Properties.Resources.solution__4_;
+            this.pictureBox2.Location = new System.Drawing.Point(121, 0);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(222, 218);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(521, 554);
-            this.Controls.Add(this.chkPassword);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
+            this.ClientSize = new System.Drawing.Size(554, 779);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnUyelikOlustur);
-            this.Controls.Add(this.btnGirisYap);
-            this.Controls.Add(this.txtSifre);
-            this.Controls.Add(this.txtKullaniciAdi);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Controls.Add(this.materialCard1);
             this.Name = "Form1";
+            this.Padding = new System.Windows.Forms.Padding(2, 52, 2, 2);
             this.Text = "Kullanıcı Girişi    ";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.materialCard1.ResumeLayout(false);
+            this.materialCard1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -230,8 +238,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ImageList ımageList1;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private MaterialSkin.Controls.MaterialCheckbox chkPassword;
+        private MaterialSkin.Controls.MaterialCard materialCard1;
     }
 }
 

@@ -84,6 +84,10 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form10.cs" />
+    <Compile Include="Form10.Designer.cs">
+      <DependentUpon>Form10.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form11.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +146,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form10.resx">
+      <DependentUpon>Form10.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form11.resx">
       <DependentUpon>Form11.cs</DependentUpon>
@@ -210,20 +217,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\Resources\breakfast.png" />
-    <None Include="Resources\physical-education.png" />
-    <None Include="Resources\adding.png" />
-    <None Include="Resources\menu.png" />
-    <None Include="Resources\boy.png" />
-    <None Include="Resources\bar-chart.png" />
-    <None Include="Resources\fasting.png" />
-    <None Include="Resources\cooking-show.png" />
-    <None Include="Resources\justify-textdik2.png" />
-    <None Include="Resources\justify-textdik.png" />
-    <None Include="Resources\justify-text.png" />
-    <None Include="Resources\climb.png" />
-    <None Include="Resources\fire.png" />
-    <None Include="Resources\birthday-cake.png" />
-    <None Include="Resources\woman %283%29.png" />
     <None Include="Resources\minus-sign.png" />
     <None Include="Resources\minus.png" />
     <None Include="Resources\run.png" />

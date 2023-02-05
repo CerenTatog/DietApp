@@ -349,5 +349,22 @@ private void materialFloatingActionButton1_Click(object sender, EventArgs e)
     double currentWater = userManager.RemoveDailyWater(_currentUser.ID);
     lblWaterTotal.Text = $"{currentWater} ml";
 }
+
+        private void btnChangePasword_Click(object sender, EventArgs e)
+        {
+            User newPassword = new User();
+            if (txtOldPassword.Text.EncryptoPassword()==_currentUser.Password.EncryptoPassword())
+            {
+                if (txtNewPassword.Text.Trim()==txtNewPasswordAgain.Text.Trim())
+                {
+                    newPassword.Password = txtNewPassword.Text.EncryptoPassword();
+                    db.UserRepository.Update(newPassword);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Şifrenizi hatalı girdiniz");
+            }
+        }
     }
 }

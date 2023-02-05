@@ -52,6 +52,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.materialMaskedTextBox1 = new MaterialSkin.Controls.MaterialMaskedTextBox();
             this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -289,6 +290,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.materialButton1);
             this.groupBox1.Controls.Add(this.cmbCategories);
             this.groupBox1.Controls.Add(this.materialLabel3);
             this.groupBox1.Controls.Add(this.cmbMiktarTuru);
@@ -461,7 +463,7 @@
             this.materialButton1.Depth = 0;
             this.materialButton1.HighEmphasis = true;
             this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(983, 139);
+            this.materialButton1.Location = new System.Drawing.Point(35, 510);
             this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton1.Name = "materialButton1";
@@ -474,12 +476,16 @@
             this.materialButton1.UseVisualStyleBackColor = true;
             this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
             // Form8
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1495, 778);
-            this.Controls.Add(this.materialButton1);
             this.Controls.Add(this.materialMaskedTextBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnBack);
@@ -526,5 +532,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private MaterialSkin.Controls.MaterialMaskedTextBox materialMaskedTextBox1;
         private MaterialSkin.Controls.MaterialButton materialButton1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

@@ -41,8 +41,8 @@ namespace Diet.UI
             var user = db.UserRepository.GetAll().Where(u => u.Email == txtKullaniciAdi.Text).FirstOrDefault();
             if (txtKullaniciAdi.Text.Trim() == "admin" && txtSifre.Text.Trim() == "admin")
             {
-                Form3 frm3 = new Form3(user);
-                frm3.Show();
+                Form4 frm4 = new Form4(user);
+                frm4.Show();
                 Hide();
             }
             else if (user != null)
@@ -51,8 +51,8 @@ namespace Diet.UI
                 if (user.Password.Trim() == txtSifre.Text.EncryptoPassword())
                 {
 
-                    Form3 frm4 = new Form3(user);
-                    frm4.Show();
+                    Form3 frm3 = new Form3(user);
+                    frm3.Show();
                     Hide();
                 }
                 else if (true)

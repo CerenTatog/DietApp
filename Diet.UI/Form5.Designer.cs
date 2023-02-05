@@ -41,12 +41,17 @@
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.materialComboBox2 = new MaterialSkin.Controls.MaterialComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.materialListBox1 = new MaterialSkin.Controls.MaterialListBox();
             this.materialListBox2 = new MaterialSkin.Controls.MaterialListBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
+            this.lblKCAL = new MaterialSkin.Controls.MaterialLabel();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.materialCard1.SuspendLayout();
+            this.materialCard2.SuspendLayout();
             this.SuspendLayout();
             // 
             // materialTextBox22
@@ -96,7 +101,7 @@
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel3.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
-            this.materialLabel3.Location = new System.Drawing.Point(229, 131);
+            this.materialLabel3.Location = new System.Drawing.Point(8, 102);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(69, 29);
@@ -111,7 +116,7 @@
             this.materialButtonEkle.Depth = 0;
             this.materialButtonEkle.HighEmphasis = true;
             this.materialButtonEkle.Icon = null;
-            this.materialButtonEkle.Location = new System.Drawing.Point(553, 207);
+            this.materialButtonEkle.Location = new System.Drawing.Point(553, 253);
             this.materialButtonEkle.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButtonEkle.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButtonEkle.Name = "materialButtonEkle";
@@ -204,8 +209,8 @@
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.materialLabel5);
             this.groupBox1.Controls.Add(this.materialButtonEkle);
-            this.groupBox1.Controls.Add(this.materialLabel3);
             this.groupBox1.Controls.Add(this.materialTextBox22);
+            this.groupBox1.Controls.Add(this.materialCard1);
             this.groupBox1.Location = new System.Drawing.Point(17, 82);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(744, 605);
@@ -236,16 +241,6 @@
             this.materialComboBox2.TabIndex = 14;
             this.materialComboBox2.SelectedIndexChanged += new System.EventHandler(this.materialComboBox2_SelectedIndexChanged);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(52, 55);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(161, 160);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
-            // 
             // materialListBox1
             // 
             this.materialListBox1.BackColor = System.Drawing.Color.White;
@@ -257,7 +252,7 @@
             this.materialListBox1.Name = "materialListBox1";
             this.materialListBox1.SelectedIndex = -1;
             this.materialListBox1.SelectedItem = null;
-            this.materialListBox1.Size = new System.Drawing.Size(621, 234);
+            this.materialListBox1.Size = new System.Drawing.Size(630, 234);
             this.materialListBox1.TabIndex = 3;
             // 
             // materialListBox2
@@ -265,7 +260,7 @@
             this.materialListBox2.BackColor = System.Drawing.Color.White;
             this.materialListBox2.BorderColor = System.Drawing.Color.LightGray;
             this.materialListBox2.Depth = 0;
-            this.materialListBox2.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialListBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialListBox2.Location = new System.Drawing.Point(800, 137);
             this.materialListBox2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialListBox2.Name = "materialListBox2";
@@ -287,6 +282,59 @@
             this.materialLabel2.TabIndex = 15;
             this.materialLabel2.Text = "Popüler Besinler";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(34, 44);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(179, 178);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
+            // materialCard1
+            // 
+            this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard1.Controls.Add(this.materialCard2);
+            this.materialCard1.Controls.Add(this.materialLabel3);
+            this.materialCard1.Depth = 0;
+            this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard1.Location = new System.Drawing.Point(230, 30);
+            this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard1.Name = "materialCard1";
+            this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard1.Size = new System.Drawing.Size(452, 212);
+            this.materialCard1.TabIndex = 15;
+            // 
+            // materialCard2
+            // 
+            this.materialCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard2.Controls.Add(this.lblKCAL);
+            this.materialCard2.Depth = 0;
+            this.materialCard2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard2.Location = new System.Drawing.Point(237, 143);
+            this.materialCard2.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard2.Name = "materialCard2";
+            this.materialCard2.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard2.Size = new System.Drawing.Size(194, 60);
+            this.materialCard2.TabIndex = 7;
+            // 
+            // lblKCAL
+            // 
+            this.lblKCAL.AutoSize = true;
+            this.lblKCAL.Depth = 0;
+            this.lblKCAL.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lblKCAL.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
+            this.lblKCAL.Location = new System.Drawing.Point(93, 14);
+            this.lblKCAL.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblKCAL.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblKCAL.Name = "lblKCAL";
+            this.lblKCAL.Size = new System.Drawing.Size(48, 29);
+            this.lblKCAL.TabIndex = 0;
+            this.lblKCAL.Text = "kCal";
+            // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -305,6 +353,10 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.materialCard1.ResumeLayout(false);
+            this.materialCard1.PerformLayout();
+            this.materialCard2.ResumeLayout(false);
+            this.materialCard2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -326,5 +378,8 @@
         private MaterialSkin.Controls.MaterialListBox materialListBox1;
         private MaterialSkin.Controls.MaterialListBox materialListBox2;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private MaterialSkin.Controls.MaterialCard materialCard1;
+        private MaterialSkin.Controls.MaterialCard materialCard2;
+        private MaterialSkin.Controls.MaterialLabel lblKCAL;
     }
 }

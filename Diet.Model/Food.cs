@@ -30,7 +30,7 @@ namespace Diet.Model
         public virtual Category Category { get; set; }
         public virtual ICollection<MealFood> MealFoods { get; set; }
     }
-    public enum QuantityType 
+    public enum QuantityType
     {
         [Display(Name = "Adet")]
         adet=1,

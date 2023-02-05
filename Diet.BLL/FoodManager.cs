@@ -66,6 +66,7 @@ namespace Diet.BLL
                          select new
                          {
                              f.Calorie,
+                             f.PortionQuantity,
                              mf.Quantity,
                              m.MealType
                          }).ToList();
@@ -74,7 +75,7 @@ namespace Diet.BLL
                               select new DailyUserCalori
                               {
                                   MealType = g.Key,
-                                  TotalCalori = g.Sum(x => x.Quantity * x.Calorie)
+                                  TotalCalori = g.Sum(x => (x.Quantity / x.PortionQuantity) * x.Calorie)
                               }).ToList();
 
             return groupQuery;
@@ -117,7 +118,7 @@ namespace Diet.BLL
             return 0;
         }
         //weekly carbonhyrate alanı düzenlenecek hesaplamada sıkıntı var.
-        public double DailyTakenCarbonhyrate(int UserId) 
+        public double DailyTakenCarbonhyrate(int UserId)
         {
             var dateToday = DateTime.Today;
             var dateEnd = DateTime.Today.AddDays(1).AddSeconds(-1);
@@ -128,6 +129,7 @@ namespace Diet.BLL
                          select new
                          {
                              f.Carbonhydrate,
+                             f.PortionQuantity,
                              mf.Quantity,
                              m.MealDate,
                              m.MealType
@@ -135,13 +137,13 @@ namespace Diet.BLL
             var groupQuery = (from gq in query
                               let dt = gq.MealDate
                               group gq by dt into g
-                              select new 
+                              select new
                               {
                                   Date = g.Key,
-                                  Carbonhyrate = g.Sum(x => x.Carbonhydrate * x.Quantity)
+                                  Carbonhyrate = g.Sum(x => x.Carbonhydrate * (x.Quantity / x.PortionQuantity))
                               }).ToList();
 
-            return groupQuery.Sum(x=>x.Carbonhyrate);
+            return groupQuery.Sum(x => x.Carbonhyrate);
 
 
         }
@@ -157,6 +159,7 @@ namespace Diet.BLL
                          select new
                          {
                              f.Protein,
+                             f.PortionQuantity,
                              mf.Quantity,
                              m.MealDate,
                              m.MealType
@@ -167,7 +170,7 @@ namespace Diet.BLL
                               select new
                               {
                                   Date = g.Key,
-                                  Protein = g.Sum(x => x.Protein * x.Quantity)
+                                  Protein = g.Sum(x => x.Protein * (x.Quantity / x.PortionQuantity))
                               }).ToList();
 
             return groupQuery.Sum(x => x.Protein);
@@ -186,6 +189,7 @@ namespace Diet.BLL
                          {
                              f.Fat,
                              mf.Quantity,
+                             f.PortionQuantity,
                              m.MealDate,
                              m.MealType
                          }).ToList();
@@ -195,7 +199,7 @@ namespace Diet.BLL
                               select new
                               {
                                   Date = g.Key,
-                                  Fat = g.Sum(x => x.Fat * x.Quantity)
+                                  Fat = g.Sum(x => x.Fat * (x.Quantity / x.PortionQuantity))
                               }).ToList();
 
             return groupQuery.Sum(x => x.Fat);

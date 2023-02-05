@@ -47,7 +47,6 @@ namespace Diet.UI
             }
             else if (user != null)
             {
-                var query = db.UserRepository.GetAll().Count(x => x.Email == txtKullaniciAdi.Text);
                 if (user.Password.Trim() == txtSifre.Text.EncryptoPassword())
                 {
 

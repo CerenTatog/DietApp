@@ -31,6 +31,7 @@ namespace Diet.BLL
                          select new
                          {
                              f.Calorie,
+                             f.PortionQuantity,
                              mf.Quantity,
                              m.MealDate
                          }).ToList();
@@ -40,7 +41,7 @@ namespace Diet.BLL
                               select new WeeklyCaloriDto
                               {
                                   Date = g.Key,
-                                  Calori = g.Sum(x => x.Calorie * x.Quantity)
+                                  Calori = g.Sum(x => x.Calorie * (x.Quantity / x.PortionQuantity))
                               }).ToList();
 
             return groupQuery;
@@ -57,6 +58,7 @@ namespace Diet.BLL
                          select new
                          {
                              f.Carbonhydrate,
+                             f.PortionQuantity,
                              mf.Quantity,
                              m.MealDate
                          }).ToList();
@@ -66,7 +68,7 @@ namespace Diet.BLL
                               select new WeeklyCarbonHydrateDo
                               {
                                   Date = g.Key,
-                                  Carb = g.Sum(x => x.Carbonhydrate * x.Quantity)
+                                  Carb = g.Sum(x => x.Carbonhydrate * (x.Quantity / x.PortionQuantity))
                               }).ToList();
             return groupQuery;
 
@@ -84,6 +86,7 @@ namespace Diet.BLL
                              f.Carbonhydrate,
                              f.Fat,
                              f.Protein,
+                             f.PortionQuantity,
                              mf.Quantity,
                              m.MealDate
                          }).ToList();
@@ -93,9 +96,9 @@ namespace Diet.BLL
                               select new WeeklyMacros
                               {
                                   Date = g.Key,
-                                  Carb = g.Sum(x => x.Carbonhydrate * x.Quantity),
-                                  Protein = g.Sum(x => x.Protein * x.Quantity),
-                                  Fat = g.Sum(x => x.Protein * x.Quantity),
+                                  Carb = g.Sum(x => x.Carbonhydrate * (x.Quantity / x.PortionQuantity)),
+                                  Protein = g.Sum(x => x.Protein * (x.Quantity / x.PortionQuantity)),
+                                  Fat = g.Sum(x => x.Protein * (x.Quantity / x.PortionQuantity)),
                               }).ToList();
             return groupQuery;
 
@@ -113,6 +116,7 @@ namespace Diet.BLL
                          select new
                          {
                              f.Protein,
+                             f.PortionQuantity,
                              mf.Quantity,
                              m.MealDate
                          }).ToList();
@@ -122,7 +126,7 @@ namespace Diet.BLL
                               select new WeeklyUserProtein
                               {
                                   Date = g.Key,
-                                  Protein = g.Sum(x => x.Protein * x.Quantity)
+                                  Protein = g.Sum(x => x.Protein * (x.Quantity / x.PortionQuantity))
                               }).ToList();
             return groupQuery;
 
@@ -139,6 +143,7 @@ namespace Diet.BLL
                          select new
                          {
                              f.Fat,
+                             f.PortionQuantity,
                              mf.Quantity,
                              m.MealDate
                          }).ToList();
@@ -148,7 +153,7 @@ namespace Diet.BLL
                               select new WeeklyFatDbo
                               {
                                   Date = g.Key,
-                                  Fat = g.Sum(x => x.Fat * x.Quantity)
+                                  Fat = g.Sum(x => x.Fat * (x.Quantity / x.PortionQuantity))
                               }).ToList();
             return groupQuery;
 
@@ -209,7 +214,6 @@ namespace Diet.BLL
                          join a in db.ActivityRepository.GetAll() on ua.ActivityID equals a.ID
                          select new
                          {
-
                              ua.StepCount,
                              ua.ActivityTime
                          }).ToList();
@@ -231,8 +235,6 @@ namespace Diet.BLL
             var dateSevenDayBefore = DateTime.Today.AddDays(-7);
             var userDailyWeigthRepo = db.UserDetailRepository.GetAll().Where(x => x.CreatedDate >= dateSevenDayBefore && x.CreatedDate < dateToday && x.UserID == UserId);
             var query = (from ud in userDailyWeigthRepo
-                             //join u in db.UserRepository.GetAll() on ud.UserID equals u.ID
-                             //join ub in db.UserBcRepository.GetAll() on u.ID equals ub.UserID
                          select new
                          {
                              ud.Weight,
@@ -243,7 +245,7 @@ namespace Diet.BLL
                               group gq by dt into g
                               select new WeeklyWeightDto
                               {
-                                  Date = (DateTime)g.Key,//Nullubeal hatası bir bakalım
+                                  Date = (DateTime)g.Key,
                                   Weight = g.Sum(x => x.Weight)
                               }).ToList();
             return groupQuery;

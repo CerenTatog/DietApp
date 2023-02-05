@@ -10,24 +10,12 @@ namespace Diet.Model
     public class UserBC : Base
     {
         public int UserID { get; set; }
-        public BodyCharacteristicTypeEnum BodyCharacteristicType { get; set; }
-        public double MeasurementValue { get; set; }
+        public double Weight { get; set; }
+        public double Height { get; set; }
+        public ActivityStatus ActivityStatus { get; set; }
         public DateTime MeasuredDate { get; set; }
-        public MeasureTypeEnum MeasureType { get; set; }
+
         [ForeignKey("UserID")]
         public virtual User User { get; set; }
-    }
-    public enum MeasureTypeEnum
-    {
-        cm = 1,
-        kg
-    }
-    /// <summary>
-    /// bu alan güncellenecek
-    /// </summary>
-    public enum BodyCharacteristicTypeEnum
-    {
-        Kilo = 1,
-        Boy,
     }
 }

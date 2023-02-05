@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -24,9 +25,13 @@ namespace Diet.Model
     }
     public enum MealType
     {
+        [Display(Name ="Kahvaltı")]
         Breakfast=1,
+        [Display(Name = "Öğlen Yemeği")]
         Lunch,
+        [Display(Name = "Akşam Yemeği")]
         Dinner,
+        [Display(Name = "Atıştırmalık")]
         Snack
        
     }

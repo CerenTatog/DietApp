@@ -52,14 +52,6 @@ namespace Diet.UI
             materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey600, Primary.BlueGrey700, Primary.BlueGrey600, Accent.LightBlue400, TextShade.WHITE);
             _currentUser = user;
-
-            //var query = from u in db.UserRepository.GetAll()
-            //            select new { u.UserName, u.UserSurname, u.Email, u.CreatedDate };
-            //dataGridViewKullaniciListesi.DataSource = query.ToList();
-
-
-
-
         }
 
         private void Form3_Load(object sender, EventArgs e)
@@ -81,7 +73,7 @@ namespace Diet.UI
 
             //Toplam alınan kalori miktarı(öğün toplamı)
             double toplamAlınanKalori = calculateCalorieIntake.Sum(x => x.TotalCalori);
-            //mlToplamAlinanKalori.Text = toplamAlınanKalori.ToString();
+            mlToplamAlinanKalori.Text = toplamAlınanKalori.ToString();
 
 
             var dailyCalculateConsumedCalorieByActivity = activityManager.CalculateConsumedCalorieByActivity(_currentUser.ID);
@@ -89,21 +81,21 @@ namespace Diet.UI
             //Harcanan kalori
             lblAdımSayisi.Text = activityManager.CalculateStepCountByUserId(_currentUser.ID).ToString();//form6'dan veri gelecek.
             lblAktivite.Text = dailyCalculateConsumedCalorieByActivity.ToString();
-            
+
             //Harcanan Toplam Kalori
             double toplamVerilenKalori = dailyCalculateConsumedCalorieByActivity + dailyCalculateConsumedCalorieByStep;
             lblHarcananToplamKalori.Text = toplamVerilenKalori.ToString();
 
             //Günlük Toplam Kalori
 
-            double dailyToplam= Math.Abs((toplamAlınanKalori - toplamVerilenKalori));
+            double dailyToplam = Math.Abs((toplamAlınanKalori - toplamVerilenKalori));
             ////farkıyla alakalı bir gösterim.
             mlKalanKalorid.Text = (foodManager.CalculateDailyCalorie(_currentUser.ID) - (toplamAlınanKalori - toplamVerilenKalori)).ToString();
 
             //Kullanıcı Bilgileri /Profil
             int yas = db.UserDetailRepository.GetAll().Select(x => x.Age).FirstOrDefault();
             lblUserYas.Text = yas.ToString();
-           
+
             //mmlKilo.Text = mlKalanKalorid.Text;
             double mevcutKilo = db.UserDetailRepository.GetAll().Select(x => x.Weight).FirstOrDefault();
             lblMevcutKilo.Text = mevcutKilo.ToString();
@@ -112,13 +104,13 @@ namespace Diet.UI
             mlHedefKilo.Text = hedefkilo.ToString();
 
 
-           // mlHedefKilo.Text = (mevcutKilo - (db.UserDetailRepository.GetById(_currentUser.ID).TargetWeight)).ToString();
-            
+            // mlHedefKilo.Text = (mevcutKilo - (db.UserDetailRepository.GetById(_currentUser.ID).TargetWeight)).ToString();
+
 
             //Water
             lblWaterTotal.Text = $"{userManager.GetDailyWater(_currentUser.ID)} ml";
             //pictureBox2.Image = db.UserDetailRepository.GetAll().Where(x => x.UserID == _currentUser.ID &&x.Gender == Gender.Men).First ? Diet.UI.Properties.Resources.boy : Diet.UI.Properties.Resources.woman__3_;
-            
+
             solidGauge1.From = 0;
             solidGauge1.To = dailyToplam;
             solidGauge1.Base.LabelsVisibility = System.Windows.Visibility.Hidden;
@@ -126,12 +118,12 @@ namespace Diet.UI
             {
                 GradientStops = new System.Windows.Media.GradientStopCollection
 
-                { 
+                {
                     new System.Windows.Media.GradientStop(System.Windows.Media.Colors.Blue,0),
                     new System.Windows.Media.GradientStop(System.Windows.Media.Colors.Yellow,.5),
                     new System.Windows.Media.GradientStop(System.Windows.Media.Colors.Green,1),
                     new System.Windows.Media.GradientStop(System.Windows.Media.Colors.Red,1.1),
-                   
+
                 }
 
             };
@@ -274,17 +266,16 @@ namespace Diet.UI
 
         }
 
-         private void mfabKahvaltıEkle_Click(object sender, EventArgs e)
-         {
-                    string ogun = materialLabel5.Text;
-                    Form5 form5 = new Form5(ogun, Model.MealType.Breakfast, _currentUser);
-                    form5.ShowDialog();
-         }
+        private void mfabKahvaltıEkle_Click(object sender, EventArgs e)
+        {
+            Form5 form5 = new Form5(MealType.Breakfast, _currentUser);
+            form5.FormClosing += Form5_FormClosing;
+            form5.ShowDialog();
+        }
 
         private void mfabOgleYemegiEkle_Click(object sender, EventArgs e)
         {
-            string ogun = materialLabel6.Text;
-            Form5 form5 = new Form5(ogun, MealType.Lunch, _currentUser);
+            Form5 form5 = new Form5(MealType.Lunch, _currentUser);
             form5.FormClosing += Form5_FormClosing;
             form5.ShowDialog();
         }
@@ -296,20 +287,17 @@ namespace Diet.UI
 
         private void mfabAksamYemegiEkle_Click(object sender, EventArgs e)
         {
-            string ogun = materialLabel7.Text;
-            Form5 form5 = new Form5(ogun, MealType.Dinner, _currentUser);
+            Form5 form5 = new Form5(MealType.Dinner, _currentUser);
             form5.FormClosing += Form5_FormClosing;
             form5.ShowDialog();
         }
 
         private void mfabAtıstırmalıkEkle_Click(object sender, EventArgs e)
         {
-            string ogun = materialLabel8.Text;
-            Form5 form5 = new Form5(ogun, MealType.Snack, _currentUser);
+            Form5 form5 = new Form5(MealType.Snack, _currentUser);
+            form5.FormClosing += Form5_FormClosing;
             form5.ShowDialog();
         }
-
-
 
         private void materialLabel15_Click(object sender, EventArgs e)
         {
@@ -343,7 +331,13 @@ namespace Diet.UI
         private void mfabAdımSayisiEkle_Click(object sender, EventArgs e)
         {
             Form6 form6 = new Form6(_currentUser);
+            form6.FormClosing += Form6_FormClosing;
             form6.ShowDialog();
+        }
+
+        private void Form6_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Form3_Load(sender, e);
         }
 
         private void mfabAktiviteEkle_Click(object sender, EventArgs e)
@@ -363,27 +357,27 @@ namespace Diet.UI
 
         }
 
-            private void materialButton1_Click(object sender, EventArgs e)
-            {
-                 Form11 frm11 = new Form11();
-                frm11.Show();
-                Hide();
-            }
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+            Form11 frm11 = new Form11();
+            frm11.Show();
+            Hide();
+        }
 
-            private void materialFloatingActionButton1_Click(object sender, EventArgs e)
-            {   
+        private void materialFloatingActionButton1_Click(object sender, EventArgs e)
+        {
             double currentWater = userManager.RemoveDailyWater(_currentUser.ID);
             lblWaterTotal.Text = $"{currentWater} ml";
-            }   
-            
-            private void btnChangePasword_Click(object sender, EventArgs e)
-            {
-           
+        }
+
+        private void btnChangePasword_Click(object sender, EventArgs e)
+        {
+
             if (txtOldPassword.Text.EncryptoPassword() == _currentUser.Password)
             {
                 if (txtNewPassword.Text.Trim() == txtNewPasswordAgain.Text.Trim())
                 {
-                    
+
                     _currentUser.Password = txtNewPassword.Text.EncryptoPassword();
                     db.UserRepository.Update(_currentUser);
 
@@ -397,15 +391,21 @@ namespace Diet.UI
 
         private void btnSaveAndUpdate_Click(object sender, EventArgs e)
         {
-
-            UserDetail userDetail = new UserDetail();
-            userDetail.ID = _currentUser.ID;
-            userDetail.Height =Convert.ToInt32( nmrBoy.Value);
-            userDetail.Weight =Convert.ToInt32( nmrKilo.Value);
+            UserDetail userDetail = db.UserDetailRepository.GetAll().FirstOrDefault(x => x.UserID == _currentUser.ID);
+            userDetail.Height = Convert.ToInt32(nmrBoy.Value);
+            userDetail.Weight = Convert.ToInt32(nmrKilo.Value);
             userDetail.Age = Convert.ToInt32(cmbYas.Value);
-            userDetail.Gender =(Gender)cmbCinsiyet.SelectedValue;
-            userDetail.ActivityStatus =(ActivityStatus) cmbAktivite.SelectedValue;
+            userDetail.Gender = (Gender)cmbCinsiyet.SelectedValue;
+            userDetail.ActivityStatus = (ActivityStatus)cmbAktivite.SelectedValue;
             db.UserDetailRepository.Update(userDetail);
+
+            UserBC userBC = new UserBC();
+            userBC.UserID = _currentUser.ID;
+            userBC.MeasuredDate = DateTime.Now;
+            userBC.ActivityStatus = userDetail.ActivityStatus;
+            userBC.Weight = userDetail.Weight;
+            userBC.Height = userDetail.Height;
+            db.UserBcRepository.Create(userBC);
         }
-    }   
-}   
+    }
+}

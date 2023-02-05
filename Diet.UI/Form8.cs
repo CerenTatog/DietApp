@@ -84,19 +84,28 @@ namespace Diet.UI
         }
         private void btnEkle_Click(object sender, EventArgs e)
         {
-            Food food = new Food();
-            food.FoodName = txtBesinAdi.Text;
-            food.Carbonhydrate = Convert.ToDouble(txtKarbonhıdrat.Text);
-            food.Portion = (QuantityType)cmbMiktarTuru.SelectedValue;
-            food.CategoryID = (int)cmbCategories.SelectedValue;
-            food.Fat = Convert.ToDouble(txtYag.Text);
-            food.Protein = Convert.ToDouble(txtProtein.Text);
-            food.Calorie = Convert.ToDouble(txtKalori.Text);
-            food.FoodPicture = foodImage;
-            db.FoodRepository.Create(food);
+            string foodName = txtBesinAdi.Text.Trim();
+            var checkFood = db.FoodRepository.GetAll().Any(x => x.FoodName == foodName);
+            if (checkFood)
+            {
+                MessageBox.Show("Aynı isimli besin zaten eklenmiştir.");
+            }
+            else
+            {
+                Food food = new Food();
+                food.FoodName = txtBesinAdi.Text.Trim();
+                food.Carbonhydrate = Convert.ToDouble(txtKarbonhıdrat.Text);
+                food.Portion = (QuantityType)cmbMiktarTuru.SelectedValue;
+                food.CategoryID = (int)cmbCategories.SelectedValue;
+                food.Fat = Convert.ToDouble(txtYag.Text);
+                food.Protein = Convert.ToDouble(txtProtein.Text);
+                food.Calorie = Convert.ToDouble(txtKalori.Text);
+                food.FoodPicture = foodImage;
+                db.FoodRepository.Create(food);
 
-            LoadFood();
+                LoadFood();
 
+            }
         }
         void LoadFood()
         {

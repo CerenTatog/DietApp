@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Diet.BLL;
 using Diet.DAL.GenericRepository;
 using Diet.Model;
+using Diet.Model.Dto;
 using MaterialSkin;
 using MaterialSkin.Controls;
 
@@ -42,10 +43,17 @@ namespace Diet.UI
 
         private void Form4_Load(object sender, EventArgs e)
         {
-            //Kullanıcı Listesi -Sistem Raporları
-            var query = from u in db.UserRepository.GetAll()
-                        select new { u.UserName, u.UserSurname, u.Email, u.CreatedDate };
-            dataGridViewKullaniciListesi.DataSource = query.ToList();
+            //userdetail?
+            var query = (from u in db.UserRepository.GetAll()
+                         select new AdminUserListDto
+                         {
+                             CreatedDate = u.CreatedDate,
+                             Email = u.Email,
+                             UserName = u.UserName,
+                             UserSurname = u.UserSurname
+                         }).ToList();
+
+            dataGridViewKullaniciListesi.DataSource = query;
         }
 
         private void materialFloatingActionButton1_Click(object sender, EventArgs e)

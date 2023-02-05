@@ -41,17 +41,19 @@
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.materialComboBox2 = new MaterialSkin.Controls.MaterialComboBox();
-            this.materialListBox1 = new MaterialSkin.Controls.MaterialListBox();
-            this.materialListBox2 = new MaterialSkin.Controls.MaterialListBox();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
             this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
             this.lblKCAL = new MaterialSkin.Controls.MaterialLabel();
+            this.materialListBox1 = new MaterialSkin.Controls.MaterialListBox();
+            this.materialListBox2 = new MaterialSkin.Controls.MaterialListBox();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.dataGridViewPopularFoodsTop10 = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.materialCard1.SuspendLayout();
             this.materialCard2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPopularFoodsTop10)).BeginInit();
             this.SuspendLayout();
             // 
             // materialTextBox22
@@ -240,47 +242,7 @@
             this.materialComboBox2.StartIndex = 0;
             this.materialComboBox2.TabIndex = 14;
             this.materialComboBox2.SelectedIndexChanged += new System.EventHandler(this.materialComboBox2_SelectedIndexChanged);
-            // 
-            // materialListBox1
-            // 
-            this.materialListBox1.BackColor = System.Drawing.Color.White;
-            this.materialListBox1.BorderColor = System.Drawing.Color.LightGray;
-            this.materialListBox1.Depth = 0;
-            this.materialListBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialListBox1.Location = new System.Drawing.Point(69, 393);
-            this.materialListBox1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialListBox1.Name = "materialListBox1";
-            this.materialListBox1.SelectedIndex = -1;
-            this.materialListBox1.SelectedItem = null;
-            this.materialListBox1.Size = new System.Drawing.Size(630, 234);
-            this.materialListBox1.TabIndex = 3;
-            // 
-            // materialListBox2
-            // 
-            this.materialListBox2.BackColor = System.Drawing.Color.White;
-            this.materialListBox2.BorderColor = System.Drawing.Color.LightGray;
-            this.materialListBox2.Depth = 0;
-            this.materialListBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialListBox2.Location = new System.Drawing.Point(800, 137);
-            this.materialListBox2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialListBox2.Name = "materialListBox2";
-            this.materialListBox2.SelectedIndex = -1;
-            this.materialListBox2.SelectedItem = null;
-            this.materialListBox2.Size = new System.Drawing.Size(314, 511);
-            this.materialListBox2.TabIndex = 14;
-            // 
-            // materialLabel2
-            // 
-            this.materialLabel2.AutoSize = true;
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
-            this.materialLabel2.Location = new System.Drawing.Point(795, 94);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(175, 29);
-            this.materialLabel2.TabIndex = 15;
-            this.materialLabel2.Text = "Popüler Besinler";
+            this.materialComboBox2.SelectionChangeCommitted += new System.EventHandler(this.materialComboBox2_SelectionChangeCommitted);
             // 
             // pictureBox1
             // 
@@ -335,11 +297,61 @@
             this.lblKCAL.TabIndex = 0;
             this.lblKCAL.Text = "kCal";
             // 
+            // materialListBox1
+            // 
+            this.materialListBox1.BackColor = System.Drawing.Color.White;
+            this.materialListBox1.BorderColor = System.Drawing.Color.LightGray;
+            this.materialListBox1.Depth = 0;
+            this.materialListBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialListBox1.Location = new System.Drawing.Point(69, 393);
+            this.materialListBox1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialListBox1.Name = "materialListBox1";
+            this.materialListBox1.SelectedIndex = -1;
+            this.materialListBox1.SelectedItem = null;
+            this.materialListBox1.Size = new System.Drawing.Size(630, 234);
+            this.materialListBox1.TabIndex = 3;
+            // 
+            // materialListBox2
+            // 
+            this.materialListBox2.BackColor = System.Drawing.Color.White;
+            this.materialListBox2.BorderColor = System.Drawing.Color.LightGray;
+            this.materialListBox2.Depth = 0;
+            this.materialListBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialListBox2.Location = new System.Drawing.Point(800, 137);
+            this.materialListBox2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialListBox2.Name = "materialListBox2";
+            this.materialListBox2.SelectedIndex = -1;
+            this.materialListBox2.SelectedItem = null;
+            this.materialListBox2.Size = new System.Drawing.Size(314, 511);
+            this.materialListBox2.TabIndex = 14;
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel2.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
+            this.materialLabel2.Location = new System.Drawing.Point(795, 94);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(175, 29);
+            this.materialLabel2.TabIndex = 15;
+            this.materialLabel2.Text = "Popüler Besinler";
+            // 
+            // dataGridViewPopularFoodsTop10
+            // 
+            this.dataGridViewPopularFoodsTop10.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewPopularFoodsTop10.Location = new System.Drawing.Point(800, 137);
+            this.dataGridViewPopularFoodsTop10.Name = "dataGridViewPopularFoodsTop10";
+            this.dataGridViewPopularFoodsTop10.Size = new System.Drawing.Size(314, 150);
+            this.dataGridViewPopularFoodsTop10.TabIndex = 16;
+            // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1137, 693);
+            this.Controls.Add(this.dataGridViewPopularFoodsTop10);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialListBox2);
             this.Controls.Add(this.materialButtonTamamla);
@@ -348,7 +360,7 @@
             this.Controls.Add(this.materialListBox1);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form5";
-            this.Text = "Ogun-Besin Ekle(Kullanıcı)";
+            this.Text = "Ogun-Besin Ekle";
             this.Load += new System.EventHandler(this.Form5_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -357,6 +369,7 @@
             this.materialCard1.PerformLayout();
             this.materialCard2.ResumeLayout(false);
             this.materialCard2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPopularFoodsTop10)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -381,5 +394,6 @@
         private MaterialSkin.Controls.MaterialCard materialCard1;
         private MaterialSkin.Controls.MaterialCard materialCard2;
         private MaterialSkin.Controls.MaterialLabel lblKCAL;
+        private System.Windows.Forms.DataGridView dataGridViewPopularFoodsTop10;
     }
 }

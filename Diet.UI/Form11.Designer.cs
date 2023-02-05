@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnEkle = new MaterialSkin.Controls.MaterialButton();
             this.btnSil = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
@@ -37,10 +37,10 @@
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.txtKategoriAdi = new MaterialSkin.Controls.MaterialMultiLineTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtKategoriID = new MaterialSkin.Controls.MaterialMultiLineTextBox();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.btnGeri = new MaterialSkin.Controls.MaterialButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtKategoriID = new MaterialSkin.Controls.MaterialMultiLineTextBox();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -174,6 +174,45 @@
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
             // 
+            // btnGeri
+            // 
+            this.btnGeri.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnGeri.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnGeri.Depth = 0;
+            this.btnGeri.HighEmphasis = true;
+            this.btnGeri.Icon = null;
+            this.btnGeri.Location = new System.Drawing.Point(431, 74);
+            this.btnGeri.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.btnGeri.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnGeri.Name = "btnGeri";
+            this.btnGeri.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnGeri.Size = new System.Drawing.Size(153, 36);
+            this.btnGeri.TabIndex = 29;
+            this.btnGeri.Text = "Ana sayfaya dön";
+            this.btnGeri.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnGeri.UseAccentColor = false;
+            this.btnGeri.UseVisualStyleBackColor = true;
+            this.btnGeri.Click += new System.EventHandler(this.btnGeri_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.Location = new System.Drawing.Point(36, 396);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(548, 187);
+            this.dataGridView1.TabIndex = 28;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
             // txtKategoriID
             // 
             this.txtKategoriID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -201,45 +240,6 @@
             this.materialLabel2.TabIndex = 6;
             this.materialLabel2.Text = "Kategori ID:";
             // 
-            // btnGeri
-            // 
-            this.btnGeri.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnGeri.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btnGeri.Depth = 0;
-            this.btnGeri.HighEmphasis = true;
-            this.btnGeri.Icon = null;
-            this.btnGeri.Location = new System.Drawing.Point(431, 74);
-            this.btnGeri.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.btnGeri.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnGeri.Name = "btnGeri";
-            this.btnGeri.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnGeri.Size = new System.Drawing.Size(153, 36);
-            this.btnGeri.TabIndex = 29;
-            this.btnGeri.Text = "Ana sayfaya dön";
-            this.btnGeri.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btnGeri.UseAccentColor = false;
-            this.btnGeri.UseVisualStyleBackColor = true;
-            this.btnGeri.Click += new System.EventHandler(this.btnGeri_Click);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.Location = new System.Drawing.Point(36, 396);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(548, 187);
-            this.dataGridView1.TabIndex = 28;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
             // Form11
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -248,7 +248,7 @@
             this.Controls.Add(this.btnGeri);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form11";
             this.Padding = new System.Windows.Forms.Padding(2, 52, 2, 2);
             this.Text = "Kategori Ekle(Admin)";

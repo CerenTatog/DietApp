@@ -20,6 +20,7 @@ namespace Diet.DAL.GenericRepository
         }
         public void Create(TEntity entity)
         {
+            entity.CreatedDate = DateTime.Now;
             _db.Set<TEntity>().Add(entity);
             _db.SaveChanges();
         }

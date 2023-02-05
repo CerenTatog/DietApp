@@ -51,17 +51,26 @@ namespace Diet.UI
         void LoadCategory()
         {
             var query = from f in db.CategoryRepository.GetAll()
-                        select new {f.ID,  f.CategoryName, f.Description};
+                        select new { f.ID, f.CategoryName, f.Description };
             dataGridView1.DataSource = query.ToList();
         }
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
-            Category cat = new Category();
-            cat.CategoryName = txtKategoriAdi.Text;
-            cat.Description = txtTanimlama.Text;           
-            db.CategoryRepository.Create(cat);
-            LoadCategory();
+            string categoryName = txtKategoriAdi.Text.Trim();
+            bool categoryCheck = db.CategoryRepository.GetAll().Any(x => x.CategoryName == categoryName);
+            if (categoryCheck)
+            {
+                MessageBox.Show("Bu kategori daha önce eklenmiştir.");
+            }
+            else
+            {
+                Category cat = new Category();
+                cat.CategoryName = txtKategoriAdi.Text.Trim();
+                cat.Description = txtTanimlama.Text;
+                db.CategoryRepository.Create(cat);
+                LoadCategory();
+            }
         }
 
         private void btnSil_Click(object sender, EventArgs e)
@@ -86,7 +95,7 @@ namespace Diet.UI
             UpdateCat.CategoryName = txtKategoriAdi.Text;
             UpdateCat.Description = txtTanimlama.Text;
             db.CategoryRepository.Update(UpdateCat);
-            LoadCategory();           
+            LoadCategory();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -94,8 +103,8 @@ namespace Diet.UI
             txtKategoriID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             txtKategoriAdi.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
             //txtTanimlama.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            
-           
+
+
         }
 
         private void btnGeri_Click(object sender, EventArgs e)

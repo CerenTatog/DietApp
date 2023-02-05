@@ -35,7 +35,7 @@ namespace Diet.UI
         private void Form2_Load(object sender, EventArgs e)
         {
             List<ActivityStatus> activityStatusList = Enum.GetValues(typeof(ActivityStatus)).Cast<ActivityStatus>().ToList();
-            List<CustomSelectItem> activityTypeList = activityStatusList.Select(x=> new CustomSelectItem
+            List<CustomSelectItem> activityTypeList = activityStatusList.Select(x => new CustomSelectItem
             {
                 Label = x.GetEnumDisplayName(),
                 Value = (int)x
@@ -69,7 +69,7 @@ namespace Diet.UI
             if (txtEmail.Text.CheckEmailFormat() == true)
             {
                 var query = db.UserRepository.GetAll().Count(x => x.Email == txtEmail.Text);
-                if (query==0)
+                if (query == 0)
                 {
                     newuser.Email = txtEmail.Text.Trim();
                     materialTabControl1.SelectedTab = tabPage3;
@@ -78,7 +78,7 @@ namespace Diet.UI
                 {
                     MessageBox.Show("Bu mail adresi ile giriş yapılmış");
                 }
-                
+
             }
             else
             {
@@ -121,7 +121,7 @@ namespace Diet.UI
         {
             newuserdetail.Height = Convert.ToDouble(nmrBoy.Value);
             newuserdetail.Weight = Convert.ToDouble(nmrKilo.Value);
-            newuserdetail.TargetWeight =Convert.ToInt32(nmrHedefKilo.Value);
+            newuserdetail.TargetWeight = Convert.ToInt32(nmrHedefKilo.Value);
             materialTabControl1.SelectedTab = tabPage5;
         }
 
@@ -138,7 +138,17 @@ namespace Diet.UI
             newuser.CreatedDate = DateTime.Now;
             db.UserRepository.Create(newuser);
             newuserdetail.UserID = newuser.ID;
+            newuserdetail.CreatedDate = DateTime.Now;
             db.UserDetailRepository.Create(newuserdetail);
+
+            UserBC userBC = new UserBC();
+            userBC.UserID = newuser.ID;
+            userBC.MeasuredDate = DateTime.Now;
+            userBC.ActivityStatus = newuserdetail.ActivityStatus;
+            userBC.Weight = newuserdetail.Weight;
+            userBC.Height = newuserdetail.Height;
+            db.UserBcRepository.Create(userBC);
+
             Form1 frm1 = new Form1();
             frm1.Show();
             Hide();
@@ -149,7 +159,7 @@ namespace Diet.UI
             materialTabControl1.SelectedTab = tabPage4;
         }
 
-       
+
         private void materialLabel7_Click(object sender, EventArgs e)
         {
             Form1 frm1 = new Form1();

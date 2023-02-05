@@ -122,7 +122,7 @@ namespace Diet.BLL
         {
             var dateToday = DateTime.Today;
             var dateEnd = DateTime.Today.AddDays(1).AddSeconds(-1);
-            var userDailyMealRepo = db.MealRepository.GetAll().Where(x => x.MealDate >= dateEnd && x.MealDate < dateToday && x.UserID == UserId);
+            var userDailyMealRepo = db.MealRepository.GetAll().Where(x => x.MealDate >= dateToday && x.MealDate < dateEnd && x.UserID == UserId);
             var query = (from m in userDailyMealRepo
                          join mf in db.MealFoodRepository.GetAll() on m.ID equals mf.MealID
                          join f in db.FoodRepository.GetAll() on mf.FoodID equals f.ID
@@ -152,7 +152,7 @@ namespace Diet.BLL
         {
             var dateToday = DateTime.Today;
             var dateEnd = DateTime.Today.AddDays(1).AddSeconds(-1);
-            var userDailyMealRepo = db.MealRepository.GetAll().Where(x => x.MealDate >= dateEnd && x.MealDate < dateToday && x.UserID == UserId);
+            var userDailyMealRepo = db.MealRepository.GetAll().Where(x => x.MealDate >= dateToday && x.MealDate < dateEnd && x.UserID == UserId);
             var query = (from m in userDailyMealRepo
                          join mf in db.MealFoodRepository.GetAll() on m.ID equals mf.MealID
                          join f in db.FoodRepository.GetAll() on mf.FoodID equals f.ID
@@ -181,7 +181,7 @@ namespace Diet.BLL
         {
             var dateToday = DateTime.Today;
             var dateEnd = DateTime.Today.AddDays(1).AddSeconds(-1);
-            var userDailyMealRepo = db.MealRepository.GetAll().Where(x => x.MealDate >= dateEnd && x.MealDate < dateToday && x.UserID == UserId);
+            var userDailyMealRepo = db.MealRepository.GetAll().Where(x => x.MealDate >= dateToday && x.MealDate < dateEnd && x.UserID == UserId);
             var query = (from m in userDailyMealRepo
                          join mf in db.MealFoodRepository.GetAll() on m.ID equals mf.MealID
                          join f in db.FoodRepository.GetAll() on mf.FoodID equals f.ID
@@ -219,6 +219,67 @@ namespace Diet.BLL
                               }).ToList();
             return groupQuery.Sum(x => x.TotalMl);
 
+        }
+
+        public List<MostEatenFoods> OtherUserMostEatenFood(int UserId, MealType mealType)
+        {
+            var userMeal = db.MealRepository.GetAll().Where(x => x.UserID != UserId && x.MealType == mealType);
+            var query = (from mf in db.MealFoodRepository.GetAll()
+                         join f in db.FoodRepository.GetAll() on mf.FoodID equals f.ID
+                         join c in db.CategoryRepository.GetAll() on f.CategoryID equals c.ID
+                         join um in userMeal on mf.MealID equals um.ID
+                         select new
+                         {
+                             f.FoodName,
+                             c.CategoryName,
+                             f.PortionQuantity,
+                             mf.Quantity
+                         });
+            var groupQuery = (from gq in query
+                              group gq by new { gq.FoodName, gq.CategoryName } into g
+                              select new MostEatenFoods
+                              {
+                                  FoodName = g.Key.FoodName,
+                                  CategoryName = g.Key.CategoryName,
+                                  TotalQuantity = g.Sum(x => x.Quantity / x.PortionQuantity)
+                              }).OrderByDescending(x => x.TotalQuantity).Take(10).ToList();
+
+            return groupQuery.ToList();
+        }
+
+        public List<UserDailyMeaListByMealTypeDto> GetUserDailyMeaListByMealType(int UserId, MealType mealType)
+        {
+            List<UserDailyMeaListByMealTypeDto> mealList = new List<UserDailyMeaListByMealTypeDto>();
+
+            var dateToday = DateTime.Today;
+            var dateEnd = DateTime.Today.AddDays(1).AddSeconds(-1);
+            var userDailyMealRepo = db.MealRepository.GetAll().Where(x => x.MealDate >= dateToday && x.MealDate < dateEnd && x.UserID == UserId && x.MealType == mealType);
+            var query = (from m in userDailyMealRepo
+                         join mf in db.MealFoodRepository.GetAll() on m.ID equals mf.MealID
+                         join f in db.FoodRepository.GetAll() on mf.FoodID equals f.ID
+                         select new
+                         {
+                             f,
+                             mf
+                         }).ToList();
+            var groupQuery = (from gq in query
+                              group gq by gq.f.FoodName into g
+                              select new
+                              {
+                                  FoodName = g.Key,
+                                  UserDailyMeaList = g.Select(x => new UserDailyMeaListByMealTypeDto
+                                  {
+                                      Food = x.f,
+                                      MealFood = x.mf
+                                  })
+                              }).ToList();
+
+            foreach (var item in groupQuery)
+            {
+                mealList.AddRange(item.UserDailyMeaList);
+            }
+
+            return mealList;
         }
     }
 }

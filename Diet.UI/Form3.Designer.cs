@@ -220,32 +220,31 @@
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.pictureBox20 = new System.Windows.Forms.PictureBox();
             this.materialCard38 = new MaterialSkin.Controls.MaterialCard();
-            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
-            this.materialComboBox1 = new MaterialSkin.Controls.MaterialComboBox();
+            this.btnSaveAndUpdate = new MaterialSkin.Controls.MaterialButton();
+            this.cmbAktivite = new MaterialSkin.Controls.MaterialComboBox();
             this.materialLabel69 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel68 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialTextBox24 = new MaterialSkin.Controls.MaterialTextBox2();
             this.materialLabel67 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialTextBox23 = new MaterialSkin.Controls.MaterialTextBox2();
             this.materialLabel66 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialTextBox22 = new MaterialSkin.Controls.MaterialTextBox2();
             this.materialLabel65 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialTextBox21 = new MaterialSkin.Controls.MaterialTextBox2();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.materialCard39 = new MaterialSkin.Controls.MaterialCard();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnChangePasword = new MaterialSkin.Controls.MaterialButton();
+            this.txtNewPasswordAgain = new MaterialSkin.Controls.MaterialMaskedTextBox();
+            this.txtNewPassword = new MaterialSkin.Controls.MaterialMaskedTextBox();
+            this.txtOldPassword = new MaterialSkin.Controls.MaterialMaskedTextBox();
             this.materialSwitch3 = new MaterialSkin.Controls.MaterialSwitch();
             this.materialSwitch2 = new MaterialSkin.Controls.MaterialSwitch();
             this.materialSwitch1 = new MaterialSkin.Controls.MaterialSwitch();
-            this.materialDrawer1 = new MaterialSkin.Controls.MaterialDrawer();
             this.materialCard40 = new MaterialSkin.Controls.MaterialCard();
             this.materialLabel71 = new MaterialSkin.Controls.MaterialLabel();
             this.tabPage10 = new System.Windows.Forms.TabPage();
             this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtOldPassword = new MaterialSkin.Controls.MaterialMaskedTextBox();
-            this.txtNewPassword = new MaterialSkin.Controls.MaterialMaskedTextBox();
-            this.txtNewPasswordAgain = new MaterialSkin.Controls.MaterialMaskedTextBox();
-            this.btnChangePasword = new MaterialSkin.Controls.MaterialButton();
+            this.cmbYas = new System.Windows.Forms.NumericUpDown();
+            this.nmrKilo = new System.Windows.Forms.NumericUpDown();
+            this.nmrBoy = new System.Windows.Forms.NumericUpDown();
+            this.cmbCinsiyet = new MaterialSkin.Controls.MaterialComboBox();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.materialCard17.SuspendLayout();
@@ -313,8 +312,11 @@
             this.materialCard38.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.materialCard39.SuspendLayout();
-            this.materialCard40.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.materialCard40.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbYas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrKilo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrBoy)).BeginInit();
             this.SuspendLayout();
             // 
             // materialTabControl1
@@ -330,7 +332,7 @@
             this.materialTabControl1.Depth = 0;
             this.materialTabControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.materialTabControl1.Location = new System.Drawing.Point(4, 79);
-            this.materialTabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.materialTabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.materialTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabControl1.Multiline = true;
             this.materialTabControl1.Name = "materialTabControl1";
@@ -356,9 +358,9 @@
             this.tabPage1.Controls.Add(this.materialCard2);
             this.tabPage1.ImageKey = "(none)";
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage1.Size = new System.Drawing.Size(1867, 953);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Günlük";
@@ -558,7 +560,7 @@
             this.mfabAtıstırmalıkEkle.Depth = 0;
             this.mfabAtıstırmalıkEkle.Icon = global::Diet.UI.Properties.Resources.plus;
             this.mfabAtıstırmalıkEkle.Location = new System.Drawing.Point(351, 140);
-            this.mfabAtıstırmalıkEkle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mfabAtıstırmalıkEkle.Margin = new System.Windows.Forms.Padding(4);
             this.mfabAtıstırmalıkEkle.Mini = true;
             this.mfabAtıstırmalıkEkle.MouseState = MaterialSkin.MouseState.HOVER;
             this.mfabAtıstırmalıkEkle.Name = "mfabAtıstırmalıkEkle";
@@ -572,7 +574,7 @@
             // 
             this.pictureBox6.Image = global::Diet.UI.Properties.Resources.granola;
             this.pictureBox6.Location = new System.Drawing.Point(17, 14);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(165, 159);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -759,7 +761,7 @@
             this.mfabAksamYemegiEkle.Depth = 0;
             this.mfabAksamYemegiEkle.Icon = global::Diet.UI.Properties.Resources.plus;
             this.mfabAksamYemegiEkle.Location = new System.Drawing.Point(340, 140);
-            this.mfabAksamYemegiEkle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mfabAksamYemegiEkle.Margin = new System.Windows.Forms.Padding(4);
             this.mfabAksamYemegiEkle.Mini = true;
             this.mfabAksamYemegiEkle.MouseState = MaterialSkin.MouseState.HOVER;
             this.mfabAksamYemegiEkle.Name = "mfabAksamYemegiEkle";
@@ -773,7 +775,7 @@
             // 
             this.pictureBox5.Image = global::Diet.UI.Properties.Resources.food;
             this.pictureBox5.Location = new System.Drawing.Point(17, 14);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(165, 159);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -933,7 +935,7 @@
             this.mfabOgleYemegiEkle.Depth = 0;
             this.mfabOgleYemegiEkle.Icon = global::Diet.UI.Properties.Resources.plus;
             this.mfabOgleYemegiEkle.Location = new System.Drawing.Point(340, 140);
-            this.mfabOgleYemegiEkle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mfabOgleYemegiEkle.Margin = new System.Windows.Forms.Padding(4);
             this.mfabOgleYemegiEkle.Mini = true;
             this.mfabOgleYemegiEkle.MouseState = MaterialSkin.MouseState.HOVER;
             this.mfabOgleYemegiEkle.Name = "mfabOgleYemegiEkle";
@@ -947,7 +949,7 @@
             // 
             this.pictureBox4.Image = global::Diet.UI.Properties.Resources.smoked;
             this.pictureBox4.Location = new System.Drawing.Point(17, 21);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(165, 151);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1121,7 +1123,7 @@
             // 
             this.pictureBox3.Image = global::Diet.UI.Properties.Resources.breakfast__2_;
             this.pictureBox3.Location = new System.Drawing.Point(17, 14);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(165, 159);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1135,7 +1137,7 @@
             this.mfabKahvaltıEkle.Depth = 0;
             this.mfabKahvaltıEkle.Icon = global::Diet.UI.Properties.Resources.plus;
             this.mfabKahvaltıEkle.Location = new System.Drawing.Point(340, 140);
-            this.mfabKahvaltıEkle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mfabKahvaltıEkle.Margin = new System.Windows.Forms.Padding(4);
             this.mfabKahvaltıEkle.Mini = true;
             this.mfabKahvaltıEkle.MouseState = MaterialSkin.MouseState.HOVER;
             this.mfabKahvaltıEkle.Name = "mfabKahvaltıEkle";
@@ -1186,7 +1188,7 @@
             // 
             this.pictureBox15.Image = global::Diet.UI.Properties.Resources.water;
             this.pictureBox15.Location = new System.Drawing.Point(549, 47);
-            this.pictureBox15.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox15.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(77, 70);
             this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1197,7 +1199,7 @@
             // 
             this.pictureBox14.Image = global::Diet.UI.Properties.Resources.water;
             this.pictureBox14.Location = new System.Drawing.Point(472, 47);
-            this.pictureBox14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox14.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(77, 70);
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1208,7 +1210,7 @@
             // 
             this.pictureBox13.Image = global::Diet.UI.Properties.Resources.water;
             this.pictureBox13.Location = new System.Drawing.Point(395, 47);
-            this.pictureBox13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox13.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(77, 70);
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1219,7 +1221,7 @@
             // 
             this.pictureBox12.Image = global::Diet.UI.Properties.Resources.water;
             this.pictureBox12.Location = new System.Drawing.Point(317, 47);
-            this.pictureBox12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox12.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(77, 70);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1230,7 +1232,7 @@
             // 
             this.pictureBox11.Image = global::Diet.UI.Properties.Resources.water;
             this.pictureBox11.Location = new System.Drawing.Point(240, 47);
-            this.pictureBox11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox11.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(77, 70);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1241,7 +1243,7 @@
             // 
             this.pictureBox10.Image = global::Diet.UI.Properties.Resources.water;
             this.pictureBox10.Location = new System.Drawing.Point(163, 47);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox10.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(77, 70);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1252,7 +1254,7 @@
             // 
             this.pictureBox1.Image = global::Diet.UI.Properties.Resources.water;
             this.pictureBox1.Location = new System.Drawing.Point(85, 47);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(77, 70);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1266,7 +1268,7 @@
             this.materialFloatingActionButton1.Depth = 0;
             this.materialFloatingActionButton1.Icon = global::Diet.UI.Properties.Resources.minus_sign;
             this.materialFloatingActionButton1.Location = new System.Drawing.Point(23, 53);
-            this.materialFloatingActionButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.materialFloatingActionButton1.Margin = new System.Windows.Forms.Padding(4);
             this.materialFloatingActionButton1.Mini = true;
             this.materialFloatingActionButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialFloatingActionButton1.Name = "materialFloatingActionButton1";
@@ -1283,7 +1285,7 @@
             this.mfabSuEkle.Depth = 0;
             this.mfabSuEkle.Icon = global::Diet.UI.Properties.Resources.plus;
             this.mfabSuEkle.Location = new System.Drawing.Point(829, 53);
-            this.mfabSuEkle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mfabSuEkle.Margin = new System.Windows.Forms.Padding(4);
             this.mfabSuEkle.Mini = true;
             this.mfabSuEkle.MouseState = MaterialSkin.MouseState.HOVER;
             this.mfabSuEkle.Name = "mfabSuEkle";
@@ -1326,7 +1328,7 @@
             // solidGauge1
             // 
             this.solidGauge1.Location = new System.Drawing.Point(725, 21);
-            this.solidGauge1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.solidGauge1.Margin = new System.Windows.Forms.Padding(4);
             this.solidGauge1.Name = "solidGauge1";
             this.solidGauge1.Size = new System.Drawing.Size(287, 105);
             this.solidGauge1.TabIndex = 23;
@@ -1377,7 +1379,7 @@
             // 
             this.materialProgressBar1.Depth = 0;
             this.materialProgressBar1.Location = new System.Drawing.Point(47, 154);
-            this.materialProgressBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.materialProgressBar1.Margin = new System.Windows.Forms.Padding(4);
             this.materialProgressBar1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialProgressBar1.Name = "materialProgressBar1";
             this.materialProgressBar1.Size = new System.Drawing.Size(307, 5);
@@ -1452,7 +1454,7 @@
             // 
             this.materialProgressBar2.Depth = 0;
             this.materialProgressBar2.Location = new System.Drawing.Point(705, 154);
-            this.materialProgressBar2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.materialProgressBar2.Margin = new System.Windows.Forms.Padding(4);
             this.materialProgressBar2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialProgressBar2.Name = "materialProgressBar2";
             this.materialProgressBar2.Size = new System.Drawing.Size(307, 5);
@@ -1482,7 +1484,7 @@
             // 
             this.materialProgressBar3.Depth = 0;
             this.materialProgressBar3.Location = new System.Drawing.Point(1440, 154);
-            this.materialProgressBar3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.materialProgressBar3.Margin = new System.Windows.Forms.Padding(4);
             this.materialProgressBar3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialProgressBar3.Name = "materialProgressBar3";
             this.materialProgressBar3.Size = new System.Drawing.Size(307, 5);
@@ -1584,7 +1586,7 @@
             // 
             this.pictureBox8.Image = global::Diet.UI.Properties.Resources.run;
             this.pictureBox8.Location = new System.Drawing.Point(17, 11);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(128, 116);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1598,7 +1600,7 @@
             this.mfabAdımSayisiEkle.Depth = 0;
             this.mfabAdımSayisiEkle.Icon = global::Diet.UI.Properties.Resources.plus;
             this.mfabAdımSayisiEkle.Location = new System.Drawing.Point(775, 91);
-            this.mfabAdımSayisiEkle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mfabAdımSayisiEkle.Margin = new System.Windows.Forms.Padding(4);
             this.mfabAdımSayisiEkle.Mini = true;
             this.mfabAdımSayisiEkle.MouseState = MaterialSkin.MouseState.HOVER;
             this.mfabAdımSayisiEkle.Name = "mfabAdımSayisiEkle";
@@ -1686,7 +1688,7 @@
             // 
             this.pictureBox7.Image = global::Diet.UI.Properties.Resources.dumbbell;
             this.pictureBox7.Location = new System.Drawing.Point(23, 17);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(128, 116);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1698,7 +1700,7 @@
             this.mfabAktiviteEkle.Depth = 0;
             this.mfabAktiviteEkle.Icon = global::Diet.UI.Properties.Resources.plus;
             this.mfabAktiviteEkle.Location = new System.Drawing.Point(775, 94);
-            this.mfabAktiviteEkle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mfabAktiviteEkle.Margin = new System.Windows.Forms.Padding(4);
             this.mfabAktiviteEkle.Mini = true;
             this.mfabAktiviteEkle.MouseState = MaterialSkin.MouseState.HOVER;
             this.mfabAktiviteEkle.Name = "mfabAktiviteEkle";
@@ -1765,9 +1767,9 @@
             this.tabPage2.Controls.Add(this.materialCard24);
             this.tabPage2.ImageKey = "(none)";
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage2.Size = new System.Drawing.Size(1867, 953);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Profil";
@@ -1780,7 +1782,7 @@
             this.materialListBox2.Depth = 0;
             this.materialListBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialListBox2.Location = new System.Drawing.Point(1112, 511);
-            this.materialListBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.materialListBox2.Margin = new System.Windows.Forms.Padding(4);
             this.materialListBox2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialListBox2.Name = "materialListBox2";
             this.materialListBox2.SelectedIndex = -1;
@@ -1882,7 +1884,7 @@
             this.materialDivider4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialDivider4.Depth = 0;
             this.materialDivider4.Location = new System.Drawing.Point(59, 60);
-            this.materialDivider4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.materialDivider4.Margin = new System.Windows.Forms.Padding(4);
             this.materialDivider4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider4.Name = "materialDivider4";
             this.materialDivider4.Size = new System.Drawing.Size(1601, 12);
@@ -1948,7 +1950,7 @@
             // pieChart2
             // 
             this.pieChart2.Location = new System.Drawing.Point(4, 4);
-            this.pieChart2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pieChart2.Margin = new System.Windows.Forms.Padding(4);
             this.pieChart2.Name = "pieChart2";
             this.pieChart2.Size = new System.Drawing.Size(347, 191);
             this.pieChart2.TabIndex = 24;
@@ -1986,7 +1988,7 @@
             // pieChart3
             // 
             this.pieChart3.Location = new System.Drawing.Point(0, 4);
-            this.pieChart3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pieChart3.Margin = new System.Windows.Forms.Padding(4);
             this.pieChart3.Name = "pieChart3";
             this.pieChart3.Size = new System.Drawing.Size(375, 191);
             this.pieChart3.TabIndex = 25;
@@ -2038,7 +2040,7 @@
             // pieChart4
             // 
             this.pieChart4.Location = new System.Drawing.Point(0, 2);
-            this.pieChart4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pieChart4.Margin = new System.Windows.Forms.Padding(4);
             this.pieChart4.Name = "pieChart4";
             this.pieChart4.Size = new System.Drawing.Size(396, 191);
             this.pieChart4.TabIndex = 26;
@@ -2156,7 +2158,7 @@
             this.mmlAdim.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.mmlAdim.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.mmlAdim.Location = new System.Drawing.Point(143, 119);
-            this.mmlAdim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mmlAdim.Margin = new System.Windows.Forms.Padding(4);
             this.mmlAdim.MouseState = MaterialSkin.MouseState.HOVER;
             this.mmlAdim.Name = "mmlAdim";
             this.mmlAdim.ReadOnly = true;
@@ -2172,7 +2174,7 @@
             this.mmlKalori.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.mmlKalori.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.mmlKalori.Location = new System.Drawing.Point(91, 92);
-            this.mmlKalori.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mmlKalori.Margin = new System.Windows.Forms.Padding(4);
             this.mmlKalori.MouseState = MaterialSkin.MouseState.HOVER;
             this.mmlKalori.Name = "mmlKalori";
             this.mmlKalori.ReadOnly = true;
@@ -2188,7 +2190,7 @@
             this.mmlKilo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.mmlKilo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.mmlKilo.Location = new System.Drawing.Point(83, 66);
-            this.mmlKilo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mmlKilo.Margin = new System.Windows.Forms.Padding(4);
             this.mmlKilo.MouseState = MaterialSkin.MouseState.HOVER;
             this.mmlKilo.Name = "mmlKilo";
             this.mmlKilo.ReadOnly = true;
@@ -2204,7 +2206,7 @@
             this.mmlHedef.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.mmlHedef.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.mmlHedef.Location = new System.Drawing.Point(91, 42);
-            this.mmlHedef.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mmlHedef.Margin = new System.Windows.Forms.Padding(4);
             this.mmlHedef.MouseState = MaterialSkin.MouseState.HOVER;
             this.mmlHedef.Name = "mmlHedef";
             this.mmlHedef.ReadOnly = true;
@@ -2220,7 +2222,7 @@
             this.mmlBeslenme.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.mmlBeslenme.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.mmlBeslenme.Location = new System.Drawing.Point(121, 16);
-            this.mmlBeslenme.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mmlBeslenme.Margin = new System.Windows.Forms.Padding(4);
             this.mmlBeslenme.MouseState = MaterialSkin.MouseState.HOVER;
             this.mmlBeslenme.Name = "mmlBeslenme";
             this.mmlBeslenme.ReadOnly = true;
@@ -2321,7 +2323,7 @@
             // 
             this.pictureBox9.Image = global::Diet.UI.Properties.Resources.birthday_cake;
             this.pictureBox9.Location = new System.Drawing.Point(399, 60);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(35, 27);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2332,7 +2334,7 @@
             // 
             this.pictureBox2.Image = global::Diet.UI.Properties.Resources.boy;
             this.pictureBox2.Location = new System.Drawing.Point(37, 22);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(223, 193);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2401,7 +2403,7 @@
             // 
             this.pictureBox17.Image = global::Diet.UI.Properties.Resources.climb;
             this.pictureBox17.Location = new System.Drawing.Point(221, 14);
-            this.pictureBox17.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox17.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox17.Name = "pictureBox17";
             this.pictureBox17.Size = new System.Drawing.Size(35, 27);
             this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2412,7 +2414,7 @@
             // 
             this.pictureBox16.Image = global::Diet.UI.Properties.Resources.fire;
             this.pictureBox16.Location = new System.Drawing.Point(29, 14);
-            this.pictureBox16.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox16.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox16.Name = "pictureBox16";
             this.pictureBox16.Size = new System.Drawing.Size(35, 27);
             this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2520,7 +2522,7 @@
             // pieChart1
             // 
             this.pieChart1.Location = new System.Drawing.Point(0, 4);
-            this.pieChart1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pieChart1.Margin = new System.Windows.Forms.Padding(4);
             this.pieChart1.Name = "pieChart1";
             this.pieChart1.Size = new System.Drawing.Size(355, 193);
             this.pieChart1.TabIndex = 23;
@@ -2532,9 +2534,9 @@
             this.tabPage3.Controls.Add(this.pictureBox18);
             this.tabPage3.ImageKey = "(none)";
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage3.Size = new System.Drawing.Size(1867, 953);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Tarifler(Çok Yakında)";
@@ -2558,7 +2560,7 @@
             // 
             this.pictureBox18.Image = global::Diet.UI.Properties.Resources.cooking_show;
             this.pictureBox18.Location = new System.Drawing.Point(485, 294);
-            this.pictureBox18.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox18.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox18.Name = "pictureBox18";
             this.pictureBox18.Size = new System.Drawing.Size(764, 496);
             this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -2571,9 +2573,9 @@
             this.tabPage4.Controls.Add(this.pictureBox19);
             this.tabPage4.ImageKey = "(none)";
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage4.Size = new System.Drawing.Size(1867, 953);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Aralıklı Oruç (Çok Yakında)";
@@ -2597,7 +2599,7 @@
             // 
             this.pictureBox19.Image = global::Diet.UI.Properties.Resources.fasting;
             this.pictureBox19.Location = new System.Drawing.Point(532, 276);
-            this.pictureBox19.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox19.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox19.Name = "pictureBox19";
             this.pictureBox19.Size = new System.Drawing.Size(683, 527);
             this.pictureBox19.TabIndex = 0;
@@ -2619,9 +2621,9 @@
             this.tabPage5.Controls.Add(this.materialCard4);
             this.tabPage5.ImageKey = "(none)";
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
-            this.tabPage5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage5.Size = new System.Drawing.Size(1867, 953);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Raporlar";
@@ -2812,7 +2814,7 @@
             // cartesianChart6
             // 
             this.cartesianChart6.Location = new System.Drawing.Point(19, 22);
-            this.cartesianChart6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cartesianChart6.Margin = new System.Windows.Forms.Padding(4);
             this.cartesianChart6.Name = "cartesianChart6";
             this.cartesianChart6.Size = new System.Drawing.Size(529, 186);
             this.cartesianChart6.TabIndex = 0;
@@ -2835,7 +2837,7 @@
             // cartesianChart5
             // 
             this.cartesianChart5.Location = new System.Drawing.Point(19, 21);
-            this.cartesianChart5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cartesianChart5.Margin = new System.Windows.Forms.Padding(4);
             this.cartesianChart5.Name = "cartesianChart5";
             this.cartesianChart5.Size = new System.Drawing.Size(569, 187);
             this.cartesianChart5.TabIndex = 0;
@@ -2858,7 +2860,7 @@
             // cartesianChart4
             // 
             this.cartesianChart4.Location = new System.Drawing.Point(4, 21);
-            this.cartesianChart4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cartesianChart4.Margin = new System.Windows.Forms.Padding(4);
             this.cartesianChart4.Name = "cartesianChart4";
             this.cartesianChart4.Size = new System.Drawing.Size(619, 208);
             this.cartesianChart4.TabIndex = 0;
@@ -2881,7 +2883,7 @@
             // cartesianChart3
             // 
             this.cartesianChart3.Location = new System.Drawing.Point(19, 23);
-            this.cartesianChart3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cartesianChart3.Margin = new System.Windows.Forms.Padding(4);
             this.cartesianChart3.Name = "cartesianChart3";
             this.cartesianChart3.Size = new System.Drawing.Size(573, 206);
             this.cartesianChart3.TabIndex = 0;
@@ -2904,7 +2906,7 @@
             // cartesianChart2
             // 
             this.cartesianChart2.Location = new System.Drawing.Point(4, 21);
-            this.cartesianChart2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cartesianChart2.Margin = new System.Windows.Forms.Padding(4);
             this.cartesianChart2.Name = "cartesianChart2";
             this.cartesianChart2.Size = new System.Drawing.Size(525, 208);
             this.cartesianChart2.TabIndex = 0;
@@ -2927,7 +2929,7 @@
             // cartesianChart1
             // 
             this.cartesianChart1.Location = new System.Drawing.Point(23, 21);
-            this.cartesianChart1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cartesianChart1.Margin = new System.Windows.Forms.Padding(4);
             this.cartesianChart1.Name = "cartesianChart1";
             this.cartesianChart1.Size = new System.Drawing.Size(569, 187);
             this.cartesianChart1.TabIndex = 10;
@@ -2939,9 +2941,9 @@
             this.tabPage6.Controls.Add(this.materialCard38);
             this.tabPage6.ImageKey = "(none)";
             this.tabPage6.Location = new System.Drawing.Point(4, 25);
-            this.tabPage6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage6.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage6.Size = new System.Drawing.Size(1867, 953);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Vücut Analizi";
@@ -2951,7 +2953,7 @@
             // 
             this.pictureBox20.Image = global::Diet.UI.Properties.Resources.bar_chart;
             this.pictureBox20.Location = new System.Drawing.Point(1015, 63);
-            this.pictureBox20.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox20.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox20.Name = "pictureBox20";
             this.pictureBox20.Size = new System.Drawing.Size(699, 596);
             this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2961,17 +2963,17 @@
             // materialCard38
             // 
             this.materialCard38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard38.Controls.Add(this.materialButton1);
-            this.materialCard38.Controls.Add(this.materialComboBox1);
+            this.materialCard38.Controls.Add(this.cmbCinsiyet);
+            this.materialCard38.Controls.Add(this.nmrBoy);
+            this.materialCard38.Controls.Add(this.nmrKilo);
+            this.materialCard38.Controls.Add(this.cmbYas);
+            this.materialCard38.Controls.Add(this.btnSaveAndUpdate);
+            this.materialCard38.Controls.Add(this.cmbAktivite);
             this.materialCard38.Controls.Add(this.materialLabel69);
             this.materialCard38.Controls.Add(this.materialLabel68);
-            this.materialCard38.Controls.Add(this.materialTextBox24);
             this.materialCard38.Controls.Add(this.materialLabel67);
-            this.materialCard38.Controls.Add(this.materialTextBox23);
             this.materialCard38.Controls.Add(this.materialLabel66);
-            this.materialCard38.Controls.Add(this.materialTextBox22);
             this.materialCard38.Controls.Add(this.materialLabel65);
-            this.materialCard38.Controls.Add(this.materialTextBox21);
             this.materialCard38.Depth = 0;
             this.materialCard38.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialCard38.Location = new System.Drawing.Point(53, 63);
@@ -2982,47 +2984,48 @@
             this.materialCard38.Size = new System.Drawing.Size(915, 596);
             this.materialCard38.TabIndex = 3;
             // 
-            // materialButton1
+            // btnSaveAndUpdate
             // 
-            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton1.Depth = 0;
-            this.materialButton1.HighEmphasis = true;
-            this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(719, 422);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
-            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton1.Name = "materialButton1";
-            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton1.Size = new System.Drawing.Size(76, 36);
-            this.materialButton1.TabIndex = 12;
-            this.materialButton1.Text = "Kaydet";
-            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton1.UseAccentColor = false;
-            this.materialButton1.UseVisualStyleBackColor = true;
+            this.btnSaveAndUpdate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnSaveAndUpdate.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnSaveAndUpdate.Depth = 0;
+            this.btnSaveAndUpdate.HighEmphasis = true;
+            this.btnSaveAndUpdate.Icon = null;
+            this.btnSaveAndUpdate.Location = new System.Drawing.Point(620, 427);
+            this.btnSaveAndUpdate.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.btnSaveAndUpdate.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnSaveAndUpdate.Name = "btnSaveAndUpdate";
+            this.btnSaveAndUpdate.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnSaveAndUpdate.Size = new System.Drawing.Size(174, 36);
+            this.btnSaveAndUpdate.TabIndex = 12;
+            this.btnSaveAndUpdate.Text = "Kaydet ve Güncelle";
+            this.btnSaveAndUpdate.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnSaveAndUpdate.UseAccentColor = false;
+            this.btnSaveAndUpdate.UseVisualStyleBackColor = true;
+            this.btnSaveAndUpdate.Click += new System.EventHandler(this.btnSaveAndUpdate_Click);
             // 
-            // materialComboBox1
+            // cmbAktivite
             // 
-            this.materialComboBox1.AutoResize = false;
-            this.materialComboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialComboBox1.Depth = 0;
-            this.materialComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.materialComboBox1.DropDownHeight = 174;
-            this.materialComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.materialComboBox1.DropDownWidth = 121;
-            this.materialComboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialComboBox1.FormattingEnabled = true;
-            this.materialComboBox1.IntegralHeight = false;
-            this.materialComboBox1.ItemHeight = 43;
-            this.materialComboBox1.Location = new System.Drawing.Point(256, 318);
-            this.materialComboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.materialComboBox1.MaxDropDownItems = 4;
-            this.materialComboBox1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialComboBox1.Name = "materialComboBox1";
-            this.materialComboBox1.Size = new System.Drawing.Size(539, 49);
-            this.materialComboBox1.StartIndex = 0;
-            this.materialComboBox1.TabIndex = 11;
+            this.cmbAktivite.AutoResize = false;
+            this.cmbAktivite.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cmbAktivite.Depth = 0;
+            this.cmbAktivite.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cmbAktivite.DropDownHeight = 174;
+            this.cmbAktivite.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbAktivite.DropDownWidth = 121;
+            this.cmbAktivite.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cmbAktivite.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmbAktivite.FormattingEnabled = true;
+            this.cmbAktivite.IntegralHeight = false;
+            this.cmbAktivite.ItemHeight = 43;
+            this.cmbAktivite.Location = new System.Drawing.Point(256, 318);
+            this.cmbAktivite.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbAktivite.MaxDropDownItems = 4;
+            this.cmbAktivite.MouseState = MaterialSkin.MouseState.OUT;
+            this.cmbAktivite.Name = "cmbAktivite";
+            this.cmbAktivite.Size = new System.Drawing.Size(539, 49);
+            this.cmbAktivite.StartIndex = 0;
+            this.cmbAktivite.TabIndex = 11;
             // 
             // materialLabel69
             // 
@@ -3052,35 +3055,6 @@
             this.materialLabel68.TabIndex = 8;
             this.materialLabel68.Text = "Yaş";
             // 
-            // materialTextBox24
-            // 
-            this.materialTextBox24.AnimateReadOnly = false;
-            this.materialTextBox24.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.materialTextBox24.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.materialTextBox24.Depth = 0;
-            this.materialTextBox24.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox24.HideSelection = true;
-            this.materialTextBox24.LeadingIcon = null;
-            this.materialTextBox24.Location = new System.Drawing.Point(255, 251);
-            this.materialTextBox24.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.materialTextBox24.MaxLength = 32767;
-            this.materialTextBox24.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox24.Name = "materialTextBox24";
-            this.materialTextBox24.PasswordChar = '\0';
-            this.materialTextBox24.PrefixSuffixText = null;
-            this.materialTextBox24.ReadOnly = false;
-            this.materialTextBox24.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.materialTextBox24.SelectedText = "";
-            this.materialTextBox24.SelectionLength = 0;
-            this.materialTextBox24.SelectionStart = 0;
-            this.materialTextBox24.ShortcutsEnabled = true;
-            this.materialTextBox24.Size = new System.Drawing.Size(541, 48);
-            this.materialTextBox24.TabIndex = 7;
-            this.materialTextBox24.TabStop = false;
-            this.materialTextBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialTextBox24.TrailingIcon = null;
-            this.materialTextBox24.UseSystemPasswordChar = false;
-            // 
             // materialLabel67
             // 
             this.materialLabel67.AutoSize = true;
@@ -3094,35 +3068,6 @@
             this.materialLabel67.Size = new System.Drawing.Size(73, 24);
             this.materialLabel67.TabIndex = 6;
             this.materialLabel67.Text = "Cinsiyet";
-            // 
-            // materialTextBox23
-            // 
-            this.materialTextBox23.AnimateReadOnly = false;
-            this.materialTextBox23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.materialTextBox23.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.materialTextBox23.Depth = 0;
-            this.materialTextBox23.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox23.HideSelection = true;
-            this.materialTextBox23.LeadingIcon = null;
-            this.materialTextBox23.Location = new System.Drawing.Point(255, 185);
-            this.materialTextBox23.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.materialTextBox23.MaxLength = 32767;
-            this.materialTextBox23.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox23.Name = "materialTextBox23";
-            this.materialTextBox23.PasswordChar = '\0';
-            this.materialTextBox23.PrefixSuffixText = null;
-            this.materialTextBox23.ReadOnly = false;
-            this.materialTextBox23.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.materialTextBox23.SelectedText = "";
-            this.materialTextBox23.SelectionLength = 0;
-            this.materialTextBox23.SelectionStart = 0;
-            this.materialTextBox23.ShortcutsEnabled = true;
-            this.materialTextBox23.Size = new System.Drawing.Size(541, 48);
-            this.materialTextBox23.TabIndex = 5;
-            this.materialTextBox23.TabStop = false;
-            this.materialTextBox23.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialTextBox23.TrailingIcon = null;
-            this.materialTextBox23.UseSystemPasswordChar = false;
             // 
             // materialLabel66
             // 
@@ -3138,35 +3083,6 @@
             this.materialLabel66.TabIndex = 4;
             this.materialLabel66.Text = "Boy";
             // 
-            // materialTextBox22
-            // 
-            this.materialTextBox22.AnimateReadOnly = false;
-            this.materialTextBox22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.materialTextBox22.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.materialTextBox22.Depth = 0;
-            this.materialTextBox22.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox22.HideSelection = true;
-            this.materialTextBox22.LeadingIcon = null;
-            this.materialTextBox22.Location = new System.Drawing.Point(255, 118);
-            this.materialTextBox22.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.materialTextBox22.MaxLength = 32767;
-            this.materialTextBox22.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox22.Name = "materialTextBox22";
-            this.materialTextBox22.PasswordChar = '\0';
-            this.materialTextBox22.PrefixSuffixText = null;
-            this.materialTextBox22.ReadOnly = false;
-            this.materialTextBox22.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.materialTextBox22.SelectedText = "";
-            this.materialTextBox22.SelectionLength = 0;
-            this.materialTextBox22.SelectionStart = 0;
-            this.materialTextBox22.ShortcutsEnabled = true;
-            this.materialTextBox22.Size = new System.Drawing.Size(541, 48);
-            this.materialTextBox22.TabIndex = 3;
-            this.materialTextBox22.TabStop = false;
-            this.materialTextBox22.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialTextBox22.TrailingIcon = null;
-            this.materialTextBox22.UseSystemPasswordChar = false;
-            // 
             // materialLabel65
             // 
             this.materialLabel65.AutoSize = true;
@@ -3181,43 +3097,14 @@
             this.materialLabel65.TabIndex = 2;
             this.materialLabel65.Text = "Kilo";
             // 
-            // materialTextBox21
-            // 
-            this.materialTextBox21.AnimateReadOnly = false;
-            this.materialTextBox21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.materialTextBox21.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.materialTextBox21.Depth = 0;
-            this.materialTextBox21.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox21.HideSelection = true;
-            this.materialTextBox21.LeadingIcon = null;
-            this.materialTextBox21.Location = new System.Drawing.Point(253, 50);
-            this.materialTextBox21.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.materialTextBox21.MaxLength = 32767;
-            this.materialTextBox21.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox21.Name = "materialTextBox21";
-            this.materialTextBox21.PasswordChar = '\0';
-            this.materialTextBox21.PrefixSuffixText = null;
-            this.materialTextBox21.ReadOnly = false;
-            this.materialTextBox21.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.materialTextBox21.SelectedText = "";
-            this.materialTextBox21.SelectionLength = 0;
-            this.materialTextBox21.SelectionStart = 0;
-            this.materialTextBox21.ShortcutsEnabled = true;
-            this.materialTextBox21.Size = new System.Drawing.Size(541, 48);
-            this.materialTextBox21.TabIndex = 0;
-            this.materialTextBox21.TabStop = false;
-            this.materialTextBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialTextBox21.TrailingIcon = null;
-            this.materialTextBox21.UseSystemPasswordChar = false;
-            // 
             // tabPage7
             // 
             this.tabPage7.Controls.Add(this.materialCard39);
             this.tabPage7.ImageKey = "(none)";
             this.tabPage7.Location = new System.Drawing.Point(4, 25);
-            this.tabPage7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage7.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage7.Size = new System.Drawing.Size(1867, 953);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Ayarlar";
@@ -3230,7 +3117,6 @@
             this.materialCard39.Controls.Add(this.materialSwitch3);
             this.materialCard39.Controls.Add(this.materialSwitch2);
             this.materialCard39.Controls.Add(this.materialSwitch1);
-            this.materialCard39.Controls.Add(this.materialDrawer1);
             this.materialCard39.Controls.Add(this.materialCard40);
             this.materialCard39.Depth = 0;
             this.materialCard39.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -3241,112 +3127,6 @@
             this.materialCard39.Padding = new System.Windows.Forms.Padding(19, 17, 19, 17);
             this.materialCard39.Size = new System.Drawing.Size(1731, 736);
             this.materialCard39.TabIndex = 0;
-            // 
-            // materialSwitch3
-            // 
-            this.materialSwitch3.Depth = 0;
-            this.materialSwitch3.Location = new System.Drawing.Point(1377, 204);
-            this.materialSwitch3.Margin = new System.Windows.Forms.Padding(0);
-            this.materialSwitch3.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialSwitch3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSwitch3.Name = "materialSwitch3";
-            this.materialSwitch3.Ripple = true;
-            this.materialSwitch3.Size = new System.Drawing.Size(161, 46);
-            this.materialSwitch3.TabIndex = 7;
-            this.materialSwitch3.Text = "Pink";
-            this.materialSwitch3.UseVisualStyleBackColor = true;
-            // 
-            // materialSwitch2
-            // 
-            this.materialSwitch2.Depth = 0;
-            this.materialSwitch2.Location = new System.Drawing.Point(1377, 145);
-            this.materialSwitch2.Margin = new System.Windows.Forms.Padding(0);
-            this.materialSwitch2.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialSwitch2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSwitch2.Name = "materialSwitch2";
-            this.materialSwitch2.Ripple = true;
-            this.materialSwitch2.Size = new System.Drawing.Size(161, 46);
-            this.materialSwitch2.TabIndex = 6;
-            this.materialSwitch2.Text = "Yellow";
-            this.materialSwitch2.UseVisualStyleBackColor = true;
-            // 
-            // materialSwitch1
-            // 
-            this.materialSwitch1.Depth = 0;
-            this.materialSwitch1.Location = new System.Drawing.Point(1377, 81);
-            this.materialSwitch1.Margin = new System.Windows.Forms.Padding(0);
-            this.materialSwitch1.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialSwitch1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSwitch1.Name = "materialSwitch1";
-            this.materialSwitch1.Ripple = true;
-            this.materialSwitch1.Size = new System.Drawing.Size(161, 53);
-            this.materialSwitch1.TabIndex = 5;
-            this.materialSwitch1.Text = "Green";
-            this.materialSwitch1.UseVisualStyleBackColor = true;
-            // 
-            // materialDrawer1
-            // 
-            this.materialDrawer1.AutoHide = false;
-            this.materialDrawer1.AutoShow = false;
-            this.materialDrawer1.BackgroundWithAccent = false;
-            this.materialDrawer1.BaseTabControl = null;
-            this.materialDrawer1.Depth = 0;
-            this.materialDrawer1.HighlightWithAccent = true;
-            this.materialDrawer1.IndicatorWidth = 0;
-            this.materialDrawer1.IsOpen = false;
-            this.materialDrawer1.Location = new System.Drawing.Point(-1027, 43);
-            this.materialDrawer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.materialDrawer1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialDrawer1.Name = "materialDrawer1";
-            this.materialDrawer1.ShowIconsWhenHidden = true;
-            this.materialDrawer1.Size = new System.Drawing.Size(1089, 580);
-            this.materialDrawer1.TabIndex = 2;
-            this.materialDrawer1.Text = "materialDrawer1";
-            this.materialDrawer1.UseColors = false;
-            // 
-            // materialCard40
-            // 
-            this.materialCard40.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard40.Controls.Add(this.materialLabel71);
-            this.materialCard40.Depth = 0;
-            this.materialCard40.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard40.Location = new System.Drawing.Point(663, 81);
-            this.materialCard40.Margin = new System.Windows.Forms.Padding(19, 17, 19, 17);
-            this.materialCard40.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard40.Name = "materialCard40";
-            this.materialCard40.Padding = new System.Windows.Forms.Padding(19, 17, 19, 17);
-            this.materialCard40.Size = new System.Drawing.Size(420, 68);
-            this.materialCard40.TabIndex = 3;
-            // 
-            // materialLabel71
-            // 
-            this.materialLabel71.AutoSize = true;
-            this.materialLabel71.Depth = 0;
-            this.materialLabel71.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel71.Location = new System.Drawing.Point(23, 17);
-            this.materialLabel71.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.materialLabel71.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel71.Name = "materialLabel71";
-            this.materialLabel71.Size = new System.Drawing.Size(62, 19);
-            this.materialLabel71.TabIndex = 1;
-            this.materialLabel71.Text = "Tercihler";
-            // 
-            // tabPage10
-            // 
-            this.tabPage10.ImageKey = "(none)";
-            this.tabPage10.Location = new System.Drawing.Point(4, 25);
-            this.tabPage10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Size = new System.Drawing.Size(1867, 953);
-            this.tabPage10.TabIndex = 7;
-            this.tabPage10.Text = "Çıkış Yap";
-            this.tabPage10.UseVisualStyleBackColor = true;
-            // 
-            // ımageList1
-            // 
-            this.ımageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ımageList1.ImageStream")));
-            this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.ımageList1.Images.SetKeyName(0, "calendar-lines-pen.png");
             // 
             // groupBox1
             // 
@@ -3361,89 +3141,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Şifre Değiştir";
             // 
-            // txtOldPassword
+            // btnChangePasword
             // 
-            this.txtOldPassword.AllowPromptAsInput = true;
-            this.txtOldPassword.AnimateReadOnly = false;
-            this.txtOldPassword.AsciiOnly = false;
-            this.txtOldPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtOldPassword.BeepOnError = false;
-            this.txtOldPassword.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-            this.txtOldPassword.Depth = 0;
-            this.txtOldPassword.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtOldPassword.HidePromptOnLeave = false;
-            this.txtOldPassword.HideSelection = true;
-            this.txtOldPassword.Hint = "Eski Şifre";
-            this.txtOldPassword.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
-            this.txtOldPassword.LeadingIcon = null;
-            this.txtOldPassword.Location = new System.Drawing.Point(6, 43);
-            this.txtOldPassword.Mask = "";
-            this.txtOldPassword.MaxLength = 32767;
-            this.txtOldPassword.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtOldPassword.Name = "txtOldPassword";
-            this.txtOldPassword.PasswordChar = '\0';
-            this.txtOldPassword.PrefixSuffixText = null;
-            this.txtOldPassword.PromptChar = '_';
-            this.txtOldPassword.ReadOnly = false;
-            this.txtOldPassword.RejectInputOnFirstFailure = false;
-            this.txtOldPassword.ResetOnPrompt = true;
-            this.txtOldPassword.ResetOnSpace = true;
-            this.txtOldPassword.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtOldPassword.SelectedText = "";
-            this.txtOldPassword.SelectionLength = 0;
-            this.txtOldPassword.SelectionStart = 0;
-            this.txtOldPassword.ShortcutsEnabled = true;
-            this.txtOldPassword.Size = new System.Drawing.Size(526, 48);
-            this.txtOldPassword.SkipLiterals = true;
-            this.txtOldPassword.TabIndex = 5;
-            this.txtOldPassword.TabStop = false;
-            this.txtOldPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtOldPassword.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-            this.txtOldPassword.TrailingIcon = null;
-            this.txtOldPassword.UseSystemPasswordChar = false;
-            this.txtOldPassword.ValidatingType = null;
-            // 
-            // txtNewPassword
-            // 
-            this.txtNewPassword.AllowPromptAsInput = true;
-            this.txtNewPassword.AnimateReadOnly = false;
-            this.txtNewPassword.AsciiOnly = false;
-            this.txtNewPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtNewPassword.BeepOnError = false;
-            this.txtNewPassword.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-            this.txtNewPassword.Depth = 0;
-            this.txtNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtNewPassword.HidePromptOnLeave = false;
-            this.txtNewPassword.HideSelection = true;
-            this.txtNewPassword.Hint = "Yeni Şifre";
-            this.txtNewPassword.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
-            this.txtNewPassword.LeadingIcon = null;
-            this.txtNewPassword.Location = new System.Drawing.Point(6, 129);
-            this.txtNewPassword.Mask = "";
-            this.txtNewPassword.MaxLength = 32767;
-            this.txtNewPassword.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtNewPassword.Name = "txtNewPassword";
-            this.txtNewPassword.PasswordChar = '\0';
-            this.txtNewPassword.PrefixSuffixText = null;
-            this.txtNewPassword.PromptChar = '_';
-            this.txtNewPassword.ReadOnly = false;
-            this.txtNewPassword.RejectInputOnFirstFailure = false;
-            this.txtNewPassword.ResetOnPrompt = true;
-            this.txtNewPassword.ResetOnSpace = true;
-            this.txtNewPassword.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtNewPassword.SelectedText = "";
-            this.txtNewPassword.SelectionLength = 0;
-            this.txtNewPassword.SelectionStart = 0;
-            this.txtNewPassword.ShortcutsEnabled = true;
-            this.txtNewPassword.Size = new System.Drawing.Size(526, 48);
-            this.txtNewPassword.SkipLiterals = true;
-            this.txtNewPassword.TabIndex = 6;
-            this.txtNewPassword.TabStop = false;
-            this.txtNewPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtNewPassword.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-            this.txtNewPassword.TrailingIcon = null;
-            this.txtNewPassword.UseSystemPasswordChar = false;
-            this.txtNewPassword.ValidatingType = null;
+            this.btnChangePasword.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnChangePasword.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnChangePasword.Depth = 0;
+            this.btnChangePasword.HighEmphasis = true;
+            this.btnChangePasword.Icon = null;
+            this.btnChangePasword.Location = new System.Drawing.Point(344, 321);
+            this.btnChangePasword.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnChangePasword.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnChangePasword.Name = "btnChangePasword";
+            this.btnChangePasword.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnChangePasword.Size = new System.Drawing.Size(76, 36);
+            this.btnChangePasword.TabIndex = 8;
+            this.btnChangePasword.Text = "Kaydet";
+            this.btnChangePasword.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnChangePasword.UseAccentColor = false;
+            this.btnChangePasword.UseVisualStyleBackColor = true;
+            this.btnChangePasword.Click += new System.EventHandler(this.btnChangePasword_Click);
             // 
             // txtNewPasswordAgain
             // 
@@ -3487,25 +3203,218 @@
             this.txtNewPasswordAgain.UseSystemPasswordChar = false;
             this.txtNewPasswordAgain.ValidatingType = null;
             // 
-            // btnChangePasword
+            // txtNewPassword
             // 
-            this.btnChangePasword.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnChangePasword.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btnChangePasword.Depth = 0;
-            this.btnChangePasword.HighEmphasis = true;
-            this.btnChangePasword.Icon = null;
-            this.btnChangePasword.Location = new System.Drawing.Point(344, 321);
-            this.btnChangePasword.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnChangePasword.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnChangePasword.Name = "btnChangePasword";
-            this.btnChangePasword.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnChangePasword.Size = new System.Drawing.Size(76, 36);
-            this.btnChangePasword.TabIndex = 8;
-            this.btnChangePasword.Text = "Kaydet";
-            this.btnChangePasword.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btnChangePasword.UseAccentColor = false;
-            this.btnChangePasword.UseVisualStyleBackColor = true;
-            this.btnChangePasword.Click += new System.EventHandler(this.btnChangePasword_Click);
+            this.txtNewPassword.AllowPromptAsInput = true;
+            this.txtNewPassword.AnimateReadOnly = false;
+            this.txtNewPassword.AsciiOnly = false;
+            this.txtNewPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtNewPassword.BeepOnError = false;
+            this.txtNewPassword.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.txtNewPassword.Depth = 0;
+            this.txtNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtNewPassword.HidePromptOnLeave = false;
+            this.txtNewPassword.HideSelection = true;
+            this.txtNewPassword.Hint = "Yeni Şifre";
+            this.txtNewPassword.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
+            this.txtNewPassword.LeadingIcon = null;
+            this.txtNewPassword.Location = new System.Drawing.Point(6, 129);
+            this.txtNewPassword.Mask = "";
+            this.txtNewPassword.MaxLength = 32767;
+            this.txtNewPassword.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtNewPassword.Name = "txtNewPassword";
+            this.txtNewPassword.PasswordChar = '\0';
+            this.txtNewPassword.PrefixSuffixText = null;
+            this.txtNewPassword.PromptChar = '_';
+            this.txtNewPassword.ReadOnly = false;
+            this.txtNewPassword.RejectInputOnFirstFailure = false;
+            this.txtNewPassword.ResetOnPrompt = true;
+            this.txtNewPassword.ResetOnSpace = true;
+            this.txtNewPassword.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtNewPassword.SelectedText = "";
+            this.txtNewPassword.SelectionLength = 0;
+            this.txtNewPassword.SelectionStart = 0;
+            this.txtNewPassword.ShortcutsEnabled = true;
+            this.txtNewPassword.Size = new System.Drawing.Size(526, 48);
+            this.txtNewPassword.SkipLiterals = true;
+            this.txtNewPassword.TabIndex = 6;
+            this.txtNewPassword.TabStop = false;
+            this.txtNewPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtNewPassword.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.txtNewPassword.TrailingIcon = null;
+            this.txtNewPassword.UseSystemPasswordChar = false;
+            this.txtNewPassword.ValidatingType = null;
+            // 
+            // txtOldPassword
+            // 
+            this.txtOldPassword.AllowPromptAsInput = true;
+            this.txtOldPassword.AnimateReadOnly = false;
+            this.txtOldPassword.AsciiOnly = false;
+            this.txtOldPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtOldPassword.BeepOnError = false;
+            this.txtOldPassword.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.txtOldPassword.Depth = 0;
+            this.txtOldPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtOldPassword.HidePromptOnLeave = false;
+            this.txtOldPassword.HideSelection = true;
+            this.txtOldPassword.Hint = "Eski Şifre";
+            this.txtOldPassword.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
+            this.txtOldPassword.LeadingIcon = null;
+            this.txtOldPassword.Location = new System.Drawing.Point(6, 43);
+            this.txtOldPassword.Mask = "";
+            this.txtOldPassword.MaxLength = 32767;
+            this.txtOldPassword.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtOldPassword.Name = "txtOldPassword";
+            this.txtOldPassword.PasswordChar = '\0';
+            this.txtOldPassword.PrefixSuffixText = null;
+            this.txtOldPassword.PromptChar = '_';
+            this.txtOldPassword.ReadOnly = false;
+            this.txtOldPassword.RejectInputOnFirstFailure = false;
+            this.txtOldPassword.ResetOnPrompt = true;
+            this.txtOldPassword.ResetOnSpace = true;
+            this.txtOldPassword.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtOldPassword.SelectedText = "";
+            this.txtOldPassword.SelectionLength = 0;
+            this.txtOldPassword.SelectionStart = 0;
+            this.txtOldPassword.ShortcutsEnabled = true;
+            this.txtOldPassword.Size = new System.Drawing.Size(526, 48);
+            this.txtOldPassword.SkipLiterals = true;
+            this.txtOldPassword.TabIndex = 5;
+            this.txtOldPassword.TabStop = false;
+            this.txtOldPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtOldPassword.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.txtOldPassword.TrailingIcon = null;
+            this.txtOldPassword.UseSystemPasswordChar = false;
+            this.txtOldPassword.ValidatingType = null;
+            // 
+            // materialSwitch3
+            // 
+            this.materialSwitch3.Depth = 0;
+            this.materialSwitch3.Location = new System.Drawing.Point(1377, 204);
+            this.materialSwitch3.Margin = new System.Windows.Forms.Padding(0);
+            this.materialSwitch3.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialSwitch3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialSwitch3.Name = "materialSwitch3";
+            this.materialSwitch3.Ripple = true;
+            this.materialSwitch3.Size = new System.Drawing.Size(161, 46);
+            this.materialSwitch3.TabIndex = 7;
+            this.materialSwitch3.Text = "Pink";
+            this.materialSwitch3.UseVisualStyleBackColor = true;
+            // 
+            // materialSwitch2
+            // 
+            this.materialSwitch2.Depth = 0;
+            this.materialSwitch2.Location = new System.Drawing.Point(1377, 145);
+            this.materialSwitch2.Margin = new System.Windows.Forms.Padding(0);
+            this.materialSwitch2.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialSwitch2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialSwitch2.Name = "materialSwitch2";
+            this.materialSwitch2.Ripple = true;
+            this.materialSwitch2.Size = new System.Drawing.Size(161, 46);
+            this.materialSwitch2.TabIndex = 6;
+            this.materialSwitch2.Text = "Yellow";
+            this.materialSwitch2.UseVisualStyleBackColor = true;
+            // 
+            // materialSwitch1
+            // 
+            this.materialSwitch1.Depth = 0;
+            this.materialSwitch1.Location = new System.Drawing.Point(1377, 81);
+            this.materialSwitch1.Margin = new System.Windows.Forms.Padding(0);
+            this.materialSwitch1.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialSwitch1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialSwitch1.Name = "materialSwitch1";
+            this.materialSwitch1.Ripple = true;
+            this.materialSwitch1.Size = new System.Drawing.Size(161, 53);
+            this.materialSwitch1.TabIndex = 5;
+            this.materialSwitch1.Text = "Green";
+            this.materialSwitch1.UseVisualStyleBackColor = true;
+            // 
+            // materialCard40
+            // 
+            this.materialCard40.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard40.Controls.Add(this.materialLabel71);
+            this.materialCard40.Depth = 0;
+            this.materialCard40.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard40.Location = new System.Drawing.Point(663, 81);
+            this.materialCard40.Margin = new System.Windows.Forms.Padding(19, 17, 19, 17);
+            this.materialCard40.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard40.Name = "materialCard40";
+            this.materialCard40.Padding = new System.Windows.Forms.Padding(19, 17, 19, 17);
+            this.materialCard40.Size = new System.Drawing.Size(420, 68);
+            this.materialCard40.TabIndex = 3;
+            // 
+            // materialLabel71
+            // 
+            this.materialLabel71.AutoSize = true;
+            this.materialLabel71.Depth = 0;
+            this.materialLabel71.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel71.Location = new System.Drawing.Point(11, 17);
+            this.materialLabel71.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.materialLabel71.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel71.Name = "materialLabel71";
+            this.materialLabel71.Size = new System.Drawing.Size(62, 19);
+            this.materialLabel71.TabIndex = 1;
+            this.materialLabel71.Text = "Tercihler";
+            // 
+            // tabPage10
+            // 
+            this.tabPage10.ImageKey = "(none)";
+            this.tabPage10.Location = new System.Drawing.Point(4, 25);
+            this.tabPage10.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage10.Name = "tabPage10";
+            this.tabPage10.Size = new System.Drawing.Size(1867, 953);
+            this.tabPage10.TabIndex = 7;
+            this.tabPage10.Text = "Çıkış Yap";
+            this.tabPage10.UseVisualStyleBackColor = true;
+            // 
+            // ımageList1
+            // 
+            this.ımageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ımageList1.ImageStream")));
+            this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.ımageList1.Images.SetKeyName(0, "calendar-lines-pen.png");
+            // 
+            // cmbYas
+            // 
+            this.cmbYas.Location = new System.Drawing.Point(256, 264);
+            this.cmbYas.Name = "cmbYas";
+            this.cmbYas.Size = new System.Drawing.Size(538, 22);
+            this.cmbYas.TabIndex = 13;
+            // 
+            // nmrKilo
+            // 
+            this.nmrKilo.Location = new System.Drawing.Point(255, 63);
+            this.nmrKilo.Name = "nmrKilo";
+            this.nmrKilo.Size = new System.Drawing.Size(538, 22);
+            this.nmrKilo.TabIndex = 13;
+            // 
+            // nmrBoy
+            // 
+            this.nmrBoy.Location = new System.Drawing.Point(255, 135);
+            this.nmrBoy.Name = "nmrBoy";
+            this.nmrBoy.Size = new System.Drawing.Size(538, 22);
+            this.nmrBoy.TabIndex = 13;
+            // 
+            // cmbCinsiyet
+            // 
+            this.cmbCinsiyet.AutoResize = false;
+            this.cmbCinsiyet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cmbCinsiyet.Depth = 0;
+            this.cmbCinsiyet.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cmbCinsiyet.DropDownHeight = 174;
+            this.cmbCinsiyet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCinsiyet.DropDownWidth = 121;
+            this.cmbCinsiyet.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cmbCinsiyet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmbCinsiyet.FormattingEnabled = true;
+            this.cmbCinsiyet.IntegralHeight = false;
+            this.cmbCinsiyet.ItemHeight = 43;
+            this.cmbCinsiyet.Location = new System.Drawing.Point(250, 191);
+            this.cmbCinsiyet.MaxDropDownItems = 4;
+            this.cmbCinsiyet.MouseState = MaterialSkin.MouseState.OUT;
+            this.cmbCinsiyet.Name = "cmbCinsiyet";
+            this.cmbCinsiyet.Size = new System.Drawing.Size(545, 49);
+            this.cmbCinsiyet.StartIndex = 0;
+            this.cmbCinsiyet.TabIndex = 14;
             // 
             // Form3
             // 
@@ -3516,7 +3425,7 @@
             this.DrawerIsOpen = true;
             this.DrawerShowIconsWhenHidden = true;
             this.DrawerTabControl = this.materialTabControl1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form3";
             this.Padding = new System.Windows.Forms.Padding(4, 79, 4, 4);
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
@@ -3619,10 +3528,13 @@
             this.materialCard38.PerformLayout();
             this.tabPage7.ResumeLayout(false);
             this.materialCard39.ResumeLayout(false);
-            this.materialCard40.ResumeLayout(false);
-            this.materialCard40.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.materialCard40.ResumeLayout(false);
+            this.materialCard40.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbYas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrKilo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrBoy)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3820,22 +3732,17 @@
         private LiveCharts.WinForms.CartesianChart cartesianChart4;
         private LiveCharts.WinForms.CartesianChart cartesianChart3;
         private MaterialSkin.Controls.MaterialCard materialCard38;
-        private MaterialSkin.Controls.MaterialButton materialButton1;
-        private MaterialSkin.Controls.MaterialComboBox materialComboBox1;
+        private MaterialSkin.Controls.MaterialButton btnSaveAndUpdate;
+        private MaterialSkin.Controls.MaterialComboBox cmbAktivite;
         private MaterialSkin.Controls.MaterialLabel materialLabel69;
         private MaterialSkin.Controls.MaterialLabel materialLabel68;
-        private MaterialSkin.Controls.MaterialTextBox2 materialTextBox24;
         private MaterialSkin.Controls.MaterialLabel materialLabel67;
-        private MaterialSkin.Controls.MaterialTextBox2 materialTextBox23;
         private MaterialSkin.Controls.MaterialLabel materialLabel66;
-        private MaterialSkin.Controls.MaterialTextBox2 materialTextBox22;
         private MaterialSkin.Controls.MaterialLabel materialLabel65;
-        private MaterialSkin.Controls.MaterialTextBox2 materialTextBox21;
         private MaterialSkin.Controls.MaterialCard materialCard39;
         private MaterialSkin.Controls.MaterialSwitch materialSwitch3;
         private MaterialSkin.Controls.MaterialSwitch materialSwitch2;
         private MaterialSkin.Controls.MaterialSwitch materialSwitch1;
-        private MaterialSkin.Controls.MaterialDrawer materialDrawer1;
         private MaterialSkin.Controls.MaterialCard materialCard40;
         private MaterialSkin.Controls.MaterialLabel materialLabel71;
         private System.Windows.Forms.PictureBox pictureBox20;
@@ -3845,5 +3752,9 @@
         private MaterialSkin.Controls.MaterialMaskedTextBox txtNewPasswordAgain;
         private MaterialSkin.Controls.MaterialMaskedTextBox txtNewPassword;
         private MaterialSkin.Controls.MaterialMaskedTextBox txtOldPassword;
+        private System.Windows.Forms.NumericUpDown nmrBoy;
+        private System.Windows.Forms.NumericUpDown nmrKilo;
+        private System.Windows.Forms.NumericUpDown cmbYas;
+        private MaterialSkin.Controls.MaterialComboBox cmbCinsiyet;
     }
 }

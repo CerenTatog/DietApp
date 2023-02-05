@@ -180,61 +180,61 @@ namespace Diet.UI
 
             //Pie Chart
             Func<ChartPoint, string> fu = x => string.Format("{0},{1:P}", x.Y, x.Participation);
-        SeriesCollection series = new SeriesCollection();
+            SeriesCollection series = new SeriesCollection();
             foreach (var item in reportManager.WhichFoodsEatenByMealType(_currentUser.ID, MealType.Breakfast))
             {
                 PieSeries pie = new PieSeries();
-        pie.Title = item.FoodName;
+                pie.Title = item.FoodName;
                 pie.Values = new ChartValues<double> { item.TotalQuantity
-    };
-    pie.DataLabels = true;
+                };
+                pie.DataLabels = true;
                 pie.LabelPoint = fu;
                 series.Add(pie);
                 pieChart1.Series = series;
             }
-pieChart1.LegendLocation = LegendLocation.Right;
+            pieChart1.LegendLocation = LegendLocation.Right;
 
-Func<ChartPoint, string> fu2 = x => string.Format("{0},{1:P}", x.Y, x.Participation);
-SeriesCollection series2 = new SeriesCollection();
-foreach (var item in reportManager.WhichFoodsEatenByMealType(_currentUser.ID, MealType.Lunch))
-{
-    PieSeries pie2 = new PieSeries();
-    pie2.Title = item.FoodName;
-    pie2.Values = new ChartValues<double> { item.TotalQuantity };
-    pie2.DataLabels = true;
-    pie2.LabelPoint = fu2;
-    series2.Add(pie2);
-    pieChart2.Series = series2;
-}
-pieChart2.LegendLocation = LegendLocation.Right;
+            Func<ChartPoint, string> fu2 = x => string.Format("{0},{1:P}", x.Y, x.Participation);
+            SeriesCollection series2 = new SeriesCollection();
+            foreach (var item in reportManager.WhichFoodsEatenByMealType(_currentUser.ID, MealType.Lunch))
+            {
+                PieSeries pie2 = new PieSeries();
+                pie2.Title = item.FoodName;
+                pie2.Values = new ChartValues<double> { item.TotalQuantity };
+                pie2.DataLabels = true;
+                pie2.LabelPoint = fu2;
+                series2.Add(pie2);
+                pieChart2.Series = series2;
+            }
+            pieChart2.LegendLocation = LegendLocation.Right;
 
-Func<ChartPoint, string> fu3 = x => string.Format("{0},{1:P}", x.Y, x.Participation);
-SeriesCollection series3 = new SeriesCollection();
-foreach (var item in reportManager.WhichFoodsEatenByMealType(_currentUser.ID, MealType.Dinner))
-{
-    PieSeries pie3 = new PieSeries();
-    pie3.Title = item.FoodName;
-    pie3.Values = new ChartValues<double> { item.TotalQuantity };
-    pie3.DataLabels = true;
-    pie3.LabelPoint = fu3;
-    series3.Add(pie3);
-    pieChart3.Series = series3;
-}
-pieChart3.LegendLocation = LegendLocation.Right;
+            Func<ChartPoint, string> fu3 = x => string.Format("{0},{1:P}", x.Y, x.Participation);
+            SeriesCollection series3 = new SeriesCollection();
+            foreach (var item in reportManager.WhichFoodsEatenByMealType(_currentUser.ID, MealType.Dinner))
+            {
+                PieSeries pie3 = new PieSeries();
+                pie3.Title = item.FoodName;
+                pie3.Values = new ChartValues<double> { item.TotalQuantity };
+                pie3.DataLabels = true;
+                pie3.LabelPoint = fu3;
+                series3.Add(pie3);
+                pieChart3.Series = series3;
+            }
+            pieChart3.LegendLocation = LegendLocation.Right;
 
-Func<ChartPoint, string> fu4 = x => string.Format("{0},{1:P}", x.Y, x.Participation);
-SeriesCollection series4 = new SeriesCollection();
-foreach (var item in reportManager.WhichFoodsEatenByMealType(_currentUser.ID, MealType.Snack))
-{
-    PieSeries pie4 = new PieSeries();
-    pie4.Title = item.FoodName;
-    pie4.Values = new ChartValues<double> { item.TotalQuantity };
-    pie4.DataLabels = true;
-    pie4.LabelPoint = fu4;
-    series4.Add(pie4);
-    pieChart4.Series = series4;
-}
-pieChart4.LegendLocation = LegendLocation.Right;
+            Func<ChartPoint, string> fu4 = x => string.Format("{0},{1:P}", x.Y, x.Participation);
+            SeriesCollection series4 = new SeriesCollection();
+            foreach (var item in reportManager.WhichFoodsEatenByMealType(_currentUser.ID, MealType.Snack))
+            {
+                PieSeries pie4 = new PieSeries();
+                pie4.Title = item.FoodName;
+                pie4.Values = new ChartValues<double> { item.TotalQuantity };
+                pie4.DataLabels = true;
+                pie4.LabelPoint = fu4;
+                series4.Add(pie4);
+                pieChart4.Series = series4;
+            }
+            pieChart4.LegendLocation = LegendLocation.Right;
 
 
             //List<MostEatenFoods> mef =  reportManager.MostEatenFood(_currentUser.ID);
@@ -248,117 +248,119 @@ pieChart4.LegendLocation = LegendLocation.Right;
 
         }
 
-        private void mfabKahvaltıEkle_Click(object sender, EventArgs e)
-{
-    string ogun = materialLabel5.Text;
-    Form5 form5 = new Form5(ogun, Model.MealType.Breakfast, _currentUser);
-    form5.ShowDialog();
-}
+         private void mfabKahvaltıEkle_Click(object sender, EventArgs e)
+         {
+                    string ogun = materialLabel5.Text;
+                    Form5 form5 = new Form5(ogun, Model.MealType.Breakfast, _currentUser);
+                    form5.ShowDialog();
+         }
 
-private void mfabOgleYemegiEkle_Click(object sender, EventArgs e)
-{
-    string ogun = materialLabel6.Text;
-    Form5 form5 = new Form5(ogun, MealType.Lunch, _currentUser);
-    form5.FormClosing += Form5_FormClosing;
-    form5.ShowDialog();
-}
-
-private void Form5_FormClosing(object sender, FormClosingEventArgs e)
-{
-    Form3_Load(sender, e);
-}
-
-private void mfabAksamYemegiEkle_Click(object sender, EventArgs e)
-{
-    string ogun = materialLabel7.Text;
-    Form5 form5 = new Form5(ogun, MealType.Dinner, _currentUser);
-    form5.FormClosing += Form5_FormClosing;
-    form5.ShowDialog();
-}
-
-private void mfabAtıstırmalıkEkle_Click(object sender, EventArgs e)
-{
-    string ogun = materialLabel8.Text;
-    Form5 form5 = new Form5(ogun, MealType.Snack, _currentUser);
-    form5.ShowDialog();
-}
-
-
-
-private void materialLabel15_Click(object sender, EventArgs e)
-{
-
-}
-
-private void mlHedefDuzenle_Click(object sender, EventArgs e)//bu alan değişecek. 
-{
-
-}
-
-private void mfabSuEkle_Click(object sender, EventArgs e)
-{
-    double currentWater = userManager.AddDailyWater(_currentUser.ID);
-    lblWaterTotal.Text = $"{currentWater} ml";
-
-}
-
-private void materialTabControl1_TabIndexChanged(object sender, EventArgs e)
-{
-
-
-}
-
-private void materialFloatingActionButton5_Click(object sender, EventArgs e)
-{
-    OpenFileDialog openFileDialog = new OpenFileDialog();
-    pictureBox1.ImageLocation = openFileDialog.FileName;
-}
-
-private void mfabAdımSayisiEkle_Click(object sender, EventArgs e)
-{
-    Form6 form6 = new Form6(_currentUser);
-    form6.ShowDialog();
-}
-
-private void mfabAktiviteEkle_Click(object sender, EventArgs e)
-{
-    Form7 form7 = new Form7(_currentUser);
-    form7.FormClosing += Form7_FormClosing;
-    form7.ShowDialog();
-}
-
-private void Form7_FormClosing(object sender, FormClosingEventArgs e)
-{
-    Form3_Load(sender, e);
-}
-
-private void dataGridView8_CellContentClick(object sender, DataGridViewCellEventArgs e)
-{
-
-}
-
-private void materialButton1_Click(object sender, EventArgs e)
-{
-    Form11 frm11 = new Form11();
-    frm11.Show();
-    Hide();
-}
-
-private void materialFloatingActionButton1_Click(object sender, EventArgs e)
-{
-    double currentWater = userManager.RemoveDailyWater(_currentUser.ID);
-    lblWaterTotal.Text = $"{currentWater} ml";
-}
-
-        private void btnChangePasword_Click(object sender, EventArgs e)
+        private void mfabOgleYemegiEkle_Click(object sender, EventArgs e)
         {
-            User newPassword = new User();
-            if (txtOldPassword.Text.EncryptoPassword()==_currentUser.Password.EncryptoPassword())
+            string ogun = materialLabel6.Text;
+            Form5 form5 = new Form5(ogun, MealType.Lunch, _currentUser);
+            form5.FormClosing += Form5_FormClosing;
+            form5.ShowDialog();
+        }
+
+        private void Form5_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Form3_Load(sender, e);
+        }
+
+        private void mfabAksamYemegiEkle_Click(object sender, EventArgs e)
+        {
+            string ogun = materialLabel7.Text;
+            Form5 form5 = new Form5(ogun, MealType.Dinner, _currentUser);
+            form5.FormClosing += Form5_FormClosing;
+            form5.ShowDialog();
+        }
+
+        private void mfabAtıstırmalıkEkle_Click(object sender, EventArgs e)
+        {
+            string ogun = materialLabel8.Text;
+            Form5 form5 = new Form5(ogun, MealType.Snack, _currentUser);
+            form5.ShowDialog();
+        }
+
+
+
+        private void materialLabel15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mlHedefDuzenle_Click(object sender, EventArgs e)//bu alan değişecek. 
+        {
+
+        }
+
+        private void mfabSuEkle_Click(object sender, EventArgs e)
+        {
+            double currentWater = userManager.AddDailyWater(_currentUser.ID);
+            lblWaterTotal.Text = $"{currentWater} ml";
+
+        }
+
+        private void materialTabControl1_TabIndexChanged(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void materialFloatingActionButton5_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            pictureBox1.ImageLocation = openFileDialog.FileName;
+        }
+
+        private void mfabAdımSayisiEkle_Click(object sender, EventArgs e)
+        {
+            Form6 form6 = new Form6(_currentUser);
+            form6.ShowDialog();
+        }
+
+        private void mfabAktiviteEkle_Click(object sender, EventArgs e)
+        {
+            Form7 form7 = new Form7(_currentUser);
+            form7.FormClosing += Form7_FormClosing;
+            form7.ShowDialog();
+        }
+
+        private void Form7_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Form3_Load(sender, e);
+        }
+
+        private void dataGridView8_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+            private void materialButton1_Click(object sender, EventArgs e)
             {
-                if (txtNewPassword.Text.Trim()==txtNewPasswordAgain.Text.Trim())
+                 Form11 frm11 = new Form11();
+                frm11.Show();
+                Hide();
+            }
+
+            private void materialFloatingActionButton1_Click(object sender, EventArgs e)
+            {   
+            double currentWater = userManager.RemoveDailyWater(_currentUser.ID);
+            lblWaterTotal.Text = $"{currentWater} ml";
+            }   
+            
+            private void btnChangePasword_Click(object sender, EventArgs e)
+            {
+           
+            if (txtOldPassword.Text.EncryptoPassword() == _currentUser.Password.EncryptoPassword())
+            {
+                if (txtNewPassword.Text.Trim() == txtNewPasswordAgain.Text.Trim())
                 {
-                    newPassword.Password = txtNewPassword.Text.EncryptoPassword();
-                    db.UserRepository.Update(newPassword);
+                    
+                    _currentUser.Password = txtNewPassword.Text.EncryptoPassword();
+                    db.UserRepository.Update(_currentUser);
+
                 }
             }
             else
@@ -366,5 +368,18 @@ private void materialFloatingActionButton1_Click(object sender, EventArgs e)
                 MessageBox.Show("Şifrenizi hatalı girdiniz");
             }
         }
-    }
-}
+
+        private void btnSaveAndUpdate_Click(object sender, EventArgs e)
+        {
+
+            UserDetail userDetail = new UserDetail();
+            userDetail.ID = _currentUser.ID;
+            userDetail.Height =Convert.ToInt32( nmrBoy.Value);
+            userDetail.Weight =Convert.ToInt32( nmrKilo.Value);
+            userDetail.Age = Convert.ToInt32(cmbYas.Value);
+            userDetail.Gender =(Gender)cmbCinsiyet.SelectedValue;
+            userDetail.ActivityStatus =(ActivityStatus) cmbAktivite.SelectedValue;
+            db.UserDetailRepository.Update(userDetail);
+        }
+    }   
+}   

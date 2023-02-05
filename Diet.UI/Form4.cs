@@ -44,7 +44,7 @@ namespace Diet.UI
 
         }
 
-        private void UrunEkle_Click(object sender, EventArgs e)
+        private void BesinEkle_Click(object sender, EventArgs e)
         {
             //Form8 frm8 = new Form8(_currentUser);
             //frm8.ShowDialog();
@@ -59,5 +59,9 @@ namespace Diet.UI
 
         }
 
+        private void materialCard10_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

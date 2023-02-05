@@ -111,6 +111,10 @@
     <Compile Include="Migrations\202302051257399_TargetWeight.designer.cs">
       <DependentUpon>202302051257399_TargetWeight.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202302052031271_userBC_Update.cs" />
+    <Compile Include="Migrations\202302052031271_userBC_Update.designer.cs">
+      <DependentUpon>202302052031271_userBC_Update.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -151,6 +155,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202302051257399_TargetWeight.resx">
       <DependentUpon>202302051257399_TargetWeight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302052031271_userBC_Update.resx">
+      <DependentUpon>202302052031271_userBC_Update.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

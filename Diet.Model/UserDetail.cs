@@ -16,7 +16,7 @@ namespace Diet.Model
         public Gender Gender { get; set; }
         public int Age { get; set; }
         public ActivityStatus ActivityStatus { get; set; }
-        public double? TargetWeight { get; set;}
+        public double TargetWeight { get; set;}
         public int? UserID { get; set; }
 
         [ForeignKey("UserID")]

@@ -11,6 +11,7 @@ using Diet.BLL;
 using Diet.BLL.Helper;
 using Diet.DAL.Entities;
 using Diet.DAL.GenericRepository;
+using Diet.Model;
 using MaterialSkin;
 using MaterialSkin.Controls;
 
@@ -18,6 +19,7 @@ namespace Diet.UI
 {
     public partial class Form1 : MaterialForm
     {
+        
         public Form1()
         {
             InitializeComponent();
@@ -49,14 +51,10 @@ namespace Diet.UI
             {
                 if (user.Password.Trim() == txtSifre.Text.EncryptoPassword())
                 {
-
+                    
                     Form3 frm3 = new Form3(user);
                     frm3.Show();
                     Hide();
-                }
-                else if (true)
-                {
-
                 }
                 else
                 {

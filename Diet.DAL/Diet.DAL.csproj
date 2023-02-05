@@ -107,6 +107,10 @@
     <Compile Include="Migrations\202302032219107_foodEUpdatePortion.designer.cs">
       <DependentUpon>202302032219107_foodEUpdatePortion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202302051257399_TargetWeight.cs" />
+    <Compile Include="Migrations\202302051257399_TargetWeight.designer.cs">
+      <DependentUpon>202302051257399_TargetWeight.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -144,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202302032219107_foodEUpdatePortion.resx">
       <DependentUpon>202302032219107_foodEUpdatePortion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302051257399_TargetWeight.resx">
+      <DependentUpon>202302051257399_TargetWeight.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

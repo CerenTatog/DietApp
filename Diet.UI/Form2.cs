@@ -135,8 +135,10 @@ namespace Diet.UI
 
             newuserdetail.Age = Convert.ToInt32(nmrYas.Value);
             newuserdetail.ActivityStatus = (ActivityStatus)cmbActivityStatus.SelectedValue;
-            newuserdetail.Gender = (Gender)cmbGender.SelectedValue;
+            newuserdetail.Gender = (Gender)cmbGender.SelectedValue;        
+            newuser.CreatedDate = DateTime.Now;
             db.UserRepository.Create(newuser);
+            newuserdetail.UserID = newuser.ID;
             db.UserDetailRepository.Create(newuserdetail);
             Form1 frm1 = new Form1();
             frm1.Show();

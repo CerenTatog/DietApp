@@ -50,11 +50,19 @@
             this.txtTekrarSifre = new MaterialSkin.Controls.MaterialTextBox2();
             this.txtSifre = new MaterialSkin.Controls.MaterialTextBox2();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.nmrHedefKilo = new System.Windows.Forms.NumericUpDown();
+            this.nmrKilo = new System.Windows.Forms.NumericUpDown();
+            this.nmrBoy = new System.Windows.Forms.NumericUpDown();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.btnGeri4 = new MaterialSkin.Controls.MaterialButton();
             this.btnIler4 = new MaterialSkin.Controls.MaterialButton();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
+            this.nmrYas = new System.Windows.Forms.NumericUpDown();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.cmbGender = new MaterialSkin.Controls.MaterialComboBox();
@@ -62,14 +70,6 @@
             this.btnGeri5 = new MaterialSkin.Controls.MaterialButton();
             this.btnKaydetBitir = new MaterialSkin.Controls.MaterialButton();
             this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.nmrBoy = new System.Windows.Forms.NumericUpDown();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.nmrKilo = new System.Windows.Forms.NumericUpDown();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.nmrHedefKilo = new System.Windows.Forms.NumericUpDown();
-            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
-            this.nmrYas = new System.Windows.Forms.NumericUpDown();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -80,15 +80,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrHedefKilo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrKilo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrBoy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrYas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmrBoy)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmrKilo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmrHedefKilo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmrYas)).BeginInit();
             this.SuspendLayout();
             // 
             // materialTabControl1
@@ -477,6 +477,78 @@
             this.tabPage4.Text = "Kişisel Özellikler";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // materialLabel3
+            // 
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel3.Location = new System.Drawing.Point(183, 203);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(193, 19);
+            this.materialLabel3.TabIndex = 15;
+            this.materialLabel3.Text = "Hedeflediğiniz Kilo Kaç kg?";
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel2.Location = new System.Drawing.Point(183, 115);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(114, 19);
+            this.materialLabel2.TabIndex = 15;
+            this.materialLabel2.Text = "Kilonuz Kaç kg?";
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel1.Location = new System.Drawing.Point(183, 30);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(128, 19);
+            this.materialLabel1.TabIndex = 15;
+            this.materialLabel1.Text = "Boyunuz Kaç cm?";
+            // 
+            // nmrHedefKilo
+            // 
+            this.nmrHedefKilo.Location = new System.Drawing.Point(183, 228);
+            this.nmrHedefKilo.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
+            this.nmrHedefKilo.Name = "nmrHedefKilo";
+            this.nmrHedefKilo.Size = new System.Drawing.Size(407, 22);
+            this.nmrHedefKilo.TabIndex = 14;
+            // 
+            // nmrKilo
+            // 
+            this.nmrKilo.Location = new System.Drawing.Point(183, 140);
+            this.nmrKilo.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
+            this.nmrKilo.Name = "nmrKilo";
+            this.nmrKilo.Size = new System.Drawing.Size(407, 22);
+            this.nmrKilo.TabIndex = 14;
+            // 
+            // nmrBoy
+            // 
+            this.nmrBoy.Location = new System.Drawing.Point(183, 55);
+            this.nmrBoy.Maximum = new decimal(new int[] {
+            250,
+            0,
+            0,
+            0});
+            this.nmrBoy.Name = "nmrBoy";
+            this.nmrBoy.Size = new System.Drawing.Size(407, 22);
+            this.nmrBoy.TabIndex = 14;
+            // 
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
@@ -556,6 +628,25 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Yaş Cinsiyet";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // materialLabel4
+            // 
+            this.materialLabel4.AutoSize = true;
+            this.materialLabel4.Depth = 0;
+            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel4.Location = new System.Drawing.Point(188, 34);
+            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel4.Name = "materialLabel4";
+            this.materialLabel4.Size = new System.Drawing.Size(106, 19);
+            this.materialLabel4.TabIndex = 17;
+            this.materialLabel4.Text = "Yaşınızı Giriniz";
+            // 
+            // nmrYas
+            // 
+            this.nmrYas.Location = new System.Drawing.Point(188, 59);
+            this.nmrYas.Name = "nmrYas";
+            this.nmrYas.Size = new System.Drawing.Size(436, 22);
+            this.nmrYas.TabIndex = 16;
             // 
             // pictureBox9
             // 
@@ -680,82 +771,6 @@
             this.ımageList1.Images.SetKeyName(8, "settings_accessibility_FILL0_wght400_GRAD0_opsz48.png");
             this.ımageList1.Images.SetKeyName(9, "transgender_FILL0_wght400_GRAD0_opsz48.png");
             // 
-            // nmrBoy
-            // 
-            this.nmrBoy.Location = new System.Drawing.Point(183, 55);
-            this.nmrBoy.Name = "nmrBoy";
-            this.nmrBoy.Size = new System.Drawing.Size(407, 22);
-            this.nmrBoy.TabIndex = 14;
-            // 
-            // materialLabel1
-            // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(183, 30);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(128, 19);
-            this.materialLabel1.TabIndex = 15;
-            this.materialLabel1.Text = "Boyunuz Kaç cm?";
-            // 
-            // nmrKilo
-            // 
-            this.nmrKilo.Location = new System.Drawing.Point(183, 140);
-            this.nmrKilo.Name = "nmrKilo";
-            this.nmrKilo.Size = new System.Drawing.Size(407, 22);
-            this.nmrKilo.TabIndex = 14;
-            // 
-            // materialLabel2
-            // 
-            this.materialLabel2.AutoSize = true;
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.Location = new System.Drawing.Point(183, 115);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(114, 19);
-            this.materialLabel2.TabIndex = 15;
-            this.materialLabel2.Text = "Kilonuz Kaç kg?";
-            // 
-            // nmrHedefKilo
-            // 
-            this.nmrHedefKilo.Location = new System.Drawing.Point(183, 228);
-            this.nmrHedefKilo.Name = "nmrHedefKilo";
-            this.nmrHedefKilo.Size = new System.Drawing.Size(407, 22);
-            this.nmrHedefKilo.TabIndex = 14;
-            // 
-            // materialLabel3
-            // 
-            this.materialLabel3.AutoSize = true;
-            this.materialLabel3.Depth = 0;
-            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel3.Location = new System.Drawing.Point(183, 203);
-            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(193, 19);
-            this.materialLabel3.TabIndex = 15;
-            this.materialLabel3.Text = "Hedeflediğiniz Kilo Kaç kg?";
-            // 
-            // materialLabel4
-            // 
-            this.materialLabel4.AutoSize = true;
-            this.materialLabel4.Depth = 0;
-            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel4.Location = new System.Drawing.Point(188, 34);
-            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel4.Name = "materialLabel4";
-            this.materialLabel4.Size = new System.Drawing.Size(106, 19);
-            this.materialLabel4.TabIndex = 17;
-            this.materialLabel4.Text = "Yaşınızı Giriniz";
-            // 
-            // nmrYas
-            // 
-            this.nmrYas.Location = new System.Drawing.Point(188, 59);
-            this.nmrYas.Name = "nmrYas";
-            this.nmrYas.Size = new System.Drawing.Size(436, 22);
-            this.nmrYas.TabIndex = 16;
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -785,16 +800,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrHedefKilo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrKilo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrBoy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrYas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmrBoy)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmrKilo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmrHedefKilo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nmrYas)).EndInit();
             this.ResumeLayout(false);
 
         }

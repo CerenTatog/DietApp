@@ -13,6 +13,7 @@ using Diet.BLL;
 using Diet.BLL.Helper;
 using Diet.DAL.GenericRepository;
 using Diet.Model;
+using Diet.Model.Dto;
 using Diet.Model.Dto.Report;
 using LiveCharts;
 using LiveCharts.Wpf;
@@ -106,7 +107,13 @@ namespace Diet.UI
             //mmlKilo.Text = mlKalanKalorid.Text;
             double mevcutKilo = db.UserDetailRepository.GetAll().Select(x => x.Weight).FirstOrDefault();
             lblMevcutKilo.Text = mevcutKilo.ToString();
-            mlHedefKilo.Text = (mevcutKilo - (db.UserDetailRepository.GetById(_currentUser.ID).TargetWeight)).ToString();
+
+            double hedefkilo = db.UserDetailRepository.GetAll().Select(x => x.TargetWeight).FirstOrDefault();
+            mlHedefKilo.Text = hedefkilo.ToString();
+
+
+           // mlHedefKilo.Text = (mevcutKilo - (db.UserDetailRepository.GetById(_currentUser.ID).TargetWeight)).ToString();
+            
 
             //Water
             lblWaterTotal.Text = $"{userManager.GetDailyWater(_currentUser.ID)} ml";
@@ -244,6 +251,25 @@ namespace Diet.UI
             //    Tag = mef.Foo,
             //    Text = $"{mef.} {yeniOgun.Quantity} {food.Portion.GetEnumDisplayName()} Kalori:{food.Calorie * (yeniOgun.Quantity / food.PortionQuantity)}"
             //});
+            List<ActivityStatus> activityStatusList = Enum.GetValues(typeof(ActivityStatus)).Cast<ActivityStatus>().ToList();
+            List<CustomSelectItem> activityTypeList = activityStatusList.Select(x => new CustomSelectItem
+            {
+                Label = x.GetEnumDisplayName(),
+                Value = (int)x
+            }).ToList();
+            cmbAktivite.DataSource = activityTypeList;
+            cmbAktivite.DisplayMember = "Label";
+            cmbAktivite.ValueMember = "Value";
+
+            List<Gender> genderList = Enum.GetValues(typeof(Gender)).Cast<Gender>().ToList();
+            List<CustomSelectItem> genderTypeList = genderList.Select(x => new CustomSelectItem
+            {
+                Label = x.GetEnumDisplayName(),
+                Value = (int)x
+            }).ToList();
+            cmbCinsiyet.DataSource = genderTypeList;
+            cmbCinsiyet.DisplayMember = "Label";
+            cmbCinsiyet.ValueMember = "Value";
 
 
         }
@@ -353,7 +379,7 @@ namespace Diet.UI
             private void btnChangePasword_Click(object sender, EventArgs e)
             {
            
-            if (txtOldPassword.Text.EncryptoPassword() == _currentUser.Password.EncryptoPassword())
+            if (txtOldPassword.Text.EncryptoPassword() == _currentUser.Password)
             {
                 if (txtNewPassword.Text.Trim() == txtNewPasswordAgain.Text.Trim())
                 {

@@ -242,7 +242,7 @@
             this.materialLabel71 = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard41 = new MaterialSkin.Controls.MaterialCard();
             this.tabPage10 = new System.Windows.Forms.TabPage();
-            this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.ımageList2 = new System.Windows.Forms.ImageList(this.components);
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.materialCard17.SuspendLayout();
@@ -3198,11 +3198,12 @@
             this.tabPage10.Text = "Çıkış Yap";
             this.tabPage10.UseVisualStyleBackColor = true;
             // 
-            // ımageList1
+            // ımageList2
             // 
-            this.ımageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ımageList1.ImageStream")));
-            this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.ımageList1.Images.SetKeyName(0, "calendar-lines-pen.png");
+            this.ımageList2.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ımageList2.ImageStream")));
+            this.ımageList2.TransparentColor = System.Drawing.Color.Transparent;
+            this.ımageList2.Images.SetKeyName(0, "analytics.png");
+            this.ımageList2.Images.SetKeyName(1, "infographic.png");
             // 
             // Form3
             // 
@@ -3535,6 +3536,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel71;
         private MaterialSkin.Controls.MaterialCard materialCard41;
         private System.Windows.Forms.PictureBox pictureBox20;
-        private System.Windows.Forms.ImageList ımageList1;
+        private System.Windows.Forms.ImageList ımageList2;
     }
 }

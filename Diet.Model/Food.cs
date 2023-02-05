@@ -17,7 +17,7 @@ namespace Diet.Model
         [Required]
         [StringLength(120)] 
         public string FoodName { get; set; }
-        public QuantityType Portion{ get; set; }
+        public QuantityType Portion { get; set; }
         public double Calorie { get; set; }
         public int CategoryID { get; set; }        
         public double Carbonhydrate { get; set; }
@@ -33,7 +33,7 @@ namespace Diet.Model
     public enum QuantityType
     {
         [Display(Name = "Adet")]
-        adet = 1,
+        adet=1,
         [Display(Name = "ml")]
         ml,
         [Display(Name = "gr")]

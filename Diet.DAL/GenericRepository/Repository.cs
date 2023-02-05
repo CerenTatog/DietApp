@@ -51,8 +51,7 @@ namespace Diet.DAL.GenericRepository
 
         public void Update(TEntity entity)
         {
-            _db.Set<TEntity>().Attach(entity);
-            _db.Entry(entity).State = EntityState.Modified;
+            _db.Set<TEntity>().AddOrUpdate(entity);
             _db.SaveChanges();
         }
     }

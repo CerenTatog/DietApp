@@ -210,6 +210,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\Resources\breakfast.png" />
+    <None Include="Resources\boy %281%29.png" />
     <None Include="Resources\logout.png" />
     <None Include="Resources\profile.png" />
     <None Include="Resources\weight-loss.png" />

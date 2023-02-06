@@ -37,11 +37,11 @@
             this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
             this.chkPassword = new MaterialSkin.Controls.MaterialCheckbox();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.materialCard1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // txtKullaniciAdi
@@ -179,7 +179,7 @@
             this.materialCard1.Controls.Add(this.btnUyelikOlustur);
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard1.Location = new System.Drawing.Point(98, 239);
+            this.materialCard1.Location = new System.Drawing.Point(53, 185);
             this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
@@ -187,34 +187,34 @@
             this.materialCard1.Size = new System.Drawing.Size(343, 485);
             this.materialCard1.TabIndex = 7;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Diet.UI.Properties.Resources.solution__4_;
-            this.pictureBox2.Location = new System.Drawing.Point(121, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(222, 218);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.pictureBox1.Image = global::Diet.UI.Properties.Resources.logomuzkare;
-            this.pictureBox1.Location = new System.Drawing.Point(176, 89);
+            this.pictureBox1.Location = new System.Drawing.Point(165, 85);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(189, 123);
+            this.pictureBox1.Size = new System.Drawing.Size(108, 74);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Diet.UI.Properties.Resources.boy__1_;
+            this.pictureBox2.Location = new System.Drawing.Point(97, 48);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(163, 159);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(554, 779);
+            this.ClientSize = new System.Drawing.Size(456, 732);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.materialCard1);
             this.Name = "Form1";
@@ -223,8 +223,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }

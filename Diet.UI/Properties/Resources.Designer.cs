@@ -113,6 +113,16 @@ namespace Diet.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap boy__1_ {
+            get {
+                object obj = ResourceManager.GetObject("boy (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap breakfast {
             get {
                 object obj = ResourceManager.GetObject("breakfast", resourceCulture);

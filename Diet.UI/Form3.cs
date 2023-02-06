@@ -8,6 +8,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls.Primitives;
 using System.Windows.Forms;
 using System.Windows.Media;
 using Diet.BLL;
@@ -57,6 +58,7 @@ namespace Diet.UI
 
         private void Form3_Load(object sender, EventArgs e)
         {
+            //ımageList1.Images.Add
             //Karbonhidrat,Yağ, Protein gösterim alanı
             mlKarbonhidratg.Text = foodManager.DailyTakenCarbonhyrate(_currentUser.ID).ToString();
             mlProteing.Text = foodManager.DailyTakenProtein(_currentUser.ID).ToString();
@@ -64,13 +66,13 @@ namespace Diet.UI
 
             //Öğünlere göre alınan kalori miktarları
             var calculateCalorieIntake = foodManager.CalculateCalorieIntake(_currentUser.ID);
-            mlKahvaltıKalori.Text = (calculateCalorieIntake.FirstOrDefault(x => x.MealType == MealType.Breakfast)?.TotalCalori).ToString();
+            mlKahvaltıKalori.Text = (Math.Round((calculateCalorieIntake.FirstOrDefault(x => x.MealType == MealType.Breakfast).TotalCalori),2)).ToString();
 
-            mlOgleYemegiCalori.Text = calculateCalorieIntake.FirstOrDefault(x => x.MealType == MealType.Lunch)?.TotalCalori.ToString();
+            mlOgleYemegiCalori.Text = (Math.Round((calculateCalorieIntake.FirstOrDefault(x => x.MealType == MealType.Lunch).TotalCalori), 2)).ToString();
 
-            mlAksamYemegiKalori.Text = calculateCalorieIntake.FirstOrDefault(x => x.MealType == MealType.Dinner)?.TotalCalori.ToString();
+            mlAksamYemegiKalori.Text = (Math.Round((calculateCalorieIntake.FirstOrDefault(x => x.MealType == MealType.Dinner).TotalCalori), 2)).ToString();
 
-            mlAtistirmalikKalori.Text = calculateCalorieIntake.FirstOrDefault(x => x.MealType == MealType.Snack)?.TotalCalori.ToString();
+            mlAtistirmalikKalori.Text = (Math.Round((calculateCalorieIntake.FirstOrDefault(x => x.MealType == MealType.Snack).TotalCalori), 2)).ToString();
             //Gender
 
             var userDetail = db.UserDetailRepository.GetAll().FirstOrDefault(x => x.UserID == _currentUser.ID);
@@ -132,7 +134,20 @@ namespace Diet.UI
             lblMevcutKilo.Text = mevcutKilo.ToString();
             //?
             double hedefkilo = db.UserDetailRepository.GetAll().Where(x=>x.UserID == _currentUser.ID).Select(x => x.TargetWeight).FirstOrDefault();
-            lblHedef.Text = hedefkilo > mevcutKilo ? "Kilo Almak" : hedefkilo < mevcutKilo ? "Kilo vermek" : "Kilo Kontrolü";
+            if (hedefkilo > mevcutKilo)
+            {
+                lblHedef.Text = "Kilo Almak";
+            }
+            else if (hedefkilo < mevcutKilo)
+            {
+                lblHedef.Text = "Kilo Vermek";
+            }
+            else
+            {
+                lblHedef.Text = "Kilo Kontrolü";
+            }
+            
+
 
 
             //mlHedefKilo.Text = (mevcutKilo - (db.UserDetailRepository.GetById(_currentUser.ID).TargetWeight)).ToString();
@@ -246,7 +261,8 @@ namespace Diet.UI
                 DataLabels = true,
                 Values = new ChartValues<double>(),
                 LabelPoint = point => point.Y.ToString(),
-                Title = "Su(ml)"
+                Title = "Su(ml)",
+                Fill = System.Windows.Media.Brushes.BlueViolet
             };
             Axis axisX2 = new Axis()
             {
@@ -314,7 +330,8 @@ namespace Diet.UI
                 DataLabels = true,
                 Values = new ChartValues<double>(),
                 LabelPoint = point => point.Y.ToString(),
-                Title = "Adım"
+                Title = "Adım",
+                Fill = System.Windows.Media.Brushes.DarkOliveGreen
             };
             Axis axisX4 = new Axis()
             {
@@ -349,6 +366,7 @@ namespace Diet.UI
                 Values = new ChartValues<double>(),
                 LabelPoint = point => point.Y.ToString(),
                 Title = "Kg",
+                Fill = System.Windows.Media.Brushes.DarkSalmon,
                 PointGeometry = DefaultGeometries.Square,
                 PointGeometrySize = 15,
                 LineSmoothness = 0,
@@ -376,11 +394,7 @@ namespace Diet.UI
             }
 
 
-            //dataGridView11.DataSource = reportManager.MostEatenFood(_currentUser.ID);
-
-
-
-            //profil sayfası gelen kullanıcının cinsiyetine göre resim değişecek.
+            
 
             //Pie Chart
             //Sabah
@@ -412,10 +426,10 @@ namespace Diet.UI
                 pieChart2.Series = series2;
             }
             //pieChart2.LegendLocation = LegendLocation.Right;
-            //Akşam
+            //Atıştırmalık
             Func<ChartPoint, string> fu3 = x => string.Format("{0},{1:P}", x.Y, x.Participation);
             SeriesCollection series3 = new SeriesCollection();
-            foreach (var item in reportManager.WhichFoodsEatenByMealType(_currentUser.ID, MealType.Dinner))
+            foreach (var item in reportManager.WhichFoodsEatenByMealType(_currentUser.ID, MealType.Snack))
             {
                 PieSeries pie3 = new PieSeries();
                 pie3.Title = item.FoodName;
@@ -427,11 +441,11 @@ namespace Diet.UI
             }
             //pieChart3.LegendLocation = LegendLocation.Right;
 
-            //Atıştırmalık
+            //Akşam yemeği
             Func<ChartPoint, string> fu4 = x => string.Format("{0},{1:P}", x.Y, x.Participation);
             
              SeriesCollection series4 = new SeriesCollection();
-            foreach (var item in reportManager.WhichFoodsEatenByMealType(_currentUser.ID, MealType.Snack))
+            foreach (var item in reportManager.WhichFoodsEatenByMealType(_currentUser.ID, MealType.Dinner))
             {
                 PieSeries pie4 = new PieSeries();
                 pie4.Title = item.FoodName;
@@ -478,10 +492,12 @@ namespace Diet.UI
             cmbCinsiyet.DataSource = genderTypeList;
             cmbCinsiyet.DisplayMember = "Label";
             cmbCinsiyet.ValueMember = "Value";
-
             LoadBodyAnalyz();
 
-
+            if (materialTabControl1.SelectedTab == tabPage10)
+            {
+                this.Close();
+            }
         }
 
         private void mfabKahvaltıEkle_Click(object sender, EventArgs e)
@@ -653,6 +669,16 @@ namespace Diet.UI
                         };
             dataGridView1.DataSource = query.ToList();
 
+
+        }
+
+        private void pictureBox31_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void vScrollBar1_Scroll(object sender, System.Windows.Forms.ScrollEventArgs e)
+        {
 
         }
     }

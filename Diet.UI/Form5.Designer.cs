@@ -41,19 +41,17 @@
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.materialComboBox2 = new MaterialSkin.Controls.MaterialComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
-            this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
-            this.lblKCAL = new MaterialSkin.Controls.MaterialLabel();
             this.materialListBox1 = new MaterialSkin.Controls.MaterialListBox();
             this.materialListBox2 = new MaterialSkin.Controls.MaterialListBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.dataGridViewPopularFoodsTop10 = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblKCAL = new MaterialSkin.Controls.MaterialLabel();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.materialCard1.SuspendLayout();
-            this.materialCard2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPopularFoodsTop10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // materialTextBox22
@@ -244,20 +242,10 @@
             this.materialComboBox2.SelectedIndexChanged += new System.EventHandler(this.materialComboBox2_SelectedIndexChanged);
             this.materialComboBox2.SelectionChangeCommitted += new System.EventHandler(this.materialComboBox2_SelectionChangeCommitted);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(34, 44);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(179, 178);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
-            // 
             // materialCard1
             // 
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard1.Controls.Add(this.materialCard2);
+            this.materialCard1.Controls.Add(this.lblKCAL);
             this.materialCard1.Controls.Add(this.materialLabel3);
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -268,34 +256,6 @@
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard1.Size = new System.Drawing.Size(452, 212);
             this.materialCard1.TabIndex = 15;
-            // 
-            // materialCard2
-            // 
-            this.materialCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard2.Controls.Add(this.lblKCAL);
-            this.materialCard2.Depth = 0;
-            this.materialCard2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard2.Location = new System.Drawing.Point(237, 143);
-            this.materialCard2.Margin = new System.Windows.Forms.Padding(14);
-            this.materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard2.Name = "materialCard2";
-            this.materialCard2.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard2.Size = new System.Drawing.Size(194, 60);
-            this.materialCard2.TabIndex = 7;
-            // 
-            // lblKCAL
-            // 
-            this.lblKCAL.AutoSize = true;
-            this.lblKCAL.Depth = 0;
-            this.lblKCAL.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.lblKCAL.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
-            this.lblKCAL.Location = new System.Drawing.Point(93, 14);
-            this.lblKCAL.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblKCAL.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblKCAL.Name = "lblKCAL";
-            this.lblKCAL.Size = new System.Drawing.Size(48, 29);
-            this.lblKCAL.TabIndex = 0;
-            this.lblKCAL.Text = "kCal";
             // 
             // materialListBox1
             // 
@@ -317,12 +277,12 @@
             this.materialListBox2.BorderColor = System.Drawing.Color.LightGray;
             this.materialListBox2.Depth = 0;
             this.materialListBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialListBox2.Location = new System.Drawing.Point(800, 137);
+            this.materialListBox2.Location = new System.Drawing.Point(792, 257);
             this.materialListBox2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialListBox2.Name = "materialListBox2";
             this.materialListBox2.SelectedIndex = -1;
             this.materialListBox2.SelectedItem = null;
-            this.materialListBox2.Size = new System.Drawing.Size(314, 511);
+            this.materialListBox2.Size = new System.Drawing.Size(314, 150);
             this.materialListBox2.TabIndex = 14;
             // 
             // materialLabel2
@@ -331,7 +291,7 @@
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel2.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
-            this.materialLabel2.Location = new System.Drawing.Point(795, 94);
+            this.materialLabel2.Location = new System.Drawing.Point(787, 214);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(175, 29);
@@ -340,11 +300,37 @@
             // 
             // dataGridViewPopularFoodsTop10
             // 
+            this.dataGridViewPopularFoodsTop10.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewPopularFoodsTop10.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewPopularFoodsTop10.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPopularFoodsTop10.Location = new System.Drawing.Point(800, 137);
+            this.dataGridViewPopularFoodsTop10.Location = new System.Drawing.Point(792, 257);
             this.dataGridViewPopularFoodsTop10.Name = "dataGridViewPopularFoodsTop10";
             this.dataGridViewPopularFoodsTop10.Size = new System.Drawing.Size(314, 150);
             this.dataGridViewPopularFoodsTop10.TabIndex = 16;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(34, 44);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(179, 178);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lblKCAL
+            // 
+            this.lblKCAL.AutoSize = true;
+            this.lblKCAL.Depth = 0;
+            this.lblKCAL.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lblKCAL.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
+            this.lblKCAL.Location = new System.Drawing.Point(369, 163);
+            this.lblKCAL.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblKCAL.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblKCAL.Name = "lblKCAL";
+            this.lblKCAL.Size = new System.Drawing.Size(48, 29);
+            this.lblKCAL.TabIndex = 0;
+            this.lblKCAL.Text = "kCal";
             // 
             // Form5
             // 
@@ -364,12 +350,10 @@
             this.Load += new System.EventHandler(this.Form5_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
-            this.materialCard2.ResumeLayout(false);
-            this.materialCard2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPopularFoodsTop10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -392,8 +376,7 @@
         private MaterialSkin.Controls.MaterialListBox materialListBox2;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialCard materialCard1;
-        private MaterialSkin.Controls.MaterialCard materialCard2;
-        private MaterialSkin.Controls.MaterialLabel lblKCAL;
         private System.Windows.Forms.DataGridView dataGridViewPopularFoodsTop10;
+        private MaterialSkin.Controls.MaterialLabel lblKCAL;
     }
 }

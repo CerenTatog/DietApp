@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.lblkarsilamaMesaji = new MaterialSkin.Controls.MaterialLabel();
@@ -243,6 +243,7 @@
             this.pictureBox27 = new System.Windows.Forms.PictureBox();
             this.pictureBox20 = new System.Windows.Forms.PictureBox();
             this.pictureBox30 = new System.Windows.Forms.PictureBox();
+            this.pictureBox31 = new System.Windows.Forms.PictureBox();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.materialCard17.SuspendLayout();
@@ -288,6 +289,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmbYas)).BeginInit();
             this.tabPage7.SuspendLayout();
             this.materialCard39.SuspendLayout();
+            this.tabPage10.SuspendLayout();
             this.materialCard41.SuspendLayout();
             this.materialCard3.SuspendLayout();
             this.materialCard42.SuspendLayout();
@@ -326,6 +328,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox30)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox31)).BeginInit();
             this.SuspendLayout();
             // 
             // materialTabControl1
@@ -1447,8 +1450,9 @@
             // 
             // mListBoxMostEaten
             // 
+            this.mListBoxMostEaten.AllowDrop = true;
             this.mListBoxMostEaten.BackColor = System.Drawing.Color.White;
-            this.mListBoxMostEaten.BorderColor = System.Drawing.Color.LightGray;
+            this.mListBoxMostEaten.BorderColor = System.Drawing.Color.RosyBrown;
             this.mListBoxMostEaten.Depth = 0;
             this.mListBoxMostEaten.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.mListBoxMostEaten.Location = new System.Drawing.Point(843, 283);
@@ -2229,14 +2233,14 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.Location = new System.Drawing.Point(79, 430);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
@@ -2595,6 +2599,7 @@
             // 
             // tabPage10
             // 
+            this.tabPage10.Controls.Add(this.pictureBox31);
             this.tabPage10.ImageKey = "(none)";
             this.tabPage10.Location = new System.Drawing.Point(4, 22);
             this.tabPage10.Name = "tabPage10";
@@ -3230,6 +3235,17 @@
             this.pictureBox30.TabIndex = 9;
             this.pictureBox30.TabStop = false;
             // 
+            // pictureBox31
+            // 
+            this.pictureBox31.Image = global::Diet.UI.Properties.Resources.logout;
+            this.pictureBox31.Location = new System.Drawing.Point(1286, 506);
+            this.pictureBox31.Name = "pictureBox31";
+            this.pictureBox31.Size = new System.Drawing.Size(62, 59);
+            this.pictureBox31.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox31.TabIndex = 0;
+            this.pictureBox31.TabStop = false;
+            this.pictureBox31.Click += new System.EventHandler(this.pictureBox31_Click);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3315,6 +3331,7 @@
             this.tabPage7.PerformLayout();
             this.materialCard39.ResumeLayout(false);
             this.materialCard39.PerformLayout();
+            this.tabPage10.ResumeLayout(false);
             this.materialCard41.ResumeLayout(false);
             this.materialCard3.ResumeLayout(false);
             this.materialCard3.PerformLayout();
@@ -3358,6 +3375,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox30)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox31)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3576,5 +3594,6 @@
         private System.Windows.Forms.PictureBox pictureBox29;
         private MaterialSkin.Controls.MaterialLabel materialLabel15;
         private System.Windows.Forms.PictureBox pictureBox30;
+        private System.Windows.Forms.PictureBox pictureBox31;
     }
 }

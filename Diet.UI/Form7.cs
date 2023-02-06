@@ -60,7 +60,7 @@ namespace Diet.UI
                 NewActivity.CalculatedCalorie = db.ActivityRepository.GetById(NewActivity.ActivityID).LostCalorie * NewActivity.Duration; 
                 db.UserActivityRepository.Create(NewActivity);
                 lblKCAL.Text = NewActivity.CalculatedCalorie.ToString() + " kCal";
-                LoadCmbAndDgv();
+                LoadCmbAndDgv();                
             }
             else
             {
@@ -93,6 +93,9 @@ namespace Diet.UI
             dataGridView1.DataSource = query;
         }
 
-        
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

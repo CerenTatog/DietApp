@@ -93,6 +93,6 @@ namespace Diet.UI
             dataGridView1.DataSource = query;
         }
 
-        
+     
     }
 }

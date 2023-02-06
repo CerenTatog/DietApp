@@ -67,7 +67,7 @@ namespace Diet.UI
             materialComboBox2.DataSource = db.FoodRepository.GetAll().Select(x => new { x.ID, x.FoodName }).ToList();
             materialComboBox2.DisplayMember = "FoodName";
             materialComboBox2.ValueMember = "ID";
-
+            lblKCAL.Text = _foodManager.CalculateCalorieIntake(_currentUser.ID).Where(x => x.MealType == _mealType).FirstOrDefault()?.TotalCalori.ToString();
             materialTextBox22.Text = "";
             materialComboBox2.SelectedIndex = -1;
 
@@ -99,7 +99,6 @@ namespace Diet.UI
                 db.MealRepository.Create(meal);
 
 
-                //var portionQuantity = db.FoodRepository.GetAll().Where(x => x.ID == (int)materialComboBox2.SelectedValue).Select(x => x.PortionQuantity).FirstOrDefault();
 
                 MealFood yeniOgun = new MealFood();
                 yeniOgun.FoodID = (int)materialComboBox2.SelectedValue;

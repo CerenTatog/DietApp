@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblKCAL = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
@@ -39,17 +39,17 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            this.materialButtonSil = new MaterialSkin.Controls.MaterialButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.materialButtonSil = new MaterialSkin.Controls.MaterialButton();
-            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
             ((System.ComponentModel.ISupportInitialize)(this.nmrDuration)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.materialCard1.SuspendLayout();
             this.materialCard2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -124,7 +124,7 @@
             this.cmbActivities.IntegralHeight = false;
             this.cmbActivities.ItemHeight = 43;
             this.cmbActivities.Location = new System.Drawing.Point(143, 28);
-            this.cmbActivities.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbActivities.Margin = new System.Windows.Forms.Padding(2);
             this.cmbActivities.MaxDropDownItems = 4;
             this.cmbActivities.MouseState = MaterialSkin.MouseState.OUT;
             this.cmbActivities.Name = "cmbActivities";
@@ -136,7 +136,7 @@
             // 
             this.nmrDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.nmrDuration.Location = new System.Drawing.Point(143, 98);
-            this.nmrDuration.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nmrDuration.Margin = new System.Windows.Forms.Padding(2);
             this.nmrDuration.Maximum = new decimal(new int[] {
             120,
             0,
@@ -176,16 +176,16 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.Location = new System.Drawing.Point(39, 326);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -221,6 +221,57 @@
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             // 
+            // materialButton1
+            // 
+            this.materialButton1.AutoSize = false;
+            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton1.Depth = 0;
+            this.materialButton1.HighEmphasis = true;
+            this.materialButton1.Icon = null;
+            this.materialButton1.Location = new System.Drawing.Point(606, 554);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton1.Name = "materialButton1";
+            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton1.Size = new System.Drawing.Size(107, 36);
+            this.materialButton1.TabIndex = 18;
+            this.materialButton1.Text = "Tamamla";
+            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton1.UseAccentColor = false;
+            this.materialButton1.UseVisualStyleBackColor = true;
+            
+            // 
+            // materialButtonSil
+            // 
+            this.materialButtonSil.AutoSize = false;
+            this.materialButtonSil.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButtonSil.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButtonSil.Depth = 0;
+            this.materialButtonSil.HighEmphasis = true;
+            this.materialButtonSil.Icon = null;
+            this.materialButtonSil.Location = new System.Drawing.Point(474, 554);
+            this.materialButtonSil.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.materialButtonSil.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButtonSil.Name = "materialButtonSil";
+            this.materialButtonSil.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButtonSil.Size = new System.Drawing.Size(122, 36);
+            this.materialButtonSil.TabIndex = 17;
+            this.materialButtonSil.Text = "Sil";
+            this.materialButtonSil.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButtonSil.UseAccentColor = false;
+            this.materialButtonSil.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Diet.UI.Properties.Resources.lifestyle;
+            this.pictureBox1.Location = new System.Drawing.Point(56, 69);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(177, 177);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            // 
             // materialLabel5
             // 
             this.materialLabel5.AutoSize = true;
@@ -253,56 +304,6 @@
             this.materialCard1.Size = new System.Drawing.Size(424, 207);
             this.materialCard1.TabIndex = 16;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Diet.UI.Properties.Resources.lifestyle;
-            this.pictureBox1.Location = new System.Drawing.Point(56, 69);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(177, 177);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
-            // 
-            // materialButtonSil
-            // 
-            this.materialButtonSil.AutoSize = false;
-            this.materialButtonSil.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButtonSil.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButtonSil.Depth = 0;
-            this.materialButtonSil.HighEmphasis = true;
-            this.materialButtonSil.Icon = null;
-            this.materialButtonSil.Location = new System.Drawing.Point(474, 554);
-            this.materialButtonSil.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.materialButtonSil.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButtonSil.Name = "materialButtonSil";
-            this.materialButtonSil.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButtonSil.Size = new System.Drawing.Size(122, 36);
-            this.materialButtonSil.TabIndex = 17;
-            this.materialButtonSil.Text = "Sil";
-            this.materialButtonSil.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButtonSil.UseAccentColor = false;
-            this.materialButtonSil.UseVisualStyleBackColor = true;
-            // 
-            // materialButton1
-            // 
-            this.materialButton1.AutoSize = false;
-            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton1.Depth = 0;
-            this.materialButton1.HighEmphasis = true;
-            this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(606, 554);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton1.Name = "materialButton1";
-            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton1.Size = new System.Drawing.Size(107, 36);
-            this.materialButton1.TabIndex = 18;
-            this.materialButton1.Text = "Tamamla";
-            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton1.UseAccentColor = false;
-            this.materialButton1.UseVisualStyleBackColor = true;
-            // 
             // materialCard2
             // 
             this.materialCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -330,9 +331,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.materialCard2.ResumeLayout(false);
             this.materialCard2.PerformLayout();
             this.ResumeLayout(false);

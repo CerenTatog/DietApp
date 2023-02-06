@@ -86,7 +86,7 @@ namespace Diet.UI
             }
             materialListBox1.Refresh();
         }
-        List<MealFood> ogunListesi;
+
         private void materialButtonEkle_Click(object sender, EventArgs e)
         {
             if (materialComboBox2.SelectedValue != null && materialTextBox22 != null)
@@ -97,6 +97,9 @@ namespace Diet.UI
                 meal.MealType = _mealType;
                 meal.UserID = _currentUser.ID;
                 db.MealRepository.Create(meal);
+
+
+                //var portionQuantity = db.FoodRepository.GetAll().Where(x => x.ID == (int)materialComboBox2.SelectedValue).Select(x => x.PortionQuantity).FirstOrDefault();
 
                 MealFood yeniOgun = new MealFood();
                 yeniOgun.FoodID = (int)materialComboBox2.SelectedValue;

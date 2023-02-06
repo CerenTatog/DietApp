@@ -61,29 +61,23 @@ namespace Diet.UI
 
         }
 
-        private void BesinEkle_Click(object sender, EventArgs e)
-        {
-            Form8 frm8 = new Form8(_currentUser);
-            frm8.ShowDialog();
-
-
-        }
-        //userıd
-        private void mlAktiviteDuzenle_Click(object sender, EventArgs e)
-        {
-            Form9 frm9 = new Form9(_currentUser);
-            frm9.ShowDialog();
-
-        }
-
-        private void materialCard10_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void materialLabel4_Click(object sender, EventArgs e)
         {
+            Form11 frm11 = new Form11(_currentUser);
+            frm11.Show();
+        }
 
+        private void BesinEkle_Click_1(object sender, EventArgs e)
+        {
+            Form8 frm8 = new Form8(_currentUser);
+            frm8.ShowDialog();
+        }
+
+        private void mlAktiviteDuzenle_Click_1(object sender, EventArgs e)
+        {
+            Form9 frm9 = new Form9(_currentUser);
+            frm9.ShowDialog();
         }
     }
 }

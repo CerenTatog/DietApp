@@ -57,7 +57,7 @@ namespace Diet.UI
             newuserAct.StepCount = Convert.ToInt32(nmrStepCount.Value);
             db.UserActivityRepository.Create(newuserAct);
             lblKCAL.Text = newuserAct.CalculatedCalorie.ToString() + " kcal";
-            this.Close();
+            
 
             LoadStep();
 
@@ -71,6 +71,25 @@ namespace Diet.UI
         void LoadStep()
         {
             dataGridView1.DataSource = activityManager.GetDailyStep(_currentUser.ID);
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            int Id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+            Activity DeletedActivity = new Activity();
+            DeletedActivity = db.ActivityRepository.GetById(Id);
+            DialogResult sor = new DialogResult();
+            sor = System.Windows.Forms.MessageBox.Show("Atılan adım silinecek. Silmek istediğinizden eminmisiniz?", "Kalıcı Olarak Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (sor == DialogResult.Yes)
+            {
+                db.ActivityRepository.Delete(Id);
+                LoadStep();
+            }
+        }
+
+        private void btnEnd_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

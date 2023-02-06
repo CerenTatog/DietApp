@@ -85,6 +85,7 @@ namespace Diet.UI
                          join u in db.UserRepository.GetAll() on userActivity.UserID equals u.ID
                          select new
                          {
+                             KullanıcıID=u.ID,
                              UserName = u.UserName + " " + u.UserSurname,
                              Activite = userActivity.Activity.ActivityName,
                              ActiviteZamanı = userActivity.ActivityTime,
@@ -96,6 +97,20 @@ namespace Diet.UI
         private void materialButton1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void materialButtonSil_Click(object sender, EventArgs e)
+        {
+            int Id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+            Activity DeletedActivity = new Activity();
+            DeletedActivity = db.ActivityRepository.GetById(Id);
+            DialogResult sor = new DialogResult();
+            sor = System.Windows.Forms.MessageBox.Show("Aktivite silinecek. Silmek istediğinizden eminmisiniz?", "Kalıcı Olarak Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (sor == DialogResult.Yes)
+            {
+                db.ActivityRepository.Delete(Id);
+                LoadCmbAndDgv();
+            }
         }
     }
 }

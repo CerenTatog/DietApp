@@ -69,5 +69,19 @@ namespace Diet.BLL
 
             return query.Sum(x => x.LostCalorie * x.Duration);
         }
+
+        public List<DailyStep> GetDailyStep(int UserId)
+        {
+            var dateToday = DateTime.Today;
+            var dateEnd = DateTime.Today.AddDays(1).AddSeconds(-1);
+            var query = db.UserActivityRepository.GetAll().Where(x => x.ActivityTime >= dateToday && x.ActivityTime < dateEnd && x.UserID == UserId && x.StepCount > 0).Select(x => new DailyStep()
+            {
+                Step = x.StepCount.Value,
+                Date = x.ActivityTime,
+                Calorie = x.CalculatedCalorie
+            }).ToList();
+            return query;
+
+        }
     }
 }

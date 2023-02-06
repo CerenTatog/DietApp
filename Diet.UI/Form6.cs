@@ -70,18 +70,7 @@ namespace Diet.UI
         }
         void LoadStep()
         {
-
-
-            var query = (from u in db.UserActivityRepository.GetAll()
-                         select new CustomerStepDetail
-                         {
-                             StepCount = (int)u.StepCount,
-                             CalculatedCalorie = u.CalculatedCalorie,
-                             Duration = u.Duration
-
-                         }).ToList();
-
-            dataGridView1.DataSource = query;
+            dataGridView1.DataSource = activityManager.GetDailyStep(_currentUser.ID);
         }
     }
 }

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -63,13 +64,43 @@ namespace Diet.UI
 
             //Öğünlere göre alınan kalori miktarları
             var calculateCalorieIntake = foodManager.CalculateCalorieIntake(_currentUser.ID);
-            mlKahvaltıKalori.Text = calculateCalorieIntake.FirstOrDefault(x => x.MealType == MealType.Breakfast)?.TotalCalori.ToString();
+            mlKahvaltıKalori.Text = (calculateCalorieIntake.FirstOrDefault(x => x.MealType == MealType.Breakfast)?.TotalCalori).ToString();
 
             mlOgleYemegiCalori.Text = calculateCalorieIntake.FirstOrDefault(x => x.MealType == MealType.Lunch)?.TotalCalori.ToString();
 
             mlAksamYemegiKalori.Text = calculateCalorieIntake.FirstOrDefault(x => x.MealType == MealType.Dinner)?.TotalCalori.ToString();
 
             mlAtistirmalikKalori.Text = calculateCalorieIntake.FirstOrDefault(x => x.MealType == MealType.Snack)?.TotalCalori.ToString();
+            //Gender
+
+            var userDetail = db.UserDetailRepository.GetAll().FirstOrDefault(x => x.UserID == _currentUser.ID);
+            if (userDetail != null && userDetail.Gender == Gender.Men)
+            {
+                pictureBox2.Image = Diet.UI.Properties.Resources.boy;
+            }
+            else if(userDetail != null && userDetail.Gender == Gender.Women)
+            {
+                pictureBox2.Image = Diet.UI.Properties.Resources.woman__3_;
+            }
+
+            //günlük sayfası => karbonhidrat/protein/yağ güncellenecek.
+            mlSabahKarb.Text = reportManager.CalculateDailyCarbByMealType(_currentUser.ID, MealType.Breakfast).ToString();
+            mlSabahProtein.Text = reportManager.CalculateDailyProteinByMealType(_currentUser.ID, MealType.Breakfast).ToString();
+            mlSabahYag.Text = reportManager.CalculateDailyFatByMealType(_currentUser.ID, MealType.Breakfast).ToString();
+
+            mlOgleKarb.Text = reportManager.CalculateDailyCarbByMealType(_currentUser.ID, MealType.Lunch).ToString();
+            mlOgleProtein.Text = reportManager.CalculateDailyProteinByMealType(_currentUser.ID, MealType.Lunch).ToString();
+            mlOgleYag.Text = reportManager.CalculateDailyFatByMealType(_currentUser.ID, MealType.Lunch).ToString();
+
+            mlAksamKarb.Text = reportManager.CalculateDailyCarbByMealType(_currentUser.ID, MealType.Dinner).ToString();
+            mlAksamProtein.Text = reportManager.CalculateDailyProteinByMealType(_currentUser.ID, MealType.Dinner).ToString();
+            mlAksamYag.Text = reportManager.CalculateDailyFatByMealType(_currentUser.ID, MealType.Dinner).ToString();
+
+            mlAtistirmalıkKarb.Text = reportManager.CalculateDailyCarbByMealType(_currentUser.ID, MealType.Snack).ToString();
+            mlAtistirmalıkProtein.Text = reportManager.CalculateDailyProteinByMealType(_currentUser.ID, MealType.Snack).ToString();
+            mlAtistirmalıkYag.Text = reportManager.CalculateDailyFatByMealType(_currentUser.ID, MealType.Snack).ToString();
+
+
 
             //Toplam alınan kalori miktarı(öğün toplamı)
             double toplamAlınanKalori = calculateCalorieIntake.Sum(x => x.TotalCalori);
@@ -99,22 +130,23 @@ namespace Diet.UI
             //mmlKilo.Text = mlKalanKalorid.Text;
             double mevcutKilo = db.UserDetailRepository.GetAll().Select(x => x.Weight).FirstOrDefault();
             lblMevcutKilo.Text = mevcutKilo.ToString();
-
-            double hedefkilo = db.UserDetailRepository.GetAll().Select(x => x.TargetWeight).FirstOrDefault();
-            mlHedefKilo.Text = hedefkilo.ToString();
-
-
-            // mlHedefKilo.Text = (mevcutKilo - (db.UserDetailRepository.GetById(_currentUser.ID).TargetWeight)).ToString();
+            //?
+            double hedefkilo = db.UserDetailRepository.GetAll().Where(x=>x.UserID == _currentUser.ID).Select(x => x.TargetWeight).FirstOrDefault();
+            lblHedef.Text = hedefkilo > mevcutKilo ? "Kilo Almak" : hedefkilo < mevcutKilo ? "Kilo vermek" : "Kilo Kontrolü";
 
 
-            //Water
+            //mlHedefKilo.Text = (mevcutKilo - (db.UserDetailRepository.GetById(_currentUser.ID).TargetWeight)).ToString();
+            lblMevcutKilo.Text = db.UserDetailRepository.GetAll().Where(x => x.UserID== _currentUser.ID).Select(x => x.Weight).FirstOrDefault().ToString();
+            mlAdimProfild.Text = lblAdımSayisi.Text;
+            
             lblWaterTotal.Text = $"{userManager.GetDailyWater(_currentUser.ID)} ml";
-            //pictureBox2.Image = db.UserDetailRepository.GetAll().Where(x => x.UserID == _currentUser.ID &&x.Gender == Gender.Men).First ? Diet.UI.Properties.Resources.boy : Diet.UI.Properties.Resources.woman__3_;
+            
 
             solidGauge1.From = 0;
             solidGauge1.To = foodManager.CalculateDailyCalorie(_currentUser.ID);
-            solidGauge1.Value = dailyToplam;
+            solidGauge1.Value = Math.Round(dailyToplam,2);
             solidGauge1.Base.LabelsVisibility = System.Windows.Visibility.Hidden;
+            solidGauge1.ForeColor = System.Drawing.Color.White;
             solidGauge1.Base.GaugeActiveFill = new System.Windows.Media.LinearGradientBrush
             {
                 GradientStops = new System.Windows.Media.GradientStopCollection
@@ -128,16 +160,9 @@ namespace Diet.UI
                 }
 
             };
-            lblkarsilamaMesaji.Text = $"Hoşgeldin {_currentUser.UserName}";
+            lblkarsilamaMesaji.Text = $"Hoşgeldin, {CultureInfo.CurrentCulture.TextInfo.ToTitleCase(_currentUser.UserName)}";
 
-            
 
-            //Kullanıcı raporları
-
-            //dataGridView2.DataSource = reportManager.WeeklyMacroFood(_currentUser.ID);
-            //dataGridView3.DataSource = reportManager.WeeklyDrinkingWater(_currentUser.ID);
-            //dataGridView4.DataSource = reportManager.CalculateActivity(_currentUser.ID);
-            //dataGridView6.DataSource = reportManager.CalculateWeight(_currentUser.ID);
 
             //Makro Besin chart;
             cartesianChart2.Series.Clear();
@@ -158,7 +183,7 @@ namespace Diet.UI
             cartesianChart2.Series.Add(new ColumnSeries
             {
                 Title = "Karbonhidrat",
-                Values = new ChartValues<double>(carb) 
+                Values = new ChartValues<double>(carb)
             });
 
             cartesianChart2.Series.Add(new ColumnSeries
@@ -170,7 +195,7 @@ namespace Diet.UI
             cartesianChart2.AxisX.Add(new Axis
             {
                 Title = "",
-                Labels = weeklyMacroFood.Select(x=> x.Date.ToString("dd/MM/yyyy")).ToList(),
+                Labels = weeklyMacroFood.Select(x => x.Date.ToString("dd/MM/yyyy")).ToList(),
             });
 
             //Günlük Alınan Kalori Chart
@@ -184,7 +209,9 @@ namespace Diet.UI
                 DataLabels = true,
                 Values = new ChartValues<double>(),
                 LabelPoint = point => point.Y.ToString(),
-                Title = "Kalori"
+                Title = "Kalori",
+                Fill = System.Windows.Media.Brushes.DarkGoldenrod
+                
             };
             Axis axisX = new Axis()
             {
@@ -206,8 +233,6 @@ namespace Diet.UI
                 series5.Values.Add(item.Calori);
                 axisX.Labels.Add(item.Date.ToString("dd/MM/yyyy"));
             }
-
-            cartesianChart1.LegendLocation = LegendLocation.Right;
 
             //Günlük Su Tüketimi 
 
@@ -327,7 +352,7 @@ namespace Diet.UI
                 PointGeometry = DefaultGeometries.Square,
                 PointGeometrySize = 15,
                 LineSmoothness = 0,
-                
+
             };
             Axis axisX5 = new Axis()
             {
@@ -356,10 +381,9 @@ namespace Diet.UI
 
 
             //profil sayfası gelen kullanıcının cinsiyetine göre resim değişecek.
-            //günlük sayfası => karbonhidrat/protein/yağ güncellenecek.
-
 
             //Pie Chart
+            //Sabah
             Func<ChartPoint, string> fu = x => string.Format("{0},{1:P}", x.Y, x.Participation);
             SeriesCollection series = new SeriesCollection();
             foreach (var item in reportManager.WhichFoodsEatenByMealType(_currentUser.ID, MealType.Breakfast))
@@ -373,8 +397,8 @@ namespace Diet.UI
                 series.Add(pie);
                 pieChart1.Series = series;
             }
-            pieChart1.LegendLocation = LegendLocation.Right;
-
+            //pieChart1.LegendLocation = LegendLocation.Right;
+            //Oglen
             Func<ChartPoint, string> fu2 = x => string.Format("{0},{1:P}", x.Y, x.Participation);
             SeriesCollection series2 = new SeriesCollection();
             foreach (var item in reportManager.WhichFoodsEatenByMealType(_currentUser.ID, MealType.Lunch))
@@ -387,8 +411,8 @@ namespace Diet.UI
                 series2.Add(pie2);
                 pieChart2.Series = series2;
             }
-            pieChart2.LegendLocation = LegendLocation.Right;
-
+            //pieChart2.LegendLocation = LegendLocation.Right;
+            //Akşam
             Func<ChartPoint, string> fu3 = x => string.Format("{0},{1:P}", x.Y, x.Participation);
             SeriesCollection series3 = new SeriesCollection();
             foreach (var item in reportManager.WhichFoodsEatenByMealType(_currentUser.ID, MealType.Dinner))
@@ -401,10 +425,12 @@ namespace Diet.UI
                 series3.Add(pie3);
                 pieChart3.Series = series3;
             }
-            pieChart3.LegendLocation = LegendLocation.Right;
+            //pieChart3.LegendLocation = LegendLocation.Right;
 
+            //Atıştırmalık
             Func<ChartPoint, string> fu4 = x => string.Format("{0},{1:P}", x.Y, x.Participation);
-            SeriesCollection series4 = new SeriesCollection();
+            
+             SeriesCollection series4 = new SeriesCollection();
             foreach (var item in reportManager.WhichFoodsEatenByMealType(_currentUser.ID, MealType.Snack))
             {
                 PieSeries pie4 = new PieSeries();
@@ -415,16 +441,24 @@ namespace Diet.UI
                 series4.Add(pie4);
                 pieChart4.Series = series4;
             }
-            pieChart4.LegendLocation = LegendLocation.Right;
+            //pieChart4.LegendLocation = LegendLocation.Right;
 
 
-            //List<MostEatenFoods> mef =  reportManager.MostEatenFood(_currentUser.ID);
-            //materialListBox1.Items.Add(new MaterialListBoxItem
-            //{
-            //    SecondaryText = "",
-            //    Tag = mef.Foo,
-            //    Text = $"{mef.} {yeniOgun.Quantity} {food.Portion.GetEnumDisplayName()} Kalori:{food.Calorie * (yeniOgun.Quantity / food.PortionQuantity)}"
-            //});
+            List<MostEatenFoods> mef = reportManager.MostEatenFood(_currentUser.ID);
+
+            mListBoxMostEaten.Items.Clear();
+            foreach (var item in mef)
+            {
+                mListBoxMostEaten.Items.Add(new MaterialListBoxItem
+                {
+                    SecondaryText = "",
+                    Tag = item,
+                    Text = $"{item.CategoryName} grubundan  {item.TotalQuantity} {item.Portion.GetEnumDisplayName()} {item.FoodName} yedin."
+                });
+            }
+            mListBoxMostEaten.Refresh();
+
+
             List<ActivityStatus> activityStatusList = Enum.GetValues(typeof(ActivityStatus)).Cast<ActivityStatus>().ToList();
             List<CustomSelectItem> activityTypeList = activityStatusList.Select(x => new CustomSelectItem
             {
@@ -583,16 +617,30 @@ namespace Diet.UI
             userDetail.ActivityStatus = (ActivityStatus)cmbAktivite.SelectedValue;
             db.UserDetailRepository.Update(userDetail);
 
-            UserBC userBC = new UserBC();
-            userBC.UserID = _currentUser.ID;
-            userBC.MeasuredDate = DateTime.Now;
-            userBC.ActivityStatus = userDetail.ActivityStatus;
-            userBC.Weight = userDetail.Weight;
-            userBC.Height = userDetail.Height;
-            db.UserBcRepository.Create(userBC);
+            var dateToday = DateTime.Today;
+            var dateEnd = DateTime.Today.AddDays(1).AddSeconds(-1);
+
+            var userBC = db.UserBcRepository.GetAll().Where(x => x.MeasuredDate >= dateToday && x.MeasuredDate < dateEnd && x.UserID == _currentUser.ID).FirstOrDefault();
+            if (userBC != null)
+            {
+                userBC.MeasuredDate = DateTime.Now;
+                userBC.ActivityStatus = userDetail.ActivityStatus;
+                userBC.Weight = userDetail.Weight;
+                userBC.Height = userDetail.Height;
+                db.UserBcRepository.Update(userBC);
+            }
+            else
+            {
+                userBC = new UserBC();
+                userBC.UserID = _currentUser.ID;
+                userBC.MeasuredDate = DateTime.Now;
+                userBC.ActivityStatus = userDetail.ActivityStatus;
+                userBC.Weight = userDetail.Weight;
+                userBC.Height = userDetail.Height;
+                db.UserBcRepository.Create(userBC);
+            }
 
             LoadBodyAnalyz();
-            
         }
         void LoadBodyAnalyz()
         {
@@ -605,7 +653,7 @@ namespace Diet.UI
                         };
             dataGridView1.DataSource = query.ToList();
 
-                        
+
         }
     }
 }

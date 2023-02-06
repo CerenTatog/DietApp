@@ -203,7 +203,7 @@ namespace Diet.BLL
             return groupQuery;
         }
 
-        //haftalık adım sayısı Veri tabanında Adım sayısı tutulmuyor.
+       
         public List<WeeklyStepDto> CalculateStep(int UserId)
         {
             var dateToday = DateTime.Now;
@@ -304,5 +304,30 @@ namespace Diet.BLL
 
             return groupQuery.ToList();
         }
+
+        public List<WeeklyStepDto> CalculateWeeklyStepCount(int UserId)
+        {
+            var dateToday = DateTime.Now;
+            var dateSevenDayBefore = DateTime.Today.AddDays(-7);
+            var userDailyStepRepo = db.UserActivityRepository.GetAll().Where(x => x.ActivityTime >= dateSevenDayBefore && x.ActivityTime < dateToday && x.UserID == UserId);
+            var userDailyActivityRepo = db.UserActivityRepository.GetAll().Where(x => x.ActivityTime >= dateSevenDayBefore && x.ActivityTime < dateToday && x.UserID == UserId);
+            var query = (from ua in userDailyActivityRepo
+                         join a in db.ActivityRepository.GetAll() on ua.ActivityID equals a.ID
+                         select new
+                         {
+                             ua.StepCount,
+                             ua.ActivityTime
+                         }).ToList();
+            var groupQuery = (from gq in query
+                              let dt = gq.ActivityTime.Date
+                              group gq by dt into g
+                              select new WeeklyStepDto
+                              {
+                                  Date = g.Key,
+                                  Step = Convert.ToDouble(g.Sum(x => x.StepCount))
+                              }).ToList();
+            return groupQuery;
+        }
+
     }
 }

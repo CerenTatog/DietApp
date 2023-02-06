@@ -112,7 +112,8 @@ namespace Diet.UI
             //pictureBox2.Image = db.UserDetailRepository.GetAll().Where(x => x.UserID == _currentUser.ID &&x.Gender == Gender.Men).First ? Diet.UI.Properties.Resources.boy : Diet.UI.Properties.Resources.woman__3_;
 
             solidGauge1.From = 0;
-            solidGauge1.To = dailyToplam;
+            solidGauge1.To = foodManager.CalculateDailyCalorie(_currentUser.ID);
+            solidGauge1.Value = dailyToplam;
             solidGauge1.Base.LabelsVisibility = System.Windows.Visibility.Hidden;
             solidGauge1.Base.GaugeActiveFill = new System.Windows.Media.LinearGradientBrush
             {
@@ -129,7 +130,7 @@ namespace Diet.UI
             };
             lblkarsilamaMesaji.Text = $"Hoşgeldin {_currentUser.UserName}";
 
-            //pictureBox1.Image = Diet.UI.Properties.Resources.fried_rice;
+            
 
             //Kullanıcı raporları
 
@@ -137,6 +138,8 @@ namespace Diet.UI
             //dataGridView3.DataSource = reportManager.WeeklyDrinkingWater(_currentUser.ID);
             //dataGridView4.DataSource = reportManager.CalculateActivity(_currentUser.ID);
             //dataGridView6.DataSource = reportManager.CalculateWeight(_currentUser.ID);
+
+            //Makro Besin chart;
             cartesianChart2.Series.Clear();
             cartesianChart2.AxisX.Clear();
             var weeklyMacroFood = reportManager.WeeklyMacroFood(_currentUser.ID);
@@ -170,7 +173,7 @@ namespace Diet.UI
                 Labels = weeklyMacroFood.Select(x=> x.Date.ToString("dd/MM/yyyy")).ToList(),
             });
 
-            //Çalışmıyor?
+            //Günlük Alınan Kalori Chart
             cartesianChart1.Series.Clear();
             cartesianChart1.AxisX.Clear();
             cartesianChart1.AxisY.Clear();
@@ -204,15 +207,157 @@ namespace Diet.UI
                 axisX.Labels.Add(item.Date.ToString("dd/MM/yyyy"));
             }
 
+            cartesianChart1.LegendLocation = LegendLocation.Right;
+
+            //Günlük Su Tüketimi 
+
+            cartesianChart3.Series.Clear();
+            cartesianChart3.AxisX.Clear();
+            cartesianChart3.AxisY.Clear();
+
+            var data2 = reportManager.WeeklyDrinkingWater(_currentUser.ID);
+            ColumnSeries series6 = new ColumnSeries()
+            {
+                DataLabels = true,
+                Values = new ChartValues<double>(),
+                LabelPoint = point => point.Y.ToString(),
+                Title = "Su(ml)"
+            };
+            Axis axisX2 = new Axis()
+            {
+                Separator = new Separator() { Step = 1, IsEnabled = false },
+                Labels = new List<string>()
+
+            };
+            Axis axisY2 = new Axis()
+            {
+                LabelFormatter = y => y.ToString(),
+                //Separator = new Separator()
+            };
+            cartesianChart3.Series.Add(series6);
+            cartesianChart3.AxisX.Add(axisX2);
+            cartesianChart3.AxisY.Add(axisY2);
+
+            foreach (var item in data2)
+            {
+                series6.Values.Add(item.Water);
+                axisX2.Labels.Add(item.Date.ToString("dd/MM/yyyy"));
+            }
+
+            //Aktivite Kayıtları
+            cartesianChart4.Series.Clear();
+            cartesianChart4.AxisX.Clear();
+            cartesianChart4.AxisY.Clear();
+
+            var data3 = reportManager.CalculateActivity(_currentUser.ID);
+            ColumnSeries series7 = new ColumnSeries()
+            {
+                DataLabels = true,
+                Values = new ChartValues<double>(),
+                LabelPoint = point => point.Y.ToString(),
+                Title = "Kalori"
+            };
+            Axis axisX3 = new Axis()
+            {
+                Separator = new Separator() { Step = 1, IsEnabled = false },
+                Labels = new List<string>()
+
+            };
+            Axis axisY3 = new Axis()
+            {
+                LabelFormatter = y => y.ToString(),
+                //Separator = new Separator()
+            };
+            cartesianChart4.Series.Add(series7);
+            cartesianChart4.AxisX.Add(axisX3);
+            cartesianChart4.AxisY.Add(axisY3);
+
+            foreach (var item in data3)
+            {
+                series7.Values.Add(item.Activity);
+                axisX3.Labels.Add(item.Date.ToString("dd/MM/yyyy"));
+            }
+
+            //Günlük Adım Sayısı
+            cartesianChart5.Series.Clear();
+            cartesianChart5.AxisX.Clear();
+            cartesianChart5.AxisY.Clear();
+
+            var data4 = reportManager.CalculateWeeklyStepCount(_currentUser.ID);
+            ColumnSeries series8 = new ColumnSeries()
+            {
+                DataLabels = true,
+                Values = new ChartValues<double>(),
+                LabelPoint = point => point.Y.ToString(),
+                Title = "Adım"
+            };
+            Axis axisX4 = new Axis()
+            {
+                Separator = new Separator() { Step = 1, IsEnabled = false },
+                Labels = new List<string>()
+
+            };
+            Axis axisY4 = new Axis()
+            {
+                LabelFormatter = y => y.ToString(),
+                //Separator = new Separator()
+            };
+            cartesianChart5.Series.Add(series8);
+            cartesianChart5.AxisX.Add(axisX4);
+            cartesianChart5.AxisY.Add(axisY4);
+
+            foreach (var item in data4)
+            {
+                series8.Values.Add(item.Step);
+                axisX4.Labels.Add(item.Date.ToString("dd/MM/yyyy"));
+            }
+
+            //Kilo Değişimi
+            cartesianChart6.Series.Clear();
+            cartesianChart6.AxisX.Clear();
+            cartesianChart6.AxisY.Clear();
+
+            var data5 = reportManager.CalculateWeight(_currentUser.ID);//bi bak
+            LineSeries series9 = new LineSeries()
+            {
+                DataLabels = true,
+                Values = new ChartValues<double>(),
+                LabelPoint = point => point.Y.ToString(),
+                Title = "Kg",
+                PointGeometry = DefaultGeometries.Square,
+                PointGeometrySize = 15,
+                LineSmoothness = 0,
+                
+            };
+            Axis axisX5 = new Axis()
+            {
+                Separator = new Separator() { Step = 1, IsEnabled = false },
+                Labels = new List<string>()
+
+            };
+            Axis axisY5 = new Axis()
+            {
+                LabelFormatter = y => y.ToString(),
+                //Separator = new Separator()
+            };
+            cartesianChart6.Series.Add(series9);
+            cartesianChart6.AxisX.Add(axisX5);
+            cartesianChart6.AxisY.Add(axisY5);
+
+            foreach (var item in data5)
+            {
+                series9.Values.Add(item.Weight);
+                axisX5.Labels.Add(item.Date.ToString("dd/MM/yyyy"));
+            }
 
 
             //dataGridView11.DataSource = reportManager.MostEatenFood(_currentUser.ID);
 
 
-            //günlük sayfası => gelen kullanıcıya göre isim alanı değişecek.
+
             //profil sayfası gelen kullanıcının cinsiyetine göre resim değişecek.
             //günlük sayfası => karbonhidrat/protein/yağ güncellenecek.
-            //günlük sayfası=>su alanı bağlanacak. 
+
 
             //Pie Chart
             Func<ChartPoint, string> fu = x => string.Format("{0},{1:P}", x.Y, x.Participation);

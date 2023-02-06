@@ -42,7 +42,7 @@ namespace Diet.BLL
                               {
                                   Date = g.Key,
                                   Calori = g.Sum(x => x.Calorie * (x.Quantity / x.PortionQuantity))
-                              }).OrderBy(x=> x.Date).ToList();
+                              }).OrderBy(x => x.Date).ToList();
 
             return groupQuery;
         }
@@ -73,6 +73,65 @@ namespace Diet.BLL
             return groupQuery;
 
         }
+
+        public double CalculateDailyCarbByMealType(int userId, MealType mealType)
+        {
+            var dateToday = DateTime.Today;
+            var dateEnd = DateTime.Today.AddDays(1).AddSeconds(-1);
+            var userDailyMealRepo = db.MealRepository.GetAll().Where(x => x.MealDate >= dateToday && x.MealDate < dateEnd && x.UserID == userId && x.MealType == mealType);
+            var query = (from m in userDailyMealRepo
+                         join mf in db.MealFoodRepository.GetAll() on m.ID equals mf.MealID
+                         join f in db.FoodRepository.GetAll() on mf.FoodID equals f.ID
+                         select new
+                         {
+                             f.Carbonhydrate,
+                             f.PortionQuantity,
+                             mf.Quantity,
+                             m.MealDate
+                         }).ToList().Sum(x => x.Carbonhydrate * (x.Quantity / x.PortionQuantity));
+            return query;
+
+        }
+        public double CalculateDailyProteinByMealType(int userId, MealType mealType)
+        {
+            var dateToday = DateTime.Today;
+            var dateEnd = DateTime.Today.AddDays(1).AddSeconds(-1);
+            var userDailyMealRepo = db.MealRepository.GetAll().Where(x => x.MealDate >= dateToday && x.MealDate < dateEnd && x.UserID == userId && x.MealType == mealType);
+            var query = (from m in userDailyMealRepo
+                         join mf in db.MealFoodRepository.GetAll() on m.ID equals mf.MealID
+                         join f in db.FoodRepository.GetAll() on mf.FoodID equals f.ID
+                         select new
+                         {
+                             f.Protein,
+                             f.PortionQuantity,
+                             mf.Quantity,
+                             m.MealDate
+                         }).ToList().Sum(x => x.Protein * (x.Quantity / x.PortionQuantity));
+            return query;
+
+        }
+
+        public double CalculateDailyFatByMealType(int userId, MealType mealType)
+        {
+            var dateToday = DateTime.Today;
+            var dateEnd = DateTime.Today.AddDays(1).AddSeconds(-1);
+            var userDailyMealRepo = db.MealRepository.GetAll().Where(x => x.MealDate >= dateToday && x.MealDate < dateEnd && x.UserID == userId && x.MealType == mealType);
+            var query = (from m in userDailyMealRepo
+                         join mf in db.MealFoodRepository.GetAll() on m.ID equals mf.MealID
+                         join f in db.FoodRepository.GetAll() on mf.FoodID equals f.ID
+                         select new
+                         {
+                             f.Fat,
+                             f.PortionQuantity,
+                             mf.Quantity,
+                             m.MealDate
+                         }).ToList().Sum(x => x.Fat * (x.Quantity / x.PortionQuantity));
+            return query;
+
+        }
+
+
+
         public List<WeeklyMacros> WeeklyMacroFood(int UserId)
         {
             var dateToday = DateTime.Now;
@@ -203,7 +262,7 @@ namespace Diet.BLL
             return groupQuery;
         }
 
-        //haftalık adım sayısı Veri tabanında Adım sayısı tutulmuyor.
+
         public List<WeeklyStepDto> CalculateStep(int UserId)
         {
             var dateToday = DateTime.Now;
@@ -233,7 +292,7 @@ namespace Diet.BLL
         {//şu tab
             var dateToday = DateTime.Now;
             var dateSevenDayBefore = DateTime.Today.AddDays(-7);
-            var userDailyWeigthRepo = db.UserDetailRepository.GetAll().Where(x => x.CreatedDate >= dateSevenDayBefore && x.CreatedDate < dateToday && x.UserID == UserId);
+            var userDailyWeigthRepo = db.UserBcRepository.GetAll().Where(x => x.CreatedDate >= dateSevenDayBefore && x.CreatedDate < dateToday && x.UserID == UserId);
             var query = (from ud in userDailyWeigthRepo
                          select new
                          {
@@ -246,7 +305,7 @@ namespace Diet.BLL
                               select new WeeklyWeightDto
                               {
                                   Date = (DateTime)g.Key,
-                                  Weight = g.Sum(x => x.Weight)
+                                  Weight = g.FirstOrDefault().Weight,
                               }).ToList();
             return groupQuery;
         }
@@ -287,22 +346,52 @@ namespace Diet.BLL
             var userMeal = db.MealRepository.GetAll().Where(x => x.UserID == UserId);
             var query = (from mf in db.MealFoodRepository.GetAll()
                          join f in db.FoodRepository.GetAll() on mf.FoodID equals f.ID
+                         join c in db.CategoryRepository.GetAll() on f.CategoryID equals c.ID
                          join um in userMeal on mf.MealID equals um.ID
                          select new
                          {
                              f.FoodName,
+                             c.CategoryName,
                              f.PortionQuantity,
-                             mf.Quantity
+                             mf.Quantity,
+                             f.Portion
                          });
             var groupQuery = (from gq in query
-                              group gq by gq.FoodName into g
+                              group gq by new { gq.FoodName, gq.CategoryName, gq.Portion } into g
                               select new MostEatenFoods
                               {
-                                  FoodName = g.Key,
+                                  FoodName = g.Key.FoodName,
+                                  CategoryName = g.Key.CategoryName,
+                                  Portion = g.Key.Portion,
                                   TotalQuantity = g.Sum(x => x.Quantity / x.PortionQuantity)
-                              }).OrderByDescending(x => x.TotalQuantity).ToList();
+                              }).OrderByDescending(x => x.TotalQuantity).Take(10).ToList();
 
             return groupQuery.ToList();
         }
+
+        public List<WeeklyStepDto> CalculateWeeklyStepCount(int UserId)
+        {
+            var dateToday = DateTime.Now;
+            var dateSevenDayBefore = DateTime.Today.AddDays(-7);
+            var userDailyStepRepo = db.UserActivityRepository.GetAll().Where(x => x.ActivityTime >= dateSevenDayBefore && x.ActivityTime < dateToday && x.UserID == UserId);
+            var userDailyActivityRepo = db.UserActivityRepository.GetAll().Where(x => x.ActivityTime >= dateSevenDayBefore && x.ActivityTime < dateToday && x.UserID == UserId);
+            var query = (from ua in userDailyActivityRepo
+                         join a in db.ActivityRepository.GetAll() on ua.ActivityID equals a.ID
+                         select new
+                         {
+                             ua.StepCount,
+                             ua.ActivityTime
+                         }).ToList();
+            var groupQuery = (from gq in query
+                              let dt = gq.ActivityTime.Date
+                              group gq by dt into g
+                              select new WeeklyStepDto
+                              {
+                                  Date = g.Key,
+                                  Step = Convert.ToDouble(g.Sum(x => x.StepCount))
+                              }).ToList();
+            return groupQuery;
+        }
+
     }
 }

@@ -13,6 +13,9 @@ namespace Diet.Model.Dto.Report
         public string FoodName { get; set; }
         [DisplayName("Kategori")]
         public string CategoryName { get; set; }
+
+        public QuantityType Portion { get; set; }
+
         [DisplayName("Miktar")]
         public double TotalQuantity { get; set; }
 

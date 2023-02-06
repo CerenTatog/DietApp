@@ -210,6 +210,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\Resources\breakfast.png" />
+    <None Include="Resources\profile.png" />
+    <None Include="Resources\weight-loss.png" />
+    <None Include="Resources\footprint.png" />
+    <None Include="Resources\water %281%29.png" />
+    <None Include="Resources\burning.png" />
+    <None Include="Resources\low-carb.png" />
+    <None Include="Resources\reduce.png" />
+    <None Include="Resources\123.png" />
+    <None Include="Resources\lose-weight.png" />
+    <None Include="Resources\target.png" />
+    <None Include="Resources\nutrition %281%29.png" />
+    <None Include="Resources\logomuzkare1.jpeg" />
     <None Include="Resources\lifestyle.png" />
     <None Include="Resources\foot-traffic.png" />
     <None Include="Resources\running.png" />

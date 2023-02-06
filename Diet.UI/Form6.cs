@@ -6,11 +6,13 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Forms;
 using Diet.BLL;
 using Diet.DAL.Entities;
 using Diet.DAL.GenericRepository;
 using Diet.Model;
+using Diet.Model.Dto;
 using MaterialSkin;
 using MaterialSkin.Controls;
 
@@ -55,13 +57,31 @@ namespace Diet.UI
             newuserAct.StepCount = Convert.ToInt32(nmrStepCount.Value);
             db.UserActivityRepository.Create(newuserAct);
             lblKCAL.Text = newuserAct.CalculatedCalorie.ToString() + " kcal";
+            this.Close();
+
+            LoadStep();
 
 
         }
 
         private void Form6_Load(object sender, EventArgs e)
         {
+            LoadStep();
+        }
+        void LoadStep()
+        {
+            
 
+            //var query = (from u in db.UserActivityRepository.GetAll()
+            //             select new CustomerStepDetail
+            //             {
+            //                 StepCount =(int)u.StepCount,
+            //                 CalculatedCalorie=u.CalculatedCalorie,
+            //                 Duration=u.Duration
+                           
+            //             }).ToList();
+
+            //dataGridView1.DataSource = query;
         }
     }
 }

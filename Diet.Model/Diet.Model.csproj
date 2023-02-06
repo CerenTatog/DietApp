@@ -72,6 +72,7 @@
     <Compile Include="Activity.cs" />
     <Compile Include="Base.cs" />
     <Compile Include="Category.cs" />
+    <Compile Include="Dto\CustomerStepDetail.cs" />
     <Compile Include="Dto\UserDailyMeaListByMealTypeDto.cs" />
     <Compile Include="Dto\CustomSelectItem.cs" />
     <Compile Include="Dto\AdminUserListDto.cs" />

@@ -9,6 +9,7 @@ namespace Diet.Model.Dto.Report
     public class DailyStep
     {
         public double Step { get; set; }
+        public double Calorie { get; set; }
         public DateTime Date { get; set; }
     }
 }

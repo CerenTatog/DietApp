@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Diet.DAL.Entities;
 using Diet.DAL.GenericRepository;
 using Diet.Model;
+using Diet.Model.Dto.Report;
 
 namespace Diet.BLL
 {
@@ -67,6 +68,31 @@ namespace Diet.BLL
                 }
             }
             return 0;
+        }
+
+        public List<DailyStep> GetDailyStep(int UserId)
+        {
+            var dateToday = DateTime.Today;
+            var dateEnd = DateTime.Today.AddDays(1).AddSeconds(-1);
+            var userWater = db.UserActivityRepository.GetAll().Where(x => x.ActivityTime >= dateToday && x.ActivityTime < dateEnd && x.UserID == UserId && x.StepCount > 0).Select(x=new )
+            if (userWater == null)
+            {
+                UserWater dbItem = new UserWater
+                {
+                    CreatedDate = DateTime.Now,
+                    DrinkTime = DateTime.Now,
+                    Quantity = 250,
+                    UserID = UserId
+                };
+                db.UserWaterRepository.Create(dbItem);
+                return dbItem.Quantity;
+            }
+            else
+            {
+                userWater.Quantity += 250;
+                db.UserWaterRepository.Update(userWater);
+                return userWater.Quantity;
+            }
         }
 
     }

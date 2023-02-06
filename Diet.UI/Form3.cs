@@ -681,5 +681,15 @@ namespace Diet.UI
         {
 
         }
+
+        private void materialLabel24_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialCard34_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

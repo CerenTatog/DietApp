@@ -67,7 +67,7 @@ namespace Diet.UI
             materialComboBox2.DataSource = db.FoodRepository.GetAll().Select(x => new { x.ID, x.FoodName }).ToList();
             materialComboBox2.DisplayMember = "FoodName";
             materialComboBox2.ValueMember = "ID";
-            lblKCAL.Text = _foodManager.CalculateCalorieIntake(_currentUser.ID).Where(x => x.MealType == _mealType).FirstOrDefault()?.TotalCalori.ToString();
+            lblKCAL.Text = _foodManager.CalculateCalorieIntake(_currentUser.ID).Where(x => x.MealType == _mealType).FirstOrDefault()?.TotalCalori.ToString() +"kcal";
             materialTextBox22.Text = "";
             materialComboBox2.SelectedIndex = -1;
 

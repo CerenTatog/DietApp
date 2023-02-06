@@ -38,7 +38,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
-            this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnEnd = new MaterialSkin.Controls.MaterialButton();
             this.btnDelete = new MaterialSkin.Controls.MaterialButton();
@@ -46,7 +45,6 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.materialCard1.SuspendLayout();
-            this.materialCard2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +54,8 @@
             this.lblKCAL.Depth = 0;
             this.lblKCAL.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.lblKCAL.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
-            this.lblKCAL.Location = new System.Drawing.Point(124, 17);
+            this.lblKCAL.Location = new System.Drawing.Point(256, 102);
+            this.lblKCAL.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblKCAL.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblKCAL.Name = "lblKCAL";
             this.lblKCAL.Size = new System.Drawing.Size(48, 29);
@@ -66,15 +65,15 @@
             // nmrStepCount
             // 
             this.nmrStepCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.nmrStepCount.Location = new System.Drawing.Point(227, 31);
-            this.nmrStepCount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nmrStepCount.Location = new System.Drawing.Point(170, 25);
+            this.nmrStepCount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nmrStepCount.Maximum = new decimal(new int[] {
             20000,
             0,
             0,
             0});
             this.nmrStepCount.Name = "nmrStepCount";
-            this.nmrStepCount.Size = new System.Drawing.Size(207, 34);
+            this.nmrStepCount.Size = new System.Drawing.Size(155, 29);
             this.nmrStepCount.TabIndex = 2;
             this.nmrStepCount.Value = new decimal(new int[] {
             250,
@@ -89,8 +88,8 @@
             this.btnAddStepCount.Depth = 0;
             this.btnAddStepCount.HighEmphasis = true;
             this.btnAddStepCount.Icon = null;
-            this.btnAddStepCount.Location = new System.Drawing.Point(634, 282);
-            this.btnAddStepCount.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnAddStepCount.Location = new System.Drawing.Point(459, 230);
+            this.btnAddStepCount.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnAddStepCount.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAddStepCount.Name = "btnAddStepCount";
             this.btnAddStepCount.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -108,7 +107,8 @@
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel2.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
-            this.materialLabel2.Location = new System.Drawing.Point(35, 28);
+            this.materialLabel2.Location = new System.Drawing.Point(26, 23);
+            this.materialLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(126, 29);
@@ -121,21 +121,18 @@
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.materialLabel1);
             this.groupBox1.Controls.Add(this.materialCard1);
-            this.groupBox1.Location = new System.Drawing.Point(33, 106);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(25, 86);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(792, 330);
+            this.groupBox1.Size = new System.Drawing.Size(617, 289);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Diet.UI.Properties.Resources.foot_traffic;
-            this.pictureBox1.Location = new System.Drawing.Point(28, 57);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(21, 46);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(245, 217);
+            this.pictureBox1.Size = new System.Drawing.Size(184, 176);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
@@ -146,8 +143,7 @@
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel1.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
-            this.materialLabel1.Location = new System.Drawing.Point(8, 0);
-            this.materialLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.materialLabel1.Location = new System.Drawing.Point(6, 0);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(58, 29);
@@ -157,42 +153,29 @@
             // materialCard1
             // 
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard1.Controls.Add(this.materialCard2);
+            this.materialCard1.Controls.Add(this.lblKCAL);
             this.materialCard1.Controls.Add(this.nmrStepCount);
             this.materialCard1.Controls.Add(this.materialLabel2);
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard1.Location = new System.Drawing.Point(293, 57);
-            this.materialCard1.Margin = new System.Windows.Forms.Padding(19, 17, 19, 17);
+            this.materialCard1.Location = new System.Drawing.Point(220, 46);
+            this.materialCard1.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
             this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
-            this.materialCard1.Padding = new System.Windows.Forms.Padding(19, 17, 19, 17);
-            this.materialCard1.Size = new System.Drawing.Size(476, 217);
+            this.materialCard1.Padding = new System.Windows.Forms.Padding(14, 14, 14, 14);
+            this.materialCard1.Size = new System.Drawing.Size(357, 176);
             this.materialCard1.TabIndex = 7;
-            // 
-            // materialCard2
-            // 
-            this.materialCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard2.Controls.Add(this.lblKCAL);
-            this.materialCard2.Depth = 0;
-            this.materialCard2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard2.Location = new System.Drawing.Point(180, 112);
-            this.materialCard2.Margin = new System.Windows.Forms.Padding(19, 17, 19, 17);
-            this.materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard2.Name = "materialCard2";
-            this.materialCard2.Padding = new System.Windows.Forms.Padding(19, 17, 19, 17);
-            this.materialCard2.Size = new System.Drawing.Size(259, 74);
-            this.materialCard2.TabIndex = 5;
             // 
             // dataGridView1
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DodgerBlue;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.WindowText;
@@ -202,12 +185,12 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Location = new System.Drawing.Point(33, 442);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(25, 380);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(792, 280);
+            this.dataGridView1.Size = new System.Drawing.Size(617, 228);
             this.dataGridView1.TabIndex = 6;
             // 
             // btnEnd
@@ -217,8 +200,8 @@
             this.btnEnd.Depth = 0;
             this.btnEnd.HighEmphasis = true;
             this.btnEnd.Icon = null;
-            this.btnEnd.Location = new System.Drawing.Point(732, 730);
-            this.btnEnd.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnEnd.Location = new System.Drawing.Point(549, 627);
+            this.btnEnd.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnEnd.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEnd.Name = "btnEnd";
             this.btnEnd.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -237,8 +220,8 @@
             this.btnDelete.Depth = 0;
             this.btnDelete.HighEmphasis = true;
             this.btnDelete.Icon = null;
-            this.btnDelete.Location = new System.Drawing.Point(635, 730);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnDelete.Location = new System.Drawing.Point(476, 627);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnDelete.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -252,16 +235,14 @@
             // 
             // Form6
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(857, 866);
+            this.ClientSize = new System.Drawing.Size(669, 704);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEnd);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form6";
-            this.Padding = new System.Windows.Forms.Padding(4, 79, 4, 4);
             this.Text = "Adım Sayısı Gir";
             this.Load += new System.EventHandler(this.Form6_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nmrStepCount)).EndInit();
@@ -270,8 +251,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
-            this.materialCard2.ResumeLayout(false);
-            this.materialCard2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -288,7 +267,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialCard materialCard1;
-        private MaterialSkin.Controls.MaterialCard materialCard2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private MaterialSkin.Controls.MaterialButton btnEnd;
         private MaterialSkin.Controls.MaterialButton btnDelete;

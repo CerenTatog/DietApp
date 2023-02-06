@@ -55,7 +55,7 @@ namespace Diet.UI
             newuserAct.StepCount = Convert.ToInt32(nmrStepCount.Value);
             db.UserActivityRepository.Create(newuserAct);
             lblKCAL.Text = newuserAct.CalculatedCalorie.ToString() + " kcal";
-
+            this.Close();
 
         }
 

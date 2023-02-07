@@ -9,6 +9,7 @@ namespace Diet.Model.Dto.Report
 {
     public class DailyStep
     {
+        public int ID { get; set; }
         [DisplayName("Adım")]
         public double Step { get; set; }
         [DisplayName("Kalori")]

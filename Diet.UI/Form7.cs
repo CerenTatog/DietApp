@@ -75,23 +75,7 @@ namespace Diet.UI
             cmbActivities.DisplayMember = "ActivityName";
             cmbActivities.ValueMember = "ID";
 
-            //DGV 1 günlük Aktiviteler
-            var dateToday = DateTime.Today;
-            var dateEnd = DateTime.Today.AddDays(1).AddSeconds(-1);
-            var userActivityRepo = db.UserActivityRepository.GetAll().Where(x => x.ActivityTime >= dateToday && x.ActivityTime < dateEnd && x.UserID == _currentUser.ID && x.StepCount == null);
-
-            var query = (from userActivity in userActivityRepo
-                         join a in db.ActivityRepository.GetAll() on userActivity.ActivityID equals a.ID
-                         join u in db.UserRepository.GetAll() on userActivity.UserID equals u.ID
-                         select new
-                         {
-                             KullanıcıID=u.ID,
-                             UserName = u.UserName + " " + u.UserSurname,
-                             Activite = userActivity.Activity.ActivityName,
-                             ActiviteZamanı = userActivity.ActivityTime,
-                             AktiviteSüresi = userActivity.Duration
-                         }).ToList();
-            dataGridView1.DataSource = query;
+            dataGridView1.DataSource = activityManager.GetDailyActivity(_currentUser.ID);
         }
 
         private void materialButton1_Click(object sender, EventArgs e)
@@ -102,13 +86,11 @@ namespace Diet.UI
         private void materialButtonSil_Click(object sender, EventArgs e)
         {
             int Id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-            Activity DeletedActivity = new Activity();
-            DeletedActivity = db.ActivityRepository.GetById(Id);
             DialogResult sor = new DialogResult();
             sor = System.Windows.Forms.MessageBox.Show("Aktivite silinecek. Silmek istediğinizden eminmisiniz?", "Kalıcı Olarak Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (sor == DialogResult.Yes)
             {
-                db.ActivityRepository.Delete(Id);
+                db.UserActivityRepository.Delete(Id);
                 LoadCmbAndDgv();
             }
         }

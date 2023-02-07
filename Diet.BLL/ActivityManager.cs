@@ -76,9 +76,24 @@ namespace Diet.BLL
             var dateEnd = DateTime.Today.AddDays(1).AddSeconds(-1);
             var query = db.UserActivityRepository.GetAll().Where(x => x.ActivityTime >= dateToday && x.ActivityTime < dateEnd && x.UserID == UserId && x.StepCount > 0).Select(x => new DailyStep()
             {
+                ID = x.ID,
                 Step = x.StepCount.Value,
                 Date = x.ActivityTime,
                 Calorie = x.CalculatedCalorie
+            }).ToList();
+            return query;
+
+        }
+
+        public List<DailyActivity> GetDailyActivity(int UserId)
+        {
+            var dateToday = DateTime.Today;
+            var dateEnd = DateTime.Today.AddDays(1).AddSeconds(-1);
+            var query = db.UserActivityRepository.GetAll().Where(x => x.ActivityTime >= dateToday && x.ActivityTime < dateEnd && x.UserID == UserId && x.StepCount == null).Select(x => new DailyActivity()
+            {
+                ID = x.ID,
+                ActivityName = x.Activity.ActivityName,
+                Duration = x.Duration
             }).ToList();
             return query;
 

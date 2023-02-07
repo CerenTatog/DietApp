@@ -255,7 +255,7 @@
             this.tabPage2.Controls.Add(this.btnIlerle2);
             this.tabPage2.Controls.Add(this.txtEmail);
             this.tabPage2.Controls.Add(this.pictureBox1);
-            this.tabPage2.ImageKey = "mail_FILL0_wght400_GRAD0_opsz48.png";
+            this.tabPage2.ImageKey = "2.png";
             this.tabPage2.Location = new System.Drawing.Point(4, 39);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
@@ -372,7 +372,7 @@
             this.tabPage3.Controls.Add(this.btnIlerle3);
             this.tabPage3.Controls.Add(this.txtTekrarSifre);
             this.tabPage3.Controls.Add(this.txtSifre);
-            this.tabPage3.ImageKey = "password_FILL0_wght400_GRAD0_opsz48.png";
+            this.tabPage3.ImageKey = "3.png";
             this.tabPage3.Location = new System.Drawing.Point(4, 39);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
@@ -535,7 +535,7 @@
             this.tabPage4.Controls.Add(this.nmrBoy);
             this.tabPage4.Controls.Add(this.btnGeri4);
             this.tabPage4.Controls.Add(this.btnIler4);
-            this.tabPage4.ImageKey = "settings_accessibility_FILL0_wght400_GRAD0_opsz48.png";
+            this.tabPage4.ImageKey = "4.png";
             this.tabPage4.Location = new System.Drawing.Point(4, 39);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage4.Name = "tabPage4";
@@ -720,7 +720,7 @@
             this.tabPage5.Controls.Add(this.cmbActivityStatus);
             this.tabPage5.Controls.Add(this.btnGeri5);
             this.tabPage5.Controls.Add(this.btnKaydetBitir);
-            this.tabPage5.ImageKey = "transgender_FILL0_wght400_GRAD0_opsz48.png";
+            this.tabPage5.ImageKey = "5.png";
             this.tabPage5.Location = new System.Drawing.Point(4, 39);
             this.tabPage5.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage5.Name = "tabPage5";
@@ -883,6 +883,9 @@
             this.ımageList1.Images.SetKeyName(9, "transgender_FILL0_wght400_GRAD0_opsz48.png");
             this.ımageList1.Images.SetKeyName(10, "1.png");
             this.ımageList1.Images.SetKeyName(11, "2.png");
+            this.ımageList1.Images.SetKeyName(12, "3.png");
+            this.ımageList1.Images.SetKeyName(13, "4.png");
+            this.ımageList1.Images.SetKeyName(14, "5.png");
             // 
             // pictureBox1
             // 

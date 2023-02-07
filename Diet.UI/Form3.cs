@@ -66,13 +66,13 @@ namespace Diet.UI
 
             //Öğünlere göre alınan kalori miktarları
             var calculateCalorieIntake = foodManager.CalculateCalorieIntake(_currentUser.ID);
-            mlKahvaltıKalori.Text = (Math.Round((calculateCalorieIntake.FirstOrDefault(x => x.MealType == MealType.Breakfast).TotalCalori),2)).ToString();
+            mlKahvaltıKalori.Text = (Math.Round((calculateCalorieIntake.FirstOrDefault(x => x.MealType == MealType.Breakfast)?.TotalCalori ?? 0),2)).ToString();
 
-            mlOgleYemegiCalori.Text = (Math.Round((calculateCalorieIntake.FirstOrDefault(x => x.MealType == MealType.Lunch).TotalCalori), 2)).ToString();
+            mlOgleYemegiCalori.Text = (Math.Round((calculateCalorieIntake.FirstOrDefault(x => x.MealType == MealType.Lunch)?.TotalCalori ?? 0), 2)).ToString();
 
-            mlAksamYemegiKalori.Text = (Math.Round((calculateCalorieIntake.FirstOrDefault(x => x.MealType == MealType.Dinner).TotalCalori), 2)).ToString();
+            mlAksamYemegiKalori.Text = (Math.Round((calculateCalorieIntake.FirstOrDefault(x => x.MealType == MealType.Dinner)?.TotalCalori ?? 0), 2)).ToString();
 
-            mlAtistirmalikKalori.Text = (Math.Round((calculateCalorieIntake.FirstOrDefault(x => x.MealType == MealType.Snack).TotalCalori), 2)).ToString();
+            mlAtistirmalikKalori.Text = (Math.Round((calculateCalorieIntake.FirstOrDefault(x => x.MealType == MealType.Snack)?.TotalCalori ?? 0), 2)).ToString();
             //Gender
 
             var userDetail = db.UserDetailRepository.GetAll().FirstOrDefault(x => x.UserID == _currentUser.ID);

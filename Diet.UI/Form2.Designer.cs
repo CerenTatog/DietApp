@@ -33,22 +33,28 @@
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
-            this.linkLabelGeri = new System.Windows.Forms.LinkLabel();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             this.btnIlerle = new MaterialSkin.Controls.MaterialButton();
             this.txtSoyad = new MaterialSkin.Controls.MaterialTextBox2();
             this.txtKullaniciAdi = new MaterialSkin.Controls.MaterialTextBox2();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.materialLabel14 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel13 = new MaterialSkin.Controls.MaterialLabel();
             this.btnGeri2 = new MaterialSkin.Controls.MaterialButton();
             this.btnIlerle2 = new MaterialSkin.Controls.MaterialButton();
             this.txtEmail = new MaterialSkin.Controls.MaterialTextBox2();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
             this.btnGeri3 = new MaterialSkin.Controls.MaterialButton();
             this.btnIlerle3 = new MaterialSkin.Controls.MaterialButton();
             this.txtTekrarSifre = new MaterialSkin.Controls.MaterialTextBox2();
             this.txtSifre = new MaterialSkin.Controls.MaterialTextBox2();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.materialLabel12 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel11 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
@@ -58,6 +64,8 @@
             this.btnGeri4 = new MaterialSkin.Controls.MaterialButton();
             this.btnIler4 = new MaterialSkin.Controls.MaterialButton();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.materialLabel16 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel15 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.nmrYas = new System.Windows.Forms.NumericUpDown();
             this.cmbGender = new MaterialSkin.Controls.MaterialComboBox();
@@ -66,15 +74,6 @@
             this.btnKaydetBitir = new MaterialSkin.Controls.MaterialButton();
             this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel11 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel12 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel13 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel14 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel15 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel16 = new MaterialSkin.Controls.MaterialLabel();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -111,14 +110,13 @@
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Transparent;
             this.tabPage1.Controls.Add(this.materialLabel7);
-            this.tabPage1.Controls.Add(this.linkLabelGeri);
             this.tabPage1.Controls.Add(this.materialLabel5);
             this.tabPage1.Controls.Add(this.materialLabel6);
             this.tabPage1.Controls.Add(this.btnIlerle);
             this.tabPage1.Controls.Add(this.txtSoyad);
             this.tabPage1.Controls.Add(this.txtKullaniciAdi);
             this.tabPage1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.tabPage1.ImageKey = "r1.png";
+            this.tabPage1.ImageKey = "1.png";
             this.tabPage1.Location = new System.Drawing.Point(4, 39);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
@@ -141,22 +139,13 @@
             this.materialLabel7.Text = "Zaten Üye misin? Giriş Yap ekranına dön.";
             this.materialLabel7.Click += new System.EventHandler(this.materialLabel7_Click);
             // 
-            // linkLabelGeri
-            // 
-            this.linkLabelGeri.AutoSize = true;
-            this.linkLabelGeri.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.linkLabelGeri.Location = new System.Drawing.Point(304, 351);
-            this.linkLabelGeri.Name = "linkLabelGeri";
-            this.linkLabelGeri.Size = new System.Drawing.Size(0, 22);
-            this.linkLabelGeri.TabIndex = 7;
-            // 
             // materialLabel5
             // 
             this.materialLabel5.AutoSize = true;
             this.materialLabel5.Depth = 0;
             this.materialLabel5.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel5.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
-            this.materialLabel5.Location = new System.Drawing.Point(147, 51);
+            this.materialLabel5.Location = new System.Drawing.Point(147, 65);
             this.materialLabel5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel5.Name = "materialLabel5";
             this.materialLabel5.Size = new System.Drawing.Size(479, 29);
@@ -168,7 +157,7 @@
             this.materialLabel6.AutoSize = true;
             this.materialLabel6.Depth = 0;
             this.materialLabel6.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel6.Location = new System.Drawing.Point(269, 111);
+            this.materialLabel6.Location = new System.Drawing.Point(269, 125);
             this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel6.Name = "materialLabel6";
             this.materialLabel6.Size = new System.Drawing.Size(234, 19);
@@ -207,7 +196,7 @@
             this.txtSoyad.HideSelection = true;
             this.txtSoyad.Hint = "Soyadınız";
             this.txtSoyad.LeadingIcon = null;
-            this.txtSoyad.Location = new System.Drawing.Point(215, 261);
+            this.txtSoyad.Location = new System.Drawing.Point(215, 275);
             this.txtSoyad.Margin = new System.Windows.Forms.Padding(2);
             this.txtSoyad.MaxLength = 32767;
             this.txtSoyad.MouseState = MaterialSkin.MouseState.OUT;
@@ -237,7 +226,7 @@
             this.txtKullaniciAdi.HideSelection = true;
             this.txtKullaniciAdi.Hint = "Adınız";
             this.txtKullaniciAdi.LeadingIcon = null;
-            this.txtKullaniciAdi.Location = new System.Drawing.Point(215, 184);
+            this.txtKullaniciAdi.Location = new System.Drawing.Point(215, 198);
             this.txtKullaniciAdi.Margin = new System.Windows.Forms.Padding(2);
             this.txtKullaniciAdi.MaxLength = 32767;
             this.txtKullaniciAdi.MouseState = MaterialSkin.MouseState.OUT;
@@ -262,10 +251,10 @@
             this.tabPage2.BackColor = System.Drawing.Color.Transparent;
             this.tabPage2.Controls.Add(this.materialLabel14);
             this.tabPage2.Controls.Add(this.materialLabel13);
-            this.tabPage2.Controls.Add(this.pictureBox1);
             this.tabPage2.Controls.Add(this.btnGeri2);
             this.tabPage2.Controls.Add(this.btnIlerle2);
             this.tabPage2.Controls.Add(this.txtEmail);
+            this.tabPage2.Controls.Add(this.pictureBox1);
             this.tabPage2.ImageKey = "mail_FILL0_wght400_GRAD0_opsz48.png";
             this.tabPage2.Location = new System.Drawing.Point(4, 39);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
@@ -274,6 +263,31 @@
             this.tabPage2.Size = new System.Drawing.Size(790, 493);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "E-mail";
+            // 
+            // materialLabel14
+            // 
+            this.materialLabel14.AutoSize = true;
+            this.materialLabel14.Depth = 0;
+            this.materialLabel14.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel14.Location = new System.Drawing.Point(186, 110);
+            this.materialLabel14.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel14.Name = "materialLabel14";
+            this.materialLabel14.Size = new System.Drawing.Size(424, 19);
+            this.materialLabel14.TabIndex = 1;
+            this.materialLabel14.Text = "E-postanı aynı zamanda kullanıcı adı olarak kullanabilirsin...";
+            // 
+            // materialLabel13
+            // 
+            this.materialLabel13.AutoSize = true;
+            this.materialLabel13.Depth = 0;
+            this.materialLabel13.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel13.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
+            this.materialLabel13.Location = new System.Drawing.Point(286, 62);
+            this.materialLabel13.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel13.Name = "materialLabel13";
+            this.materialLabel13.Size = new System.Drawing.Size(224, 29);
+            this.materialLabel13.TabIndex = 0;
+            this.materialLabel13.Text = "E-posta adresini gir...";
             // 
             // btnGeri2
             // 
@@ -366,6 +380,44 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Şifre";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // materialLabel10
+            // 
+            this.materialLabel10.Depth = 0;
+            this.materialLabel10.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel10.Location = new System.Drawing.Point(161, 142);
+            this.materialLabel10.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel10.Name = "materialLabel10";
+            this.materialLabel10.Size = new System.Drawing.Size(435, 46);
+            this.materialLabel10.TabIndex = 16;
+            this.materialLabel10.Text = "Şifrende en az 2 büyük karakter  ve en az 2 küçük karakter olmalı. Ayrıca sayı ve" +
+    " özel karakter de içermeli...";
+            this.materialLabel10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // materialLabel9
+            // 
+            this.materialLabel9.Depth = 0;
+            this.materialLabel9.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel9.Location = new System.Drawing.Point(71, 102);
+            this.materialLabel9.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel9.Name = "materialLabel9";
+            this.materialLabel9.Size = new System.Drawing.Size(609, 40);
+            this.materialLabel9.TabIndex = 15;
+            this.materialLabel9.Text = "Ancak güvenliğini sağlamak için bazı kurallarımız var; ";
+            this.materialLabel9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // materialLabel8
+            // 
+            this.materialLabel8.AutoSize = true;
+            this.materialLabel8.Depth = 0;
+            this.materialLabel8.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel8.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
+            this.materialLabel8.Location = new System.Drawing.Point(169, 61);
+            this.materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel8.Name = "materialLabel8";
+            this.materialLabel8.Size = new System.Drawing.Size(427, 29);
+            this.materialLabel8.TabIndex = 14;
+            this.materialLabel8.Text = "Hesaba giriş yapmak için şifreni belirle...";
             // 
             // btnGeri3
             // 
@@ -491,6 +543,32 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Kişisel Özellikler";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // materialLabel12
+            // 
+            this.materialLabel12.Depth = 0;
+            this.materialLabel12.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel12.Location = new System.Drawing.Point(84, 113);
+            this.materialLabel12.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel12.Name = "materialLabel12";
+            this.materialLabel12.Size = new System.Drawing.Size(612, 45);
+            this.materialLabel12.TabIndex = 17;
+            this.materialLabel12.Text = "Şimdi sana doğru bir plan oluşturmak için bazı kişisel bilgilerine ihtiyacımız va" +
+    "r...Lütfen aşağıdaki alanları doldur.";
+            this.materialLabel12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // materialLabel11
+            // 
+            this.materialLabel11.Depth = 0;
+            this.materialLabel11.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel11.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
+            this.materialLabel11.Location = new System.Drawing.Point(59, 38);
+            this.materialLabel11.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel11.Name = "materialLabel11";
+            this.materialLabel11.Size = new System.Drawing.Size(666, 62);
+            this.materialLabel11.TabIndex = 16;
+            this.materialLabel11.Text = "Hesap bilgilerin tamamlanmak üzere... ";
+            this.materialLabel11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // materialLabel3
             // 
@@ -651,6 +729,31 @@
             this.tabPage5.Text = "Yaş Cinsiyet";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // materialLabel16
+            // 
+            this.materialLabel16.AutoSize = true;
+            this.materialLabel16.Depth = 0;
+            this.materialLabel16.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel16.Location = new System.Drawing.Point(231, 125);
+            this.materialLabel16.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel16.Name = "materialLabel16";
+            this.materialLabel16.Size = new System.Drawing.Size(301, 19);
+            this.materialLabel16.TabIndex = 19;
+            this.materialLabel16.Text = "Yaşını, cinsiyetini ve aktivite durumunu gir.";
+            // 
+            // materialLabel15
+            // 
+            this.materialLabel15.Depth = 0;
+            this.materialLabel15.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel15.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
+            this.materialLabel15.Location = new System.Drawing.Point(45, 60);
+            this.materialLabel15.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel15.Name = "materialLabel15";
+            this.materialLabel15.Size = new System.Drawing.Size(685, 53);
+            this.materialLabel15.TabIndex = 18;
+            this.materialLabel15.Text = "Son adım... Üyelik oluşturmadan önce bilgilerini kontrol etmeyi unutma!";
+            this.materialLabel15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // materialLabel4
             // 
             this.materialLabel4.AutoSize = true;
@@ -778,6 +881,8 @@
             this.ımageList1.Images.SetKeyName(7, "password_FILL0_wght400_GRAD0_opsz48.png");
             this.ımageList1.Images.SetKeyName(8, "settings_accessibility_FILL0_wght400_GRAD0_opsz48.png");
             this.ımageList1.Images.SetKeyName(9, "transgender_FILL0_wght400_GRAD0_opsz48.png");
+            this.ımageList1.Images.SetKeyName(10, "1.png");
+            this.ımageList1.Images.SetKeyName(11, "2.png");
             // 
             // pictureBox1
             // 
@@ -788,120 +893,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
-            // 
-            // materialLabel8
-            // 
-            this.materialLabel8.AutoSize = true;
-            this.materialLabel8.Depth = 0;
-            this.materialLabel8.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel8.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
-            this.materialLabel8.Location = new System.Drawing.Point(169, 61);
-            this.materialLabel8.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel8.Name = "materialLabel8";
-            this.materialLabel8.Size = new System.Drawing.Size(427, 29);
-            this.materialLabel8.TabIndex = 14;
-            this.materialLabel8.Text = "Hesaba giriş yapmak için şifreni belirle...";
-            // 
-            // materialLabel9
-            // 
-            this.materialLabel9.Depth = 0;
-            this.materialLabel9.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel9.Location = new System.Drawing.Point(71, 102);
-            this.materialLabel9.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel9.Name = "materialLabel9";
-            this.materialLabel9.Size = new System.Drawing.Size(609, 40);
-            this.materialLabel9.TabIndex = 15;
-            this.materialLabel9.Text = "Ancak güvenliğini sağlamak için bazı kurallarımız var; ";
-            this.materialLabel9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // materialLabel10
-            // 
-            this.materialLabel10.Depth = 0;
-            this.materialLabel10.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel10.Location = new System.Drawing.Point(161, 142);
-            this.materialLabel10.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel10.Name = "materialLabel10";
-            this.materialLabel10.Size = new System.Drawing.Size(435, 46);
-            this.materialLabel10.TabIndex = 16;
-            this.materialLabel10.Text = "Şifrende en az 2 büyük karakter  ve en az 2 küçük karakter olmalı. Ayrıca sayı ve" +
-    " özel karakter de içermeli...";
-            this.materialLabel10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // materialLabel11
-            // 
-            this.materialLabel11.Depth = 0;
-            this.materialLabel11.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel11.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
-            this.materialLabel11.Location = new System.Drawing.Point(59, 38);
-            this.materialLabel11.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel11.Name = "materialLabel11";
-            this.materialLabel11.Size = new System.Drawing.Size(666, 62);
-            this.materialLabel11.TabIndex = 16;
-            this.materialLabel11.Text = "Hesap bilgilerin tamamlanmak üzere... ";
-            this.materialLabel11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // materialLabel12
-            // 
-            this.materialLabel12.Depth = 0;
-            this.materialLabel12.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel12.Location = new System.Drawing.Point(84, 113);
-            this.materialLabel12.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel12.Name = "materialLabel12";
-            this.materialLabel12.Size = new System.Drawing.Size(612, 45);
-            this.materialLabel12.TabIndex = 17;
-            this.materialLabel12.Text = "Şimdi sana doğru bir plan oluşturmak için bazı kişisel bilgilerine ihtiyacımız va" +
-    "r...Lütfen aşağıdaki alanları doldur.";
-            this.materialLabel12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // materialLabel13
-            // 
-            this.materialLabel13.AutoSize = true;
-            this.materialLabel13.Depth = 0;
-            this.materialLabel13.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel13.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
-            this.materialLabel13.Location = new System.Drawing.Point(286, 62);
-            this.materialLabel13.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel13.Name = "materialLabel13";
-            this.materialLabel13.Size = new System.Drawing.Size(224, 29);
-            this.materialLabel13.TabIndex = 0;
-            this.materialLabel13.Text = "E-posta adresini gir...";
-            // 
-            // materialLabel14
-            // 
-            this.materialLabel14.AutoSize = true;
-            this.materialLabel14.Depth = 0;
-            this.materialLabel14.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel14.Location = new System.Drawing.Point(186, 110);
-            this.materialLabel14.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel14.Name = "materialLabel14";
-            this.materialLabel14.Size = new System.Drawing.Size(424, 19);
-            this.materialLabel14.TabIndex = 1;
-            this.materialLabel14.Text = "E-postanı aynı zamanda kullanıcı adı olarak kullanabilirsin...";
-            // 
-            // materialLabel15
-            // 
-            this.materialLabel15.Depth = 0;
-            this.materialLabel15.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel15.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
-            this.materialLabel15.Location = new System.Drawing.Point(45, 60);
-            this.materialLabel15.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel15.Name = "materialLabel15";
-            this.materialLabel15.Size = new System.Drawing.Size(685, 53);
-            this.materialLabel15.TabIndex = 18;
-            this.materialLabel15.Text = "Son adım... Üyelik oluşturmadan önce bilgilerini kontrol etmeyi unutma!";
-            this.materialLabel15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // materialLabel16
-            // 
-            this.materialLabel16.AutoSize = true;
-            this.materialLabel16.Depth = 0;
-            this.materialLabel16.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel16.Location = new System.Drawing.Point(231, 125);
-            this.materialLabel16.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel16.Name = "materialLabel16";
-            this.materialLabel16.Size = new System.Drawing.Size(301, 19);
-            this.materialLabel16.TabIndex = 19;
-            this.materialLabel16.Text = "Yaşını, cinsiyetini ve aktivite durumunu gir.";
             // 
             // Form2
             // 
@@ -971,7 +962,6 @@
         private System.Windows.Forms.NumericUpDown nmrYas;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
-        private System.Windows.Forms.LinkLabel linkLabelGeri;
         private MaterialSkin.Controls.MaterialLabel materialLabel7;
         private System.Windows.Forms.PictureBox pictureBox1;
         private MaterialSkin.Controls.MaterialLabel materialLabel8;

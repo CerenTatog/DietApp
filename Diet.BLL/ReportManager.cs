@@ -335,7 +335,7 @@ namespace Diet.BLL
                                   MealType = mealType,
                                   FoodName = g.Key,
                                   TotalQuantity = g.Sum(x => x.Quantity / x.PortionQuantity),
-                              }).ToList();
+                              }).Take(5).ToList();
 
             return groupQuery;
 

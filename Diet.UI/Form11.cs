@@ -109,8 +109,8 @@ namespace Diet.UI
 
         private void btnGeri_Click(object sender, EventArgs e)
         {
-            Form3 Frm3 = new Form3();
-            Frm3.Show();
+            Form4 Frm4 = new Form4();
+            Frm4.Show();
             Hide();
         }
     }

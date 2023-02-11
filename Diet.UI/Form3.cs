@@ -33,7 +33,7 @@ namespace Diet.UI
         UnitOfWork db = new UnitOfWork();
         UserManager userManager = new UserManager();
 
-        //parametreli constructor yapılacak User bilgisi aktarılacak
+        
         public Form3()
         {
             InitializeComponent();
@@ -121,7 +121,7 @@ namespace Diet.UI
 
             //Günlük Toplam Kalori
 
-            double dailyToplam = Math.Abs((toplamAlınanKalori - toplamVerilenKalori));
+            double dailyToplam = (toplamAlınanKalori - toplamVerilenKalori);
             ////farkıyla alakalı bir gösterim.
             mlKalanKalorid.Text = (foodManager.CalculateDailyCalorie(_currentUser.ID) - (toplamAlınanKalori - toplamVerilenKalori)).ToString();
 
@@ -147,9 +147,6 @@ namespace Diet.UI
                 lblHedef.Text = "Kilo Kontrolü";
             }
             
-
-
-
             //mlHedefKilo.Text = (mevcutKilo - (db.UserDetailRepository.GetById(_currentUser.ID).TargetWeight)).ToString();
             lblMevcutKilo.Text = db.UserDetailRepository.GetAll().Where(x => x.UserID== _currentUser.ID).Select(x => x.Weight).FirstOrDefault().ToString();
             mlAdimProfild.Text = lblAdımSayisi.Text;
@@ -217,6 +214,7 @@ namespace Diet.UI
             cartesianChart1.Series.Clear();
             cartesianChart1.AxisX.Clear();
             cartesianChart1.AxisY.Clear();
+
 
             var data1 = reportManager.CalculateWeeklyCalorie(_currentUser.ID);
             ColumnSeries series5 = new ColumnSeries()
@@ -392,9 +390,6 @@ namespace Diet.UI
                 series9.Values.Add(item.Weight);
                 axisX5.Labels.Add(item.Date.ToString("dd/MM/yyyy"));
             }
-
-
-            
 
             //Pie Chart
             //Sabah

@@ -155,16 +155,16 @@
             // 
             this.chkPassword.AutoSize = true;
             this.chkPassword.Depth = 0;
-            this.chkPassword.Location = new System.Drawing.Point(213, 353);
+            this.chkPassword.Location = new System.Drawing.Point(199, 353);
             this.chkPassword.Margin = new System.Windows.Forms.Padding(0);
             this.chkPassword.MouseLocation = new System.Drawing.Point(-1, -1);
             this.chkPassword.MouseState = MaterialSkin.MouseState.HOVER;
             this.chkPassword.Name = "chkPassword";
             this.chkPassword.ReadOnly = false;
             this.chkPassword.Ripple = true;
-            this.chkPassword.Size = new System.Drawing.Size(107, 37);
+            this.chkPassword.Size = new System.Drawing.Size(130, 37);
             this.chkPassword.TabIndex = 6;
-            this.chkPassword.Text = "Şifre Gizle";
+            this.chkPassword.Text = "Şifreyi Göster";
             this.chkPassword.UseVisualStyleBackColor = true;
             this.chkPassword.CheckedChanged += new System.EventHandler(this.materialCheckbox1_CheckedChanged);
             // 

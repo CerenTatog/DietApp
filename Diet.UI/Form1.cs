@@ -35,7 +35,7 @@ namespace Diet.UI
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            txtSifre.UseSystemPasswordChar = true;
         }
 
         private void btnGirisYap_Click(object sender, EventArgs e)
@@ -90,11 +90,14 @@ namespace Diet.UI
         {
             if (chkPassword.CheckState==CheckState.Checked)
             {
-                txtSifre.UseSystemPasswordChar = true;
+               
+                txtSifre.UseSystemPasswordChar = false;
+                chkPassword.Text = "Şifreyi Gizle";
             }
             else
             {
-                txtSifre.UseSystemPasswordChar = false;
+                txtSifre.UseSystemPasswordChar = true;
+                chkPassword.Text = "Şifreyi Göster";
             }
         }
     }

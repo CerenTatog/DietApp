@@ -191,11 +191,11 @@ namespace Diet.UI
         {
             int Id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
             Food UpdatedFood = new Food();
-            // UpdatedFood = db.FoodRepository.GetById(Id);
+            UpdatedFood = db.FoodRepository.GetById(Id);
             UpdatedFood.FoodName = txtBesinAdi.Text;
             UpdatedFood.Carbonhydrate = Convert.ToInt32(txtKarbonhıdrat.Text);
             UpdatedFood.Portion = (QuantityType)cmbMiktarTuru.SelectedValue;
-            UpdatedFood.Fat = Convert.ToInt32(txtYag.Text);
+            UpdatedFood.Fat = Convert.ToInt32(txtYag.Text);            
             UpdatedFood.Protein = Convert.ToInt32(txtProtein.Text);
             UpdatedFood.Calorie = Convert.ToInt32(txtKalori.Text);
             db.FoodRepository.Update(UpdatedFood);//SaveChanges hata verdi

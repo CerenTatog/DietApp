@@ -82,7 +82,7 @@ namespace Diet.UI
             UpdatedActivity = db.ActivityRepository.GetById(Id);
             UpdatedActivity.ActivityName = txtActivityType.Text;
             UpdatedActivity.LostCalorie = Convert.ToDouble( txtCalorie.Text);
-            UpdatedActivity.CreatedDate = DateTime.Now;
+            //UpdatedActivity.CreatedDate = DateTime.Now;
             db.ActivityRepository.Update(UpdatedActivity); //SaveChanges hata verdi
             loadActivities();
         }

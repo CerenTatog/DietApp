@@ -123,7 +123,7 @@ namespace Diet.UI
 
             double dailyToplam = (toplamAlınanKalori - toplamVerilenKalori);
             ////farkıyla alakalı bir gösterim.
-            mlKalanKalorid.Text = (foodManager.CalculateDailyCalorie(_currentUser.ID) - (toplamAlınanKalori - toplamVerilenKalori)).ToString();
+            mlKalanKalorid.Text = Math.Round((foodManager.CalculateDailyCalorie(_currentUser.ID) - (toplamAlınanKalori - toplamVerilenKalori)),1).ToString();
 
             //Kullanıcı Bilgileri /Profil
             int yas = db.UserDetailRepository.GetAll().Select(x => x.Age).FirstOrDefault();
@@ -174,7 +174,16 @@ namespace Diet.UI
             };
             lblkarsilamaMesaji.Text = $"Hoşgeldin, {CultureInfo.CurrentCulture.TextInfo.ToTitleCase(_currentUser.UserName)}";
 
+            var query = db.UserDetailRepository.GetAll().FirstOrDefault(x => x.UserID == _currentUser.ID);
+            nmrBoy.Value = (decimal)query.Height;
+            nmrKilo.Value = (decimal)query.Weight;
+            cmbYas.Value = (decimal)query.Age;
+            cmbCinsiyet.SelectedValue = (int)query.Gender;
+          
 
+
+            //(Gender)cmbCinsiyet.SelectedValue;
+            //(ActivityStatus)cmbAktivite.SelectedValue;
 
             //Makro Besin chart;
             cartesianChart2.Series.Clear();
@@ -489,10 +498,7 @@ namespace Diet.UI
             cmbCinsiyet.ValueMember = "Value";
             LoadBodyAnalyz();
 
-            if (materialTabControl1.SelectedTab == tabPage10)
-            {
-                this.Close();
-            }
+            
         }
 
         private void mfabKahvaltıEkle_Click(object sender, EventArgs e)

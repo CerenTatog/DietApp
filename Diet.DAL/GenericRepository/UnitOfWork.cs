@@ -27,6 +27,7 @@ namespace Diet.DAL.GenericRepository
         private Repository<UserWater> _userWaterRepository;
         private Repository<UserNotification> _userNotificationRepository;
         private Repository<Category> _categoryRepository;
+
         
         private bool _disposed = false;
         public Repository<User> UserRepository

@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form5));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.materialTextBox22 = new MaterialSkin.Controls.MaterialTextBox2();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
@@ -41,17 +44,17 @@
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.materialComboBox2 = new MaterialSkin.Controls.MaterialComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
+            this.lblKCAL = new MaterialSkin.Controls.MaterialLabel();
             this.materialListBox1 = new MaterialSkin.Controls.MaterialListBox();
             this.materialListBox2 = new MaterialSkin.Controls.MaterialListBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.dataGridViewPopularFoodsTop10 = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblKCAL = new MaterialSkin.Controls.MaterialLabel();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPopularFoodsTop10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // materialTextBox22
@@ -63,7 +66,7 @@
             this.materialTextBox22.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialTextBox22.HideSelection = true;
             this.materialTextBox22.LeadingIcon = null;
-            this.materialTextBox22.Location = new System.Drawing.Point(319, 122);
+            this.materialTextBox22.Location = new System.Drawing.Point(434, 122);
             this.materialTextBox22.MaxLength = 32767;
             this.materialTextBox22.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox22.Name = "materialTextBox22";
@@ -75,7 +78,7 @@
             this.materialTextBox22.SelectionLength = 0;
             this.materialTextBox22.SelectionStart = 0;
             this.materialTextBox22.ShortcutsEnabled = true;
-            this.materialTextBox22.Size = new System.Drawing.Size(354, 48);
+            this.materialTextBox22.Size = new System.Drawing.Size(239, 48);
             this.materialTextBox22.TabIndex = 2;
             this.materialTextBox22.TabStop = false;
             this.materialTextBox22.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -101,12 +104,13 @@
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel3.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
-            this.materialLabel3.Location = new System.Drawing.Point(8, 102);
+            this.materialLabel3.Location = new System.Drawing.Point(129, 102);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(69, 29);
             this.materialLabel3.TabIndex = 6;
             this.materialLabel3.Text = "Miktar";
+            this.materialLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // materialButtonEkle
             // 
@@ -242,6 +246,16 @@
             this.materialComboBox2.SelectedIndexChanged += new System.EventHandler(this.materialComboBox2_SelectedIndexChanged);
             this.materialComboBox2.SelectionChangeCommitted += new System.EventHandler(this.materialComboBox2_SelectionChangeCommitted);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(34, 44);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(179, 178);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
             // materialCard1
             // 
             this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -256,6 +270,21 @@
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard1.Size = new System.Drawing.Size(452, 212);
             this.materialCard1.TabIndex = 15;
+            // 
+            // lblKCAL
+            // 
+            this.lblKCAL.AutoSize = true;
+            this.lblKCAL.Depth = 0;
+            this.lblKCAL.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.lblKCAL.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
+            this.lblKCAL.Location = new System.Drawing.Point(383, 163);
+            this.lblKCAL.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblKCAL.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblKCAL.Name = "lblKCAL";
+            this.lblKCAL.Size = new System.Drawing.Size(48, 29);
+            this.lblKCAL.TabIndex = 0;
+            this.lblKCAL.Text = "kCal";
+            this.lblKCAL.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // materialListBox1
             // 
@@ -301,42 +330,44 @@
             // dataGridViewPopularFoodsTop10
             // 
             this.dataGridViewPopularFoodsTop10.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewPopularFoodsTop10.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridViewPopularFoodsTop10.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewPopularFoodsTop10.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewPopularFoodsTop10.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewPopularFoodsTop10.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridViewPopularFoodsTop10.EnableHeadersVisualStyles = false;
+            this.dataGridViewPopularFoodsTop10.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dataGridViewPopularFoodsTop10.Location = new System.Drawing.Point(792, 257);
             this.dataGridViewPopularFoodsTop10.Name = "dataGridViewPopularFoodsTop10";
-            this.dataGridViewPopularFoodsTop10.Size = new System.Drawing.Size(314, 150);
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewPopularFoodsTop10.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridViewPopularFoodsTop10.Size = new System.Drawing.Size(389, 243);
             this.dataGridViewPopularFoodsTop10.TabIndex = 16;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(34, 44);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(179, 178);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
-            // 
-            // lblKCAL
-            // 
-            this.lblKCAL.AutoSize = true;
-            this.lblKCAL.Depth = 0;
-            this.lblKCAL.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.lblKCAL.FontType = MaterialSkin.MaterialSkinManager.fontType.H5;
-            this.lblKCAL.Location = new System.Drawing.Point(369, 163);
-            this.lblKCAL.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblKCAL.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblKCAL.Name = "lblKCAL";
-            this.lblKCAL.Size = new System.Drawing.Size(48, 29);
-            this.lblKCAL.TabIndex = 0;
-            this.lblKCAL.Text = "kCal";
             // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1137, 693);
+            this.ClientSize = new System.Drawing.Size(1206, 693);
             this.Controls.Add(this.dataGridViewPopularFoodsTop10);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialListBox2);
@@ -350,10 +381,10 @@
             this.Load += new System.EventHandler(this.Form5_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPopularFoodsTop10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -67,7 +67,7 @@ namespace Diet.UI
             materialComboBox2.DataSource = db.FoodRepository.GetAll().Select(x => new { x.ID, x.FoodName }).ToList();
             materialComboBox2.DisplayMember = "FoodName";
             materialComboBox2.ValueMember = "ID";
-            lblKCAL.Text = _foodManager.CalculateCalorieIntake(_currentUser.ID).Where(x => x.MealType == _mealType).FirstOrDefault()?.TotalCalori.ToString() +"kcal";
+            lblKCAL.Text = _foodManager.CalculateCalorieIntake(_currentUser.ID).Where(x => x.MealType == _mealType).FirstOrDefault()?.TotalCalori.ToString() +" kcal";
             materialTextBox22.Text = "";
             materialComboBox2.SelectedIndex = -1;
 
@@ -117,6 +117,7 @@ namespace Diet.UI
 
                 materialTextBox22.Text = "";
                 materialComboBox2.SelectedIndex = -1;
+                lblKCAL.Text = _foodManager.CalculateCalorieIntake(_currentUser.ID).Where(x => x.MealType == _mealType).FirstOrDefault()?.TotalCalori.ToString() + " kcal";
 
             }
             else
@@ -138,6 +139,7 @@ namespace Diet.UI
 
             }
             Form5_Load(sender, e);
+       
         }
 
         private void materialButtonTamamla_Click(object sender, EventArgs e)

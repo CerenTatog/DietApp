@@ -79,6 +79,7 @@ namespace Diet.UI
         {
             int Id = Convert.ToInt32(dgvActivities.CurrentRow.Cells[0].Value.ToString());
             Activity UpdatedActivity = new Activity();
+            UpdatedActivity = db.ActivityRepository.GetById(Id);
             UpdatedActivity.ActivityName = txtActivityType.Text;
             UpdatedActivity.LostCalorie = Convert.ToDouble( txtCalorie.Text);
             UpdatedActivity.CreatedDate = DateTime.Now;

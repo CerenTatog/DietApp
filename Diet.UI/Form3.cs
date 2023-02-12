@@ -548,6 +548,7 @@ namespace Diet.UI
         {
             double currentWater = userManager.AddDailyWater(_currentUser.ID);
             lblWaterTotal.Text = $"{currentWater} ml";
+            Form3_Load(sender, e);
 
         }
 
@@ -658,6 +659,7 @@ namespace Diet.UI
             }
 
             LoadBodyAnalyz();
+            Form3_Load(sender,e);
         }
         void LoadBodyAnalyz()
         {
